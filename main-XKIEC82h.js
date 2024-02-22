@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-QZMRUIoN.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-5U7bgaYt.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -20319,7 +20319,6 @@ const theme = createTheme({
   }
 });
 const globalTheme = responsiveFontSizes(theme);
-const InterRegular = "/Inter-Regular.ttf";
 if (!document.getElementById("younet-embed-chatbox")) {
   const root = document.createElement("div");
   root.id = "younet-embed-chatbox";
@@ -20346,11 +20345,6 @@ if (!document.getElementById("younet-embed-chatbox")) {
   const width2 = url.searchParams.get("width");
   const bottom = url.searchParams.get("bottom");
   const right = url.searchParams.get("right");
-  const head = document.head;
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = InterRegular;
-  head.appendChild(link);
   root.appendChild(link);
   const shadow = root.attachShadow({ mode: "open" });
   document.body.appendChild(root);
