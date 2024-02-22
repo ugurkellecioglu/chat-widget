@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash2) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-lJv5GVOg.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-81PNwfdL.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -20334,8 +20334,7 @@ root.style.bottom = "0px";
 root.style.right = "0px";
 console.log("Inter-Regular.ttf", InterRegular);
 const url = new URL(import.meta.url);
-console.log("url", url);
-console.log("currentScript", document.currentScript);
+console.log("mainjsx url", url);
 const modelHash = url.searchParams.get("modelHash");
 const height = url.searchParams.get("height");
 const width = url.searchParams.get("width");
