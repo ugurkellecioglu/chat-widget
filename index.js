@@ -1,3 +1,1 @@
-const url = new URL(import.meta.url)
-const modelHash = url.searchParams.get("modelHash")
-import(`./main-PLonMSs9.js?modelHash=${modelHash}`)
+import "./main-PQrmMtBH.js";
