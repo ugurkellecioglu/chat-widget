@@ -1,5 +1,9 @@
-const urlParams = new URLSearchParams(new URL(import.meta.url))
-console.log("new URL(import.meta.url)", new URL(import.meta.url))
-const modelHash = urlParams.get("modelHash")
-console.log("modelHash", modelHash)
+const url = new URL(import.meta.url)
+
+console.log("url", url)
+
+const modelHash = url.searchParams.get("modelHash")
+
+console("modelHash", modelHash)
+
 import(`./main-odPP3p5S.js?modelHash=${modelHash})`)
