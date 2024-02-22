@@ -1,4 +1,4 @@
-import { g as generateUtilityClasses, a as generateUtilityClass, r as reactExports, s as styled, B as ButtonBase, b as rootShouldForwardProp, c as capitalize, _ as _extends, d as alpha, e as resolveProps, u as useThemeProps, f as _objectWithoutPropertiesLoose$1, j as jsxRuntimeExports, h as clsx, i as composeClasses, k as Backdrop, M as Modal, P as Paper, l as useTheme, m as useId, F as Fade, n as getPath, T as Typography, o as useIsFocusVisible, p as useForkRef, q as getDefaultExportFromCjs, t as Box, R as React, C as Config, I as IconButton } from "./main-pkcLtUoY.js";
+import { g as generateUtilityClasses, a as generateUtilityClass, r as reactExports, s as styled, B as ButtonBase, b as rootShouldForwardProp, c as capitalize, _ as _extends, d as alpha, e as resolveProps, u as useThemeProps, f as _objectWithoutPropertiesLoose$1, j as jsxRuntimeExports, h as clsx, i as composeClasses, k as Backdrop, M as Modal, P as Paper, l as useTheme, m as useId, F as Fade, n as getPath, T as Typography, o as useIsFocusVisible, p as useForkRef, q as getDefaultExportFromCjs, t as Box, R as React, C as Config, I as IconButton } from "./main-QWaFsvi_.js";
 function getButtonUtilityClass(slot) {
   return generateUtilityClass("MuiButton", slot);
 }
@@ -26639,7 +26639,7 @@ const Spinner = () => {
     }
   );
 };
-const ReactMarkdown = reactExports.lazy(() => import("./index-2FZIaNJy.js"));
+const ReactMarkdown = reactExports.lazy(() => import("./index-98Le0Hci.js"));
 const CodeBlock = ({ language, value }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(React.Fragment, { children: [
     value,
@@ -26720,7 +26720,6 @@ const ImageComponent = ({ src, alt, ...props }) => {
   ] });
 };
 const MarkdownComponent = ({ source }) => {
-  console.log("source", source);
   if (!source) {
     return null;
   }

@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-blrbqLs9.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-QZMRUIoN.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -19519,8 +19519,6 @@ function Chatbox({
     }).then((r2) => r2.json()).then((r2) => {
       if (r2) {
         console.log("saveAiResponse");
-        const { message } = r2;
-        console.log("message", message);
       }
     }).catch((err) => {
       console.log("err", err);
@@ -19584,7 +19582,6 @@ function Chatbox({
       var _a2;
       if (resp.error) {
         if (resp.data != "") {
-          console.log("resp.data", resp.data);
           cachedMsg += resp.data;
         }
         abortController.abort();
@@ -19594,7 +19591,6 @@ function Chatbox({
         return;
       }
       if (resp.data) {
-        console.log("resp.data", resp);
         let data2 = resp.data;
         cachedMsg += resp.data;
         if (chatContainerRef.current)
@@ -19616,7 +19612,6 @@ function Chatbox({
         }
       }
       if (resp.response) {
-        console.log("resp.response", resp.response);
         const { response } = resp;
         ref.current.value = "";
         cleanChunkSources("");
@@ -19766,10 +19761,8 @@ function Chatbox({
                 disabled: isMsgSending,
                 sx: { width: "100%" },
                 onInput: (e2) => {
-                  console.log("txt", txt);
                   setTxt((prev2) => {
                     var _a, _b, _c, _d;
-                    console.log("prev", prev2);
                     if ((prev2 == null ? void 0 : prev2.length) > 0 && ((_b = (_a = e2 == null ? void 0 : e2.target) == null ? void 0 : _a.value) == null ? void 0 : _b.length) == 0) {
                       setStage(1);
                     } else if ((!prev2 || (prev2 == null ? void 0 : prev2.length) == 0) && ((_d = (_c = e2.target) == null ? void 0 : _c.value) == null ? void 0 : _d.length) > 0) {
