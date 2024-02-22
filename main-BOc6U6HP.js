@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-ooPTlm5-.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-3eA0ZjUz.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -19922,7 +19922,7 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
             sm: "445px"
           },
           height: {
-            xs: "100svh",
+            xs: "100vh",
             sm: "auto"
           }
         },
