@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-hzZfkfcP.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-i7sNHUB5.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -20034,7 +20034,7 @@ const theme = createTheme({
   spacing: 4,
   typography: {
     fontSize: 14,
-    fontFamily: ["Inter"].join(","),
+    fontFamily: ["InterYounet"].join(","),
     header: {
       fontSize: "1.5rem",
       fontWeight: "500",
@@ -20043,19 +20043,19 @@ const theme = createTheme({
     },
     h1: {
       fontSize: "1.5rem",
-      //  fontFamily: 'Inter',
+      //  fontFamily: 'InterYounet',
       fontWeight: "bold",
       letterSpacing: "0.7px"
     },
     h2: {
       fontSize: "1rem",
-      // fontFamily: 'Inter',
+      // fontFamily: 'InterYounet',
       fontWeight: "bold",
       letterSpacing: "0.7px"
     },
     h3: {
       fontSize: "0.8rem",
-      // fontFamily: 'Inter',
+      // fontFamily: 'InterYounet',
       letterSpacing: "0.7px"
     },
     p: {
@@ -20078,7 +20078,7 @@ const theme = createTheme({
     },
     messages: {
       fontSize: "14px",
-      fontFamily: "Inter, sans-serif",
+      fontFamily: "InterYounet, sans-serif",
       letterSpacing: "0.7px",
       display: "block"
     },
@@ -20092,14 +20092,14 @@ const theme = createTheme({
     },
     link: {
       fontSize: "inherit",
-      // fontFamily: 'Inter',
+      // fontFamily: 'InterYounet',
       textDecoration: "underline",
-      cursor: "pointer",
+      cursor: "poInterYounet",
       letterSpacing: "0.7px"
     },
     span: {
       fontSize: "0.7rem",
-      // fontFamily: 'Inter',
+      // fontFamily: 'InterYounet',
       letterSpacing: "0.7px"
     },
     one_line_ellipsis: {
@@ -20227,18 +20227,18 @@ const theme = createTheme({
     emailTemplateEmail: {
       fontSize: "0.75rem",
       color: "#5f6368",
-      // fontFamily: 'Inter',
+      // fontFamily: 'InterYounet',
       letterSpacing: "0.7px"
     },
     emailTemplateTime: {
       fontSize: "0.75rem",
       color: "#5f6368",
-      // fontFamily: 'Inter',
+      // fontFamily: 'InterYounet',
       letterSpacing: "0.7px"
     },
     emailTemplateContent: {
       fontSize: "0.813rem",
-      // fontFamily: 'Inter',
+      // fontFamily: 'InterYounet',
       letterSpacing: "0.7px"
     },
     footerLink: {
