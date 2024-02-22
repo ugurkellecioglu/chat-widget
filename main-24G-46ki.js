@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-5U7bgaYt.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-25zO5Une.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -20345,7 +20345,6 @@ if (!document.getElementById("younet-embed-chatbox")) {
   const width2 = url.searchParams.get("width");
   const bottom = url.searchParams.get("bottom");
   const right = url.searchParams.get("right");
-  root.appendChild(link);
   const shadow = root.attachShadow({ mode: "open" });
   document.body.appendChild(root);
   const cache = createCache({
