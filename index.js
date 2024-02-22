@@ -1,5 +1,3 @@
 const url = new URL(import.meta.url)
 const modelHash = url.searchParams.get("modelHash")
-import(`./main-I6TcMnYV.js?modelHash=${modelHash}`)
-
-// import "./main-I6TcMnYV.js";
+import(`./main-018QuYoo.js?modelHash=${modelHash}`)

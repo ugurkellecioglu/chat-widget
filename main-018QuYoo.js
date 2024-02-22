@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-H0xBgUeu.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index--bF-yIas.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -20334,11 +20334,11 @@ if (!document.getElementById("younet-embed-chatbox")) {
   root.style.bottom = "0px";
   root.style.right = "0px";
   console.log("import meta url", import.meta.url);
-  console.log(
-    "new URL(InterRegular, import.meta.url)",
-    new URL(InterRegular, import.meta.url)
-  );
-  const InterRegularUrl = new URL(InterRegular, import.meta.url).href;
+  const u2 = new URL(import.meta.url);
+  const lastSlash = url.href.lastIndexOf("/");
+  u2.pathname = u2.pathname.substring(0, lastSlash + 1) + "Inter-Regular.ttf";
+  console.log("u", u2);
+  const InterRegularUrl = u2.href;
   const stylefont = document.createElement("style");
   stylefont.innerHTML = `
     @font-face {
