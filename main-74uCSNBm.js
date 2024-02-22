@@ -7568,7 +7568,7 @@ var m$2 = reactDomExports;
   client.createRoot = m$2.createRoot;
   client.hydrateRoot = m$2.hydrateRoot;
 }
-const STYLE$1 = '*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;font-optical-sizing:auto;font-style:normal;font-variation-settings:"slnt" 0}@keyframes rotateLogo{0%{transform:rotate(0);opacity:1}to{transform:rotate(360deg);opacity:0}}.logo{transition:all .3s ease}.opened{animation-name:rotateLogo;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}@keyframes rotateClose{0%{transform:rotate(-360deg);opacity:0}to{transform:rotate(0);opacity:1}}.closeRef{background:linear-gradient(135deg,#b45afc 15%,#4285ff 50%,#00b2f8 80%);border-radius:999px;cursor:pointer;position:fixed;display:flex;justify-content:center;align-items:center}.closed{animation-name:rotateClose;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}';
+const STYLE$1 = "*{margin:0;padding:0;box-sizing:border-box;font-family:InterYounet}@keyframes rotateLogo{0%{transform:rotate(0);opacity:1}to{transform:rotate(360deg);opacity:0}}.logo{transition:all .3s ease}.opened{animation-name:rotateLogo;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}@keyframes rotateClose{0%{transform:rotate(-360deg);opacity:0}to{transform:rotate(0);opacity:1}}.closeRef{background:linear-gradient(135deg,#b45afc 15%,#4285ff 50%,#00b2f8 80%);border-radius:999px;cursor:pointer;position:fixed;display:flex;justify-content:center;align-items:center}.closed{animation-name:rotateClose;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}";
 function formatMuiErrorMessage(code) {
   let url = "https://mui.com/production-error/?code=" + code;
   for (let i = 1; i < arguments.length; i += 1) {
@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-vZtzxFst.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-hzZfkfcP.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -20336,8 +20336,8 @@ if (!document.getElementById("younet-embed-chatbox")) {
   const stylefont = document.createElement("style");
   stylefont.innerHTML = `
     @font-face {
-      font-family: 'Inter';
-      src: url('${InterRegular}') format('truetype');
+      font-family: 'InterYounet';
+      src: url('${InterRegular}');
     }
   `;
   document.head.appendChild(stylefont);
