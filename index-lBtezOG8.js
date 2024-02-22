@@ -1,5 +1,5 @@
-import { a as asciiAlphanumeric, p as push, r as resolveAll, s as splice, c as classifyCharacter, b as asciiAlpha, d as asciiControl, e as asciiAtext, m as markdownSpace, f as factorySpace, g as asciiPunctuation, h as asciiHexDigit, i as asciiDigit, j as markdownLineEnding, k as markdownLineEndingOrSpace, n as normalizeIdentifier, l as blankLine, o as ok, q as combineExtensions, t as toString$1, v as visit, u as extend, w as unreachable } from "./index-K-9NVvia.js";
-import { v as commonjsGlobal, j as jsxRuntimeExports } from "./main-v8pJ1uw0.js";
+import { a as asciiAlphanumeric, p as push, r as resolveAll, s as splice, c as classifyCharacter, b as asciiAlpha, d as asciiControl, e as asciiAtext, m as markdownSpace, f as factorySpace, g as asciiPunctuation, h as asciiHexDigit, i as asciiDigit, j as markdownLineEnding, k as markdownLineEndingOrSpace, n as normalizeIdentifier, l as blankLine, o as ok, q as combineExtensions, t as toString$1, v as visit, u as extend, w as unreachable } from "./index-LNvJu7eV.js";
+import { v as commonjsGlobal, j as jsxRuntimeExports } from "./main-cr7VHVXg.js";
 const element$1 = document.createElement("i");
 function decodeNamedCharacterReference(value) {
   const characterReference2 = "&" + value + ";";
