@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-3eA0ZjUz.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-Js-bP7ie.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -19177,7 +19177,7 @@ const Message = ({
     }
   );
 };
-const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;max-height:calc(100vh - 250px);padding:0;overflow-y:auto}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth}@media (max-width: 768px){.chatContainer{height:calc(100vh - 103px)}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important}.msg-box.user{flex-direction:row-reverse;text-align:right;color:#3976ef}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}";
+const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important}.msg-box.user{flex-direction:row-reverse;text-align:right;color:#3976ef}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
 /*!
@@ -19648,7 +19648,11 @@ function Chatbox({
         borderRadius: "5px",
         border: "1px solid #e0e0e0",
         height: {
-          xs: "100vh",
+          xs: "100dvh",
+          sm: "auto"
+        },
+        minHeight: {
+          xs: "-webkit-fill-available",
           sm: "auto"
         },
         display: "flex",
@@ -19709,7 +19713,6 @@ function Chatbox({
           Box$1,
           {
             sx: {
-              height: "400px",
               overflowY: "auto"
             },
             ref: chatContainerRef,
@@ -19922,7 +19925,7 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
             sm: "445px"
           },
           height: {
-            xs: "100vh",
+            xs: "100dvh",
             sm: "auto"
           }
         },
