@@ -7568,7 +7568,7 @@ var m$2 = reactDomExports;
   client.createRoot = m$2.createRoot;
   client.hydrateRoot = m$2.hydrateRoot;
 }
-const STYLE$1 = "*{margin:0;padding:0;box-sizing:border-box;font-family:InterYounet}@keyframes rotateLogo{0%{transform:rotate(0);opacity:1}to{transform:rotate(360deg);opacity:0}}.logo{transition:all .3s ease;filter:drop-shadow(0 20px 13px rgb(0 0 0 / .03)) drop-shadow(0 8px 5px rgb(0 0 0 / .08))}.opened{animation-name:rotateLogo;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}@keyframes rotateClose{0%{transform:rotate(-360deg);opacity:0}to{transform:rotate(0);opacity:1}}.closeRef{background:linear-gradient(135deg,#b45afc 15%,#4285ff 50%,#00b2f8 80%);border-radius:999px;cursor:pointer;position:fixed;display:flex;justify-content:center;align-items:center}.closed{animation-name:rotateClose;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}";
+const STYLE$1 = "*{margin:0;padding:0;box-sizing:border-box;font-family:InterYounet}@keyframes rotateLogo{0%{transform:rotate(0);opacity:1}to{transform:rotate(360deg);opacity:0}}.logo{transition:all .3s ease;filter:drop-shadow(0 20px 13px rgb(0 0 0 / .03)) drop-shadow(0 8px 5px rgb(0 0 0 / .08))}.opened{animation-name:rotateLogo;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}@keyframes rotateClose{0%{transform:rotate(-360deg);opacity:0}to{transform:rotate(0);opacity:1}}.closeRef{background:linear-gradient(135deg,#b45afc 15%,#4285ff 50%,#00b2f8 80%);border-radius:999px;cursor:pointer;position:fixed;display:flex;justify-content:center;align-items:center}.closed{animation-name:rotateClose;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}.animation-ping{animation:ping 2s cubic-bezier(0,0,.2,1) infinite}@keyframes ping{75%,to{transform:scale(1.19);opacity:0}}";
 function formatMuiErrorMessage(code) {
   let url = "https://mui.com/production-error/?code=" + code;
   for (let i = 1; i < arguments.length; i += 1) {
@@ -18904,7 +18904,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-reactExports.lazy(() => import("./index-URJPQCbf.js").then((n2) => n2.x));
+reactExports.lazy(() => import("./index-D2Gd6Tkt.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -18948,7 +18948,7 @@ const Message = ({
             )
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { maxWidth: "80%" }, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             Typography$1,
             {
@@ -18966,7 +18966,7 @@ const Message = ({
             {
               item: true,
               xs: 12,
-              pr: { xs: msg.type === "prompt" ? 2 : 6 },
+              pr: { xs: msg.type === "prompt" ? 2 : 1 },
               pl: { xs: msg.type === "prompt" ? 6 : 2 },
               sx: { display: "flex", flexDirection: "column" },
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { className: "inner-msg", variant: "messages", children: msg.message })
@@ -18978,7 +18978,7 @@ const Message = ({
     }
   );
 };
-const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:center}.msg-box.user{flex-direction:row-reverse;color:#3976ef}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}";
+const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:flex-end}.msg-box.user{flex-direction:row-reverse;color:#3976ef;align-items:center!important}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}.chatbox-input.sending legend,.chatbox-input.sending label{display:none}.dots-loading{display:inline-block;font-family:monospace;clip-path:inset(0 3ch 0 0);animation:dots-loading 1s steps(4) infinite}@keyframes dots-loading{to{clip-path:inset(0 -1ch 0 0)}}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
 /*!
@@ -19217,6 +19217,54 @@ const MessageStructureSkeleton = ({ loading = false, modelInfo = {} }) => {
     )
   ] });
 };
+newStyled(TextField$1)`
+  & .MuiInputLabel-root {
+    ${(props) => props.isinputfocused === "true" ? "" : "display: none;"}
+    transform: translate(16px, 25px);
+    width: 90%;
+    white-space: pre-wrap;
+  }
+  & .MuiOutlinedInput-notchedOutline legend {
+    ${(props) => props.isinputfocused === "true" ? "" : "width: 0;"}
+  }
+  & .MuiInputLabel-shrink {
+    transform: translate(16px, -8px) scale(0.75);
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 899px) {
+    & .MuiInputLabel-root {
+      transform: translate(16px, 14px);
+      width: 90%;
+      white-space: pre-wrap;
+    }
+    & .MuiInputLabel-shrink {
+      width: 112%;
+      transform: translate(16px, -8px) scale(0.75);
+    }
+    @media only screen (max-width: 600px) and (max-width: 899px) {
+      & .MuiInputLabel-root {
+        width: 90%;
+        white-space: pre-wrap;
+        transform: translate(16px, 14px);
+      }
+      & .MuiInputLabel-shrink {
+        white-space: nowrap;
+        transform: translate(10px, -8px) scale(0.75);
+      }
+    }
+    @media only screen and (max-width: 599px) {
+      & .MuiInputLabel-root {
+        width: 90%;
+        white-space: pre-wrap;
+        transform: translate(16px, 14px);
+      }
+      & .MuiInputLabel-shrink {
+        white-space: nowrap;
+        transform: translate(16px, -8px) scale(0.75);
+      }
+    }
+  }
+`;
 function Chatbox({
   info = {},
   type,
@@ -19242,7 +19290,7 @@ function Chatbox({
   const [aiMessage, setAiMessage] = reactExports.useState("");
   const [chatNotExist, setChatNotExist] = reactExports.useState(false);
   const [dataLoading, setDataLoading] = reactExports.useState(true);
-  const [stage, setStage] = reactExports.useState(1);
+  const [stage, setStage] = reactExports.useState(0);
   const modelName = reactExports.useMemo(() => {
     if (!model)
       return "";
@@ -19250,24 +19298,26 @@ function Chatbox({
   }, [model]);
   reactExports.useEffect(() => {
     if (isInputFocused) {
+      console.log("54", isInputFocused);
       setStage(2);
     } else {
+      console.log("57", isInputFocused);
       setStage(1);
     }
   }, [isInputFocused]);
   let sourcesTimer = null;
   reactExports.useEffect(() => {
-    getShareData(modelHash).then((data2) => {
-      if (data2.code >= 400) {
+    getShareData(modelHash).then((data) => {
+      if (data.code >= 400) {
         setDataLoading(false);
         setChatNotExist(true);
         return;
       }
-      setMessages(data2.messages);
-      setModel(data2.chat.model);
-      setGuestId(data2.guest.guest_id);
+      setMessages(data.messages);
+      setModel(data.chat.model);
+      setGuestId(data.guest.guest_id);
       setDataLoading(false);
-      console.debug("122");
+      console.debug("76");
       setStage(1);
     });
   }, []);
@@ -19318,11 +19368,13 @@ function Chatbox({
     let question = questionRef.current.value, ref = questionRef, emptyError = false, maxWordsAllowed = 0, firstChunkArrived = false, cachedMsg = "";
     emptyError = newMessage ? newMessage.trim() == "" : question.trim() == "";
     if (emptyError) {
+      setInputFocused(false);
       alert("Message is empty");
       return;
     }
     maxWordsAllowed = newMessage ? newMessage.split(" ").length : question.split(" ").length;
     if (maxWordsAllowed > 1500) {
+      setInputFocused(false);
       alert("The message is exceeded maximum words allowed of 1500");
       return;
     }
@@ -19350,9 +19402,12 @@ function Chatbox({
       console.log("errorCallback", response);
       let messages2 = response.message;
       let errMsg = messages2.length > 0 && messages2[0] == "guest.chat.over_limit" ? "You reached a maximum of 5 AI interactions. Register to get more. " : "Something went wrong.. Please, try again later..";
+      setInputFocused(false);
       alert(errMsg);
       cleanChunkSources("Thinking...");
       setMsgLoadState(false);
+      setStage(1);
+      setInputFocused(false);
     };
     const bufferCallback = (resp) => {
       var _a2;
@@ -19367,8 +19422,10 @@ function Chatbox({
           ref.current.focus();
           return;
         }
+        console.log("234 bufferCallback", resp);
+        setStage(3);
         if (resp.data) {
-          let data2 = resp.data;
+          let data = resp.data;
           cachedMsg += resp.data;
           if (chatContainerRef.current)
             chatContainerRef.current.scrollTop = (_a2 = chatContainerRef == null ? void 0 : chatContainerRef.current) == null ? void 0 : _a2.scrollHeight;
@@ -19380,7 +19437,7 @@ function Chatbox({
               message: cachedMsg
             };
           });
-          if (!firstChunkArrived && data2 != "") {
+          if (!firstChunkArrived && data != "") {
             firstChunkArrived = true;
             cleanChunkSources("Typing...");
           }
@@ -19410,11 +19467,13 @@ function Chatbox({
           return;
         }
       } catch (error) {
+        setInputFocused(false);
         alert(error.message);
       }
     };
     abortController = new AbortController();
     let signal = abortController.signal;
+    setStage(3);
     createStream("/message", bufferCallback, msgParams, signal, errorCallback);
   };
   const [txt, setTxt] = reactExports.useState("");
@@ -19487,6 +19546,18 @@ function Chatbox({
             children: /* @__PURE__ */ jsxRuntimeExports.jsx(Logo, { stage, isLoading: dataLoading, textInputText: txt })
           }
         ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingBottom: "10px"
+            },
+            children: isMsgSending && searchSource !== "" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dots-loading", children: searchSource })
+          }
+        ),
         chatNotExist && /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Chat Not Exist" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           Box$1,
@@ -19538,7 +19609,9 @@ function Chatbox({
             children: dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { height: "73px" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
               TextField$1,
               {
-                className: `chatbox-input ${!isInputFocused ? "label-apply" : ""}`,
+                className: `chatbox-input ${!isInputFocused ? "label-apply" : ""}
+              ${isMsgSending ? "sending" : ""}
+            `,
                 multiline: true,
                 disabled: isMsgSending,
                 sx: { width: "100%" },
@@ -19546,18 +19619,22 @@ function Chatbox({
                   setTxt((prev2) => {
                     var _a, _b, _c, _d;
                     if ((prev2 == null ? void 0 : prev2.length) > 0 && ((_b = (_a = e2 == null ? void 0 : e2.target) == null ? void 0 : _a.value) == null ? void 0 : _b.length) == 0) {
+                      console.log("424");
                       setStage(1);
                     } else if ((!prev2 || (prev2 == null ? void 0 : prev2.length) == 0) && ((_d = (_c = e2.target) == null ? void 0 : _c.value) == null ? void 0 : _d.length) > 0) {
+                      console.log("430");
                       setStage(2);
                     }
                     return e2.target.value;
                   });
                 },
-                label: isMsgSending && searchSource !== "" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: ["dots-loading"], children: searchSource }) : `Talk to "${modelName}"`,
-                isinputfocused: isInputFocused.toString(),
-                onFocus: () => setInputFocused(true),
+                label: searchSource !== "Thinking..." && isMsgSending && searchSource !== "" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dots-loading", children: searchSource }) : `Talk to "${modelName}"`,
+                focused: isInputFocused,
+                onFocus: () => {
+                  setInputFocused(true);
+                },
                 onBlur: () => setInputFocused(false),
-                placeholder: isInputFocused ? "" : `Talk to "${modelName}"`,
+                placeholder: isInputFocused || searchSource === "Thinking..." ? "" : `Talk to "${modelName}"`,
                 variant: "outlined",
                 onKeyDown: (e2) => {
                   if (e2.key == "Enter" && !isMobileDevice) {
@@ -19724,6 +19801,23 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Chatbox, { modelHash, setIsOpened }) })
             }
           ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "animation-ping ",
+              style: {
+                display: isOpened ? "none" : "block",
+                cursor: "pointer",
+                position: "fixed",
+                bottom: `${CONFIG.BOTTOM}px`,
+                right: `${CONFIG.RIGHT}px`,
+                height: `${CONFIG.HEIGHT}px`,
+                width: `${CONFIG.WIDTH}px`,
+                backgroundColor: "#3976ef",
+                borderRadius: "100%"
+              }
+            }
+          ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             Box$1,
             {
