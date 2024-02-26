@@ -18904,7 +18904,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-reactExports.lazy(() => import("./index-GqEFGnMB.js").then((n2) => n2.x));
+reactExports.lazy(() => import("./index-bsBWipcZ.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -19555,7 +19555,7 @@ function Chatbox({
               alignItems: "center",
               paddingBottom: "10px"
             },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dots-loading", children: searchSource })
+            children: isMsgSending && searchSource !== "" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dots-loading", children: searchSource })
           }
         ),
         chatNotExist && /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Chat Not Exist" }),
