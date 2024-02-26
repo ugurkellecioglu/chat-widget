@@ -8757,10 +8757,10 @@ var withEmotionCache = function withEmotionCache2(func) {
     return func(props, cache, ref);
   });
 };
-var ThemeContext$2 = /* @__PURE__ */ reactExports.createContext({});
+var ThemeContext = /* @__PURE__ */ reactExports.createContext({});
 var Global = /* @__PURE__ */ withEmotionCache(function(props, cache) {
   var styles2 = props.styles;
-  var serialized = serializeStyles([styles2], void 0, reactExports.useContext(ThemeContext$2));
+  var serialized = serializeStyles([styles2], void 0, reactExports.useContext(ThemeContext));
   var sheetRef = reactExports.useRef();
   useInsertionEffectWithLayoutFallback(function() {
     var key = cache.key + "-global";
@@ -8891,7 +8891,7 @@ var createStyled$1 = function createStyled2(tag, options) {
         for (var key in props) {
           mergedProps[key] = props[key];
         }
-        mergedProps.theme = reactExports.useContext(ThemeContext$2);
+        mergedProps.theme = reactExports.useContext(ThemeContext);
       }
       if (typeof props.className === "string") {
         className = getRegisteredStyles(cache.registered, classInterpolations, props.className);
@@ -9514,7 +9514,7 @@ function generateUtilityClasses(componentName, slots, globalStatePrefix = "Mui")
 function clamp(val, min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER) {
   return Math.max(min, Math.min(val, max));
 }
-const _excluded$G = ["values", "unit", "step"];
+const _excluded$F = ["values", "unit", "step"];
 const sortBreakpointsValues = (values2) => {
   const breakpointsAsArray = Object.keys(values2).map((key) => ({
     key,
@@ -9545,7 +9545,7 @@ function createBreakpoints(breakpoints) {
     },
     unit = "px",
     step = 5
-  } = breakpoints, other = _objectWithoutPropertiesLoose(breakpoints, _excluded$G);
+  } = breakpoints, other = _objectWithoutPropertiesLoose(breakpoints, _excluded$F);
   const sortedValues = sortBreakpointsValues(values2);
   const keys = Object.keys(sortedValues);
   function up(key) {
@@ -9619,16 +9619,16 @@ const defaultBreakpoints = {
   up: (key) => `@media (min-width:${values$1[key]}px)`
 };
 function handleBreakpoints(props, propValue, styleFromPropValue) {
-  const theme2 = props.theme || {};
+  const theme = props.theme || {};
   if (Array.isArray(propValue)) {
-    const themeBreakpoints = theme2.breakpoints || defaultBreakpoints;
+    const themeBreakpoints = theme.breakpoints || defaultBreakpoints;
     return propValue.reduce((acc, item, index) => {
       acc[themeBreakpoints.up(themeBreakpoints.keys[index])] = styleFromPropValue(propValue[index]);
       return acc;
     }, {});
   }
   if (typeof propValue === "object") {
-    const themeBreakpoints = theme2.breakpoints || defaultBreakpoints;
+    const themeBreakpoints = theme.breakpoints || defaultBreakpoints;
     return Object.keys(propValue).reduce((acc, breakpoint) => {
       if (Object.keys(themeBreakpoints.values || values$1).indexOf(breakpoint) !== -1) {
         const mediaKey = themeBreakpoints.up(breakpoint);
@@ -9750,8 +9750,8 @@ function style$1(options) {
       return null;
     }
     const propValue = props[prop];
-    const theme2 = props.theme;
-    const themeMapping = getPath(theme2, themeKey) || {};
+    const theme = props.theme;
+    const themeMapping = getPath(theme, themeKey) || {};
     const styleFromPropValue = (propValueFinal) => {
       let value = getStyleValue$1(themeMapping, transform, propValueFinal);
       if (propValueFinal === value && typeof propValueFinal === "string") {
@@ -9813,9 +9813,9 @@ const getCssProperties = memoize((prop) => {
 const marginKeys = ["m", "mt", "mr", "mb", "ml", "mx", "my", "margin", "marginTop", "marginRight", "marginBottom", "marginLeft", "marginX", "marginY", "marginInline", "marginInlineStart", "marginInlineEnd", "marginBlock", "marginBlockStart", "marginBlockEnd"];
 const paddingKeys = ["p", "pt", "pr", "pb", "pl", "px", "py", "padding", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "paddingX", "paddingY", "paddingInline", "paddingInlineStart", "paddingInlineEnd", "paddingBlock", "paddingBlockStart", "paddingBlockEnd"];
 [...marginKeys, ...paddingKeys];
-function createUnaryUnit(theme2, themeKey, defaultValue, propName) {
+function createUnaryUnit(theme, themeKey, defaultValue, propName) {
   var _getPath;
-  const themeSpacing = (_getPath = getPath(theme2, themeKey, false)) != null ? _getPath : defaultValue;
+  const themeSpacing = (_getPath = getPath(theme, themeKey, false)) != null ? _getPath : defaultValue;
   if (typeof themeSpacing === "number") {
     return (abs2) => {
       if (typeof abs2 === "string") {
@@ -9837,8 +9837,8 @@ function createUnaryUnit(theme2, themeKey, defaultValue, propName) {
   }
   return () => void 0;
 }
-function createUnarySpacing(theme2) {
-  return createUnaryUnit(theme2, "spacing", 8);
+function createUnarySpacing(theme) {
+  return createUnaryUnit(theme, "spacing", 8);
 }
 function getValue(transformer, propValue) {
   if (typeof propValue === "string" || propValue == null) {
@@ -10400,10 +10400,10 @@ function callIfFn(maybeFn, arg) {
   return typeof maybeFn === "function" ? maybeFn(arg) : maybeFn;
 }
 function unstable_createStyleFunctionSx() {
-  function getThemeValue(prop, val, theme2, config2) {
+  function getThemeValue(prop, val, theme, config2) {
     const props = {
       [prop]: val,
-      theme: theme2
+      theme
     };
     const options = config2[prop];
     if (!options) {
@@ -10425,7 +10425,7 @@ function unstable_createStyleFunctionSx() {
         [prop]: val
       };
     }
-    const themeMapping = getPath(theme2, themeKey) || {};
+    const themeMapping = getPath(theme, themeKey) || {};
     if (style2) {
       return style2(props);
     }
@@ -10447,48 +10447,48 @@ function unstable_createStyleFunctionSx() {
     var _theme$unstable_sxCon;
     const {
       sx,
-      theme: theme2 = {}
+      theme = {}
     } = props || {};
     if (!sx) {
       return null;
     }
-    const config2 = (_theme$unstable_sxCon = theme2.unstable_sxConfig) != null ? _theme$unstable_sxCon : defaultSxConfig$1;
+    const config2 = (_theme$unstable_sxCon = theme.unstable_sxConfig) != null ? _theme$unstable_sxCon : defaultSxConfig$1;
     function traverse(sxInput) {
       let sxObject = sxInput;
       if (typeof sxInput === "function") {
-        sxObject = sxInput(theme2);
+        sxObject = sxInput(theme);
       } else if (typeof sxInput !== "object") {
         return sxInput;
       }
       if (!sxObject) {
         return null;
       }
-      const emptyBreakpoints = createEmptyBreakpointObject(theme2.breakpoints);
+      const emptyBreakpoints = createEmptyBreakpointObject(theme.breakpoints);
       const breakpointsKeys = Object.keys(emptyBreakpoints);
       let css2 = emptyBreakpoints;
       Object.keys(sxObject).forEach((styleKey) => {
-        const value = callIfFn(sxObject[styleKey], theme2);
+        const value = callIfFn(sxObject[styleKey], theme);
         if (value !== null && value !== void 0) {
           if (typeof value === "object") {
             if (config2[styleKey]) {
-              css2 = merge(css2, getThemeValue(styleKey, value, theme2, config2));
+              css2 = merge(css2, getThemeValue(styleKey, value, theme, config2));
             } else {
               const breakpointsValues = handleBreakpoints({
-                theme: theme2
+                theme
               }, value, (x2) => ({
                 [styleKey]: x2
               }));
               if (objectsHaveSameKeys(breakpointsValues, value)) {
                 css2[styleKey] = styleFunctionSx2({
                   sx: value,
-                  theme: theme2
+                  theme
                 });
               } else {
                 css2 = merge(css2, breakpointsValues);
               }
             }
           } else {
-            css2 = merge(css2, getThemeValue(styleKey, value, theme2, config2));
+            css2 = merge(css2, getThemeValue(styleKey, value, theme, config2));
           }
         }
       });
@@ -10500,27 +10500,28 @@ function unstable_createStyleFunctionSx() {
 }
 const styleFunctionSx = unstable_createStyleFunctionSx();
 styleFunctionSx.filterProps = ["sx"];
+const styleFunctionSx$1 = styleFunctionSx;
 function applyStyles(key, styles2) {
-  const theme2 = this;
-  if (theme2.vars && typeof theme2.getColorSchemeSelector === "function") {
-    const selector = theme2.getColorSchemeSelector(key).replace(/(\[[^\]]+\])/, "*:where($1)");
+  const theme = this;
+  if (theme.vars && typeof theme.getColorSchemeSelector === "function") {
+    const selector = theme.getColorSchemeSelector(key).replace(/(\[[^\]]+\])/, "*:where($1)");
     return {
       [selector]: styles2
     };
   }
-  if (theme2.palette.mode === key) {
+  if (theme.palette.mode === key) {
     return styles2;
   }
   return {};
 }
-const _excluded$F = ["breakpoints", "palette", "spacing", "shape"];
+const _excluded$E = ["breakpoints", "palette", "spacing", "shape"];
 function createTheme$1(options = {}, ...args) {
   const {
     breakpoints: breakpointsInput = {},
     palette: paletteInput = {},
     spacing: spacingInput,
     shape: shapeInput = {}
-  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$F);
+  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$E);
   const breakpoints = createBreakpoints(breakpointsInput);
   const spacing = createSpacing(spacingInput);
   let muiTheme = deepmerge({
@@ -10538,7 +10539,7 @@ function createTheme$1(options = {}, ...args) {
   muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
   muiTheme.unstable_sxConfig = _extends({}, defaultSxConfig$1, other == null ? void 0 : other.unstable_sxConfig);
   muiTheme.unstable_sx = function sx(props) {
-    return styleFunctionSx({
+    return styleFunctionSx$1({
       sx: props,
       theme: this
     });
@@ -10548,26 +10549,26 @@ function createTheme$1(options = {}, ...args) {
 function isObjectEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
-function useTheme$3(defaultTheme2 = null) {
-  const contextTheme = reactExports.useContext(ThemeContext$2);
+function useTheme$2(defaultTheme2 = null) {
+  const contextTheme = reactExports.useContext(ThemeContext);
   return !contextTheme || isObjectEmpty(contextTheme) ? defaultTheme2 : contextTheme;
 }
 const systemDefaultTheme$1 = createTheme$1();
-function useTheme$2(defaultTheme2 = systemDefaultTheme$1) {
-  return useTheme$3(defaultTheme2);
+function useTheme$1(defaultTheme2 = systemDefaultTheme$1) {
+  return useTheme$2(defaultTheme2);
 }
 function GlobalStyles$1({
   styles: styles2,
   themeId,
   defaultTheme: defaultTheme2 = {}
 }) {
-  const upperTheme = useTheme$2(defaultTheme2);
+  const upperTheme = useTheme$1(defaultTheme2);
   const globalStyles = typeof styles2 === "function" ? styles2(themeId ? upperTheme[themeId] || upperTheme : upperTheme) : styles2;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GlobalStyles$2, {
     styles: globalStyles
   });
 }
-const _excluded$E = ["sx"];
+const _excluded$D = ["sx"];
 const splitProps = (props) => {
   var _props$theme$unstable, _props$theme;
   const result = {
@@ -10587,7 +10588,7 @@ const splitProps = (props) => {
 function extendSxProp(props) {
   const {
     sx: inSx
-  } = props, other = _objectWithoutPropertiesLoose(props, _excluded$E);
+  } = props, other = _objectWithoutPropertiesLoose(props, _excluded$D);
   const {
     systemProps,
     otherProps
@@ -10629,7 +10630,7 @@ function clsx() {
     (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
   return n2;
 }
-const _excluded$D = ["className", "component"];
+const _excluded$C = ["className", "component"];
 function createBox(options = {}) {
   const {
     themeId,
@@ -10639,30 +10640,30 @@ function createBox(options = {}) {
   } = options;
   const BoxRoot = styled$1("div", {
     shouldForwardProp: (prop) => prop !== "theme" && prop !== "sx" && prop !== "as"
-  })(styleFunctionSx);
+  })(styleFunctionSx$1);
   const Box2 = /* @__PURE__ */ reactExports.forwardRef(function Box3(inProps, ref) {
-    const theme2 = useTheme$2(defaultTheme2);
+    const theme = useTheme$1(defaultTheme2);
     const _extendSxProp = extendSxProp(inProps), {
       className,
       component = "div"
-    } = _extendSxProp, other = _objectWithoutPropertiesLoose(_extendSxProp, _excluded$D);
+    } = _extendSxProp, other = _objectWithoutPropertiesLoose(_extendSxProp, _excluded$C);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(BoxRoot, _extends({
       as: component,
       ref,
       className: clsx(className, generateClassName ? generateClassName(defaultClassName) : defaultClassName),
-      theme: themeId ? theme2[themeId] || theme2 : theme2
+      theme: themeId ? theme[themeId] || theme : theme
     }, other));
   });
   return Box2;
 }
-const _excluded$C = ["variant"];
+const _excluded$B = ["variant"];
 function isEmpty$3(string) {
   return string.length === 0;
 }
 function propsToClassKey(props) {
   const {
     variant
-  } = props, other = _objectWithoutPropertiesLoose(props, _excluded$C);
+  } = props, other = _objectWithoutPropertiesLoose(props, _excluded$B);
   let classKey = variant || "";
   Object.keys(other).sort().forEach((key) => {
     if (key === "color") {
@@ -10673,7 +10674,7 @@ function propsToClassKey(props) {
   });
   return classKey;
 }
-const _excluded$B = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
+const _excluded$A = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
 function isEmpty$2(obj) {
   return Object.keys(obj).length === 0;
 }
@@ -10683,9 +10684,9 @@ function isStringTag(tag) {
   // it's a lowercase character
   tag.charCodeAt(0) > 96;
 }
-const getStyleOverrides = (name, theme2) => {
-  if (theme2.components && theme2.components[name] && theme2.components[name].styleOverrides) {
-    return theme2.components[name].styleOverrides;
+const getStyleOverrides = (name, theme) => {
+  if (theme.components && theme.components[name] && theme.components[name].styleOverrides) {
+    return theme.components[name].styleOverrides;
   }
   return null;
 };
@@ -10706,10 +10707,10 @@ const transformVariants = (variants) => {
   }
   return variantsStyles;
 };
-const getVariantStyles = (name, theme2) => {
+const getVariantStyles = (name, theme) => {
   let variants = [];
-  if (theme2 && theme2.components && theme2.components[name] && theme2.components[name].variants) {
-    variants = theme2.components[name].variants;
+  if (theme && theme.components && theme.components[name] && theme.components[name].variants) {
+    variants = theme.components[name].variants;
   }
   return transformVariants(variants);
 };
@@ -10746,9 +10747,9 @@ const variantsResolver = (props, styles2, variants) => {
   }
   return variantsStyles;
 };
-const themeVariantsResolver = (props, styles2, theme2, name) => {
+const themeVariantsResolver = (props, styles2, theme, name) => {
   var _theme$components;
-  const themeVariants = theme2 == null || (_theme$components = theme2.components) == null || (_theme$components = _theme$components[name]) == null ? void 0 : _theme$components.variants;
+  const themeVariants = theme == null || (_theme$components = theme.components) == null || (_theme$components = _theme$components[name]) == null ? void 0 : _theme$components.variants;
   return variantsResolver(props, styles2, themeVariants);
 };
 function shouldForwardProp(prop) {
@@ -10763,10 +10764,10 @@ const lowercaseFirstLetter = (string) => {
 };
 function resolveTheme({
   defaultTheme: defaultTheme2,
-  theme: theme2,
+  theme,
   themeId
 }) {
-  return isEmpty$2(theme2) ? defaultTheme2 : theme2[themeId] || theme2;
+  return isEmpty$2(theme) ? defaultTheme2 : theme[themeId] || theme;
 }
 function defaultOverridesResolver(slot) {
   if (!slot) {
@@ -10805,7 +10806,7 @@ function createStyled(input = {}) {
     slotShouldForwardProp: slotShouldForwardProp2 = shouldForwardProp
   } = input;
   const systemSx = (props) => {
-    return styleFunctionSx(_extends({}, props, {
+    return styleFunctionSx$1(_extends({}, props, {
       theme: resolveTheme(_extends({}, props, {
         defaultTheme: defaultTheme2,
         themeId
@@ -10823,7 +10824,7 @@ function createStyled(input = {}) {
       // TODO v6: remove `lowercaseFirstLetter()` in the next major release
       // For more details: https://github.com/mui/material-ui/pull/37908
       overridesResolver = defaultOverridesResolver(lowercaseFirstLetter(componentSlot))
-    } = inputOptions, options = _objectWithoutPropertiesLoose(inputOptions, _excluded$B);
+    } = inputOptions, options = _objectWithoutPropertiesLoose(inputOptions, _excluded$A);
     const skipVariantsResolver = inputSkipVariantsResolver !== void 0 ? inputSkipVariantsResolver : (
       // TODO v6: remove `Root` in the next major release
       // For more details: https://github.com/mui/material-ui/pull/37908
@@ -10900,16 +10901,16 @@ function createStyled(input = {}) {
       }
       if (componentName && overridesResolver) {
         expressionsWithDefaultTheme.push((props) => {
-          const theme2 = resolveTheme(_extends({}, props, {
+          const theme = resolveTheme(_extends({}, props, {
             defaultTheme: defaultTheme2,
             themeId
           }));
-          const styleOverrides = getStyleOverrides(componentName, theme2);
+          const styleOverrides = getStyleOverrides(componentName, theme);
           if (styleOverrides) {
             const resolvedStyleOverrides = {};
             Object.entries(styleOverrides).forEach(([slotKey, slotStyle]) => {
               resolvedStyleOverrides[slotKey] = typeof slotStyle === "function" ? slotStyle(_extends({}, props, {
-                theme: theme2
+                theme
               })) : slotStyle;
             });
             return overridesResolver(props, resolvedStyleOverrides);
@@ -10919,11 +10920,11 @@ function createStyled(input = {}) {
       }
       if (componentName && !skipVariantsResolver) {
         expressionsWithDefaultTheme.push((props) => {
-          const theme2 = resolveTheme(_extends({}, props, {
+          const theme = resolveTheme(_extends({}, props, {
             defaultTheme: defaultTheme2,
             themeId
           }));
-          return themeVariantsResolver(props, getVariantStyles(componentName, theme2), theme2, componentName);
+          return themeVariantsResolver(props, getVariantStyles(componentName, theme), theme, componentName);
         });
       }
       if (!skipSx) {
@@ -10949,14 +10950,14 @@ function createStyled(input = {}) {
 }
 function getThemeProps(params) {
   const {
-    theme: theme2,
+    theme,
     name,
     props
   } = params;
-  if (!theme2 || !theme2.components || !theme2.components[name] || !theme2.components[name].defaultProps) {
+  if (!theme || !theme.components || !theme.components[name] || !theme.components[name].defaultProps) {
     return props;
   }
-  return resolveProps(theme2.components[name].defaultProps, props);
+  return resolveProps(theme.components[name].defaultProps, props);
 }
 function useThemeProps$1({
   props,
@@ -10964,12 +10965,12 @@ function useThemeProps$1({
   defaultTheme: defaultTheme2,
   themeId
 }) {
-  let theme2 = useTheme$2(defaultTheme2);
+  let theme = useTheme$1(defaultTheme2);
   if (themeId) {
-    theme2 = theme2[themeId] || theme2;
+    theme = theme[themeId] || theme;
   }
   const mergedProps = getThemeProps({
-    theme: theme2,
+    theme,
     name,
     props
   });
@@ -11121,76 +11122,6 @@ function lighten(color2, coefficient) {
   }
   return recomposeColor(color2);
 }
-const ThemeContext = /* @__PURE__ */ reactExports.createContext(null);
-const ThemeContext$1 = ThemeContext;
-function useTheme$1() {
-  const theme2 = reactExports.useContext(ThemeContext$1);
-  return theme2;
-}
-const hasSymbol = typeof Symbol === "function" && Symbol.for;
-const nested = hasSymbol ? Symbol.for("mui.nested") : "__THEME_NESTED__";
-function mergeOuterLocalTheme(outerTheme, localTheme) {
-  if (typeof localTheme === "function") {
-    const mergedTheme = localTheme(outerTheme);
-    return mergedTheme;
-  }
-  return _extends({}, outerTheme, localTheme);
-}
-function ThemeProvider$2(props) {
-  const {
-    children,
-    theme: localTheme
-  } = props;
-  const outerTheme = useTheme$1();
-  const theme2 = reactExports.useMemo(() => {
-    const output = outerTheme === null ? localTheme : mergeOuterLocalTheme(outerTheme, localTheme);
-    if (output != null) {
-      output[nested] = outerTheme !== null;
-    }
-    return output;
-  }, [localTheme, outerTheme]);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeContext$1.Provider, {
-    value: theme2,
-    children
-  });
-}
-const EMPTY_THEME = {};
-function useThemeScoping(themeId, upperTheme, localTheme, isPrivate = false) {
-  return reactExports.useMemo(() => {
-    const resolvedTheme = themeId ? upperTheme[themeId] || upperTheme : upperTheme;
-    if (typeof localTheme === "function") {
-      const mergedTheme = localTheme(resolvedTheme);
-      const result = themeId ? _extends({}, upperTheme, {
-        [themeId]: mergedTheme
-      }) : mergedTheme;
-      if (isPrivate) {
-        return () => result;
-      }
-      return result;
-    }
-    return themeId ? _extends({}, upperTheme, {
-      [themeId]: localTheme
-    }) : _extends({}, upperTheme, localTheme);
-  }, [themeId, upperTheme, localTheme, isPrivate]);
-}
-function ThemeProvider$1(props) {
-  const {
-    children,
-    theme: localTheme,
-    themeId
-  } = props;
-  const upperTheme = useTheme$3(EMPTY_THEME);
-  const upperPrivateTheme = useTheme$1() || EMPTY_THEME;
-  const engineTheme = useThemeScoping(themeId, upperTheme, localTheme);
-  const privateTheme = useThemeScoping(themeId, upperPrivateTheme, localTheme, true);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider$2, {
-    theme: privateTheme,
-    children: /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeContext$2.Provider, {
-      value: engineTheme,
-      children
-    })
-  });
-}
 const THEME_ID = "$$material";
 function createMixins(breakpoints, mixins) {
   return _extends({
@@ -11331,7 +11262,7 @@ const green = {
   A700: "#00c853"
 };
 const green$1 = green;
-const _excluded$A = ["mode", "contrastThreshold", "tonalOffset"];
+const _excluded$z = ["mode", "contrastThreshold", "tonalOffset"];
 const light = {
   // The colors used to style the text.
   text: {
@@ -11499,7 +11430,7 @@ function createPalette(palette) {
     mode = "light",
     contrastThreshold = 3,
     tonalOffset = 0.2
-  } = palette, other = _objectWithoutPropertiesLoose(palette, _excluded$A);
+  } = palette, other = _objectWithoutPropertiesLoose(palette, _excluded$z);
   const primary = palette.primary || getDefaultPrimary(mode);
   const secondary = palette.secondary || getDefaultSecondary(mode);
   const error = palette.error || getDefaultError(mode);
@@ -11593,7 +11524,7 @@ function createPalette(palette) {
   }, modes[mode]), other);
   return paletteOutput;
 }
-const _excluded$z = ["fontFamily", "fontSize", "fontWeightLight", "fontWeightRegular", "fontWeightMedium", "fontWeightBold", "htmlFontSize", "allVariants", "pxToRem"];
+const _excluded$y = ["fontFamily", "fontSize", "fontWeightLight", "fontWeightRegular", "fontWeightMedium", "fontWeightBold", "htmlFontSize", "allVariants", "pxToRem"];
 function round(value) {
   return Math.round(value * 1e5) / 1e5;
 }
@@ -11617,7 +11548,7 @@ function createTypography(palette, typography) {
     // Apply the CSS properties to all the variants.
     allVariants,
     pxToRem: pxToRem2
-  } = _ref, other = _objectWithoutPropertiesLoose(_ref, _excluded$z);
+  } = _ref, other = _objectWithoutPropertiesLoose(_ref, _excluded$y);
   const coef = fontSize / 14;
   const pxToRem = pxToRem2 || ((size) => `${size / htmlFontSize * coef}rem`);
   const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends({
@@ -11673,7 +11604,7 @@ function createShadow(...px) {
   return [`${px[0]}px ${px[1]}px ${px[2]}px ${px[3]}px rgba(0,0,0,${shadowKeyUmbraOpacity})`, `${px[4]}px ${px[5]}px ${px[6]}px ${px[7]}px rgba(0,0,0,${shadowKeyPenumbraOpacity})`, `${px[8]}px ${px[9]}px ${px[10]}px ${px[11]}px rgba(0,0,0,${shadowAmbientShadowOpacity})`].join(",");
 }
 const shadows = ["none", createShadow(0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 3, 0), createShadow(0, 3, 1, -2, 0, 2, 2, 0, 0, 1, 5, 0), createShadow(0, 3, 3, -2, 0, 3, 4, 0, 0, 1, 8, 0), createShadow(0, 2, 4, -1, 0, 4, 5, 0, 0, 1, 10, 0), createShadow(0, 3, 5, -1, 0, 5, 8, 0, 0, 1, 14, 0), createShadow(0, 3, 5, -1, 0, 6, 10, 0, 0, 1, 18, 0), createShadow(0, 4, 5, -2, 0, 7, 10, 1, 0, 2, 16, 1), createShadow(0, 5, 5, -3, 0, 8, 10, 1, 0, 3, 14, 2), createShadow(0, 5, 6, -3, 0, 9, 12, 1, 0, 3, 16, 2), createShadow(0, 6, 6, -3, 0, 10, 14, 1, 0, 4, 18, 3), createShadow(0, 6, 7, -4, 0, 11, 15, 1, 0, 4, 20, 3), createShadow(0, 7, 8, -4, 0, 12, 17, 2, 0, 5, 22, 4), createShadow(0, 7, 8, -4, 0, 13, 19, 2, 0, 5, 24, 4), createShadow(0, 7, 9, -4, 0, 14, 21, 2, 0, 5, 26, 4), createShadow(0, 8, 9, -5, 0, 15, 22, 2, 0, 6, 28, 5), createShadow(0, 8, 10, -5, 0, 16, 24, 2, 0, 6, 30, 5), createShadow(0, 8, 11, -5, 0, 17, 26, 2, 0, 6, 32, 5), createShadow(0, 9, 11, -5, 0, 18, 28, 2, 0, 7, 34, 6), createShadow(0, 9, 12, -6, 0, 19, 29, 2, 0, 7, 36, 6), createShadow(0, 10, 13, -6, 0, 20, 31, 3, 0, 8, 38, 7), createShadow(0, 10, 13, -6, 0, 21, 33, 3, 0, 8, 40, 7), createShadow(0, 10, 14, -6, 0, 22, 35, 3, 0, 8, 42, 7), createShadow(0, 11, 14, -7, 0, 23, 36, 3, 0, 9, 44, 8), createShadow(0, 11, 15, -7, 0, 24, 38, 3, 0, 9, 46, 8)];
-const _excluded$y = ["duration", "easing", "delay"];
+const _excluded$x = ["duration", "easing", "delay"];
 const easing = {
   // This is the most common easing curve.
   easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
@@ -11717,7 +11648,7 @@ function createTransitions(inputTransitions) {
       easing: easingOption = mergedEasing.easeInOut,
       delay = 0
     } = options;
-    _objectWithoutPropertiesLoose(options, _excluded$y);
+    _objectWithoutPropertiesLoose(options, _excluded$x);
     return (Array.isArray(props) ? props : [props]).map((animatedProp) => `${animatedProp} ${typeof durationOption === "string" ? durationOption : formatMs(durationOption)} ${easingOption} ${typeof delay === "string" ? delay : formatMs(delay)}`).join(",");
   };
   return _extends({
@@ -11739,14 +11670,14 @@ const zIndex = {
   tooltip: 1500
 };
 const zIndex$1 = zIndex;
-const _excluded$x = ["breakpoints", "mixins", "spacing", "palette", "transitions", "typography", "shape"];
+const _excluded$w = ["breakpoints", "mixins", "spacing", "palette", "transitions", "typography", "shape"];
 function createTheme(options = {}, ...args) {
   const {
     mixins: mixinsInput = {},
     palette: paletteInput = {},
     transitions: transitionsInput = {},
     typography: typographyInput = {}
-  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$x);
+  } = options, other = _objectWithoutPropertiesLoose(options, _excluded$w);
   if (options.vars) {
     throw new Error(formatMuiErrorMessage(18));
   }
@@ -11765,15 +11696,12 @@ function createTheme(options = {}, ...args) {
   muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
   muiTheme.unstable_sxConfig = _extends({}, defaultSxConfig$1, other == null ? void 0 : other.unstable_sxConfig);
   muiTheme.unstable_sx = function sx(props) {
-    return styleFunctionSx({
+    return styleFunctionSx$1({
       sx: props,
       theme: this
     });
   };
   return muiTheme;
-}
-function isUnitless(value) {
-  return String(parseFloat(value)).length === String(value).length;
 }
 function getUnit(input) {
   return String(input).match(/[\d.\-+]*\s*(.*)/)[1] || "";
@@ -11781,127 +11709,11 @@ function getUnit(input) {
 function toUnitless(length2) {
   return parseFloat(length2);
 }
-function convertLength(baseFontSize) {
-  return (length2, toUnit) => {
-    const fromUnit = getUnit(length2);
-    if (fromUnit === toUnit) {
-      return length2;
-    }
-    let pxLength = toUnitless(length2);
-    if (fromUnit !== "px") {
-      if (fromUnit === "em") {
-        pxLength = toUnitless(length2) * toUnitless(baseFontSize);
-      } else if (fromUnit === "rem") {
-        pxLength = toUnitless(length2) * toUnitless(baseFontSize);
-      }
-    }
-    let outputLength = pxLength;
-    if (toUnit !== "px") {
-      if (toUnit === "em") {
-        outputLength = pxLength / toUnitless(baseFontSize);
-      } else if (toUnit === "rem") {
-        outputLength = pxLength / toUnitless(baseFontSize);
-      } else {
-        return length2;
-      }
-    }
-    return parseFloat(outputLength.toFixed(5)) + toUnit;
-  };
-}
-function alignProperty({
-  size,
-  grid
-}) {
-  const sizeBelow = size - size % grid;
-  const sizeAbove = sizeBelow + grid;
-  return size - sizeBelow < sizeAbove - size ? sizeBelow : sizeAbove;
-}
-function fontGrid({
-  lineHeight,
-  pixels,
-  htmlFontSize
-}) {
-  return pixels / (lineHeight * htmlFontSize);
-}
-function responsiveProperty({
-  cssProperty,
-  min,
-  max,
-  unit = "rem",
-  breakpoints = [600, 900, 1200],
-  transform = null
-}) {
-  const output = {
-    [cssProperty]: `${min}${unit}`
-  };
-  const factor = (max - min) / breakpoints[breakpoints.length - 1];
-  breakpoints.forEach((breakpoint) => {
-    let value = min + factor * breakpoint;
-    if (transform !== null) {
-      value = transform(value);
-    }
-    output[`@media (min-width:${breakpoint}px)`] = {
-      [cssProperty]: `${Math.round(value * 1e4) / 1e4}${unit}`
-    };
-  });
-  return output;
-}
-function responsiveFontSizes(themeInput, options = {}) {
-  const {
-    breakpoints = ["sm", "md", "lg"],
-    disableAlign = false,
-    factor = 2,
-    variants = ["h1", "h2", "h3", "h4", "h5", "h6", "subtitle1", "subtitle2", "body1", "body2", "caption", "button", "overline"]
-  } = options;
-  const theme2 = _extends({}, themeInput);
-  theme2.typography = _extends({}, theme2.typography);
-  const typography = theme2.typography;
-  const convert = convertLength(typography.htmlFontSize);
-  const breakpointValues = breakpoints.map((x2) => theme2.breakpoints.values[x2]);
-  variants.forEach((variant) => {
-    const style2 = typography[variant];
-    const remFontSize = parseFloat(convert(style2.fontSize, "rem"));
-    if (remFontSize <= 1) {
-      return;
-    }
-    const maxFontSize = remFontSize;
-    const minFontSize = 1 + (maxFontSize - 1) / factor;
-    let {
-      lineHeight
-    } = style2;
-    if (!isUnitless(lineHeight) && !disableAlign) {
-      throw new Error(formatMuiErrorMessage(6));
-    }
-    if (!isUnitless(lineHeight)) {
-      lineHeight = parseFloat(convert(lineHeight, "rem")) / parseFloat(remFontSize);
-    }
-    let transform = null;
-    if (!disableAlign) {
-      transform = (value) => alignProperty({
-        size: value,
-        grid: fontGrid({
-          pixels: 4,
-          lineHeight,
-          htmlFontSize: typography.htmlFontSize
-        })
-      });
-    }
-    typography[variant] = _extends({}, style2, responsiveProperty({
-      cssProperty: "fontSize",
-      min: minFontSize,
-      max: maxFontSize,
-      unit: "rem",
-      breakpoints: breakpointValues,
-      transform
-    }));
-  });
-  return theme2;
-}
 const defaultTheme$1 = createTheme();
 const defaultTheme$2 = defaultTheme$1;
 function useTheme() {
-  const theme2 = useTheme$2(defaultTheme$2);
-  return theme2[THEME_ID] || theme2;
+  const theme = useTheme$1(defaultTheme$2);
+  return theme[THEME_ID] || theme;
 }
 function useThemeProps({
   props,
@@ -11921,17 +11733,6 @@ const styled = createStyled({
   defaultTheme: defaultTheme$2,
   rootShouldForwardProp
 });
-const _excluded$w = ["theme"];
-function ThemeProvider(_ref) {
-  let {
-    theme: themeInput
-  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded$w);
-  const scopedTheme = themeInput[THEME_ID];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider$1, _extends({}, props, {
-    themeId: scopedTheme ? THEME_ID : void 0,
-    theme: scopedTheme || themeInput
-  }));
-}
 const getOverlayAlpha = (elevation) => {
   let alphaValue;
   if (elevation < 1) {
@@ -12457,7 +12258,7 @@ const Grow = /* @__PURE__ */ reactExports.forwardRef(function Grow2(props, ref) 
   } = props, other = _objectWithoutPropertiesLoose(props, _excluded$v);
   const timer = useTimeout();
   const autoTimeout = reactExports.useRef();
-  const theme2 = useTheme();
+  const theme = useTheme();
   const nodeRef = reactExports.useRef(null);
   const handleRef = useForkRef(nodeRef, children.ref, ref);
   const normalizedTransitionCallback = (callback) => (maybeIsAppearing) => {
@@ -12486,15 +12287,15 @@ const Grow = /* @__PURE__ */ reactExports.forwardRef(function Grow2(props, ref) 
     });
     let duration2;
     if (timeout === "auto") {
-      duration2 = theme2.transitions.getAutoHeightDuration(node2.clientHeight);
+      duration2 = theme.transitions.getAutoHeightDuration(node2.clientHeight);
       autoTimeout.current = duration2;
     } else {
       duration2 = transitionDuration;
     }
-    node2.style.transition = [theme2.transitions.create("opacity", {
+    node2.style.transition = [theme.transitions.create("opacity", {
       duration: duration2,
       delay
-    }), theme2.transitions.create("transform", {
+    }), theme.transitions.create("transform", {
       duration: isWebKit154 ? duration2 : duration2 * 0.666,
       delay,
       easing: transitionTimingFunction
@@ -12519,15 +12320,15 @@ const Grow = /* @__PURE__ */ reactExports.forwardRef(function Grow2(props, ref) 
     });
     let duration2;
     if (timeout === "auto") {
-      duration2 = theme2.transitions.getAutoHeightDuration(node2.clientHeight);
+      duration2 = theme.transitions.getAutoHeightDuration(node2.clientHeight);
       autoTimeout.current = duration2;
     } else {
       duration2 = transitionDuration;
     }
-    node2.style.transition = [theme2.transitions.create("opacity", {
+    node2.style.transition = [theme.transitions.create("opacity", {
       duration: duration2,
       delay
-    }), theme2.transitions.create("transform", {
+    }), theme.transitions.create("transform", {
       duration: isWebKit154 ? duration2 : duration2 * 0.666,
       delay: isWebKit154 ? delay : delay || duration2 * 0.333,
       easing: transitionTimingFunction
@@ -12601,7 +12402,7 @@ const SvgIconRoot = styled("svg", {
     return [styles2.root, ownerState.color !== "inherit" && styles2[`color${capitalize(ownerState.color)}`], styles2[`fontSize${capitalize(ownerState.fontSize)}`]];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
   var _theme$transitions, _theme$transitions$cr, _theme$transitions2, _theme$typography, _theme$typography$pxT, _theme$typography2, _theme$typography2$px, _theme$typography3, _theme$typography3$px, _palette$ownerState$c, _palette, _palette2, _palette3;
@@ -12614,19 +12415,19 @@ const SvgIconRoot = styled("svg", {
     // e.g. heroicons uses fill="none" and stroke="currentColor"
     fill: ownerState.hasSvgAsChild ? void 0 : "currentColor",
     flexShrink: 0,
-    transition: (_theme$transitions = theme2.transitions) == null || (_theme$transitions$cr = _theme$transitions.create) == null ? void 0 : _theme$transitions$cr.call(_theme$transitions, "fill", {
-      duration: (_theme$transitions2 = theme2.transitions) == null || (_theme$transitions2 = _theme$transitions2.duration) == null ? void 0 : _theme$transitions2.shorter
+    transition: (_theme$transitions = theme.transitions) == null || (_theme$transitions$cr = _theme$transitions.create) == null ? void 0 : _theme$transitions$cr.call(_theme$transitions, "fill", {
+      duration: (_theme$transitions2 = theme.transitions) == null || (_theme$transitions2 = _theme$transitions2.duration) == null ? void 0 : _theme$transitions2.shorter
     }),
     fontSize: {
       inherit: "inherit",
-      small: ((_theme$typography = theme2.typography) == null || (_theme$typography$pxT = _theme$typography.pxToRem) == null ? void 0 : _theme$typography$pxT.call(_theme$typography, 20)) || "1.25rem",
-      medium: ((_theme$typography2 = theme2.typography) == null || (_theme$typography2$px = _theme$typography2.pxToRem) == null ? void 0 : _theme$typography2$px.call(_theme$typography2, 24)) || "1.5rem",
-      large: ((_theme$typography3 = theme2.typography) == null || (_theme$typography3$px = _theme$typography3.pxToRem) == null ? void 0 : _theme$typography3$px.call(_theme$typography3, 35)) || "2.1875rem"
+      small: ((_theme$typography = theme.typography) == null || (_theme$typography$pxT = _theme$typography.pxToRem) == null ? void 0 : _theme$typography$pxT.call(_theme$typography, 20)) || "1.25rem",
+      medium: ((_theme$typography2 = theme.typography) == null || (_theme$typography2$px = _theme$typography2.pxToRem) == null ? void 0 : _theme$typography2$px.call(_theme$typography2, 24)) || "1.5rem",
+      large: ((_theme$typography3 = theme.typography) == null || (_theme$typography3$px = _theme$typography3.pxToRem) == null ? void 0 : _theme$typography3$px.call(_theme$typography3, 35)) || "2.1875rem"
     }[ownerState.fontSize],
     // TODO v5 deprecate, v6 remove for sx
-    color: (_palette$ownerState$c = (_palette = (theme2.vars || theme2).palette) == null || (_palette = _palette[ownerState.color]) == null ? void 0 : _palette.main) != null ? _palette$ownerState$c : {
-      action: (_palette2 = (theme2.vars || theme2).palette) == null || (_palette2 = _palette2.action) == null ? void 0 : _palette2.active,
-      disabled: (_palette3 = (theme2.vars || theme2).palette) == null || (_palette3 = _palette3.action) == null ? void 0 : _palette3.disabled,
+    color: (_palette$ownerState$c = (_palette = (theme.vars || theme).palette) == null || (_palette = _palette[ownerState.color]) == null ? void 0 : _palette.main) != null ? _palette$ownerState$c : {
+      action: (_palette2 = (theme.vars || theme).palette) == null || (_palette2 = _palette2.action) == null ? void 0 : _palette2.active,
+      disabled: (_palette3 = (theme.vars || theme).palette) == null || (_palette3 = _palette3.action) == null ? void 0 : _palette3.disabled,
       inherit: void 0
     }[ownerState.color]
   };
@@ -12817,24 +12618,24 @@ const PaperRoot = styled("div", {
     return [styles2.root, styles2[ownerState.variant], !ownerState.square && styles2.rounded, ownerState.variant === "elevation" && styles2[`elevation${ownerState.elevation}`]];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
   var _theme$vars$overlays;
   return _extends({
-    backgroundColor: (theme2.vars || theme2).palette.background.paper,
-    color: (theme2.vars || theme2).palette.text.primary,
-    transition: theme2.transitions.create("box-shadow")
+    backgroundColor: (theme.vars || theme).palette.background.paper,
+    color: (theme.vars || theme).palette.text.primary,
+    transition: theme.transitions.create("box-shadow")
   }, !ownerState.square && {
-    borderRadius: theme2.shape.borderRadius
+    borderRadius: theme.shape.borderRadius
   }, ownerState.variant === "outlined" && {
-    border: `1px solid ${(theme2.vars || theme2).palette.divider}`
+    border: `1px solid ${(theme.vars || theme).palette.divider}`
   }, ownerState.variant === "elevation" && _extends({
-    boxShadow: (theme2.vars || theme2).shadows[ownerState.elevation]
-  }, !theme2.vars && theme2.palette.mode === "dark" && {
+    boxShadow: (theme.vars || theme).shadows[ownerState.elevation]
+  }, !theme.vars && theme.palette.mode === "dark" && {
     backgroundImage: `linear-gradient(${alpha("#fff", getOverlayAlpha(ownerState.elevation))}, ${alpha("#fff", getOverlayAlpha(ownerState.elevation))})`
-  }, theme2.vars && {
-    backgroundImage: (_theme$vars$overlays = theme2.vars.overlays) == null ? void 0 : _theme$vars$overlays[ownerState.elevation]
+  }, theme.vars && {
+    backgroundImage: (_theme$vars$overlays = theme.vars.overlays) == null ? void 0 : _theme$vars$overlays[ownerState.elevation]
   }));
 });
 const Paper = /* @__PURE__ */ reactExports.forwardRef(function Paper2(inProps, ref) {
@@ -13104,14 +12905,14 @@ const TouchRippleRipple = styled(Ripple, {
     animation-delay: 200ms;
   }
 `), touchRippleClasses.rippleVisible, enterKeyframe, DURATION, ({
-  theme: theme2
-}) => theme2.transitions.easing.easeInOut, touchRippleClasses.ripplePulsate, ({
-  theme: theme2
-}) => theme2.transitions.duration.shorter, touchRippleClasses.child, touchRippleClasses.childLeaving, exitKeyframe, DURATION, ({
-  theme: theme2
-}) => theme2.transitions.easing.easeInOut, touchRippleClasses.childPulsate, pulsateKeyframe, ({
-  theme: theme2
-}) => theme2.transitions.easing.easeInOut);
+  theme
+}) => theme.transitions.easing.easeInOut, touchRippleClasses.ripplePulsate, ({
+  theme
+}) => theme.transitions.duration.shorter, touchRippleClasses.child, touchRippleClasses.childLeaving, exitKeyframe, DURATION, ({
+  theme
+}) => theme.transitions.easing.easeInOut, touchRippleClasses.childPulsate, pulsateKeyframe, ({
+  theme
+}) => theme.transitions.easing.easeInOut);
 const TouchRipple = /* @__PURE__ */ reactExports.forwardRef(function TouchRipple2(inProps, ref) {
   const props = useThemeProps({
     props: inProps,
@@ -13582,23 +13383,23 @@ const IconButtonRoot = styled(ButtonBase$1, {
     return [styles2.root, ownerState.color !== "default" && styles2[`color${capitalize(ownerState.color)}`], ownerState.edge && styles2[`edge${capitalize(ownerState.edge)}`], styles2[`size${capitalize(ownerState.size)}`]];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
   textAlign: "center",
   flex: "0 0 auto",
-  fontSize: theme2.typography.pxToRem(24),
+  fontSize: theme.typography.pxToRem(24),
   padding: 8,
   borderRadius: "50%",
   overflow: "visible",
   // Explicitly set the default value to solve a bug on IE11.
-  color: (theme2.vars || theme2).palette.action.active,
-  transition: theme2.transitions.create("background-color", {
-    duration: theme2.transitions.duration.shortest
+  color: (theme.vars || theme).palette.action.active,
+  transition: theme.transitions.create("background-color", {
+    duration: theme.transitions.duration.shortest
   })
 }, !ownerState.disableRipple && {
   "&:hover": {
-    backgroundColor: theme2.vars ? `rgba(${theme2.vars.palette.action.activeChannel} / ${theme2.vars.palette.action.hoverOpacity})` : alpha(theme2.palette.action.active, theme2.palette.action.hoverOpacity),
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette.action.active, theme.palette.action.hoverOpacity),
     // Reset on touch devices, it doesn't add specificity
     "@media (hover: none)": {
       backgroundColor: "transparent"
@@ -13609,18 +13410,18 @@ const IconButtonRoot = styled(ButtonBase$1, {
 }, ownerState.edge === "end" && {
   marginRight: ownerState.size === "small" ? -3 : -12
 }), ({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
   var _palette;
-  const palette = (_palette = (theme2.vars || theme2).palette) == null ? void 0 : _palette[ownerState.color];
+  const palette = (_palette = (theme.vars || theme).palette) == null ? void 0 : _palette[ownerState.color];
   return _extends({}, ownerState.color === "inherit" && {
     color: "inherit"
   }, ownerState.color !== "inherit" && ownerState.color !== "default" && _extends({
     color: palette == null ? void 0 : palette.main
   }, !ownerState.disableRipple && {
     "&:hover": _extends({}, palette && {
-      backgroundColor: theme2.vars ? `rgba(${palette.mainChannel} / ${theme2.vars.palette.action.hoverOpacity})` : alpha(palette.main, theme2.palette.action.hoverOpacity)
+      backgroundColor: theme.vars ? `rgba(${palette.mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(palette.main, theme.palette.action.hoverOpacity)
     }, {
       // Reset on touch devices, it doesn't add specificity
       "@media (hover: none)": {
@@ -13629,14 +13430,14 @@ const IconButtonRoot = styled(ButtonBase$1, {
     })
   }), ownerState.size === "small" && {
     padding: 5,
-    fontSize: theme2.typography.pxToRem(18)
+    fontSize: theme.typography.pxToRem(18)
   }, ownerState.size === "large" && {
     padding: 12,
-    fontSize: theme2.typography.pxToRem(28)
+    fontSize: theme.typography.pxToRem(28)
   }, {
     [`&.${iconButtonClasses.disabled}`]: {
       backgroundColor: "transparent",
-      color: (theme2.vars || theme2).palette.action.disabled
+      color: (theme.vars || theme).palette.action.disabled
     }
   });
 });
@@ -13703,14 +13504,14 @@ const TypographyRoot = styled("span", {
     return [styles2.root, ownerState.variant && styles2[ownerState.variant], ownerState.align !== "inherit" && styles2[`align${capitalize(ownerState.align)}`], ownerState.noWrap && styles2.noWrap, ownerState.gutterBottom && styles2.gutterBottom, ownerState.paragraph && styles2.paragraph];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
   margin: 0
 }, ownerState.variant === "inherit" && {
   // Some elements, like <button> on Chrome have default font that doesn't inherit, reset this.
   font: "inherit"
-}, ownerState.variant !== "inherit" && theme2.typography[ownerState.variant], ownerState.align !== "inherit" && {
+}, ownerState.variant !== "inherit" && theme.typography[ownerState.variant], ownerState.align !== "inherit" && {
   textAlign: ownerState.align
 }, ownerState.noWrap && {
   overflow: "hidden",
@@ -14623,10 +14424,10 @@ const InputBaseRoot = styled("div", {
   slot: "Root",
   overridesResolver: rootOverridesResolver
 })(({
-  theme: theme2,
+  theme,
   ownerState
-}) => _extends({}, theme2.typography.body1, {
-  color: (theme2.vars || theme2).palette.text.primary,
+}) => _extends({}, theme.typography.body1, {
+  color: (theme.vars || theme).palette.text.primary,
   lineHeight: "1.4375em",
   // 23px
   boxSizing: "border-box",
@@ -14636,7 +14437,7 @@ const InputBaseRoot = styled("div", {
   display: "inline-flex",
   alignItems: "center",
   [`&.${inputBaseClasses$1.disabled}`]: {
-    color: (theme2.vars || theme2).palette.text.disabled,
+    color: (theme.vars || theme).palette.text.disabled,
     cursor: "default"
   }
 }, ownerState.multiline && _extends({
@@ -14651,26 +14452,26 @@ const InputBaseComponent = styled("input", {
   slot: "Input",
   overridesResolver: inputOverridesResolver
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
-  const light2 = theme2.palette.mode === "light";
+  const light2 = theme.palette.mode === "light";
   const placeholder = _extends({
     color: "currentColor"
-  }, theme2.vars ? {
-    opacity: theme2.vars.opacity.inputPlaceholder
+  }, theme.vars ? {
+    opacity: theme.vars.opacity.inputPlaceholder
   } : {
     opacity: light2 ? 0.42 : 0.5
   }, {
-    transition: theme2.transitions.create("opacity", {
-      duration: theme2.transitions.duration.shorter
+    transition: theme.transitions.create("opacity", {
+      duration: theme.transitions.duration.shorter
     })
   });
   const placeholderHidden = {
     opacity: "0 !important"
   };
-  const placeholderVisible = theme2.vars ? {
-    opacity: theme2.vars.opacity.inputPlaceholder
+  const placeholderVisible = theme.vars ? {
+    opacity: theme.vars.opacity.inputPlaceholder
   } : {
     opacity: light2 ? 0.42 : 0.5
   };
@@ -14732,7 +14533,7 @@ const InputBaseComponent = styled("input", {
     [`&.${inputBaseClasses$1.disabled}`]: {
       opacity: 1,
       // Reset iOS opacity
-      WebkitTextFillColor: (theme2.vars || theme2).palette.text.disabled
+      WebkitTextFillColor: (theme.vars || theme).palette.text.disabled
       // Fix opacity Safari bug
     },
     "&:-webkit-autofill": {
@@ -15049,7 +14850,7 @@ const AvatarRoot = styled("div", {
     return [styles2.root, styles2[ownerState.variant], ownerState.colorDefault && styles2.colorDefault];
   }
 })(({
-  theme: theme2
+  theme
 }) => ({
   position: "relative",
   display: "flex",
@@ -15058,8 +14859,8 @@ const AvatarRoot = styled("div", {
   flexShrink: 0,
   width: 40,
   height: 40,
-  fontFamily: theme2.typography.fontFamily,
-  fontSize: theme2.typography.pxToRem(20),
+  fontFamily: theme.typography.fontFamily,
+  fontSize: theme.typography.pxToRem(20),
   lineHeight: 1,
   borderRadius: "50%",
   overflow: "hidden",
@@ -15069,7 +14870,7 @@ const AvatarRoot = styled("div", {
       variant: "rounded"
     },
     style: {
-      borderRadius: (theme2.vars || theme2).shape.borderRadius
+      borderRadius: (theme.vars || theme).shape.borderRadius
     }
   }, {
     props: {
@@ -15083,13 +14884,13 @@ const AvatarRoot = styled("div", {
       colorDefault: true
     },
     style: _extends({
-      color: (theme2.vars || theme2).palette.background.default
-    }, theme2.vars ? {
-      backgroundColor: theme2.vars.palette.Avatar.defaultBg
+      color: (theme.vars || theme).palette.background.default
+    }, theme.vars ? {
+      backgroundColor: theme.vars.palette.Avatar.defaultBg
     } : _extends({
-      backgroundColor: theme2.palette.grey[400]
-    }, theme2.applyStyles("dark", {
-      backgroundColor: theme2.palette.grey[600]
+      backgroundColor: theme.palette.grey[400]
+    }, theme.applyStyles("dark", {
+      backgroundColor: theme.palette.grey[600]
     })))
   }]
 }));
@@ -15222,10 +15023,10 @@ const styles$1 = {
   }
 };
 const Fade = /* @__PURE__ */ reactExports.forwardRef(function Fade2(props, ref) {
-  const theme2 = useTheme();
+  const theme = useTheme();
   const defaultTimeout = {
-    enter: theme2.transitions.duration.enteringScreen,
-    exit: theme2.transitions.duration.leavingScreen
+    enter: theme.transitions.duration.enteringScreen,
+    exit: theme.transitions.duration.leavingScreen
   };
   const {
     addEndListener,
@@ -15266,8 +15067,8 @@ const Fade = /* @__PURE__ */ reactExports.forwardRef(function Fade2(props, ref) 
     }, {
       mode: "enter"
     });
-    node2.style.webkitTransition = theme2.transitions.create("opacity", transitionProps);
-    node2.style.transition = theme2.transitions.create("opacity", transitionProps);
+    node2.style.webkitTransition = theme.transitions.create("opacity", transitionProps);
+    node2.style.transition = theme.transitions.create("opacity", transitionProps);
     if (onEnter) {
       onEnter(node2, isAppearing);
     }
@@ -15282,8 +15083,8 @@ const Fade = /* @__PURE__ */ reactExports.forwardRef(function Fade2(props, ref) 
     }, {
       mode: "exit"
     });
-    node2.style.webkitTransition = theme2.transitions.create("opacity", transitionProps);
-    node2.style.transition = theme2.transitions.create("opacity", transitionProps);
+    node2.style.webkitTransition = theme.transitions.create("opacity", transitionProps);
+    node2.style.transition = theme.transitions.create("opacity", transitionProps);
     if (onExit) {
       onExit(node2);
     }
@@ -15401,7 +15202,7 @@ const Backdrop = /* @__PURE__ */ reactExports.forwardRef(function Backdrop2(inPr
   }));
 });
 const Backdrop$1 = Backdrop;
-const html = (theme2, enableColorScheme) => _extends({
+const html = (theme, enableColorScheme) => _extends({
   WebkitFontSmoothing: "antialiased",
   // Antialiasing.
   MozOsxFontSmoothing: "grayscale",
@@ -15411,48 +15212,48 @@ const html = (theme2, enableColorScheme) => _extends({
   boxSizing: "border-box",
   // Fix font resize problem in iOS
   WebkitTextSizeAdjust: "100%"
-}, enableColorScheme && !theme2.vars && {
-  colorScheme: theme2.palette.mode
+}, enableColorScheme && !theme.vars && {
+  colorScheme: theme.palette.mode
 });
-const body = (theme2) => _extends({
-  color: (theme2.vars || theme2).palette.text.primary
-}, theme2.typography.body1, {
-  backgroundColor: (theme2.vars || theme2).palette.background.default,
+const body = (theme) => _extends({
+  color: (theme.vars || theme).palette.text.primary
+}, theme.typography.body1, {
+  backgroundColor: (theme.vars || theme).palette.background.default,
   "@media print": {
     // Save printer ink.
-    backgroundColor: (theme2.vars || theme2).palette.common.white
+    backgroundColor: (theme.vars || theme).palette.common.white
   }
 });
-const styles = (theme2, enableColorScheme = false) => {
+const styles = (theme, enableColorScheme = false) => {
   var _theme$components;
   const colorSchemeStyles = {};
-  if (enableColorScheme && theme2.colorSchemes) {
-    Object.entries(theme2.colorSchemes).forEach(([key, scheme]) => {
+  if (enableColorScheme && theme.colorSchemes) {
+    Object.entries(theme.colorSchemes).forEach(([key, scheme]) => {
       var _scheme$palette;
-      colorSchemeStyles[theme2.getColorSchemeSelector(key).replace(/\s*&/, "")] = {
+      colorSchemeStyles[theme.getColorSchemeSelector(key).replace(/\s*&/, "")] = {
         colorScheme: (_scheme$palette = scheme.palette) == null ? void 0 : _scheme$palette.mode
       };
     });
   }
   let defaultStyles = _extends({
-    html: html(theme2, enableColorScheme),
+    html: html(theme, enableColorScheme),
     "*, *::before, *::after": {
       boxSizing: "inherit"
     },
     "strong, b": {
-      fontWeight: theme2.typography.fontWeightBold
+      fontWeight: theme.typography.fontWeightBold
     },
     body: _extends({
       margin: 0
-    }, body(theme2), {
+    }, body(theme), {
       // Add support for document.body.requestFullScreen().
       // Other elements, if background transparent, are not supported.
       "&::backdrop": {
-        backgroundColor: (theme2.vars || theme2).palette.background.default
+        backgroundColor: (theme.vars || theme).palette.background.default
       }
     })
   }, colorSchemeStyles);
-  const themeOverrides = (_theme$components = theme2.components) == null || (_theme$components = _theme$components.MuiCssBaseline) == null ? void 0 : _theme$components.styleOverrides;
+  const themeOverrides = (_theme$components = theme.components) == null || (_theme$components = _theme$components.MuiCssBaseline) == null ? void 0 : _theme$components.styleOverrides;
   if (themeOverrides) {
     defaultStyles = [defaultStyles, themeOverrides];
   }
@@ -15469,7 +15270,7 @@ function CssBaseline(inProps) {
   } = props;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(reactExports.Fragment, {
     children: [/* @__PURE__ */ jsxRuntimeExports.jsx(GlobalStyles, {
-      styles: (theme2) => styles(theme2, enableColorScheme)
+      styles: (theme) => styles(theme, enableColorScheme)
     }), children]
   });
 }
@@ -15500,11 +15301,11 @@ const ModalRoot = styled("div", {
     return [styles2.root, !ownerState.open && ownerState.exited && styles2.hidden];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
   position: "fixed",
-  zIndex: (theme2.vars || theme2).zIndex.modal,
+  zIndex: (theme.vars || theme).zIndex.modal,
   right: 0,
   bottom: 0,
   top: 0,
@@ -15668,40 +15469,40 @@ const FilledInputRoot = styled(InputBaseRoot, {
     return [...rootOverridesResolver(props, styles2), !ownerState.disableUnderline && styles2.underline];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
   var _palette;
-  const light2 = theme2.palette.mode === "light";
+  const light2 = theme.palette.mode === "light";
   const bottomLineColor = light2 ? "rgba(0, 0, 0, 0.42)" : "rgba(255, 255, 255, 0.7)";
   const backgroundColor2 = light2 ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.09)";
   const hoverBackground = light2 ? "rgba(0, 0, 0, 0.09)" : "rgba(255, 255, 255, 0.13)";
   const disabledBackground = light2 ? "rgba(0, 0, 0, 0.12)" : "rgba(255, 255, 255, 0.12)";
   return _extends({
     position: "relative",
-    backgroundColor: theme2.vars ? theme2.vars.palette.FilledInput.bg : backgroundColor2,
-    borderTopLeftRadius: (theme2.vars || theme2).shape.borderRadius,
-    borderTopRightRadius: (theme2.vars || theme2).shape.borderRadius,
-    transition: theme2.transitions.create("background-color", {
-      duration: theme2.transitions.duration.shorter,
-      easing: theme2.transitions.easing.easeOut
+    backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2,
+    borderTopLeftRadius: (theme.vars || theme).shape.borderRadius,
+    borderTopRightRadius: (theme.vars || theme).shape.borderRadius,
+    transition: theme.transitions.create("background-color", {
+      duration: theme.transitions.duration.shorter,
+      easing: theme.transitions.easing.easeOut
     }),
     "&:hover": {
-      backgroundColor: theme2.vars ? theme2.vars.palette.FilledInput.hoverBg : hoverBackground,
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.hoverBg : hoverBackground,
       // Reset on touch devices, it doesn't add specificity
       "@media (hover: none)": {
-        backgroundColor: theme2.vars ? theme2.vars.palette.FilledInput.bg : backgroundColor2
+        backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
       }
     },
     [`&.${filledInputClasses$1.focused}`]: {
-      backgroundColor: theme2.vars ? theme2.vars.palette.FilledInput.bg : backgroundColor2
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
     },
     [`&.${filledInputClasses$1.disabled}`]: {
-      backgroundColor: theme2.vars ? theme2.vars.palette.FilledInput.disabledBg : disabledBackground
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.disabledBg : disabledBackground
     }
   }, !ownerState.disableUnderline && {
     "&::after": {
-      borderBottom: `2px solid ${(_palette = (theme2.vars || theme2).palette[ownerState.color || "primary"]) == null ? void 0 : _palette.main}`,
+      borderBottom: `2px solid ${(_palette = (theme.vars || theme).palette[ownerState.color || "primary"]) == null ? void 0 : _palette.main}`,
       left: 0,
       bottom: 0,
       // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
@@ -15709,9 +15510,9 @@ const FilledInputRoot = styled(InputBaseRoot, {
       position: "absolute",
       right: 0,
       transform: "scaleX(0)",
-      transition: theme2.transitions.create("transform", {
-        duration: theme2.transitions.duration.shorter,
-        easing: theme2.transitions.easing.easeOut
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeOut
       }),
       pointerEvents: "none"
       // Transparent to the hover style.
@@ -15723,25 +15524,25 @@ const FilledInputRoot = styled(InputBaseRoot, {
     },
     [`&.${filledInputClasses$1.error}`]: {
       "&::before, &::after": {
-        borderBottomColor: (theme2.vars || theme2).palette.error.main
+        borderBottomColor: (theme.vars || theme).palette.error.main
       }
     },
     "&::before": {
-      borderBottom: `1px solid ${theme2.vars ? `rgba(${theme2.vars.palette.common.onBackgroundChannel} / ${theme2.vars.opacity.inputUnderline})` : bottomLineColor}`,
+      borderBottom: `1px solid ${theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / ${theme.vars.opacity.inputUnderline})` : bottomLineColor}`,
       left: 0,
       bottom: 0,
       // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
       content: '"\\00a0"',
       position: "absolute",
       right: 0,
-      transition: theme2.transitions.create("border-bottom-color", {
-        duration: theme2.transitions.duration.shorter
+      transition: theme.transitions.create("border-bottom-color", {
+        duration: theme.transitions.duration.shorter
       }),
       pointerEvents: "none"
       // Transparent to the hover style.
     },
     [`&:hover:not(.${filledInputClasses$1.disabled}, .${filledInputClasses$1.error}):before`]: {
-      borderBottom: `1px solid ${(theme2.vars || theme2).palette.text.primary}`
+      borderBottom: `1px solid ${(theme.vars || theme).palette.text.primary}`
     },
     [`&.${filledInputClasses$1.disabled}:before`]: {
       borderBottomStyle: "dotted"
@@ -15768,27 +15569,27 @@ const FilledInputInput = styled(InputBaseComponent, {
   slot: "Input",
   overridesResolver: inputOverridesResolver
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
   paddingTop: 25,
   paddingRight: 12,
   paddingBottom: 8,
   paddingLeft: 12
-}, !theme2.vars && {
+}, !theme.vars && {
   "&:-webkit-autofill": {
-    WebkitBoxShadow: theme2.palette.mode === "light" ? null : "0 0 0 100px #266798 inset",
-    WebkitTextFillColor: theme2.palette.mode === "light" ? null : "#fff",
-    caretColor: theme2.palette.mode === "light" ? null : "#fff",
+    WebkitBoxShadow: theme.palette.mode === "light" ? null : "0 0 0 100px #266798 inset",
+    WebkitTextFillColor: theme.palette.mode === "light" ? null : "#fff",
+    caretColor: theme.palette.mode === "light" ? null : "#fff",
     borderTopLeftRadius: "inherit",
     borderTopRightRadius: "inherit"
   }
-}, theme2.vars && {
+}, theme.vars && {
   "&:-webkit-autofill": {
     borderTopLeftRadius: "inherit",
     borderTopRightRadius: "inherit"
   },
-  [theme2.getColorSchemeSelector("dark")]: {
+  [theme.getColorSchemeSelector("dark")]: {
     "&:-webkit-autofill": {
       WebkitBoxShadow: "0 0 0 100px #266798 inset",
       WebkitTextFillColor: "#fff",
@@ -16054,21 +15855,21 @@ const FormHelperTextRoot = styled("p", {
     return [styles2.root, ownerState.size && styles2[`size${capitalize(ownerState.size)}`], ownerState.contained && styles2.contained, ownerState.filled && styles2.filled];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
-  color: (theme2.vars || theme2).palette.text.secondary
-}, theme2.typography.caption, {
+  color: (theme.vars || theme).palette.text.secondary
+}, theme.typography.caption, {
   textAlign: "left",
   marginTop: 3,
   marginRight: 0,
   marginBottom: 0,
   marginLeft: 0,
   [`&.${formHelperTextClasses$1.disabled}`]: {
-    color: (theme2.vars || theme2).palette.text.disabled
+    color: (theme.vars || theme).palette.text.disabled
   },
   [`&.${formHelperTextClasses$1.error}`]: {
-    color: (theme2.vars || theme2).palette.error.main
+    color: (theme.vars || theme).palette.error.main
   }
 }, ownerState.size === "small" && {
   marginTop: 4
@@ -16151,22 +15952,22 @@ const FormLabelRoot = styled("label", {
     return _extends({}, styles2.root, ownerState.color === "secondary" && styles2.colorSecondary, ownerState.filled && styles2.filled);
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
-  color: (theme2.vars || theme2).palette.text.secondary
-}, theme2.typography.body1, {
+  color: (theme.vars || theme).palette.text.secondary
+}, theme.typography.body1, {
   lineHeight: "1.4375em",
   padding: 0,
   position: "relative",
   [`&.${formLabelClasses$1.focused}`]: {
-    color: (theme2.vars || theme2).palette[ownerState.color].main
+    color: (theme.vars || theme).palette[ownerState.color].main
   },
   [`&.${formLabelClasses$1.disabled}`]: {
-    color: (theme2.vars || theme2).palette.text.disabled
+    color: (theme.vars || theme).palette.text.disabled
   },
   [`&.${formLabelClasses$1.error}`]: {
-    color: (theme2.vars || theme2).palette.error.main
+    color: (theme.vars || theme).palette.error.main
   }
 }));
 const AsteriskComponent = styled("span", {
@@ -16174,10 +15975,10 @@ const AsteriskComponent = styled("span", {
   slot: "Asterisk",
   overridesResolver: (props, styles2) => styles2.asterisk
 })(({
-  theme: theme2
+  theme
 }) => ({
   [`&.${formLabelClasses$1.error}`]: {
-    color: (theme2.vars || theme2).palette.error.main
+    color: (theme.vars || theme).palette.error.main
   }
 }));
 const FormLabel = /* @__PURE__ */ reactExports.forwardRef(function FormLabel2(inProps, ref) {
@@ -16254,11 +16055,11 @@ function getOffset(val) {
   return `${parse2}${String(val).replace(String(parse2), "") || "px"}`;
 }
 function generateGrid({
-  theme: theme2,
+  theme,
   ownerState
 }) {
   let size;
-  return theme2.breakpoints.keys.reduce((globalStyles, breakpoint) => {
+  return theme.breakpoints.keys.reduce((globalStyles, breakpoint) => {
     let styles2 = {};
     if (ownerState[breakpoint]) {
       size = ownerState[breakpoint];
@@ -16283,7 +16084,7 @@ function generateGrid({
     } else {
       const columnsBreakpointValues = resolveBreakpointValues({
         values: ownerState.columns,
-        breakpoints: theme2.breakpoints.values
+        breakpoints: theme.breakpoints.values
       });
       const columnValue = typeof columnsBreakpointValues === "object" ? columnsBreakpointValues[breakpoint] : columnsBreakpointValues;
       if (columnValue === void 0 || columnValue === null) {
@@ -16292,7 +16093,7 @@ function generateGrid({
       const width2 = `${Math.round(size / columnValue * 1e8) / 1e6}%`;
       let more = {};
       if (ownerState.container && ownerState.item && ownerState.columnSpacing !== 0) {
-        const themeSpacing = theme2.spacing(ownerState.columnSpacing);
+        const themeSpacing = theme.spacing(ownerState.columnSpacing);
         if (themeSpacing !== "0px") {
           const fullWidth = `calc(${width2} + ${getOffset(themeSpacing)})`;
           more = {
@@ -16307,24 +16108,24 @@ function generateGrid({
         maxWidth: width2
       }, more);
     }
-    if (theme2.breakpoints.values[breakpoint] === 0) {
+    if (theme.breakpoints.values[breakpoint] === 0) {
       Object.assign(globalStyles, styles2);
     } else {
-      globalStyles[theme2.breakpoints.up(breakpoint)] = styles2;
+      globalStyles[theme.breakpoints.up(breakpoint)] = styles2;
     }
     return globalStyles;
   }, {});
 }
 function generateDirection({
-  theme: theme2,
+  theme,
   ownerState
 }) {
   const directionValues = resolveBreakpointValues({
     values: ownerState.direction,
-    breakpoints: theme2.breakpoints.values
+    breakpoints: theme.breakpoints.values
   });
   return handleBreakpoints({
-    theme: theme2
+    theme
   }, directionValues, (propValue) => {
     const output = {
       flexDirection: propValue
@@ -16356,7 +16157,7 @@ function extractZeroValueBreakpointKeys({
   return sortedBreakpointKeysByValue.slice(0, sortedBreakpointKeysByValue.indexOf(nonZeroKey));
 }
 function generateRowGap({
-  theme: theme2,
+  theme,
   ownerState
 }) {
   const {
@@ -16367,20 +16168,20 @@ function generateRowGap({
   if (container && rowSpacing !== 0) {
     const rowSpacingValues = resolveBreakpointValues({
       values: rowSpacing,
-      breakpoints: theme2.breakpoints.values
+      breakpoints: theme.breakpoints.values
     });
     let zeroValueBreakpointKeys;
     if (typeof rowSpacingValues === "object") {
       zeroValueBreakpointKeys = extractZeroValueBreakpointKeys({
-        breakpoints: theme2.breakpoints.values,
+        breakpoints: theme.breakpoints.values,
         values: rowSpacingValues
       });
     }
     styles2 = handleBreakpoints({
-      theme: theme2
+      theme
     }, rowSpacingValues, (propValue, breakpoint) => {
       var _zeroValueBreakpointK;
-      const themeSpacing = theme2.spacing(propValue);
+      const themeSpacing = theme.spacing(propValue);
       if (themeSpacing !== "0px") {
         return {
           marginTop: `-${getOffset(themeSpacing)}`,
@@ -16403,7 +16204,7 @@ function generateRowGap({
   return styles2;
 }
 function generateColumnGap({
-  theme: theme2,
+  theme,
   ownerState
 }) {
   const {
@@ -16414,20 +16215,20 @@ function generateColumnGap({
   if (container && columnSpacing !== 0) {
     const columnSpacingValues = resolveBreakpointValues({
       values: columnSpacing,
-      breakpoints: theme2.breakpoints.values
+      breakpoints: theme.breakpoints.values
     });
     let zeroValueBreakpointKeys;
     if (typeof columnSpacingValues === "object") {
       zeroValueBreakpointKeys = extractZeroValueBreakpointKeys({
-        breakpoints: theme2.breakpoints.values,
+        breakpoints: theme.breakpoints.values,
         values: columnSpacingValues
       });
     }
     styles2 = handleBreakpoints({
-      theme: theme2
+      theme
     }, columnSpacingValues, (propValue, breakpoint) => {
       var _zeroValueBreakpointK2;
-      const themeSpacing = theme2.spacing(propValue);
+      const themeSpacing = theme.spacing(propValue);
       if (themeSpacing !== "0px") {
         return {
           width: `calc(100% + ${getOffset(themeSpacing)})`,
@@ -16639,13 +16440,13 @@ const InputRoot = styled(InputBaseRoot, {
     return [...rootOverridesResolver(props, styles2), !ownerState.disableUnderline && styles2.underline];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
-  const light2 = theme2.palette.mode === "light";
+  const light2 = theme.palette.mode === "light";
   let bottomLineColor = light2 ? "rgba(0, 0, 0, 0.42)" : "rgba(255, 255, 255, 0.7)";
-  if (theme2.vars) {
-    bottomLineColor = `rgba(${theme2.vars.palette.common.onBackgroundChannel} / ${theme2.vars.opacity.inputUnderline})`;
+  if (theme.vars) {
+    bottomLineColor = `rgba(${theme.vars.palette.common.onBackgroundChannel} / ${theme.vars.opacity.inputUnderline})`;
   }
   return _extends({
     position: "relative"
@@ -16655,7 +16456,7 @@ const InputRoot = styled(InputBaseRoot, {
     }
   }, !ownerState.disableUnderline && {
     "&::after": {
-      borderBottom: `2px solid ${(theme2.vars || theme2).palette[ownerState.color].main}`,
+      borderBottom: `2px solid ${(theme.vars || theme).palette[ownerState.color].main}`,
       left: 0,
       bottom: 0,
       // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
@@ -16663,9 +16464,9 @@ const InputRoot = styled(InputBaseRoot, {
       position: "absolute",
       right: 0,
       transform: "scaleX(0)",
-      transition: theme2.transitions.create("transform", {
-        duration: theme2.transitions.duration.shorter,
-        easing: theme2.transitions.easing.easeOut
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeOut
       }),
       pointerEvents: "none"
       // Transparent to the hover style.
@@ -16677,7 +16478,7 @@ const InputRoot = styled(InputBaseRoot, {
     },
     [`&.${inputClasses$1.error}`]: {
       "&::before, &::after": {
-        borderBottomColor: (theme2.vars || theme2).palette.error.main
+        borderBottomColor: (theme.vars || theme).palette.error.main
       }
     },
     "&::before": {
@@ -16688,14 +16489,14 @@ const InputRoot = styled(InputBaseRoot, {
       content: '"\\00a0"',
       position: "absolute",
       right: 0,
-      transition: theme2.transitions.create("border-bottom-color", {
-        duration: theme2.transitions.duration.shorter
+      transition: theme.transitions.create("border-bottom-color", {
+        duration: theme.transitions.duration.shorter
       }),
       pointerEvents: "none"
       // Transparent to the hover style.
     },
     [`&:hover:not(.${inputClasses$1.disabled}, .${inputClasses$1.error}):before`]: {
-      borderBottom: `2px solid ${(theme2.vars || theme2).palette.text.primary}`,
+      borderBottom: `2px solid ${(theme.vars || theme).palette.text.primary}`,
       // Reset on touch devices, it doesn't add specificity
       "@media (hover: none)": {
         borderBottom: `1px solid ${bottomLineColor}`
@@ -16792,7 +16593,7 @@ const InputLabelRoot = styled(FormLabel$1, {
     }, styles2.root, ownerState.formControl && styles2.formControl, ownerState.size === "small" && styles2.sizeSmall, ownerState.shrink && styles2.shrink, !ownerState.disableAnimation && styles2.animated, ownerState.focused && styles2.focused, styles2[ownerState.variant]];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
   display: "block",
@@ -16815,9 +16616,9 @@ const InputLabelRoot = styled(FormLabel$1, {
   transformOrigin: "top left",
   maxWidth: "133%"
 }, !ownerState.disableAnimation && {
-  transition: theme2.transitions.create(["color", "transform", "max-width"], {
-    duration: theme2.transitions.duration.shorter,
-    easing: theme2.transitions.easing.easeOut
+  transition: theme.transitions.create(["color", "transform", "max-width"], {
+    duration: theme.transitions.duration.shorter,
+    easing: theme.transitions.easing.easeOut
   })
 }, ownerState.variant === "filled" && _extends({
   // Chrome's autofill feature gives the input field a yellow background.
@@ -17052,11 +16853,11 @@ const MenuList = /* @__PURE__ */ reactExports.forwardRef(function MenuList2(prop
     }
   }, [autoFocus]);
   reactExports.useImperativeHandle(actions, () => ({
-    adjustStyleForScrollbar: (containerElement, theme2) => {
+    adjustStyleForScrollbar: (containerElement, theme) => {
       const noExplicitWidth = !listRef.current.style.width;
       if (containerElement.clientHeight < listRef.current.clientHeight && noExplicitWidth) {
         const scrollbarSize = `${getScrollbarSize(ownerDocument(containerElement))}px`;
-        listRef.current.style[theme2.direction === "rtl" ? "paddingLeft" : "paddingRight"] = scrollbarSize;
+        listRef.current.style[theme.direction === "rtl" ? "paddingLeft" : "paddingRight"] = scrollbarSize;
         listRef.current.style.width = `calc(100% + ${scrollbarSize})`;
       }
       return listRef.current;
@@ -17519,8 +17320,8 @@ const Menu = /* @__PURE__ */ reactExports.forwardRef(function Menu2(inProps, ref
     slots = {},
     slotProps = {}
   } = props, TransitionProps = _objectWithoutPropertiesLoose(props.TransitionProps, _excluded$7), other = _objectWithoutPropertiesLoose(props, _excluded2$1);
-  const theme2 = useTheme();
-  const isRtl = theme2.direction === "rtl";
+  const theme = useTheme();
+  const isRtl = theme.direction === "rtl";
   const ownerState = _extends({}, props, {
     autoFocus,
     disableAutoFocusItem,
@@ -17536,7 +17337,7 @@ const Menu = /* @__PURE__ */ reactExports.forwardRef(function Menu2(inProps, ref
   const menuListActionsRef = reactExports.useRef(null);
   const handleEntering = (element, isAppearing) => {
     if (menuListActionsRef.current) {
-      menuListActionsRef.current.adjustStyleForScrollbar(element, theme2);
+      menuListActionsRef.current.adjustStyleForScrollbar(element, theme);
     }
     if (onEntering) {
       onEntering(element, isAppearing);
@@ -17637,7 +17438,7 @@ const useUtilityClasses$5 = (ownerState) => {
 };
 const nativeSelectSelectStyles = ({
   ownerState,
-  theme: theme2
+  theme
 }) => _extends({
   MozAppearance: "none",
   // Reset
@@ -17649,10 +17450,10 @@ const nativeSelectSelectStyles = ({
   borderRadius: 0,
   // Reset
   cursor: "pointer",
-  "&:focus": _extends({}, theme2.vars ? {
-    backgroundColor: `rgba(${theme2.vars.palette.common.onBackgroundChannel} / 0.05)`
+  "&:focus": _extends({}, theme.vars ? {
+    backgroundColor: `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.05)`
   } : {
-    backgroundColor: theme2.palette.mode === "light" ? "rgba(0, 0, 0, 0.05)" : "rgba(255, 255, 255, 0.05)"
+    backgroundColor: theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.05)" : "rgba(255, 255, 255, 0.05)"
   }, {
     borderRadius: 0
     // Reset Chrome style
@@ -17668,7 +17469,7 @@ const nativeSelectSelectStyles = ({
     height: "auto"
   },
   "&:not([multiple]) option, &:not([multiple]) optgroup": {
-    backgroundColor: (theme2.vars || theme2).palette.background.paper
+    backgroundColor: (theme.vars || theme).palette.background.paper
   },
   // Bump specificity to allow extending custom inputs
   "&&&": {
@@ -17681,9 +17482,9 @@ const nativeSelectSelectStyles = ({
     paddingRight: 32
   }
 }, ownerState.variant === "outlined" && {
-  borderRadius: (theme2.vars || theme2).shape.borderRadius,
+  borderRadius: (theme.vars || theme).shape.borderRadius,
   "&:focus": {
-    borderRadius: (theme2.vars || theme2).shape.borderRadius
+    borderRadius: (theme.vars || theme).shape.borderRadius
     // Reset the reset for Chrome style
   },
   "&&&": {
@@ -17705,7 +17506,7 @@ const NativeSelectSelect = styled("select", {
 })(nativeSelectSelectStyles);
 const nativeSelectIconStyles = ({
   ownerState,
-  theme: theme2
+  theme
 }) => _extends({
   // We use a position absolute over a flexbox in order to forward the pointer events
   // to the input and to support wrapping tags..
@@ -17715,9 +17516,9 @@ const nativeSelectIconStyles = ({
   // Center vertically, height is 1em
   pointerEvents: "none",
   // Don't block pointer events on the select under the icon.
-  color: (theme2.vars || theme2).palette.action.active,
+  color: (theme.vars || theme).palette.action.active,
   [`&.${nativeSelectClasses$1.disabled}`]: {
-    color: (theme2.vars || theme2).palette.action.disabled
+    color: (theme.vars || theme).palette.action.disabled
   }
 }, ownerState.open && {
   transform: "rotate(180deg)"
@@ -17789,7 +17590,7 @@ const NotchedOutlineLegend = styled("legend", {
   shouldForwardProp: rootShouldForwardProp
 })(({
   ownerState,
-  theme: theme2
+  theme
 }) => _extends({
   float: "unset",
   // Fix conflict with bootstrap
@@ -17800,9 +17601,9 @@ const NotchedOutlineLegend = styled("legend", {
   padding: 0,
   lineHeight: "11px",
   // sync with `height` in `legend` styles
-  transition: theme2.transitions.create("width", {
+  transition: theme.transitions.create("width", {
     duration: 150,
-    easing: theme2.transitions.easing.easeOut
+    easing: theme.transitions.easing.easeOut
   })
 }, ownerState.withLabel && _extends({
   display: "block",
@@ -17813,9 +17614,9 @@ const NotchedOutlineLegend = styled("legend", {
   fontSize: "0.75em",
   visibility: "hidden",
   maxWidth: 0.01,
-  transition: theme2.transitions.create("max-width", {
+  transition: theme.transitions.create("max-width", {
     duration: 50,
-    easing: theme2.transitions.easing.easeOut
+    easing: theme.transitions.easing.easeOut
   }),
   whiteSpace: "nowrap",
   "& > span": {
@@ -17827,9 +17628,9 @@ const NotchedOutlineLegend = styled("legend", {
   }
 }, ownerState.notched && {
   maxWidth: "100%",
-  transition: theme2.transitions.create("max-width", {
+  transition: theme.transitions.create("max-width", {
     duration: 100,
-    easing: theme2.transitions.easing.easeOut,
+    easing: theme.transitions.easing.easeOut,
     delay: 50
   })
 })));
@@ -17882,31 +17683,31 @@ const OutlinedInputRoot = styled(InputBaseRoot, {
   slot: "Root",
   overridesResolver: rootOverridesResolver
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
-  const borderColor2 = theme2.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
   return _extends({
     position: "relative",
-    borderRadius: (theme2.vars || theme2).shape.borderRadius,
+    borderRadius: (theme.vars || theme).shape.borderRadius,
     [`&:hover .${outlinedInputClasses$1.notchedOutline}`]: {
-      borderColor: (theme2.vars || theme2).palette.text.primary
+      borderColor: (theme.vars || theme).palette.text.primary
     },
     // Reset on touch devices, it doesn't add specificity
     "@media (hover: none)": {
       [`&:hover .${outlinedInputClasses$1.notchedOutline}`]: {
-        borderColor: theme2.vars ? `rgba(${theme2.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+        borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
       }
     },
     [`&.${outlinedInputClasses$1.focused} .${outlinedInputClasses$1.notchedOutline}`]: {
-      borderColor: (theme2.vars || theme2).palette[ownerState.color].main,
+      borderColor: (theme.vars || theme).palette[ownerState.color].main,
       borderWidth: 2
     },
     [`&.${outlinedInputClasses$1.error} .${outlinedInputClasses$1.notchedOutline}`]: {
-      borderColor: (theme2.vars || theme2).palette.error.main
+      borderColor: (theme.vars || theme).palette.error.main
     },
     [`&.${outlinedInputClasses$1.disabled} .${outlinedInputClasses$1.notchedOutline}`]: {
-      borderColor: (theme2.vars || theme2).palette.action.disabled
+      borderColor: (theme.vars || theme).palette.action.disabled
     }
   }, ownerState.startAdornment && {
     paddingLeft: 14
@@ -17923,11 +17724,11 @@ const NotchedOutlineRoot = styled(NotchedOutline, {
   slot: "NotchedOutline",
   overridesResolver: (props, styles2) => styles2.notchedOutline
 })(({
-  theme: theme2
+  theme
 }) => {
-  const borderColor2 = theme2.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
   return {
-    borderColor: theme2.vars ? `rgba(${theme2.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+    borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
   };
 });
 const OutlinedInputInput = styled(InputBaseComponent, {
@@ -17935,22 +17736,22 @@ const OutlinedInputInput = styled(InputBaseComponent, {
   slot: "Input",
   overridesResolver: inputOverridesResolver
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => _extends({
   padding: "16.5px 14px"
-}, !theme2.vars && {
+}, !theme.vars && {
   "&:-webkit-autofill": {
-    WebkitBoxShadow: theme2.palette.mode === "light" ? null : "0 0 0 100px #266798 inset",
-    WebkitTextFillColor: theme2.palette.mode === "light" ? null : "#fff",
-    caretColor: theme2.palette.mode === "light" ? null : "#fff",
+    WebkitBoxShadow: theme.palette.mode === "light" ? null : "0 0 0 100px #266798 inset",
+    WebkitTextFillColor: theme.palette.mode === "light" ? null : "#fff",
+    caretColor: theme.palette.mode === "light" ? null : "#fff",
     borderRadius: "inherit"
   }
-}, theme2.vars && {
+}, theme.vars && {
   "&:-webkit-autofill": {
     borderRadius: "inherit"
   },
-  [theme2.getColorSchemeSelector("dark")]: {
+  [theme.getColorSchemeSelector("dark")]: {
     "&:-webkit-autofill": {
       WebkitBoxShadow: "0 0 0 100px #266798 inset",
       WebkitTextFillColor: "#fff",
@@ -18651,15 +18452,15 @@ const SkeletonRoot = styled("span", {
     return [styles2.root, styles2[ownerState.variant], ownerState.animation !== false && styles2[ownerState.animation], ownerState.hasChildren && styles2.withChildren, ownerState.hasChildren && !ownerState.width && styles2.fitContent, ownerState.hasChildren && !ownerState.height && styles2.heightAuto];
   }
 })(({
-  theme: theme2,
+  theme,
   ownerState
 }) => {
-  const radiusUnit = getUnit(theme2.shape.borderRadius) || "px";
-  const radiusValue = toUnitless(theme2.shape.borderRadius);
+  const radiusUnit = getUnit(theme.shape.borderRadius) || "px";
+  const radiusValue = toUnitless(theme.shape.borderRadius);
   return _extends({
     display: "block",
     // Create a "on paper" color with sufficient contrast retaining the color
-    backgroundColor: theme2.vars ? theme2.vars.palette.Skeleton.bg : alpha(theme2.palette.text.primary, theme2.palette.mode === "light" ? 0.11 : 0.13),
+    backgroundColor: theme.vars ? theme.vars.palette.Skeleton.bg : alpha(theme.palette.text.primary, theme.palette.mode === "light" ? 0.11 : 0.13),
     height: "1.2em"
   }, ownerState.variant === "text" && {
     marginTop: 0,
@@ -18674,7 +18475,7 @@ const SkeletonRoot = styled("span", {
   }, ownerState.variant === "circular" && {
     borderRadius: "50%"
   }, ownerState.variant === "rounded" && {
-    borderRadius: (theme2.vars || theme2).shape.borderRadius
+    borderRadius: (theme.vars || theme).shape.borderRadius
   }, ownerState.hasChildren && {
     "& > *": {
       visibility: "hidden"
@@ -18690,7 +18491,7 @@ const SkeletonRoot = styled("span", {
       animation: ${0} 2s ease-in-out 0.5s infinite;
     `), pulseKeyframe), ({
   ownerState,
-  theme: theme2
+  theme
 }) => ownerState.animation === "wave" && css(_t4 || (_t4 = _`
       position: relative;
       overflow: hidden;
@@ -18714,7 +18515,7 @@ const SkeletonRoot = styled("span", {
         right: 0;
         top: 0;
       }
-    `), waveKeyframe, (theme2.vars || theme2).palette.action.hover));
+    `), waveKeyframe, (theme.vars || theme).palette.action.hover));
 const Skeleton = /* @__PURE__ */ reactExports.forwardRef(function Skeleton2(inProps, ref) {
   const props = useThemeProps({
     props: inProps,
@@ -19103,80 +18904,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-aoGE6AZy.js").then((n2) => n2.x));
-const Message = ({
-  msg_id,
-  msg,
-  userInfo = {},
-  modelName = "",
-  children = null
-}) => {
-  reactExports.useState(false);
-  reactExports.useState(false);
-  reactExports.useState(msg.message);
-  const actionElements = children != null;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Grid$1,
-    {
-      sx: { padding: "20px 0" },
-      msg_id,
-      className: `msg-box ${msg.type === "prompt" ? "user" : "ai"}
-        `,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Grid$1,
-          {
-            item: true,
-            xs: 1,
-            sx: { display: "flex", justifyContent: "end", alignItems: "end" },
-            children: msg.type === "prompt" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Avatar$1,
-              {
-                className: "avatar",
-                src: userInfo.avatar ?? "",
-                sx: { fontSize: 15 },
-                children: userInfo.initial === "" ? "personIcon" : userInfo.initial
-              }
-            ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Avatar$1,
-              {
-                className: "avatar",
-                sx: { backgroundColor: "rebeccapurple" },
-                children: modelName.charAt(0).toUpperCase()
-              }
-            )
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Typography$1,
-            {
-              sx: {
-                fontSize: 12,
-                color: "text.secondary",
-                marginLeft: "20px",
-                marginBottom: "5px"
-              },
-              children: msg.type === "prompt" ? userInfo.name : modelName
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Grid$1,
-            {
-              item: true,
-              xs: 12,
-              pr: { xs: msg.type === "prompt" ? 2 : 6 },
-              pl: { xs: msg.type === "prompt" ? 6 : 2 },
-              sx: { display: "flex", flexDirection: "column" },
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { className: "inner-msg", variant: "messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MarkdownComponent, { source: msg.message }) })
-            }
-          )
-        ] }),
-        actionElements && /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, md: 1.5, children })
-      ]
-    }
-  );
-};
+reactExports.lazy(() => import("./index-RCqyUG1v.js").then((n2) => n2.x));
 const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:center}.msg-box.user{flex-direction:row-reverse;color:#3976ef}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
@@ -19323,15 +19051,7 @@ const MessageStructureSkeleton = ({ loading = false, modelInfo = {} }) => {
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Avatar$1, { className: "avatar" })
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, xs: 10, md: 10, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Typography$1,
-            {
-              px: { xs: 3, md: 5 },
-              className: "inner-msg",
-              variant: "messages",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { variant: "text", animation: "wave", sx: { width: "100%" } })
-            }
-          ) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, xs: 10, md: 10, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { px: { xs: 3, md: 2 }, className: "inner-msg", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { animation: "wave", sx: { width: "100%" } }) }) })
         ]
       }
     ),
@@ -19362,10 +19082,10 @@ const MessageStructureSkeleton = ({ loading = false, modelInfo = {} }) => {
           /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, xs: 10, md: 10, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             Typography$1,
             {
-              px: { xs: 3, md: 5 },
+              px: { xs: 3, md: 2 },
               className: "inner-msg",
-              variant: "messages",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { variant: "text", animation: "wave", sx: { width: "100%" } })
+              style: { width: "100%" },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { animation: "wave", sx: { width: "100%" } }) })
             }
           ) })
         ]
@@ -19390,15 +19110,7 @@ const MessageStructureSkeleton = ({ loading = false, modelInfo = {} }) => {
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Avatar$1, { className: "avatar" })
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, xs: 10, md: 10, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Typography$1,
-            {
-              px: { xs: 3, md: 5 },
-              className: "inner-msg",
-              variant: "messages",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { variant: "text", animation: "wave", sx: { width: "100%" } })
-            }
-          ) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, xs: 10, md: 10, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { px: { xs: 3, md: 2 }, className: "inner-msg", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { animation: "wave", sx: { width: "100%" } }) }) })
         ]
       }
     ),
@@ -19426,15 +19138,7 @@ const MessageStructureSkeleton = ({ loading = false, modelInfo = {} }) => {
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Avatar$1, { className: "avatar", children: modelInfo.modelName })
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, xs: 10, md: 10, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Typography$1,
-            {
-              px: { xs: 3, md: 5 },
-              className: "inner-msg",
-              variant: "messages",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { variant: "text", animation: "wave", sx: { width: "100%" } })
-            }
-          ) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, xs: 10, md: 10, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { px: { xs: 3, md: 2 }, className: "inner-msg", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton$1, { animation: "wave", sx: { width: "100%" } }) }) })
         ]
       }
     )
@@ -19722,30 +19426,7 @@ function Chatbox({
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLE } }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLEMARKDOWN } }),
-              dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(MessageStructureSkeleton, { loading: true }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(reactExports.Fragment, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Message,
-                  {
-                    msg: {
-                      message: "👋 Hi there! How can I help you today?",
-                      type: "response"
-                    },
-                    userInfo: {},
-                    modelName
-                  }
-                ),
-                messages.map((msg, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Message,
-                  {
-                    msg,
-                    userInfo: {},
-                    modelName
-                  },
-                  index
-                )),
-                userMessage && /* @__PURE__ */ jsxRuntimeExports.jsx(Message, { msg: userMessage, userInfo: {}, modelName }),
-                aiMessage && /* @__PURE__ */ jsxRuntimeExports.jsx(Message, { msg: aiMessage, userInfo: {}, modelName })
-              ] })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(MessageStructureSkeleton, { loading: true })
             ]
           }
         ),
@@ -20000,333 +19681,6 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
     )
   ] });
 }
-const theme = createTheme({
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        "*": {
-          boxSizing: "border-box"
-        },
-        html: {
-          MozOsxFontSmoothing: "grayscale",
-          WebkitFontSmoothing: "antialiased",
-          height: "100%",
-          width: "100%"
-        },
-        body: {
-          height: "100%"
-        },
-        a: {
-          textDecoration: "none",
-          color: "inherit"
-        },
-        "#root": {
-          //  minHeight: '100%',
-          height: "100%"
-        }
-        //  svg: {
-        //   width: '25px',
-        //   fontSize: '25px',
-        //   height: '25px'
-        //  }
-      }
-    }
-  },
-  spacing: 4,
-  typography: {
-    fontSize: 14,
-    fontFamily: ["InterYounet"].join(","),
-    header: {
-      fontSize: "1.5rem",
-      fontWeight: "500",
-      letterSpacing: "0.7px",
-      paddingBottom: "20px"
-    },
-    h1: {
-      fontSize: "1.5rem",
-      //  fontFamily: 'InterYounet',
-      fontWeight: "bold",
-      letterSpacing: "0.7px"
-    },
-    h2: {
-      fontSize: "1rem",
-      // fontFamily: 'InterYounet',
-      fontWeight: "bold",
-      letterSpacing: "0.7px"
-    },
-    h3: {
-      fontSize: "0.8rem",
-      // fontFamily: 'InterYounet',
-      letterSpacing: "0.7px"
-    },
-    p: {
-      fontSize: 14
-    },
-    sources_title: {
-      fontSize: "0.875rem",
-      fontWeight: "500",
-      paddingRight: "5px"
-      // color:'#7b8191'
-    },
-    truncate_text_150w: {
-      display: "inline-block",
-      fontSize: "0.7rem",
-      whiteSpace: "nowrap",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      maxWidth: "150px",
-      height: "15px"
-    },
-    messages: {
-      fontSize: "14px",
-      fontFamily: "InterYounet, sans-serif",
-      letterSpacing: "0.7px",
-      display: "block"
-    },
-    tool_header: {
-      width: "100%",
-      fontSize: "1.5rem !important",
-      letterSpacing: "0.7px",
-      textTransform: "uppercase",
-      textAlign: "center",
-      display: "block"
-    },
-    link: {
-      fontSize: "inherit",
-      // fontFamily: 'InterYounet',
-      textDecoration: "underline",
-      cursor: "poInterYounet",
-      letterSpacing: "0.7px"
-    },
-    span: {
-      fontSize: "0.7rem",
-      // fontFamily: 'InterYounet',
-      letterSpacing: "0.7px"
-    },
-    one_line_ellipsis: {
-      display: "block",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-      overflow: "hidden"
-    },
-    describe_text: {
-      fontSize: "0.875rem",
-      fontWeight: "400",
-      color: "#7b8191"
-    },
-    list_header: {
-      fontSize: "0.7rem",
-      fontWeight: "500",
-      color: "#7b8191"
-    },
-    page_title: {
-      fontSize: "1.1rem",
-      fontWeight: "500",
-      color: "rgb(52, 49, 76)",
-      margin: "10px 0",
-      letterSpacing: "1px"
-    },
-    page_sub_title: {
-      fontSize: "1rem",
-      fontWeight: "500",
-      color: "rgb(52, 49, 76)"
-      // margin: '10px 0',
-      // letterSpacing: '0.4px'
-    },
-    page_sub_title_bold: {
-      fontSize: "1rem",
-      fontWeight: "600",
-      color: "rgb(52, 49, 76)",
-      letterSpacing: "0.4px"
-    },
-    page_content: {
-      fontSize: "0.75rem",
-      fontWeight: "400",
-      color: "rgb(52, 49, 76)"
-      // margin: '10px 0',
-      // letterSpacing: '0.4px'
-    },
-    view_data_title: {
-      fontSize: "1.2rem",
-      fontWeight: "500",
-      color: "rgb(52, 49, 76)",
-      margin: "10px 0",
-      minWidth: "150px",
-      maxWidth: "160px",
-      letterSpacing: "1px"
-    },
-    view_data_content: {
-      fontSize: "0.8rem",
-      width: "100%",
-      // color:'rgb(52, 49, 76)',
-      margin: "10px 0",
-      letterSpacing: "1px"
-    },
-    view_data_content_preview: {
-      fontSize: "0.8rem",
-      width: "100%",
-      // color:'rgb(52, 49, 76)',
-      margin: "10px 0",
-      letterSpacing: "1px"
-    },
-    view_data_time: {
-      fontSize: "0.8rem",
-      minWidth: "100px",
-      maxWidth: "150px",
-      // color:'rgb(52, 49, 76)',
-      textAlign: "right",
-      letterSpacing: "1px"
-    },
-    cards_title: {
-      fontSize: "0.9rem",
-      fontWeight: "600",
-      color: "rgb(52, 49, 76)"
-      // padding: '0px 0'
-    },
-    gmailFrom: {
-      fontSize: "0.8rem",
-      letterSpacing: "0.7px",
-      display: "block",
-      whiteSpace: "nowrap",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      maxWidth: "150px"
-    },
-    gmailSubject: {
-      fontSize: "0.8rem",
-      letterSpacing: "1px",
-      display: "inline-block",
-      whiteSpace: "nowrap",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      maxWidth: "150px"
-    },
-    gmailContent: {
-      fontSize: "0.8rem",
-      letterSpacing: "1px",
-      display: "inline-block",
-      whiteSpace: "nowrap",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      width: "100%",
-      maxWidth: "500px",
-      color: "#5f6368"
-    },
-    inline: {
-      display: "flex"
-    },
-    emailTemplateSubject: {
-      fontSize: "1.375rem",
-      fontWeight: 500,
-      letterSpacing: "0.7px"
-    },
-    emailTemplateName: {
-      fontSize: "0.875rem",
-      fontWeight: 500,
-      letterSpacing: "0.7px"
-    },
-    emailTemplateEmail: {
-      fontSize: "0.75rem",
-      color: "#5f6368",
-      // fontFamily: 'InterYounet',
-      letterSpacing: "0.7px"
-    },
-    emailTemplateTime: {
-      fontSize: "0.75rem",
-      color: "#5f6368",
-      // fontFamily: 'InterYounet',
-      letterSpacing: "0.7px"
-    },
-    emailTemplateContent: {
-      fontSize: "0.813rem",
-      // fontFamily: 'InterYounet',
-      letterSpacing: "0.7px"
-    },
-    footerLink: {
-      color: "#00000099 !important",
-      fontSize: 12,
-      textDecoration: "none !important"
-    },
-    plain_links: {
-      position: "relative",
-      color: "#3976EF",
-      fontSize: "0.813rem",
-      padding: "0 2px"
-    },
-    center_text: {
-      textAlign: "center"
-    },
-    error_status: {
-      fontSize: "0.813rem",
-      color: "red",
-      letterSpacing: "0.7px"
-    },
-    approved_status: {
-      fontSize: "0.813rem",
-      color: "green",
-      letterSpacing: "0.7px"
-    },
-    trained_status: {
-      fontSize: "0.813rem",
-      color: "green",
-      letterSpacing: "0.7px"
-    },
-    pending_status: {
-      fontSize: "0.813rem",
-      color: "#F7CB73",
-      letterSpacing: "0.7px"
-    },
-    processing_status: {
-      fontSize: "0.813rem",
-      color: "#F7CB73",
-      letterSpacing: "0.7px"
-    }
-  },
-  palette: {
-    background: {
-      default: "#f9fafb"
-    },
-    primary: {
-      main: "#3976EF"
-    },
-    secondary: {
-      main: "#40B2F2"
-    },
-    icons: {
-      main: "#7b8191"
-    },
-    // #697ef0
-    smoothSecondary: {
-      main: "#99baf8"
-    },
-    deleteIcon: {
-      main: "red"
-    },
-    brighterText: {
-      main: "#bdbdbd"
-    }
-    // light purple
-    // #D09CF4
-    //
-    // error: {
-    //  main: '#D72A2A',
-    // },
-    // warning: {
-    //  main: '#FC7B09',
-    // },
-    // info: {
-    //  main: '#6B7D6A',
-    // },
-    // success: {
-    //  main: '#09FE00',
-    // },
-    // text: {
-    //  primary: '#000000',
-    //  secondary: '#FFFFFF',
-    // },
-  }
-});
-const globalTheme = responsiveFontSizes(theme);
 if (!document.getElementById("younet-embed-chatbox")) {
   const root = document.createElement("div");
   root.id = "younet-embed-chatbox";
@@ -20361,7 +19715,7 @@ if (!document.getElementById("younet-embed-chatbox")) {
     container: shadow
   });
   client.createRoot(shadow).render(
-    /* @__PURE__ */ jsxRuntimeExports.jsx(CacheProvider, { value: cache, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(ThemeProvider, { theme: globalTheme, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(CacheProvider, { value: cache, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CssBaseline, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         App,
@@ -20373,7 +19727,7 @@ if (!document.getElementById("younet-embed-chatbox")) {
           WIDTH: width2
         }
       )
-    ] }) })
+    ] })
   );
 }
 export {
