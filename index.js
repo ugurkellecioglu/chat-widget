@@ -55436,104 +55436,92 @@ function Chatbox({
               justifyContent: "center",
               padding: "15px 10px"
             },
-            children: dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { height: "73px" } }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              JSON.stringify(isInputFocused),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  onClick: () => {
-                    setInputFocused((prev2) => !prev2);
-                  },
-                  children: "toggle"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                TextField$1,
-                {
-                  className: `chatbox-input }
+            children: dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { height: "73px" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              TextField$1,
+              {
+                className: `chatbox-input }
               ${isMsgSending ? "sending" : ""}
             `,
-                  multiline: true,
-                  disabled: isMsgSending,
-                  sx: { width: "100%" },
-                  onInput: (e2) => {
-                    setTxt((prev2) => {
-                      var _a, _b, _c, _d;
-                      if ((prev2 == null ? void 0 : prev2.length) > 0 && ((_b = (_a = e2 == null ? void 0 : e2.target) == null ? void 0 : _a.value) == null ? void 0 : _b.length) == 0) {
-                        console.log("424");
-                        setStage(1);
-                      } else if ((!prev2 || (prev2 == null ? void 0 : prev2.length) == 0) && ((_d = (_c = e2.target) == null ? void 0 : _c.value) == null ? void 0 : _d.length) > 0) {
-                        console.log("430");
-                        setStage(2);
-                      }
-                      return e2.target.value;
-                    });
-                  },
-                  label: !isMsgSending && `Talk to "${modelName}"`,
-                  focused: isInputFocused,
-                  onFocus: () => {
-                    setInputFocused(true);
-                  },
-                  onBlur: () => setInputFocused(false),
-                  variant: "outlined",
-                  onKeyDown: (e2) => {
-                    if (e2.key == "Enter" && !isMobileDevice) {
-                      if (!e2.shiftKey) {
-                        sendMessage(e2);
-                      }
+                multiline: true,
+                disabled: isMsgSending,
+                sx: { width: "100%" },
+                onInput: (e2) => {
+                  setTxt((prev2) => {
+                    var _a, _b, _c, _d;
+                    if ((prev2 == null ? void 0 : prev2.length) > 0 && ((_b = (_a = e2 == null ? void 0 : e2.target) == null ? void 0 : _a.value) == null ? void 0 : _b.length) == 0) {
+                      console.log("424");
+                      setStage(1);
+                    } else if ((!prev2 || (prev2 == null ? void 0 : prev2.length) == 0) && ((_d = (_c = e2.target) == null ? void 0 : _c.value) == null ? void 0 : _d.length) > 0) {
+                      console.log("430");
+                      setStage(2);
                     }
-                  },
-                  fullWidth: true,
-                  inputRef: questionRef,
-                  InputProps: {
-                    style: { paddingRight: "5px" },
-                    endAdornment: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      IconButton$1,
-                      {
-                        sx: {
-                          borderRadius: "5px",
-                          alignSelf: "flex-end"
-                        },
-                        onClick: (e2) => {
-                          if (isMsgSending) {
-                            handleAbortRequest();
-                          } else {
-                            sendMessage(e2);
-                          }
-                        },
-                        children: isMsgSending ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "svg",
-                          {
-                            className: "MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-p79yt4",
-                            "aria-hidden": "true",
-                            viewBox: "0 0 24 24",
-                            "data-testid": "StopIcon",
-                            tabIndex: "-1",
-                            fill: "#5f6368",
-                            height: "24",
-                            width: "24",
-                            children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 6h12v12H6z" })
-                          }
-                        ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "svg",
-                          {
-                            className: "MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1ly4ijh",
-                            focusable: "false",
-                            "aria-hidden": "true",
-                            viewBox: "0 0 24 24",
-                            height: "24",
-                            width: "24",
-                            "data-testid": "SendIcon",
-                            fill: "rgb(57, 118, 239)",
-                            children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" })
-                          }
-                        )
-                      }
-                    )
+                    return e2.target.value;
+                  });
+                },
+                label: !isMsgSending && `Talk to "${modelName}"`,
+                focused: isInputFocused,
+                onFocus: () => {
+                  setInputFocused(true);
+                },
+                onBlur: () => setInputFocused(false),
+                variant: "outlined",
+                onKeyDown: (e2) => {
+                  if (e2.key == "Enter" && !isMobileDevice) {
+                    if (!e2.shiftKey) {
+                      sendMessage(e2);
+                    }
                   }
+                },
+                fullWidth: true,
+                inputRef: questionRef,
+                InputProps: {
+                  style: { paddingRight: "5px" },
+                  endAdornment: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IconButton$1,
+                    {
+                      sx: {
+                        borderRadius: "5px",
+                        alignSelf: "flex-end"
+                      },
+                      onClick: (e2) => {
+                        if (isMsgSending) {
+                          handleAbortRequest();
+                        } else {
+                          sendMessage(e2);
+                        }
+                      },
+                      children: isMsgSending ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "svg",
+                        {
+                          className: "MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-p79yt4",
+                          "aria-hidden": "true",
+                          viewBox: "0 0 24 24",
+                          "data-testid": "StopIcon",
+                          tabIndex: "-1",
+                          fill: "#5f6368",
+                          height: "24",
+                          width: "24",
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 6h12v12H6z" })
+                        }
+                      ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "svg",
+                        {
+                          className: "MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1ly4ijh",
+                          focusable: "false",
+                          "aria-hidden": "true",
+                          viewBox: "0 0 24 24",
+                          height: "24",
+                          width: "24",
+                          "data-testid": "SendIcon",
+                          fill: "rgb(57, 118, 239)",
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" })
+                        }
+                      )
+                    }
+                  )
                 }
-              )
-            ] })
+              }
+            ) })
           }
         )
       ]
