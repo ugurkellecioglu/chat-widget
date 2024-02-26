@@ -7568,7 +7568,7 @@ var m$2 = reactDomExports;
   client.createRoot = m$2.createRoot;
   client.hydrateRoot = m$2.hydrateRoot;
 }
-const STYLE$1 = "*{margin:0;padding:0;box-sizing:border-box;font-family:InterYounet}@keyframes rotateLogo{0%{transform:rotate(0);opacity:1}to{transform:rotate(360deg);opacity:0}}.logo{transition:all .3s ease}.opened{animation-name:rotateLogo;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}@keyframes rotateClose{0%{transform:rotate(-360deg);opacity:0}to{transform:rotate(0);opacity:1}}.closeRef{background:linear-gradient(135deg,#b45afc 15%,#4285ff 50%,#00b2f8 80%);border-radius:999px;cursor:pointer;position:fixed;display:flex;justify-content:center;align-items:center}.closed{animation-name:rotateClose;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}";
+const STYLE$1 = "*{margin:0;padding:0;box-sizing:border-box;font-family:InterYounet}@keyframes rotateLogo{0%{transform:rotate(0);opacity:1}to{transform:rotate(360deg);opacity:0}}.logo{transition:all .3s ease;filter:drop-shadow(0 20px 13px rgb(0 0 0 / .03)) drop-shadow(0 8px 5px rgb(0 0 0 / .08))}.opened{animation-name:rotateLogo;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}@keyframes rotateClose{0%{transform:rotate(-360deg);opacity:0}to{transform:rotate(0);opacity:1}}.closeRef{background:linear-gradient(135deg,#b45afc 15%,#4285ff 50%,#00b2f8 80%);border-radius:999px;cursor:pointer;position:fixed;display:flex;justify-content:center;align-items:center}.closed{animation-name:rotateClose;animation-duration:.9s;animation-timing-function:ease;animation-fill-mode:forwards}";
 function formatMuiErrorMessage(code) {
   let url = "https://mui.com/production-error/?code=" + code;
   for (let i = 1; i < arguments.length; i += 1) {
@@ -19103,7 +19103,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-Js-bP7ie.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-aoGE6AZy.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -19177,7 +19177,7 @@ const Message = ({
     }
   );
 };
-const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important}.msg-box.user{flex-direction:row-reverse;text-align:right;color:#3976ef}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}";
+const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:center}.msg-box.user{flex-direction:row-reverse;color:#3976ef}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
 /*!
@@ -19440,7 +19440,6 @@ const MessageStructureSkeleton = ({ loading = false, modelInfo = {} }) => {
     )
   ] });
 };
-const CHATBOXSTYLE = "";
 function Chatbox({
   info = {},
   type,
@@ -19580,57 +19579,61 @@ function Chatbox({
     };
     const bufferCallback = (resp) => {
       var _a2;
-      if (resp.error) {
-        if (resp.data != "") {
-          cachedMsg += resp.data;
-        }
-        abortController.abort();
-        saveAiResponse(cachedMsg);
-        cleanChunkSources("Thinking...");
-        ref.current.focus();
-        return;
-      }
-      if (resp.data) {
-        let data2 = resp.data;
-        cachedMsg += resp.data;
-        if (chatContainerRef.current)
-          chatContainerRef.current.scrollTop = (_a2 = chatContainerRef == null ? void 0 : chatContainerRef.current) == null ? void 0 : _a2.scrollHeight;
-        setAiMessage((prev2) => {
-          return {
-            ...prev2 ? prev2 : {
-              type: "response"
-            },
-            message: cachedMsg
-          };
-        });
-        if (!firstChunkArrived && data2 != "") {
-          firstChunkArrived = true;
-          cleanChunkSources("Typing...");
-        }
-        if (!resp.response) {
+      try {
+        if (resp.error) {
+          if (resp.data != "") {
+            cachedMsg += resp.data;
+          }
+          abortController.abort();
+          saveAiResponse(cachedMsg);
+          cleanChunkSources("Thinking...");
+          ref.current.focus();
           return;
         }
-      }
-      if (resp.response) {
-        const { response } = resp;
-        ref.current.value = "";
-        cleanChunkSources("");
-        setMsgLoadState(false);
-        setRabbitChatId(resp.response.chat_id);
-        const message2 = {
-          message: response.message,
-          type: response.type
-        };
-        if (response.message && response.type)
-          ;
-        setAiMessage("");
-        setUserMessage("");
-        setMessages((prev2) => {
-          return [...prev2, instance, message2];
-        });
-        ref.current.disabled = false;
-        ref.current.focus();
-        return;
+        if (resp.data) {
+          let data2 = resp.data;
+          cachedMsg += resp.data;
+          if (chatContainerRef.current)
+            chatContainerRef.current.scrollTop = (_a2 = chatContainerRef == null ? void 0 : chatContainerRef.current) == null ? void 0 : _a2.scrollHeight;
+          setAiMessage((prev2) => {
+            return {
+              ...prev2 ? prev2 : {
+                type: "response"
+              },
+              message: cachedMsg
+            };
+          });
+          if (!firstChunkArrived && data2 != "") {
+            firstChunkArrived = true;
+            cleanChunkSources("Typing...");
+          }
+          if (!resp.response) {
+            return;
+          }
+        }
+        if (resp.response) {
+          const { response } = resp;
+          ref.current.value = "";
+          cleanChunkSources("");
+          setMsgLoadState(false);
+          setRabbitChatId(resp.response.chat_id);
+          const message2 = {
+            message: response.message,
+            type: response.type
+          };
+          if (response.message && response.type) {
+          }
+          setAiMessage("");
+          setUserMessage("");
+          setMessages((prev2) => {
+            return [...prev2, instance, message2];
+          });
+          ref.current.disabled = false;
+          ref.current.focus();
+          return;
+        }
+      } catch (error) {
+        alert(error.message);
       }
     };
     abortController = new AbortController();
@@ -19660,7 +19663,6 @@ function Chatbox({
         justifyContent: "space-between"
       },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: CHATBOXSTYLE } }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           Box$1,
           {
@@ -19927,6 +19929,9 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
           height: {
             xs: "100dvh",
             sm: "auto"
+          },
+          minHeight: {
+            xs: "400px"
           }
         },
         children: [
@@ -19945,7 +19950,7 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             Box$1,
             {
-              className: "closeRef",
+              className: "closeRef logo",
               ref: closeRef,
               style: {
                 cursor: "pointer",
