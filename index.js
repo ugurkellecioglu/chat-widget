@@ -1,3 +1,4 @@
+// import "./main-H4mxiCPL.js";
 const url = new URL(import.meta.url)
 const modelHash = url.searchParams.get("modelHash")
-import(`./main-Y-tAHBkj.js?modelHash=${modelHash}`)
+import(`./main-H4mxiCPL.js?modelHash=${modelHash}`)

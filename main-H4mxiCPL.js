@@ -18904,7 +18904,80 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-reactExports.lazy(() => import("./index-RCqyUG1v.js").then((n2) => n2.x));
+const MarkdownComponent = reactExports.lazy(() => import("./index-UhyDaKdh.js").then((n2) => n2.x));
+const Message = ({
+  msg_id,
+  msg,
+  userInfo = {},
+  modelName = "",
+  children = null
+}) => {
+  reactExports.useState(false);
+  reactExports.useState(false);
+  reactExports.useState(msg.message);
+  const actionElements = children != null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    Grid$1,
+    {
+      sx: { padding: "20px 0" },
+      msg_id,
+      className: `msg-box ${msg.type === "prompt" ? "user" : "ai"}
+        `,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Grid$1,
+          {
+            item: true,
+            xs: 1,
+            sx: { display: "flex", justifyContent: "end", alignItems: "end" },
+            children: msg.type === "prompt" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Avatar$1,
+              {
+                className: "avatar",
+                src: userInfo.avatar ?? "",
+                sx: { fontSize: 15 },
+                children: userInfo.initial === "" ? "personIcon" : userInfo.initial
+              }
+            ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Avatar$1,
+              {
+                className: "avatar",
+                sx: { backgroundColor: "rebeccapurple" },
+                children: modelName.charAt(0).toUpperCase()
+              }
+            )
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Typography$1,
+            {
+              sx: {
+                fontSize: 12,
+                color: "text.secondary",
+                marginLeft: "20px",
+                marginBottom: "5px"
+              },
+              children: msg.type === "prompt" ? userInfo.name : modelName
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Grid$1,
+            {
+              item: true,
+              xs: 12,
+              pr: { xs: msg.type === "prompt" ? 2 : 6 },
+              pl: { xs: msg.type === "prompt" ? 6 : 2 },
+              sx: { display: "flex", flexDirection: "column" },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { className: "inner-msg", variant: "messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MarkdownComponent, { source: msg.message }) })
+            }
+          )
+        ] }),
+        actionElements && /* @__PURE__ */ jsxRuntimeExports.jsx(Grid$1, { item: true, md: 1.5, children })
+      ]
+    }
+  );
+};
 const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:center}.msg-box.user{flex-direction:row-reverse;color:#3976ef}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
@@ -19426,7 +19499,30 @@ function Chatbox({
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLE } }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLEMARKDOWN } }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(MessageStructureSkeleton, { loading: true })
+              dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(MessageStructureSkeleton, { loading: true }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(reactExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Message,
+                  {
+                    msg: {
+                      message: "👋 Hi there! How can I help you today?",
+                      type: "response"
+                    },
+                    userInfo: {},
+                    modelName
+                  }
+                ),
+                messages.map((msg, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Message,
+                  {
+                    msg,
+                    userInfo: {},
+                    modelName
+                  },
+                  index
+                )),
+                userMessage && /* @__PURE__ */ jsxRuntimeExports.jsx(Message, { msg: userMessage, userInfo: {}, modelName }),
+                aiMessage && /* @__PURE__ */ jsxRuntimeExports.jsx(Message, { msg: aiMessage, userInfo: {}, modelName })
+              ] })
             ]
           }
         ),
