@@ -18904,7 +18904,7 @@ const getShareData = async (modelHash) => {
   } catch (error) {
   }
 };
-const MarkdownComponent = reactExports.lazy(() => import("./index-UhyDaKdh.js").then((n2) => n2.x));
+reactExports.lazy(() => import("./index-URJPQCbf.js").then((n2) => n2.x));
 const Message = ({
   msg_id,
   msg,
@@ -18969,7 +18969,7 @@ const Message = ({
               pr: { xs: msg.type === "prompt" ? 2 : 6 },
               pl: { xs: msg.type === "prompt" ? 6 : 2 },
               sx: { display: "flex", flexDirection: "column" },
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { className: "inner-msg", variant: "messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MarkdownComponent, { source: msg.message }) })
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Typography$1, { className: "inner-msg", variant: "messages", children: msg.message })
             }
           )
         ] }),
