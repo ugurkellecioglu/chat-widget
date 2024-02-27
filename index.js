@@ -51465,6 +51465,8 @@ function Chatbox({
     setUserMessage(instance);
     setMsgLoadState(true);
     ref.current.value = "";
+    ref.current.style.height = "70px";
+    ref.current.overflowY = "hidden";
     let msgParams = {
       message: encodeData(newMessage ?? question2),
       type: "prompt",
@@ -51527,6 +51529,8 @@ function Chatbox({
         if (resp.response) {
           const { response } = resp;
           ref.current.value = "";
+          ref.current.style.height = "70px";
+          ref.current.overflowY = "hidden";
           cleanChunkSources("Thinking...");
           setMsgLoadState(false);
           setRabbitChatId(resp.response.chat_id);
@@ -51751,7 +51755,11 @@ function Chatbox({
                       }
                       return e2.target.value;
                     });
-                    console.log("e.target.scrollHeight", e2.target.scrollHeight);
+                    if (e2.target.value.length == 0) {
+                      e2.target.style.height = "70px";
+                      e2.target.style.overflowY = "hidden";
+                      return;
+                    }
                     if (e2.target.scrollHeight > 70) {
                       e2.target.style.height = e2.target.scrollHeight + "px";
                     }
