@@ -51827,49 +51827,112 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
   }, [isOpened]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLE$1 } }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      Box$1,
-      {
-        sx: {
-          position: {
-            sm: "absolute",
-            xs: "fixed"
-          },
-          bottom: {
-            sm: `${CONFIG.BOTTOM + CONFIG.HEIGHT + 10}px`,
-            xs: 0
-          },
-          right: {
-            sm: `${CONFIG.RIGHT}px`,
-            xs: 0
-          },
-          borderRadius: {
-            sm: "100%"
-          },
-          cursor: {
-            sm: "pointer",
-            xs: "pointer"
-          },
-          maxWidth: {
-            sm: "445px"
-          },
-          minWidth: {
-            sm: "445px"
-          },
-          width: {
-            xs: "100%",
-            sm: "445px"
-          },
-          height: {
-            xs: "100dvh",
-            sm: "auto"
-          },
-          minHeight: {
-            xs: "400px"
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "animation-ping ",
+          style: {
+            display: isOpened ? "none" : "block",
+            cursor: "pointer",
+            position: "fixed",
+            bottom: `${CONFIG.BOTTOM}px`,
+            right: `${CONFIG.RIGHT}px`,
+            height: `${CONFIG.HEIGHT}px`,
+            width: `${CONFIG.WIDTH}px`,
+            backgroundColor: "#3976ef",
+            borderRadius: "100%"
           }
-        },
-        children: [
-          chatContainerIsOpened && /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { display: "flex" }, ref: containerRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Box$1,
+        {
+          className: "closeRef logo",
+          ref: closeRef,
+          style: {
+            cursor: "pointer",
+            position: "fixed",
+            bottom: `${CONFIG.BOTTOM}px`,
+            right: `${CONFIG.RIGHT}px`,
+            height: `${CONFIG.HEIGHT}px`,
+            width: `${CONFIG.WIDTH}px`
+          },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "svg",
+            {
+              className: "MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-p79yt4",
+              focusable: "false",
+              "aria-hidden": "true",
+              viewBox: "0 0 24 24",
+              "data-testid": "CloseIcon",
+              tabIndex: "-1",
+              title: "Close",
+              height: 30,
+              width: 30,
+              fill: "white",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" })
+            }
+          )
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "img",
+        {
+          ref: logoRef,
+          className: `logo`,
+          style: {
+            cursor: "pointer",
+            position: "fixed",
+            bottom: `${CONFIG.BOTTOM}px`,
+            right: `${CONFIG.RIGHT}px`
+          },
+          height: CONFIG.HEIGHT,
+          width: CONFIG.WIDTH,
+          onClick: handleClick,
+          src: LogoImg
+        }
+      ),
+      chatContainerIsOpened && /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Box$1,
+        {
+          sx: {
+            position: {
+              sm: "absolute",
+              xs: "fixed"
+            },
+            bottom: {
+              sm: `${CONFIG.BOTTOM + CONFIG.HEIGHT + 10}px`,
+              xs: 0
+            },
+            right: {
+              sm: `${CONFIG.RIGHT}px`,
+              xs: 0
+            },
+            cursor: {
+              sm: "pointer",
+              xs: "pointer"
+            },
+            maxWidth: {
+              sm: "445px"
+            },
+            minWidth: {
+              sm: "445px"
+            },
+            width: {
+              xs: "100%",
+              sm: "445px"
+            },
+            height: {
+              xs: "100dvh",
+              sm: "auto"
+            },
+            minHeight: {
+              xs: "400px"
+            }
+          },
+          ref: containerRef,
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             Grow$1,
             {
               in: isOpened,
@@ -51880,75 +51943,10 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
               container: containerRef.current,
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Chatbox, { modelHash, setIsOpened }) })
             }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: "animation-ping ",
-              style: {
-                display: isOpened ? "none" : "block",
-                cursor: "pointer",
-                position: "fixed",
-                bottom: `${CONFIG.BOTTOM}px`,
-                right: `${CONFIG.RIGHT}px`,
-                height: `${CONFIG.HEIGHT}px`,
-                width: `${CONFIG.WIDTH}px`,
-                backgroundColor: "#3976ef",
-                borderRadius: "100%"
-              }
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Box$1,
-            {
-              className: "closeRef logo",
-              ref: closeRef,
-              style: {
-                cursor: "pointer",
-                position: "fixed",
-                bottom: `${CONFIG.BOTTOM}px`,
-                right: `${CONFIG.RIGHT}px`,
-                height: `${CONFIG.HEIGHT}px`,
-                width: `${CONFIG.WIDTH}px`
-              },
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "svg",
-                {
-                  className: "MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-p79yt4",
-                  focusable: "false",
-                  "aria-hidden": "true",
-                  viewBox: "0 0 24 24",
-                  "data-testid": "CloseIcon",
-                  tabIndex: "-1",
-                  title: "Close",
-                  height: 30,
-                  width: 30,
-                  fill: "white",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" })
-                }
-              )
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
-              ref: logoRef,
-              className: `logo`,
-              style: {
-                cursor: "pointer",
-                position: "fixed",
-                bottom: `${CONFIG.BOTTOM}px`,
-                right: `${CONFIG.RIGHT}px`
-              },
-              height: CONFIG.HEIGHT,
-              width: CONFIG.WIDTH,
-              onClick: handleClick,
-              src: LogoImg
-            }
           )
-        ]
-      }
-    )
+        }
+      )
+    ] })
   ] });
 }
 if (!document.getElementById("younet-embed-chatbox")) {
