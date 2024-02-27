@@ -9514,7 +9514,7 @@ function generateUtilityClasses(componentName, slots, globalStatePrefix = "Mui")
 function clamp$1(val, min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER) {
   return Math.max(min, Math.min(val, max));
 }
-const _excluded$K = ["values", "unit", "step"];
+const _excluded$J = ["values", "unit", "step"];
 const sortBreakpointsValues = (values2) => {
   const breakpointsAsArray = Object.keys(values2).map((key2) => ({
     key: key2,
@@ -9545,7 +9545,7 @@ function createBreakpoints(breakpoints) {
     },
     unit = "px",
     step = 5
-  } = breakpoints, other = _objectWithoutPropertiesLoose$1(breakpoints, _excluded$K);
+  } = breakpoints, other = _objectWithoutPropertiesLoose$1(breakpoints, _excluded$J);
   const sortedValues = sortBreakpointsValues(values2);
   const keys2 = Object.keys(sortedValues);
   function up2(key2) {
@@ -10514,14 +10514,14 @@ function applyStyles(key2, styles2) {
   }
   return {};
 }
-const _excluded$J = ["breakpoints", "palette", "spacing", "shape"];
+const _excluded$I = ["breakpoints", "palette", "spacing", "shape"];
 function createTheme$1(options = {}, ...args) {
   const {
     breakpoints: breakpointsInput = {},
     palette: paletteInput = {},
     spacing: spacingInput,
     shape: shapeInput = {}
-  } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$J);
+  } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$I);
   const breakpoints = createBreakpoints(breakpointsInput);
   const spacing = createSpacing(spacingInput);
   let muiTheme = deepmerge({
@@ -10568,7 +10568,7 @@ function GlobalStyles$1({
     styles: globalStyles
   });
 }
-const _excluded$I = ["sx"];
+const _excluded$H = ["sx"];
 const splitProps = (props) => {
   var _props$theme$unstable, _props$theme;
   const result = {
@@ -10588,7 +10588,7 @@ const splitProps = (props) => {
 function extendSxProp(props) {
   const {
     sx: inSx
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$I);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$H);
   const {
     systemProps,
     otherProps
@@ -10630,7 +10630,7 @@ function clsx() {
     (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
   return n2;
 }
-const _excluded$H = ["className", "component"];
+const _excluded$G = ["className", "component"];
 function createBox(options = {}) {
   const {
     themeId,
@@ -10646,7 +10646,7 @@ function createBox(options = {}) {
     const _extendSxProp = extendSxProp(inProps), {
       className,
       component = "div"
-    } = _extendSxProp, other = _objectWithoutPropertiesLoose$1(_extendSxProp, _excluded$H);
+    } = _extendSxProp, other = _objectWithoutPropertiesLoose$1(_extendSxProp, _excluded$G);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(BoxRoot, _extends({
       as: component,
       ref,
@@ -10656,14 +10656,14 @@ function createBox(options = {}) {
   });
   return Box2;
 }
-const _excluded$G = ["variant"];
+const _excluded$F = ["variant"];
 function isEmpty$3(string2) {
   return string2.length === 0;
 }
 function propsToClassKey(props) {
   const {
     variant
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$G);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$F);
   let classKey = variant || "";
   Object.keys(other).sort().forEach((key2) => {
     if (key2 === "color") {
@@ -10674,7 +10674,7 @@ function propsToClassKey(props) {
   });
   return classKey;
 }
-const _excluded$F = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
+const _excluded$E = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
 function isEmpty$2(obj) {
   return Object.keys(obj).length === 0;
 }
@@ -10824,7 +10824,7 @@ function createStyled(input = {}) {
       // TODO v6: remove `lowercaseFirstLetter()` in the next major release
       // For more details: https://github.com/mui/material-ui/pull/37908
       overridesResolver = defaultOverridesResolver(lowercaseFirstLetter(componentSlot))
-    } = inputOptions, options = _objectWithoutPropertiesLoose$1(inputOptions, _excluded$F);
+    } = inputOptions, options = _objectWithoutPropertiesLoose$1(inputOptions, _excluded$E);
     const skipVariantsResolver = inputSkipVariantsResolver !== void 0 ? inputSkipVariantsResolver : (
       // TODO v6: remove `Root` in the next major release
       // For more details: https://github.com/mui/material-ui/pull/37908
@@ -11262,7 +11262,7 @@ const green = {
   A700: "#00c853"
 };
 const green$1 = green;
-const _excluded$E = ["mode", "contrastThreshold", "tonalOffset"];
+const _excluded$D = ["mode", "contrastThreshold", "tonalOffset"];
 const light = {
   // The colors used to style the text.
   text: {
@@ -11430,7 +11430,7 @@ function createPalette(palette) {
     mode = "light",
     contrastThreshold = 3,
     tonalOffset = 0.2
-  } = palette, other = _objectWithoutPropertiesLoose$1(palette, _excluded$E);
+  } = palette, other = _objectWithoutPropertiesLoose$1(palette, _excluded$D);
   const primary = palette.primary || getDefaultPrimary(mode);
   const secondary = palette.secondary || getDefaultSecondary(mode);
   const error = palette.error || getDefaultError(mode);
@@ -11524,7 +11524,7 @@ function createPalette(palette) {
   }, modes[mode]), other);
   return paletteOutput;
 }
-const _excluded$D = ["fontFamily", "fontSize", "fontWeightLight", "fontWeightRegular", "fontWeightMedium", "fontWeightBold", "htmlFontSize", "allVariants", "pxToRem"];
+const _excluded$C = ["fontFamily", "fontSize", "fontWeightLight", "fontWeightRegular", "fontWeightMedium", "fontWeightBold", "htmlFontSize", "allVariants", "pxToRem"];
 function round(value) {
   return Math.round(value * 1e5) / 1e5;
 }
@@ -11548,7 +11548,7 @@ function createTypography(palette, typography) {
     // Apply the CSS properties to all the variants.
     allVariants,
     pxToRem: pxToRem2
-  } = _ref, other = _objectWithoutPropertiesLoose$1(_ref, _excluded$D);
+  } = _ref, other = _objectWithoutPropertiesLoose$1(_ref, _excluded$C);
   const coef = fontSize / 14;
   const pxToRem = pxToRem2 || ((size) => `${size / htmlFontSize * coef}rem`);
   const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends({
@@ -11604,7 +11604,7 @@ function createShadow(...px) {
   return [`${px[0]}px ${px[1]}px ${px[2]}px ${px[3]}px rgba(0,0,0,${shadowKeyUmbraOpacity})`, `${px[4]}px ${px[5]}px ${px[6]}px ${px[7]}px rgba(0,0,0,${shadowKeyPenumbraOpacity})`, `${px[8]}px ${px[9]}px ${px[10]}px ${px[11]}px rgba(0,0,0,${shadowAmbientShadowOpacity})`].join(",");
 }
 const shadows = ["none", createShadow(0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 3, 0), createShadow(0, 3, 1, -2, 0, 2, 2, 0, 0, 1, 5, 0), createShadow(0, 3, 3, -2, 0, 3, 4, 0, 0, 1, 8, 0), createShadow(0, 2, 4, -1, 0, 4, 5, 0, 0, 1, 10, 0), createShadow(0, 3, 5, -1, 0, 5, 8, 0, 0, 1, 14, 0), createShadow(0, 3, 5, -1, 0, 6, 10, 0, 0, 1, 18, 0), createShadow(0, 4, 5, -2, 0, 7, 10, 1, 0, 2, 16, 1), createShadow(0, 5, 5, -3, 0, 8, 10, 1, 0, 3, 14, 2), createShadow(0, 5, 6, -3, 0, 9, 12, 1, 0, 3, 16, 2), createShadow(0, 6, 6, -3, 0, 10, 14, 1, 0, 4, 18, 3), createShadow(0, 6, 7, -4, 0, 11, 15, 1, 0, 4, 20, 3), createShadow(0, 7, 8, -4, 0, 12, 17, 2, 0, 5, 22, 4), createShadow(0, 7, 8, -4, 0, 13, 19, 2, 0, 5, 24, 4), createShadow(0, 7, 9, -4, 0, 14, 21, 2, 0, 5, 26, 4), createShadow(0, 8, 9, -5, 0, 15, 22, 2, 0, 6, 28, 5), createShadow(0, 8, 10, -5, 0, 16, 24, 2, 0, 6, 30, 5), createShadow(0, 8, 11, -5, 0, 17, 26, 2, 0, 6, 32, 5), createShadow(0, 9, 11, -5, 0, 18, 28, 2, 0, 7, 34, 6), createShadow(0, 9, 12, -6, 0, 19, 29, 2, 0, 7, 36, 6), createShadow(0, 10, 13, -6, 0, 20, 31, 3, 0, 8, 38, 7), createShadow(0, 10, 13, -6, 0, 21, 33, 3, 0, 8, 40, 7), createShadow(0, 10, 14, -6, 0, 22, 35, 3, 0, 8, 42, 7), createShadow(0, 11, 14, -7, 0, 23, 36, 3, 0, 9, 44, 8), createShadow(0, 11, 15, -7, 0, 24, 38, 3, 0, 9, 46, 8)];
-const _excluded$C = ["duration", "easing", "delay"];
+const _excluded$B = ["duration", "easing", "delay"];
 const easing = {
   // This is the most common easing curve.
   easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
@@ -11648,7 +11648,7 @@ function createTransitions(inputTransitions) {
       easing: easingOption = mergedEasing.easeInOut,
       delay = 0
     } = options;
-    _objectWithoutPropertiesLoose$1(options, _excluded$C);
+    _objectWithoutPropertiesLoose$1(options, _excluded$B);
     return (Array.isArray(props) ? props : [props]).map((animatedProp) => `${animatedProp} ${typeof durationOption === "string" ? durationOption : formatMs(durationOption)} ${easingOption} ${typeof delay === "string" ? delay : formatMs(delay)}`).join(",");
   };
   return _extends({
@@ -11670,14 +11670,14 @@ const zIndex = {
   tooltip: 1500
 };
 const zIndex$1 = zIndex;
-const _excluded$B = ["breakpoints", "mixins", "spacing", "palette", "transitions", "typography", "shape"];
+const _excluded$A = ["breakpoints", "mixins", "spacing", "palette", "transitions", "typography", "shape"];
 function createTheme(options = {}, ...args) {
   const {
     mixins: mixinsInput = {},
     palette: paletteInput = {},
     transitions: transitionsInput = {},
     typography: typographyInput = {}
-  } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$B);
+  } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$A);
   if (options.vars) {
     throw new Error(formatMuiErrorMessage(18));
   }
@@ -12223,7 +12223,7 @@ function getTransitionProps(props, options) {
     delay: style2.transitionDelay
   };
 }
-const _excluded$A = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
+const _excluded$z = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
 function getScale(value) {
   return `scale(${value}, ${value ** 2})`;
 }
@@ -12255,7 +12255,7 @@ const Grow = /* @__PURE__ */ reactExports.forwardRef(function Grow2(props, ref) 
     timeout = "auto",
     // eslint-disable-next-line react/prop-types
     TransitionComponent = Transition$1
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$A);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$z);
   const timer = useTimeout();
   const autoTimeout = reactExports.useRef();
   const theme = useTheme();
@@ -12380,8 +12380,8 @@ function getSvgIconUtilityClass(slot) {
   return generateUtilityClass("MuiSvgIcon", slot);
 }
 generateUtilityClasses("MuiSvgIcon", ["root", "colorPrimary", "colorSecondary", "colorAction", "colorError", "colorDisabled", "fontSizeInherit", "fontSizeSmall", "fontSizeMedium", "fontSizeLarge"]);
-const _excluded$z = ["children", "className", "color", "component", "fontSize", "htmlColor", "inheritViewBox", "titleAccess", "viewBox"];
-const useUtilityClasses$s = (ownerState) => {
+const _excluded$y = ["children", "className", "color", "component", "fontSize", "htmlColor", "inheritViewBox", "titleAccess", "viewBox"];
+const useUtilityClasses$r = (ownerState) => {
   const {
     color: color2,
     fontSize,
@@ -12447,7 +12447,7 @@ const SvgIcon = /* @__PURE__ */ reactExports.forwardRef(function SvgIcon2(inProp
     inheritViewBox = false,
     titleAccess,
     viewBox = "0 0 24 24"
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$z);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$y);
   const hasSvgAsChild = /* @__PURE__ */ reactExports.isValidElement(children) && children.type === "svg";
   const ownerState = _extends({}, props, {
     color: color2,
@@ -12462,7 +12462,7 @@ const SvgIcon = /* @__PURE__ */ reactExports.forwardRef(function SvgIcon2(inProp
   if (!inheritViewBox) {
     more.viewBox = viewBox;
   }
-  const classes = useUtilityClasses$s(ownerState);
+  const classes = useUtilityClasses$r(ownerState);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(SvgIconRoot, _extends({
     as: component,
     className: clsx(classes.root, className),
@@ -12595,8 +12595,8 @@ function getPaperUtilityClass(slot) {
   return generateUtilityClass("MuiPaper", slot);
 }
 generateUtilityClasses("MuiPaper", ["root", "rounded", "outlined", "elevation", "elevation0", "elevation1", "elevation2", "elevation3", "elevation4", "elevation5", "elevation6", "elevation7", "elevation8", "elevation9", "elevation10", "elevation11", "elevation12", "elevation13", "elevation14", "elevation15", "elevation16", "elevation17", "elevation18", "elevation19", "elevation20", "elevation21", "elevation22", "elevation23", "elevation24"]);
-const _excluded$y = ["className", "component", "elevation", "square", "variant"];
-const useUtilityClasses$r = (ownerState) => {
+const _excluded$x = ["className", "component", "elevation", "square", "variant"];
+const useUtilityClasses$q = (ownerState) => {
   const {
     square,
     elevation,
@@ -12649,14 +12649,14 @@ const Paper = /* @__PURE__ */ reactExports.forwardRef(function Paper2(inProps, r
     elevation = 1,
     square = false,
     variant = "elevation"
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$y);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$x);
   const ownerState = _extends({}, props, {
     component,
     elevation,
     square,
     variant
   });
-  const classes = useUtilityClasses$r(ownerState);
+  const classes = useUtilityClasses$q(ownerState);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(PaperRoot, _extends({
     as: component,
     ownerState,
@@ -12743,7 +12743,7 @@ function mergeSlotProps(parameters) {
     internalRef: internalSlotProps.ref
   };
 }
-const _excluded$x = ["elementType", "externalSlotProps", "ownerState", "skipResolvingSlotProps"];
+const _excluded$w = ["elementType", "externalSlotProps", "ownerState", "skipResolvingSlotProps"];
 function useSlotProps(parameters) {
   var _parameters$additiona;
   const {
@@ -12751,7 +12751,7 @@ function useSlotProps(parameters) {
     externalSlotProps,
     ownerState,
     skipResolvingSlotProps = false
-  } = parameters, rest = _objectWithoutPropertiesLoose$1(parameters, _excluded$x);
+  } = parameters, rest = _objectWithoutPropertiesLoose$1(parameters, _excluded$w);
   const resolvedComponentsProps = skipResolvingSlotProps ? {} : resolveComponentProps(externalSlotProps, ownerState);
   const {
     props: mergedProps,
@@ -12807,7 +12807,7 @@ function Ripple(props) {
   });
 }
 const touchRippleClasses = generateUtilityClasses("MuiTouchRipple", ["root", "ripple", "rippleVisible", "ripplePulsate", "child", "childLeaving", "childPulsate"]);
-const _excluded$w = ["center", "classes", "className"];
+const _excluded$v = ["center", "classes", "className"];
 let _$1 = (t2) => t2, _t$1, _t2$1, _t3$1, _t4$1;
 const DURATION = 550;
 const DELAY_RIPPLE = 80;
@@ -12922,7 +12922,7 @@ const TouchRipple = /* @__PURE__ */ reactExports.forwardRef(function TouchRipple
     center: centerProp = false,
     classes = {},
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$w);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$v);
   const [ripples, setRipples] = reactExports.useState([]);
   const nextKey = reactExports.useRef(0);
   const rippleCallback = reactExports.useRef(null);
@@ -13081,8 +13081,8 @@ function getButtonBaseUtilityClass(slot) {
   return generateUtilityClass("MuiButtonBase", slot);
 }
 const buttonBaseClasses = generateUtilityClasses("MuiButtonBase", ["root", "disabled", "focusVisible"]);
-const _excluded$v = ["action", "centerRipple", "children", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "LinkComponent", "onBlur", "onClick", "onContextMenu", "onDragLeave", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "tabIndex", "TouchRippleProps", "touchRippleRef", "type"];
-const useUtilityClasses$q = (ownerState) => {
+const _excluded$u = ["action", "centerRipple", "children", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "LinkComponent", "onBlur", "onClick", "onContextMenu", "onDragLeave", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "tabIndex", "TouchRippleProps", "touchRippleRef", "type"];
+const useUtilityClasses$p = (ownerState) => {
   const {
     disabled,
     focusVisible,
@@ -13176,7 +13176,7 @@ const ButtonBase = /* @__PURE__ */ reactExports.forwardRef(function ButtonBase2(
     TouchRippleProps,
     touchRippleRef,
     type
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$v);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$u);
   const buttonRef = reactExports.useRef(null);
   const rippleRef = reactExports.useRef(null);
   const handleRippleRef = useForkRef(rippleRef, touchRippleRef);
@@ -13323,7 +13323,7 @@ const ButtonBase = /* @__PURE__ */ reactExports.forwardRef(function ButtonBase2(
     tabIndex,
     focusVisible
   });
-  const classes = useUtilityClasses$q(ownerState);
+  const classes = useUtilityClasses$p(ownerState);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ButtonBaseRoot, _extends({
     as: ComponentProp,
     className: clsx(classes.root, className),
@@ -13359,8 +13359,8 @@ function getIconButtonUtilityClass(slot) {
   return generateUtilityClass("MuiIconButton", slot);
 }
 const iconButtonClasses = generateUtilityClasses("MuiIconButton", ["root", "disabled", "colorInherit", "colorPrimary", "colorSecondary", "colorError", "colorInfo", "colorSuccess", "colorWarning", "edgeStart", "edgeEnd", "sizeSmall", "sizeMedium", "sizeLarge"]);
-const _excluded$u = ["edge", "children", "className", "color", "disabled", "disableFocusRipple", "size"];
-const useUtilityClasses$p = (ownerState) => {
+const _excluded$t = ["edge", "children", "className", "color", "disabled", "disableFocusRipple", "size"];
+const useUtilityClasses$o = (ownerState) => {
   const {
     classes,
     disabled,
@@ -13454,7 +13454,7 @@ const IconButton = /* @__PURE__ */ reactExports.forwardRef(function IconButton2(
     disabled = false,
     disableFocusRipple = false,
     size = "medium"
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$u);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$t);
   const ownerState = _extends({}, props, {
     edge,
     color: color2,
@@ -13462,7 +13462,7 @@ const IconButton = /* @__PURE__ */ reactExports.forwardRef(function IconButton2(
     disableFocusRipple,
     size
   });
-  const classes = useUtilityClasses$p(ownerState);
+  const classes = useUtilityClasses$o(ownerState);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(IconButtonRoot, _extends({
     className: clsx(classes.root, className),
     centerRipple: true,
@@ -13479,8 +13479,8 @@ function getTypographyUtilityClass(slot) {
   return generateUtilityClass("MuiTypography", slot);
 }
 generateUtilityClasses("MuiTypography", ["root", "h1", "h2", "h3", "h4", "h5", "h6", "subtitle1", "subtitle2", "body1", "body2", "inherit", "button", "caption", "overline", "alignLeft", "alignRight", "alignCenter", "alignJustify", "noWrap", "gutterBottom", "paragraph"]);
-const _excluded$t = ["align", "className", "component", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"];
-const useUtilityClasses$o = (ownerState) => {
+const _excluded$s = ["align", "className", "component", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"];
+const useUtilityClasses$n = (ownerState) => {
   const {
     align,
     gutterBottom,
@@ -13563,7 +13563,7 @@ const Typography = /* @__PURE__ */ reactExports.forwardRef(function Typography2(
     paragraph: paragraph2 = false,
     variant = "body1",
     variantMapping = defaultVariantMapping
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$t);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$s);
   const ownerState = _extends({}, props, {
     align,
     color: color2,
@@ -13576,7 +13576,7 @@ const Typography = /* @__PURE__ */ reactExports.forwardRef(function Typography2(
     variantMapping
   });
   const Component2 = component || (paragraph2 ? "p" : variantMapping[variant] || defaultVariantMapping[variant]) || "span";
-  const classes = useUtilityClasses$o(ownerState);
+  const classes = useUtilityClasses$n(ownerState);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(TypographyRoot, _extends({
     as: Component2,
     ref,
@@ -14173,7 +14173,7 @@ function useModal(parameters) {
     hasTransition
   };
 }
-const _excluded$s = ["onChange", "maxRows", "minRows", "style", "value"];
+const _excluded$r = ["onChange", "maxRows", "minRows", "style", "value"];
 function getStyleValue(value) {
   return parseInt(value, 10) || 0;
 }
@@ -14202,7 +14202,7 @@ const TextareaAutosize = /* @__PURE__ */ reactExports.forwardRef(function Textar
     minRows = 1,
     style: style2,
     value
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$s);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$r);
   const {
     current: isControlled
   } = reactExports.useRef(value != null);
@@ -14383,7 +14383,7 @@ function getInputBaseUtilityClass(slot) {
 }
 const inputBaseClasses = generateUtilityClasses("MuiInputBase", ["root", "formControl", "focused", "disabled", "adornedStart", "adornedEnd", "error", "sizeSmall", "multiline", "colorSecondary", "fullWidth", "hiddenLabel", "readOnly", "input", "inputSizeSmall", "inputMultiline", "inputTypeSearch", "inputAdornedStart", "inputAdornedEnd", "inputHiddenLabel"]);
 const inputBaseClasses$1 = inputBaseClasses;
-const _excluded$r = ["aria-describedby", "autoComplete", "autoFocus", "className", "color", "components", "componentsProps", "defaultValue", "disabled", "disableInjectingGlobalStyles", "endAdornment", "error", "fullWidth", "id", "inputComponent", "inputProps", "inputRef", "margin", "maxRows", "minRows", "multiline", "name", "onBlur", "onChange", "onClick", "onFocus", "onKeyDown", "onKeyUp", "placeholder", "readOnly", "renderSuffix", "rows", "size", "slotProps", "slots", "startAdornment", "type", "value"];
+const _excluded$q = ["aria-describedby", "autoComplete", "autoFocus", "className", "color", "components", "componentsProps", "defaultValue", "disabled", "disableInjectingGlobalStyles", "endAdornment", "error", "fullWidth", "id", "inputComponent", "inputProps", "inputRef", "margin", "maxRows", "minRows", "multiline", "name", "onBlur", "onChange", "onClick", "onFocus", "onKeyDown", "onKeyUp", "placeholder", "readOnly", "renderSuffix", "rows", "size", "slotProps", "slots", "startAdornment", "type", "value"];
 const rootOverridesResolver = (props, styles2) => {
   const {
     ownerState
@@ -14396,7 +14396,7 @@ const inputOverridesResolver = (props, styles2) => {
   } = props;
   return [styles2.input, ownerState.size === "small" && styles2.inputSizeSmall, ownerState.multiline && styles2.inputMultiline, ownerState.type === "search" && styles2.inputTypeSearch, ownerState.startAdornment && styles2.inputAdornedStart, ownerState.endAdornment && styles2.inputAdornedEnd, ownerState.hiddenLabel && styles2.inputHiddenLabel];
 };
-const useUtilityClasses$n = (ownerState) => {
+const useUtilityClasses$m = (ownerState) => {
   const {
     classes,
     color: color2,
@@ -14607,7 +14607,7 @@ const InputBase = /* @__PURE__ */ reactExports.forwardRef(function InputBase2(in
     startAdornment,
     type = "text",
     value: valueProp
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$r);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$q);
   const value = inputPropsProp.value != null ? inputPropsProp.value : valueProp;
   const {
     current: isControlled
@@ -14750,7 +14750,7 @@ const InputBase = /* @__PURE__ */ reactExports.forwardRef(function InputBase2(in
     startAdornment,
     type
   });
-  const classes = useUtilityClasses$n(ownerState);
+  const classes = useUtilityClasses$m(ownerState);
   const Root = slots.root || components.Root || InputBaseRoot;
   const rootProps = slotProps.root || componentsProps.root || {};
   const Input3 = slots.input || components.Input || InputBaseComponent;
@@ -14826,8 +14826,8 @@ function getAvatarUtilityClass(slot) {
   return generateUtilityClass("MuiAvatar", slot);
 }
 generateUtilityClasses("MuiAvatar", ["root", "colorDefault", "circular", "rounded", "square", "img", "fallback"]);
-const _excluded$q = ["alt", "children", "className", "component", "imgProps", "sizes", "src", "srcSet", "variant"];
-const useUtilityClasses$m = (ownerState) => {
+const _excluded$p = ["alt", "children", "className", "component", "imgProps", "sizes", "src", "srcSet", "variant"];
+const useUtilityClasses$l = (ownerState) => {
   const {
     classes,
     variant,
@@ -14970,7 +14970,7 @@ const Avatar = /* @__PURE__ */ reactExports.forwardRef(function Avatar2(inProps,
     src,
     srcSet,
     variant = "circular"
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$q);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$p);
   let children = null;
   const loaded = useLoaded(_extends({}, imgProps, {
     src,
@@ -14983,7 +14983,7 @@ const Avatar = /* @__PURE__ */ reactExports.forwardRef(function Avatar2(inProps,
     component,
     variant
   });
-  const classes = useUtilityClasses$m(ownerState);
+  const classes = useUtilityClasses$l(ownerState);
   if (hasImgNotFailing) {
     children = /* @__PURE__ */ jsxRuntimeExports.jsx(AvatarImg, _extends({
       alt,
@@ -15013,7 +15013,7 @@ const Avatar = /* @__PURE__ */ reactExports.forwardRef(function Avatar2(inProps,
   }));
 });
 const Avatar$1 = Avatar;
-const _excluded$p = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
+const _excluded$o = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
 const styles$1 = {
   entering: {
     opacity: 1
@@ -15044,7 +15044,7 @@ const Fade = /* @__PURE__ */ reactExports.forwardRef(function Fade2(props, ref) 
     timeout = defaultTimeout,
     // eslint-disable-next-line react/prop-types
     TransitionComponent = Transition$1
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$p);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$o);
   const nodeRef = reactExports.useRef(null);
   const handleRef = useForkRef(nodeRef, children.ref, ref);
   const normalizedTransitionCallback = (callback) => (maybeIsAppearing) => {
@@ -15124,8 +15124,8 @@ function getBackdropUtilityClass(slot) {
   return generateUtilityClass("MuiBackdrop", slot);
 }
 generateUtilityClasses("MuiBackdrop", ["root", "invisible"]);
-const _excluded$o = ["children", "className", "component", "components", "componentsProps", "invisible", "open", "slotProps", "slots", "TransitionComponent", "transitionDuration"];
-const useUtilityClasses$l = (ownerState) => {
+const _excluded$n = ["children", "className", "component", "components", "componentsProps", "invisible", "open", "slotProps", "slots", "TransitionComponent", "transitionDuration"];
+const useUtilityClasses$k = (ownerState) => {
   const {
     classes,
     invisible
@@ -15178,12 +15178,12 @@ const Backdrop = /* @__PURE__ */ reactExports.forwardRef(function Backdrop2(inPr
     slots = {},
     TransitionComponent = Fade$1,
     transitionDuration
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$o);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$n);
   const ownerState = _extends({}, props, {
     component,
     invisible
   });
-  const classes = useUtilityClasses$l(ownerState);
+  const classes = useUtilityClasses$k(ownerState);
   const rootSlotProps = (_slotProps$root = slotProps.root) != null ? _slotProps$root : componentsProps.root;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(TransitionComponent, _extends({
     in: open,
@@ -15202,280 +15202,6 @@ const Backdrop = /* @__PURE__ */ reactExports.forwardRef(function Backdrop2(inPr
   }));
 });
 const Backdrop$1 = Backdrop;
-function getButtonUtilityClass(slot) {
-  return generateUtilityClass("MuiButton", slot);
-}
-const buttonClasses = generateUtilityClasses("MuiButton", ["root", "text", "textInherit", "textPrimary", "textSecondary", "textSuccess", "textError", "textInfo", "textWarning", "outlined", "outlinedInherit", "outlinedPrimary", "outlinedSecondary", "outlinedSuccess", "outlinedError", "outlinedInfo", "outlinedWarning", "contained", "containedInherit", "containedPrimary", "containedSecondary", "containedSuccess", "containedError", "containedInfo", "containedWarning", "disableElevation", "focusVisible", "disabled", "colorInherit", "textSizeSmall", "textSizeMedium", "textSizeLarge", "outlinedSizeSmall", "outlinedSizeMedium", "outlinedSizeLarge", "containedSizeSmall", "containedSizeMedium", "containedSizeLarge", "sizeMedium", "sizeSmall", "sizeLarge", "fullWidth", "startIcon", "endIcon", "iconSizeSmall", "iconSizeMedium", "iconSizeLarge"]);
-const buttonClasses$1 = buttonClasses;
-const ButtonGroupContext = /* @__PURE__ */ reactExports.createContext({});
-const ButtonGroupContext$1 = ButtonGroupContext;
-const ButtonGroupButtonContext = /* @__PURE__ */ reactExports.createContext(void 0);
-const ButtonGroupButtonContext$1 = ButtonGroupButtonContext;
-const _excluded$n = ["children", "color", "component", "className", "disabled", "disableElevation", "disableFocusRipple", "endIcon", "focusVisibleClassName", "fullWidth", "size", "startIcon", "type", "variant"];
-const useUtilityClasses$k = (ownerState) => {
-  const {
-    color: color2,
-    disableElevation,
-    fullWidth,
-    size,
-    variant,
-    classes
-  } = ownerState;
-  const slots = {
-    root: ["root", variant, `${variant}${capitalize(color2)}`, `size${capitalize(size)}`, `${variant}Size${capitalize(size)}`, color2 === "inherit" && "colorInherit", disableElevation && "disableElevation", fullWidth && "fullWidth"],
-    label: ["label"],
-    startIcon: ["startIcon", `iconSize${capitalize(size)}`],
-    endIcon: ["endIcon", `iconSize${capitalize(size)}`]
-  };
-  const composedClasses = composeClasses(slots, getButtonUtilityClass, classes);
-  return _extends({}, classes, composedClasses);
-};
-const commonIconStyles = (ownerState) => _extends({}, ownerState.size === "small" && {
-  "& > *:nth-of-type(1)": {
-    fontSize: 18
-  }
-}, ownerState.size === "medium" && {
-  "& > *:nth-of-type(1)": {
-    fontSize: 20
-  }
-}, ownerState.size === "large" && {
-  "& > *:nth-of-type(1)": {
-    fontSize: 22
-  }
-});
-const ButtonRoot = styled(ButtonBase$1, {
-  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
-  name: "MuiButton",
-  slot: "Root",
-  overridesResolver: (props, styles2) => {
-    const {
-      ownerState
-    } = props;
-    return [styles2.root, styles2[ownerState.variant], styles2[`${ownerState.variant}${capitalize(ownerState.color)}`], styles2[`size${capitalize(ownerState.size)}`], styles2[`${ownerState.variant}Size${capitalize(ownerState.size)}`], ownerState.color === "inherit" && styles2.colorInherit, ownerState.disableElevation && styles2.disableElevation, ownerState.fullWidth && styles2.fullWidth];
-  }
-})(({
-  theme,
-  ownerState
-}) => {
-  var _theme$palette$getCon, _theme$palette;
-  const inheritContainedBackgroundColor = theme.palette.mode === "light" ? theme.palette.grey[300] : theme.palette.grey[800];
-  const inheritContainedHoverBackgroundColor = theme.palette.mode === "light" ? theme.palette.grey.A100 : theme.palette.grey[700];
-  return _extends({}, theme.typography.button, {
-    minWidth: 64,
-    padding: "6px 16px",
-    borderRadius: (theme.vars || theme).shape.borderRadius,
-    transition: theme.transitions.create(["background-color", "box-shadow", "border-color", "color"], {
-      duration: theme.transitions.duration.short
-    }),
-    "&:hover": _extends({
-      textDecoration: "none",
-      backgroundColor: theme.vars ? `rgba(${theme.vars.palette.text.primaryChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette.text.primary, theme.palette.action.hoverOpacity),
-      // Reset on touch devices, it doesn't add specificity
-      "@media (hover: none)": {
-        backgroundColor: "transparent"
-      }
-    }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
-      backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
-      // Reset on touch devices, it doesn't add specificity
-      "@media (hover: none)": {
-        backgroundColor: "transparent"
-      }
-    }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
-      border: `1px solid ${(theme.vars || theme).palette[ownerState.color].main}`,
-      backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : alpha(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
-      // Reset on touch devices, it doesn't add specificity
-      "@media (hover: none)": {
-        backgroundColor: "transparent"
-      }
-    }, ownerState.variant === "contained" && {
-      backgroundColor: theme.vars ? theme.vars.palette.Button.inheritContainedHoverBg : inheritContainedHoverBackgroundColor,
-      boxShadow: (theme.vars || theme).shadows[4],
-      // Reset on touch devices, it doesn't add specificity
-      "@media (hover: none)": {
-        boxShadow: (theme.vars || theme).shadows[2],
-        backgroundColor: (theme.vars || theme).palette.grey[300]
-      }
-    }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
-      backgroundColor: (theme.vars || theme).palette[ownerState.color].dark,
-      // Reset on touch devices, it doesn't add specificity
-      "@media (hover: none)": {
-        backgroundColor: (theme.vars || theme).palette[ownerState.color].main
-      }
-    }),
-    "&:active": _extends({}, ownerState.variant === "contained" && {
-      boxShadow: (theme.vars || theme).shadows[8]
-    }),
-    [`&.${buttonClasses$1.focusVisible}`]: _extends({}, ownerState.variant === "contained" && {
-      boxShadow: (theme.vars || theme).shadows[6]
-    }),
-    [`&.${buttonClasses$1.disabled}`]: _extends({
-      color: (theme.vars || theme).palette.action.disabled
-    }, ownerState.variant === "outlined" && {
-      border: `1px solid ${(theme.vars || theme).palette.action.disabledBackground}`
-    }, ownerState.variant === "contained" && {
-      color: (theme.vars || theme).palette.action.disabled,
-      boxShadow: (theme.vars || theme).shadows[0],
-      backgroundColor: (theme.vars || theme).palette.action.disabledBackground
-    })
-  }, ownerState.variant === "text" && {
-    padding: "6px 8px"
-  }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
-    color: (theme.vars || theme).palette[ownerState.color].main
-  }, ownerState.variant === "outlined" && {
-    padding: "5px 15px",
-    border: "1px solid currentColor"
-  }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
-    color: (theme.vars || theme).palette[ownerState.color].main,
-    border: theme.vars ? `1px solid rgba(${theme.vars.palette[ownerState.color].mainChannel} / 0.5)` : `1px solid ${alpha(theme.palette[ownerState.color].main, 0.5)}`
-  }, ownerState.variant === "contained" && {
-    color: theme.vars ? (
-      // this is safe because grey does not change between default light/dark mode
-      theme.vars.palette.text.primary
-    ) : (_theme$palette$getCon = (_theme$palette = theme.palette).getContrastText) == null ? void 0 : _theme$palette$getCon.call(_theme$palette, theme.palette.grey[300]),
-    backgroundColor: theme.vars ? theme.vars.palette.Button.inheritContainedBg : inheritContainedBackgroundColor,
-    boxShadow: (theme.vars || theme).shadows[2]
-  }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
-    color: (theme.vars || theme).palette[ownerState.color].contrastText,
-    backgroundColor: (theme.vars || theme).palette[ownerState.color].main
-  }, ownerState.color === "inherit" && {
-    color: "inherit",
-    borderColor: "currentColor"
-  }, ownerState.size === "small" && ownerState.variant === "text" && {
-    padding: "4px 5px",
-    fontSize: theme.typography.pxToRem(13)
-  }, ownerState.size === "large" && ownerState.variant === "text" && {
-    padding: "8px 11px",
-    fontSize: theme.typography.pxToRem(15)
-  }, ownerState.size === "small" && ownerState.variant === "outlined" && {
-    padding: "3px 9px",
-    fontSize: theme.typography.pxToRem(13)
-  }, ownerState.size === "large" && ownerState.variant === "outlined" && {
-    padding: "7px 21px",
-    fontSize: theme.typography.pxToRem(15)
-  }, ownerState.size === "small" && ownerState.variant === "contained" && {
-    padding: "4px 10px",
-    fontSize: theme.typography.pxToRem(13)
-  }, ownerState.size === "large" && ownerState.variant === "contained" && {
-    padding: "8px 22px",
-    fontSize: theme.typography.pxToRem(15)
-  }, ownerState.fullWidth && {
-    width: "100%"
-  });
-}, ({
-  ownerState
-}) => ownerState.disableElevation && {
-  boxShadow: "none",
-  "&:hover": {
-    boxShadow: "none"
-  },
-  [`&.${buttonClasses$1.focusVisible}`]: {
-    boxShadow: "none"
-  },
-  "&:active": {
-    boxShadow: "none"
-  },
-  [`&.${buttonClasses$1.disabled}`]: {
-    boxShadow: "none"
-  }
-});
-const ButtonStartIcon = styled("span", {
-  name: "MuiButton",
-  slot: "StartIcon",
-  overridesResolver: (props, styles2) => {
-    const {
-      ownerState
-    } = props;
-    return [styles2.startIcon, styles2[`iconSize${capitalize(ownerState.size)}`]];
-  }
-})(({
-  ownerState
-}) => _extends({
-  display: "inherit",
-  marginRight: 8,
-  marginLeft: -4
-}, ownerState.size === "small" && {
-  marginLeft: -2
-}, commonIconStyles(ownerState)));
-const ButtonEndIcon = styled("span", {
-  name: "MuiButton",
-  slot: "EndIcon",
-  overridesResolver: (props, styles2) => {
-    const {
-      ownerState
-    } = props;
-    return [styles2.endIcon, styles2[`iconSize${capitalize(ownerState.size)}`]];
-  }
-})(({
-  ownerState
-}) => _extends({
-  display: "inherit",
-  marginRight: -4,
-  marginLeft: 8
-}, ownerState.size === "small" && {
-  marginRight: -2
-}, commonIconStyles(ownerState)));
-const Button = /* @__PURE__ */ reactExports.forwardRef(function Button2(inProps, ref) {
-  const contextProps = reactExports.useContext(ButtonGroupContext$1);
-  const buttonGroupButtonContextPositionClassName = reactExports.useContext(ButtonGroupButtonContext$1);
-  const resolvedProps = resolveProps(contextProps, inProps);
-  const props = useThemeProps({
-    props: resolvedProps,
-    name: "MuiButton"
-  });
-  const {
-    children,
-    color: color2 = "primary",
-    component = "button",
-    className,
-    disabled = false,
-    disableElevation = false,
-    disableFocusRipple = false,
-    endIcon: endIconProp,
-    focusVisibleClassName,
-    fullWidth = false,
-    size = "medium",
-    startIcon: startIconProp,
-    type,
-    variant = "text"
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$n);
-  const ownerState = _extends({}, props, {
-    color: color2,
-    component,
-    disabled,
-    disableElevation,
-    disableFocusRipple,
-    fullWidth,
-    size,
-    type,
-    variant
-  });
-  const classes = useUtilityClasses$k(ownerState);
-  const startIcon = startIconProp && /* @__PURE__ */ jsxRuntimeExports.jsx(ButtonStartIcon, {
-    className: classes.startIcon,
-    ownerState,
-    children: startIconProp
-  });
-  const endIcon = endIconProp && /* @__PURE__ */ jsxRuntimeExports.jsx(ButtonEndIcon, {
-    className: classes.endIcon,
-    ownerState,
-    children: endIconProp
-  });
-  const positionClassName = buttonGroupButtonContextPositionClassName || "";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ButtonRoot, _extends({
-    ownerState,
-    className: clsx(contextProps.className, classes.root, className, positionClassName),
-    component,
-    disabled,
-    focusRipple: !disableFocusRipple,
-    focusVisibleClassName: clsx(classes.focusVisible, focusVisibleClassName),
-    ref,
-    type
-  }, other, {
-    classes,
-    children: [startIcon, children, endIcon]
-  }));
-});
-const Button$1 = Button;
 const html$4 = (theme, enableColorScheme) => _extends({
   WebkitFontSmoothing: "antialiased",
   // Antialiasing.
@@ -19479,10 +19205,10 @@ class Config {
   constructor(props) {
     try {
       this.API_URL = "https://api.younet.ai/api";
-      this.RIGHT = Number(props.RIGHT) || 24;
-      this.BOTTOM = Number(props.BOTTOM) || 20;
-      this.HEIGHT = Number(props.HEIGHT) || 60;
-      this.WIDTH = Number(props.WIDTH) || 60;
+      this.RIGHT = (props == null ? void 0 : props.RIGHT) ? Number(props.RIGHT) : 24;
+      this.BOTTOM = (props == null ? void 0 : props.BOTTOM) ? Number(props.BOTTOM) : 20;
+      this.HEIGHT = (props == null ? void 0 : props.HEIGHT) ? Number(props.HEIGHT) : 60;
+      this.WIDTH = props.WIDTH ? Number(props.WIDTH) : 60;
     } catch (error) {
       console.error("Config: ", error);
     }
@@ -54605,9 +54331,61 @@ function defaultUrlTransform(value) {
   return "";
 }
 const CodeBlock = ({ language, value }) => {
+  const [copied, setCopied] = reactExports.useState(false);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(React.Fragment, { children: [
     value,
-    /* @__PURE__ */ jsxRuntimeExports.jsx(lib.CopyToClipboard, { text: value, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button$1, { variant: "contained", color: "primary", children: "Copy to Clipboard" }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      lib.CopyToClipboard,
+      {
+        text: value,
+        onCopy: () => {
+          setCopied(true);
+          setTimeout(() => {
+            setCopied(false);
+          }, 1e3);
+        },
+        children: copied ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "svg",
+          {
+            xmlns: "http://www.w3.org/2000/svg",
+            class: "icon icon-tabler icon-tabler-clipboard-check",
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            "stroke-width": "1.5",
+            stroke: "#2c3e50",
+            fill: "none",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { stroke: "none", d: "M0 0h24v24H0z", fill: "none" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 14l2 2l4 -4" })
+            ]
+          }
+        ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "svg",
+          {
+            xmlns: "http://www.w3.org/2000/svg",
+            class: "icon icon-tabler icon-tabler-copy",
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            "stroke-width": "1.5",
+            stroke: "#2c3e50",
+            fill: "none",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { stroke: "none", d: "M0 0h24v24H0z", fill: "none" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" })
+            ]
+          }
+        )
+      }
+    )
   ] });
 };
 const ImageComponent = ({ src, alt, ...props }) => {
@@ -54804,7 +54582,7 @@ const Message = ({
     }
   );
 };
-const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:flex-end}.msg-box.user{flex-direction:row-reverse;color:#3976ef;align-items:center!important}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}.chatbox-input.sending legend,.chatbox-input.sending label{display:none}.dots-loading{display:inline-block;clip-path:inset(0 1ch 0 0);animation:dots-loading 1s steps(4) infinite;color:#c3c3c3;margin-left:3px}@keyframes dots-loading{to{clip-path:inset(0 -1ch 0 0)}}";
+const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:flex-end}.msg-box.user{flex-direction:row-reverse;color:#3976ef;align-items:center!important}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}.chatbox-input.sending legend,.chatbox-input.sending label{display:none}.dots-loading{display:inline-block;clip-path:inset(0 1ch 0 0);animation:dots-loading 1s steps(4) infinite;color:#c3c3c3;margin-left:3px}@keyframes dots-loading{to{clip-path:inset(0 -1ch 0 0)}}.form-input{position:relative;width:100%}.form-input input::placeholder{opacity:0}.form-input input{width:100%;height:60px;padding:10px;outline:none;border:1px solid rgba(0,0,0,.4);box-sizing:border-box;border-radius:4px;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px}.form-input:hover input{border:1px solid rgba(0,0,0,.8)}.form-input label{position:absolute;left:10px;top:50%;transform:translateY(-50%);transition:.3s;color:#00000080;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px}.form-input input:focus+label,.form-input input:not(:placeholder-shown)+label{top:0;font-size:12px;color:#3976ef;background:#fff;padding:7px}.form-input input:focus{border:1.8px solid rgb(57,118,239)}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
 /*!
@@ -55365,29 +55143,6 @@ function Chatbox({
             )
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Box$1,
-          {
-            sx: {
-              display: "flex",
-              justifyContent: "center",
-              padding: "30px 0"
-            },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Logo, { stage, isLoading: dataLoading, textInputText: txt })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            style: {
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              paddingBottom: "10px"
-            },
-            children: isMsgSending && searchSource !== "" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dots-loading", children: searchSource })
-          }
-        ),
         chatNotExist && /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Chat Not Exist" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           Box$1,
@@ -55431,97 +55186,121 @@ function Chatbox({
           Box$1,
           {
             sx: {
+              display: "flex",
+              justifyContent: "center",
+              padding: "10px 0"
+            },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Logo, { stage, isLoading: dataLoading, textInputText: txt })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingBottom: "10px"
+            },
+            children: isMsgSending && searchSource !== "" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dots-loading", children: searchSource })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Box$1,
+          {
+            sx: {
               width: "100%",
               display: "flex",
               justifyContent: "center",
               padding: "15px 10px"
             },
-            children: dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { height: "73px" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              TextField$1,
-              {
-                className: `chatbox-input }
-              ${isMsgSending ? "sending" : ""}
-            `,
-                multiline: true,
-                disabled: isMsgSending,
-                sx: { width: "100%" },
-                onInput: (e2) => {
-                  setTxt((prev2) => {
-                    var _a, _b, _c, _d;
-                    if ((prev2 == null ? void 0 : prev2.length) > 0 && ((_b = (_a = e2 == null ? void 0 : e2.target) == null ? void 0 : _a.value) == null ? void 0 : _b.length) == 0) {
-                      console.log("424");
-                      setStage(1);
-                    } else if ((!prev2 || (prev2 == null ? void 0 : prev2.length) == 0) && ((_d = (_c = e2.target) == null ? void 0 : _c.value) == null ? void 0 : _d.length) > 0) {
-                      console.log("430");
-                      setStage(2);
-                    }
-                    return e2.target.value;
-                  });
-                },
-                label: !isMsgSending && `Talk to "${modelName}"`,
-                focused: isInputFocused,
-                onFocus: () => {
-                  setInputFocused(true);
-                },
-                onBlur: () => setInputFocused(false),
-                variant: "outlined",
-                onKeyDown: (e2) => {
-                  if (e2.key == "Enter" && !isMobileDevice) {
-                    if (!e2.shiftKey) {
+            children: dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { height: "73px" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { class: "form-input", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                IconButton$1,
+                {
+                  sx: {
+                    borderRadius: "5px",
+                    alignSelf: "flex-end",
+                    position: "absolute",
+                    right: "5px",
+                    top: "50%",
+                    transform: "translateY(-50%)"
+                  },
+                  onClick: (e2) => {
+                    if (isMsgSending) {
+                      handleAbortRequest();
+                    } else {
                       sendMessage(e2);
                     }
-                  }
-                },
-                fullWidth: true,
-                inputRef: questionRef,
-                InputProps: {
-                  style: { paddingRight: "5px" },
-                  endAdornment: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    IconButton$1,
+                  },
+                  children: isMsgSending ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "svg",
                     {
-                      sx: {
-                        borderRadius: "5px",
-                        alignSelf: "flex-end"
-                      },
-                      onClick: (e2) => {
-                        if (isMsgSending) {
-                          handleAbortRequest();
-                        } else {
-                          sendMessage(e2);
-                        }
-                      },
-                      children: isMsgSending ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "svg",
-                        {
-                          className: "MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-p79yt4",
-                          "aria-hidden": "true",
-                          viewBox: "0 0 24 24",
-                          "data-testid": "StopIcon",
-                          tabIndex: "-1",
-                          fill: "#5f6368",
-                          height: "24",
-                          width: "24",
-                          children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 6h12v12H6z" })
-                        }
-                      ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "svg",
-                        {
-                          className: "MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1ly4ijh",
-                          focusable: "false",
-                          "aria-hidden": "true",
-                          viewBox: "0 0 24 24",
-                          height: "24",
-                          width: "24",
-                          "data-testid": "SendIcon",
-                          fill: "rgb(57, 118, 239)",
-                          children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" })
-                        }
-                      )
+                      className: "MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-p79yt4",
+                      "aria-hidden": "true",
+                      viewBox: "0 0 24 24",
+                      "data-testid": "StopIcon",
+                      tabIndex: "-1",
+                      fill: "#5f6368",
+                      height: "24",
+                      width: "24",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 6h12v12H6z" })
+                    }
+                  ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "svg",
+                    {
+                      className: "MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1ly4ijh",
+                      focusable: "false",
+                      "aria-hidden": "true",
+                      viewBox: "0 0 24 24",
+                      height: "24",
+                      width: "24",
+                      "data-testid": "SendIcon",
+                      fill: "rgb(57, 118, 239)",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" })
                     }
                   )
                 }
-              }
-            ) })
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  disabled: isMsgSending,
+                  onInput: (e2) => {
+                    setTxt((prev2) => {
+                      var _a, _b, _c, _d;
+                      if ((prev2 == null ? void 0 : prev2.length) > 0 && ((_b = (_a = e2 == null ? void 0 : e2.target) == null ? void 0 : _a.value) == null ? void 0 : _b.length) == 0) {
+                        console.log("424");
+                        setStage(1);
+                      } else if ((!prev2 || (prev2 == null ? void 0 : prev2.length) == 0) && ((_d = (_c = e2.target) == null ? void 0 : _c.value) == null ? void 0 : _d.length) > 0) {
+                        console.log("430");
+                        setStage(2);
+                      }
+                      return e2.target.value;
+                    });
+                  },
+                  label: !isMsgSending && `Talk to "${modelName}"`,
+                  focused: isInputFocused,
+                  onFocus: () => {
+                    setInputFocused(true);
+                  },
+                  onBlur: () => setInputFocused(false),
+                  variant: "outlined",
+                  onKeyDown: (e2) => {
+                    console.log("e.key", e2.key);
+                    if (e2.key == "Enter" && !isMobileDevice) {
+                      if (!e2.shiftKey) {
+                        sendMessage(e2);
+                      }
+                    }
+                  },
+                  placeholder: !isMsgSending && `Talk to "${modelName}"`,
+                  id: "younet-input",
+                  ref: questionRef
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { for: "younet-input", children: !isMsgSending && `Talk to "${modelName}"` })
+            ] }) })
           }
         )
       ]
