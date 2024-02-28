@@ -51099,7 +51099,7 @@ const Message = ({
     }
   );
 };
-const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:flex-end}.msg-box.user{flex-direction:row-reverse;color:#3976ef;align-items:center!important}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}.chatbox-input.sending legend,.chatbox-input.sending label{display:none}.dots-loading{display:inline-block;clip-path:inset(0 1ch 0 0);animation:dots-loading 1s steps(4) infinite;color:#c3c3c3;margin-left:3px}@keyframes dots-loading{to{clip-path:inset(0 -1ch 0 0)}}.form-input{position:relative;width:100%}.form-input textarea::placeholder{opacity:0}.form-input textarea{width:100%;height:70px;padding:16.5px 45px 16.5px 14.5px;outline:none;border:1px solid rgba(0,0,0,.4);box-sizing:border-box;border-radius:4px;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px;max-height:120px;overflow-y:hidden;resize:none}.form-input textarea::-webkit-scrollbar{width:6px}.form-input textarea::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.form-input textarea::-webkit-scrollbar-track{background-color:#f1f1f1}.form-input:hover textarea{border:1px solid rgba(0,0,0,.8)}.form-input label{position:absolute;left:14.5px;top:50%;transform:translateY(-50%);transition:.3s;color:#00000080;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px}.form-input textarea:focus+label,.form-input textarea:not(:placeholder-shown)+label{top:0;font-size:12px;color:#3976ef;background:#fff;padding:0 7px}.form-input textarea:focus{border:1.8px solid rgb(57,118,239)}";
+const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:flex-end}.msg-box.user{flex-direction:row-reverse;color:#3976ef;align-items:center!important}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}.chatbox-input.sending legend,.chatbox-input.sending label{display:none}.dots-loading{display:inline-block;clip-path:inset(0 1ch 0 0);animation:dots-loading 1s steps(4) infinite;color:#c3c3c3;margin-left:3px}@keyframes dots-loading{to{clip-path:inset(0 -1ch 0 0)}}.form-input{position:relative;width:100%}.form-input textarea::placeholder{opacity:0}.form-input textarea{width:100%;height:70px;padding:16.5px 45px 16.5px 14.5px;outline:none;border:1px solid rgba(0,0,0,.4);box-sizing:border-box;border-radius:4px;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px;max-height:120px;overflow-y:hidden;resize:none}.form-input textarea::-webkit-scrollbar{width:6px}.form-input textarea::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.form-input textarea::-webkit-scrollbar-track{background-color:#f1f1f1}.form-input:hover textarea{border:1px solid rgba(0,0,0,.8)}.form-input label{position:absolute;left:14.5px;top:50%;transform:translateY(-50%);transition:.3s;color:#00000080;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px}.form-input textarea:focus+label,.form-input textarea:not(:placeholder-shown)+label{top:0;font-size:12px;color:#3976ef;background:#fff;padding:0 7px}.form-input textarea:focus{border:1.8px solid rgb(57,118,239)}.inner-msg ol,.inner-msg ul{padding-left:20px}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
 /*!
@@ -51338,6 +51338,2035 @@ const MessageStructureSkeleton = ({ loading = false, modelInfo = {} }) => {
     )
   ] });
 };
+var core = { exports: {} };
+(function(module, exports) {
+  !function(e2, t2) {
+    module.exports = t2();
+  }("undefined" != typeof self ? self : commonjsGlobal, () => (() => {
+    var e2 = { 75: function(e3) {
+      (function() {
+        var t3, n3, r3, o3, a2, i;
+        "undefined" != typeof performance && null !== performance && performance.now ? e3.exports = function() {
+          return performance.now();
+        } : "undefined" != typeof process && null !== process && process.hrtime ? (e3.exports = function() {
+          return (t3() - a2) / 1e6;
+        }, n3 = process.hrtime, o3 = (t3 = function() {
+          var e4;
+          return 1e9 * (e4 = n3())[0] + e4[1];
+        })(), i = 1e9 * process.uptime(), a2 = o3 - i) : Date.now ? (e3.exports = function() {
+          return Date.now() - r3;
+        }, r3 = Date.now()) : (e3.exports = function() {
+          return (/* @__PURE__ */ new Date()).getTime() - r3;
+        }, r3 = (/* @__PURE__ */ new Date()).getTime());
+      }).call(this);
+    }, 4087: (e3, t3, n3) => {
+      for (var r3 = n3(75), o3 = "undefined" == typeof window ? n3.g : window, a2 = ["moz", "webkit"], i = "AnimationFrame", s = o3["request" + i], u2 = o3["cancel" + i] || o3["cancelRequest" + i], l2 = 0; !s && l2 < a2.length; l2++)
+        s = o3[a2[l2] + "Request" + i], u2 = o3[a2[l2] + "Cancel" + i] || o3[a2[l2] + "CancelRequest" + i];
+      if (!s || !u2) {
+        var c2 = 0, p2 = 0, d2 = [];
+        s = function(e4) {
+          if (0 === d2.length) {
+            var t4 = r3(), n4 = Math.max(0, 16.666666666666668 - (t4 - c2));
+            c2 = n4 + t4, setTimeout(function() {
+              var e5 = d2.slice(0);
+              d2.length = 0;
+              for (var t5 = 0; t5 < e5.length; t5++)
+                if (!e5[t5].cancelled)
+                  try {
+                    e5[t5].callback(c2);
+                  } catch (e6) {
+                    setTimeout(function() {
+                      throw e6;
+                    }, 0);
+                  }
+            }, Math.round(n4));
+          }
+          return d2.push({ handle: ++p2, callback: e4, cancelled: false }), p2;
+        }, u2 = function(e4) {
+          for (var t4 = 0; t4 < d2.length; t4++)
+            d2[t4].handle === e4 && (d2[t4].cancelled = true);
+        };
+      }
+      e3.exports = function(e4) {
+        return s.call(o3, e4);
+      }, e3.exports.cancel = function() {
+        u2.apply(o3, arguments);
+      }, e3.exports.polyfill = function(e4) {
+        e4 || (e4 = o3), e4.requestAnimationFrame = s, e4.cancelAnimationFrame = u2;
+      };
+    } }, t2 = {};
+    function n2(r3) {
+      var o3 = t2[r3];
+      if (void 0 !== o3)
+        return o3.exports;
+      var a2 = t2[r3] = { exports: {} };
+      return e2[r3].call(a2.exports, a2, a2.exports, n2), a2.exports;
+    }
+    n2.n = (e3) => {
+      var t3 = e3 && e3.__esModule ? () => e3.default : () => e3;
+      return n2.d(t3, { a: t3 }), t3;
+    }, n2.d = (e3, t3) => {
+      for (var r3 in t3)
+        n2.o(t3, r3) && !n2.o(e3, r3) && Object.defineProperty(e3, r3, { enumerable: true, get: t3[r3] });
+    }, n2.g = function() {
+      if ("object" == typeof globalThis)
+        return globalThis;
+      try {
+        return this || new Function("return this")();
+      } catch (e3) {
+        if ("object" == typeof window)
+          return window;
+      }
+    }(), n2.o = (e3, t3) => Object.prototype.hasOwnProperty.call(e3, t3);
+    var r2 = {};
+    return (() => {
+      n2.d(r2, { default: () => C2 });
+      var e3 = n2(4087), t3 = n2.n(e3);
+      const o3 = function(e4) {
+        return new RegExp(/<[a-z][\s\S]*>/i).test(e4);
+      }, a2 = function(e4, t4) {
+        return Math.floor(Math.random() * (t4 - e4 + 1)) + e4;
+      };
+      var i = "TYPE_CHARACTER", s = "REMOVE_CHARACTER", u2 = "REMOVE_ALL", l2 = "REMOVE_LAST_VISIBLE_NODE", c2 = "PAUSE_FOR", p2 = "CALL_FUNCTION", d2 = "ADD_HTML_TAG_ELEMENT", f2 = "CHANGE_DELETE_SPEED", v2 = "CHANGE_DELAY", h2 = "CHANGE_CURSOR", m2 = "PASTE_STRING", y2 = "HTML_TAG";
+      function g2(e4) {
+        return g2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e5) {
+          return typeof e5;
+        } : function(e5) {
+          return e5 && "function" == typeof Symbol && e5.constructor === Symbol && e5 !== Symbol.prototype ? "symbol" : typeof e5;
+        }, g2(e4);
+      }
+      function E2(e4, t4) {
+        var n3 = Object.keys(e4);
+        if (Object.getOwnPropertySymbols) {
+          var r3 = Object.getOwnPropertySymbols(e4);
+          t4 && (r3 = r3.filter(function(t5) {
+            return Object.getOwnPropertyDescriptor(e4, t5).enumerable;
+          })), n3.push.apply(n3, r3);
+        }
+        return n3;
+      }
+      function w2(e4) {
+        for (var t4 = 1; t4 < arguments.length; t4++) {
+          var n3 = null != arguments[t4] ? arguments[t4] : {};
+          t4 % 2 ? E2(Object(n3), true).forEach(function(t5) {
+            A2(e4, t5, n3[t5]);
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e4, Object.getOwnPropertyDescriptors(n3)) : E2(Object(n3)).forEach(function(t5) {
+            Object.defineProperty(e4, t5, Object.getOwnPropertyDescriptor(n3, t5));
+          });
+        }
+        return e4;
+      }
+      function b2(e4) {
+        return function(e5) {
+          if (Array.isArray(e5))
+            return T2(e5);
+        }(e4) || function(e5) {
+          if ("undefined" != typeof Symbol && null != e5[Symbol.iterator] || null != e5["@@iterator"])
+            return Array.from(e5);
+        }(e4) || function(e5, t4) {
+          if (e5) {
+            if ("string" == typeof e5)
+              return T2(e5, t4);
+            var n3 = Object.prototype.toString.call(e5).slice(8, -1);
+            return "Object" === n3 && e5.constructor && (n3 = e5.constructor.name), "Map" === n3 || "Set" === n3 ? Array.from(e5) : "Arguments" === n3 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n3) ? T2(e5, t4) : void 0;
+          }
+        }(e4) || function() {
+          throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+        }();
+      }
+      function T2(e4, t4) {
+        (null == t4 || t4 > e4.length) && (t4 = e4.length);
+        for (var n3 = 0, r3 = new Array(t4); n3 < t4; n3++)
+          r3[n3] = e4[n3];
+        return r3;
+      }
+      function S2(e4, t4) {
+        for (var n3 = 0; n3 < t4.length; n3++) {
+          var r3 = t4[n3];
+          r3.enumerable = r3.enumerable || false, r3.configurable = true, "value" in r3 && (r3.writable = true), Object.defineProperty(e4, N2(r3.key), r3);
+        }
+      }
+      function A2(e4, t4, n3) {
+        return (t4 = N2(t4)) in e4 ? Object.defineProperty(e4, t4, { value: n3, enumerable: true, configurable: true, writable: true }) : e4[t4] = n3, e4;
+      }
+      function N2(e4) {
+        var t4 = function(e5, t5) {
+          if ("object" !== g2(e5) || null === e5)
+            return e5;
+          var n3 = e5[Symbol.toPrimitive];
+          if (void 0 !== n3) {
+            var r3 = n3.call(e5, "string");
+            if ("object" !== g2(r3))
+              return r3;
+            throw new TypeError("@@toPrimitive must return a primitive value.");
+          }
+          return String(e5);
+        }(e4);
+        return "symbol" === g2(t4) ? t4 : String(t4);
+      }
+      const C2 = function() {
+        function n3(r4, g4) {
+          var E3 = this;
+          if (function(e4, t4) {
+            if (!(e4 instanceof t4))
+              throw new TypeError("Cannot call a class as a function");
+          }(this, n3), A2(this, "state", { cursorAnimation: null, lastFrameTime: null, pauseUntil: null, eventQueue: [], eventLoop: null, eventLoopPaused: false, reverseCalledEvents: [], calledEvents: [], visibleNodes: [], initialOptions: null, elements: { container: null, wrapper: document.createElement("span"), cursor: document.createElement("span") } }), A2(this, "options", { strings: null, cursor: "|", delay: "natural", pauseFor: 1500, deleteSpeed: "natural", loop: false, autoStart: false, devMode: false, skipAddStyles: false, wrapperClassName: "Typewriter__wrapper", cursorClassName: "Typewriter__cursor", stringSplitter: null, onCreateTextNode: null, onRemoveNode: null }), A2(this, "setupWrapperElement", function() {
+            E3.state.elements.container && (E3.state.elements.wrapper.className = E3.options.wrapperClassName, E3.state.elements.cursor.className = E3.options.cursorClassName, E3.state.elements.cursor.innerHTML = E3.options.cursor, E3.state.elements.container.innerHTML = "", E3.state.elements.container.appendChild(E3.state.elements.wrapper), E3.state.elements.container.appendChild(E3.state.elements.cursor));
+          }), A2(this, "start", function() {
+            return E3.state.eventLoopPaused = false, E3.runEventLoop(), E3;
+          }), A2(this, "pause", function() {
+            return E3.state.eventLoopPaused = true, E3;
+          }), A2(this, "stop", function() {
+            return E3.state.eventLoop && ((0, e3.cancel)(E3.state.eventLoop), E3.state.eventLoop = null), E3;
+          }), A2(this, "pauseFor", function(e4) {
+            return E3.addEventToQueue(c2, { ms: e4 }), E3;
+          }), A2(this, "typeOutAllStrings", function() {
+            return "string" == typeof E3.options.strings ? (E3.typeString(E3.options.strings).pauseFor(E3.options.pauseFor), E3) : (E3.options.strings.forEach(function(e4) {
+              E3.typeString(e4).pauseFor(E3.options.pauseFor).deleteAll(E3.options.deleteSpeed);
+            }), E3);
+          }), A2(this, "typeString", function(e4) {
+            var t4 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
+            if (o3(e4))
+              return E3.typeOutHTMLString(e4, t4);
+            if (e4) {
+              var n4 = (E3.options || {}).stringSplitter, r5 = "function" == typeof n4 ? n4(e4) : e4.split("");
+              E3.typeCharacters(r5, t4);
+            }
+            return E3;
+          }), A2(this, "pasteString", function(e4) {
+            var t4 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
+            return o3(e4) ? E3.typeOutHTMLString(e4, t4, true) : (e4 && E3.addEventToQueue(m2, { character: e4, node: t4 }), E3);
+          }), A2(this, "typeOutHTMLString", function(e4) {
+            var t4 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null, n4 = arguments.length > 2 ? arguments[2] : void 0, r5 = function(e5) {
+              var t5 = document.createElement("div");
+              return t5.innerHTML = e5, t5.childNodes;
+            }(e4);
+            if (r5.length > 0)
+              for (var o4 = 0; o4 < r5.length; o4++) {
+                var a3 = r5[o4], i2 = a3.innerHTML;
+                a3 && 3 !== a3.nodeType ? (a3.innerHTML = "", E3.addEventToQueue(d2, { node: a3, parentNode: t4 }), n4 ? E3.pasteString(i2, a3) : E3.typeString(i2, a3)) : a3.textContent && (n4 ? E3.pasteString(a3.textContent, t4) : E3.typeString(a3.textContent, t4));
+              }
+            return E3;
+          }), A2(this, "deleteAll", function() {
+            var e4 = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "natural";
+            return E3.addEventToQueue(u2, { speed: e4 }), E3;
+          }), A2(this, "changeDeleteSpeed", function(e4) {
+            if (!e4)
+              throw new Error("Must provide new delete speed");
+            return E3.addEventToQueue(f2, { speed: e4 }), E3;
+          }), A2(this, "changeDelay", function(e4) {
+            if (!e4)
+              throw new Error("Must provide new delay");
+            return E3.addEventToQueue(v2, { delay: e4 }), E3;
+          }), A2(this, "changeCursor", function(e4) {
+            if (!e4)
+              throw new Error("Must provide new cursor");
+            return E3.addEventToQueue(h2, { cursor: e4 }), E3;
+          }), A2(this, "deleteChars", function(e4) {
+            if (!e4)
+              throw new Error("Must provide amount of characters to delete");
+            for (var t4 = 0; t4 < e4; t4++)
+              E3.addEventToQueue(s);
+            return E3;
+          }), A2(this, "callFunction", function(e4, t4) {
+            if (!e4 || "function" != typeof e4)
+              throw new Error("Callback must be a function");
+            return E3.addEventToQueue(p2, { cb: e4, thisArg: t4 }), E3;
+          }), A2(this, "typeCharacters", function(e4) {
+            var t4 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
+            if (!e4 || !Array.isArray(e4))
+              throw new Error("Characters must be an array");
+            return e4.forEach(function(e5) {
+              E3.addEventToQueue(i, { character: e5, node: t4 });
+            }), E3;
+          }), A2(this, "removeCharacters", function(e4) {
+            if (!e4 || !Array.isArray(e4))
+              throw new Error("Characters must be an array");
+            return e4.forEach(function() {
+              E3.addEventToQueue(s);
+            }), E3;
+          }), A2(this, "addEventToQueue", function(e4, t4) {
+            var n4 = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+            return E3.addEventToStateProperty(e4, t4, n4, "eventQueue");
+          }), A2(this, "addReverseCalledEvent", function(e4, t4) {
+            var n4 = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+            return E3.options.loop ? E3.addEventToStateProperty(e4, t4, n4, "reverseCalledEvents") : E3;
+          }), A2(this, "addEventToStateProperty", function(e4, t4) {
+            var n4 = arguments.length > 2 && void 0 !== arguments[2] && arguments[2], r5 = arguments.length > 3 ? arguments[3] : void 0, o4 = { eventName: e4, eventArgs: t4 || {} };
+            return E3.state[r5] = n4 ? [o4].concat(b2(E3.state[r5])) : [].concat(b2(E3.state[r5]), [o4]), E3;
+          }), A2(this, "runEventLoop", function() {
+            E3.state.lastFrameTime || (E3.state.lastFrameTime = Date.now());
+            var e4 = Date.now(), n4 = e4 - E3.state.lastFrameTime;
+            if (!E3.state.eventQueue.length) {
+              if (!E3.options.loop)
+                return;
+              E3.state.eventQueue = b2(E3.state.calledEvents), E3.state.calledEvents = [], E3.options = w2({}, E3.state.initialOptions);
+            }
+            if (E3.state.eventLoop = t3()(E3.runEventLoop), !E3.state.eventLoopPaused) {
+              if (E3.state.pauseUntil) {
+                if (e4 < E3.state.pauseUntil)
+                  return;
+                E3.state.pauseUntil = null;
+              }
+              var r5, o4 = b2(E3.state.eventQueue), g5 = o4.shift();
+              if (!(n4 <= (r5 = g5.eventName === l2 || g5.eventName === s ? "natural" === E3.options.deleteSpeed ? a2(40, 80) : E3.options.deleteSpeed : "natural" === E3.options.delay ? a2(120, 160) : E3.options.delay))) {
+                var T4 = g5.eventName, S3 = g5.eventArgs;
+                switch (E3.logInDevMode({ currentEvent: g5, state: E3.state, delay: r5 }), T4) {
+                  case m2:
+                  case i:
+                    var A3 = S3.character, N3 = S3.node, C3 = document.createTextNode(A3), _2 = C3;
+                    E3.options.onCreateTextNode && "function" == typeof E3.options.onCreateTextNode && (_2 = E3.options.onCreateTextNode(A3, C3)), _2 && (N3 ? N3.appendChild(_2) : E3.state.elements.wrapper.appendChild(_2)), E3.state.visibleNodes = [].concat(b2(E3.state.visibleNodes), [{ type: "TEXT_NODE", character: A3, node: _2 }]);
+                    break;
+                  case s:
+                    o4.unshift({ eventName: l2, eventArgs: { removingCharacterNode: true } });
+                    break;
+                  case c2:
+                    var O2 = g5.eventArgs.ms;
+                    E3.state.pauseUntil = Date.now() + parseInt(O2);
+                    break;
+                  case p2:
+                    var L2 = g5.eventArgs, D2 = L2.cb, M2 = L2.thisArg;
+                    D2.call(M2, { elements: E3.state.elements });
+                    break;
+                  case d2:
+                    var x2 = g5.eventArgs, P2 = x2.node, j = x2.parentNode;
+                    j ? j.appendChild(P2) : E3.state.elements.wrapper.appendChild(P2), E3.state.visibleNodes = [].concat(b2(E3.state.visibleNodes), [{ type: y2, node: P2, parentNode: j || E3.state.elements.wrapper }]);
+                    break;
+                  case u2:
+                    var R2 = E3.state.visibleNodes, k2 = S3.speed, Q2 = [];
+                    k2 && Q2.push({ eventName: f2, eventArgs: { speed: k2, temp: true } });
+                    for (var F2 = 0, H2 = R2.length; F2 < H2; F2++)
+                      Q2.push({ eventName: l2, eventArgs: { removingCharacterNode: false } });
+                    k2 && Q2.push({ eventName: f2, eventArgs: { speed: E3.options.deleteSpeed, temp: true } }), o4.unshift.apply(o4, Q2);
+                    break;
+                  case l2:
+                    var I2 = g5.eventArgs.removingCharacterNode;
+                    if (E3.state.visibleNodes.length) {
+                      var U2 = E3.state.visibleNodes.pop(), q2 = U2.type, G2 = U2.node, Y2 = U2.character;
+                      E3.options.onRemoveNode && "function" == typeof E3.options.onRemoveNode && E3.options.onRemoveNode({ node: G2, character: Y2 }), G2 && G2.parentNode.removeChild(G2), q2 === y2 && I2 && o4.unshift({ eventName: l2, eventArgs: {} });
+                    }
+                    break;
+                  case f2:
+                    E3.options.deleteSpeed = g5.eventArgs.speed;
+                    break;
+                  case v2:
+                    E3.options.delay = g5.eventArgs.delay;
+                    break;
+                  case h2:
+                    E3.options.cursor = g5.eventArgs.cursor, E3.state.elements.cursor.innerHTML = g5.eventArgs.cursor;
+                }
+                E3.options.loop && (g5.eventName === l2 || g5.eventArgs && g5.eventArgs.temp || (E3.state.calledEvents = [].concat(b2(E3.state.calledEvents), [g5]))), E3.state.eventQueue = o4, E3.state.lastFrameTime = e4;
+              }
+            }
+          }), r4)
+            if ("string" == typeof r4) {
+              var T3 = document.querySelector(r4);
+              if (!T3)
+                throw new Error("Could not find container element");
+              this.state.elements.container = T3;
+            } else
+              this.state.elements.container = r4;
+          g4 && (this.options = w2(w2({}, this.options), g4)), this.state.initialOptions = w2({}, this.options), this.init();
+        }
+        var r3, g3;
+        return r3 = n3, (g3 = [{ key: "init", value: function() {
+          var e4, t4;
+          this.setupWrapperElement(), this.addEventToQueue(h2, { cursor: this.options.cursor }, true), this.addEventToQueue(u2, null, true), !window || window.___TYPEWRITER_JS_STYLES_ADDED___ || this.options.skipAddStyles || (e4 = ".Typewriter__cursor{-webkit-animation:Typewriter-cursor 1s infinite;animation:Typewriter-cursor 1s infinite;margin-left:1px}@-webkit-keyframes Typewriter-cursor{0%{opacity:0}50%{opacity:1}100%{opacity:0}}@keyframes Typewriter-cursor{0%{opacity:0}50%{opacity:1}100%{opacity:0}}", (t4 = document.createElement("style")).appendChild(document.createTextNode(e4)), document.head.appendChild(t4), window.___TYPEWRITER_JS_STYLES_ADDED___ = true), true === this.options.autoStart && this.options.strings && this.typeOutAllStrings().start();
+        } }, { key: "logInDevMode", value: function(e4) {
+          this.options.devMode && console.log(e4);
+        } }]) && S2(r3.prototype, g3), Object.defineProperty(r3, "prototype", { writable: false }), n3;
+      }();
+    })(), r2.default;
+  })());
+})(core);
+var coreExports = core.exports;
+const Typewriter = /* @__PURE__ */ getDefaultExportFromCjs(coreExports);
+var graphemeSplitter = { exports: {} };
+(function(module) {
+  function GraphemeSplitter2() {
+    var CR = 0, LF = 1, Control = 2, Extend = 3, Regional_Indicator = 4, SpacingMark = 5, L2 = 6, V2 = 7, T2 = 8, LV = 9, LVT = 10, Other = 11, Prepend = 12, E_Base = 13, E_Modifier = 14, ZWJ = 15, Glue_After_Zwj = 16, E_Base_GAZ = 17;
+    var NotBreak = 0, BreakStart = 1, Break = 2, BreakLastRegional = 3, BreakPenultimateRegional = 4;
+    function isSurrogate(str, pos) {
+      return 55296 <= str.charCodeAt(pos) && str.charCodeAt(pos) <= 56319 && 56320 <= str.charCodeAt(pos + 1) && str.charCodeAt(pos + 1) <= 57343;
+    }
+    function codePointAt(str, idx) {
+      if (idx === void 0) {
+        idx = 0;
+      }
+      var code2 = str.charCodeAt(idx);
+      if (55296 <= code2 && code2 <= 56319 && idx < str.length - 1) {
+        var hi2 = code2;
+        var low = str.charCodeAt(idx + 1);
+        if (56320 <= low && low <= 57343) {
+          return (hi2 - 55296) * 1024 + (low - 56320) + 65536;
+        }
+        return hi2;
+      }
+      if (56320 <= code2 && code2 <= 57343 && idx >= 1) {
+        var hi2 = str.charCodeAt(idx - 1);
+        var low = code2;
+        if (55296 <= hi2 && hi2 <= 56319) {
+          return (hi2 - 55296) * 1024 + (low - 56320) + 65536;
+        }
+        return low;
+      }
+      return code2;
+    }
+    function shouldBreak(start, mid, end2) {
+      var all2 = [start].concat(mid).concat([end2]);
+      var previous2 = all2[all2.length - 2];
+      var next2 = end2;
+      var eModifierIndex = all2.lastIndexOf(E_Modifier);
+      if (eModifierIndex > 1 && all2.slice(1, eModifierIndex).every(function(c2) {
+        return c2 == Extend;
+      }) && [Extend, E_Base, E_Base_GAZ].indexOf(start) == -1) {
+        return Break;
+      }
+      var rIIndex = all2.lastIndexOf(Regional_Indicator);
+      if (rIIndex > 0 && all2.slice(1, rIIndex).every(function(c2) {
+        return c2 == Regional_Indicator;
+      }) && [Prepend, Regional_Indicator].indexOf(previous2) == -1) {
+        if (all2.filter(function(c2) {
+          return c2 == Regional_Indicator;
+        }).length % 2 == 1) {
+          return BreakLastRegional;
+        } else {
+          return BreakPenultimateRegional;
+        }
+      }
+      if (previous2 == CR && next2 == LF) {
+        return NotBreak;
+      } else if (previous2 == Control || previous2 == CR || previous2 == LF) {
+        if (next2 == E_Modifier && mid.every(function(c2) {
+          return c2 == Extend;
+        })) {
+          return Break;
+        } else {
+          return BreakStart;
+        }
+      } else if (next2 == Control || next2 == CR || next2 == LF) {
+        return BreakStart;
+      } else if (previous2 == L2 && (next2 == L2 || next2 == V2 || next2 == LV || next2 == LVT)) {
+        return NotBreak;
+      } else if ((previous2 == LV || previous2 == V2) && (next2 == V2 || next2 == T2)) {
+        return NotBreak;
+      } else if ((previous2 == LVT || previous2 == T2) && next2 == T2) {
+        return NotBreak;
+      } else if (next2 == Extend || next2 == ZWJ) {
+        return NotBreak;
+      } else if (next2 == SpacingMark) {
+        return NotBreak;
+      } else if (previous2 == Prepend) {
+        return NotBreak;
+      }
+      var previousNonExtendIndex = all2.indexOf(Extend) != -1 ? all2.lastIndexOf(Extend) - 1 : all2.length - 2;
+      if ([E_Base, E_Base_GAZ].indexOf(all2[previousNonExtendIndex]) != -1 && all2.slice(previousNonExtendIndex + 1, -1).every(function(c2) {
+        return c2 == Extend;
+      }) && next2 == E_Modifier) {
+        return NotBreak;
+      }
+      if (previous2 == ZWJ && [Glue_After_Zwj, E_Base_GAZ].indexOf(next2) != -1) {
+        return NotBreak;
+      }
+      if (mid.indexOf(Regional_Indicator) != -1) {
+        return Break;
+      }
+      if (previous2 == Regional_Indicator && next2 == Regional_Indicator) {
+        return NotBreak;
+      }
+      return BreakStart;
+    }
+    this.nextBreak = function(string2, index2) {
+      if (index2 === void 0) {
+        index2 = 0;
+      }
+      if (index2 < 0) {
+        return 0;
+      }
+      if (index2 >= string2.length - 1) {
+        return string2.length;
+      }
+      var prev2 = getGraphemeBreakProperty(codePointAt(string2, index2));
+      var mid = [];
+      for (var i = index2 + 1; i < string2.length; i++) {
+        if (isSurrogate(string2, i - 1)) {
+          continue;
+        }
+        var next2 = getGraphemeBreakProperty(codePointAt(string2, i));
+        if (shouldBreak(prev2, mid, next2)) {
+          return i;
+        }
+        mid.push(next2);
+      }
+      return string2.length;
+    };
+    this.splitGraphemes = function(str) {
+      var res = [];
+      var index2 = 0;
+      var brk;
+      while ((brk = this.nextBreak(str, index2)) < str.length) {
+        res.push(str.slice(index2, brk));
+        index2 = brk;
+      }
+      if (index2 < str.length) {
+        res.push(str.slice(index2));
+      }
+      return res;
+    };
+    this.iterateGraphemes = function(str) {
+      var index2 = 0;
+      var res = {
+        next: (function() {
+          var value;
+          var brk;
+          if ((brk = this.nextBreak(str, index2)) < str.length) {
+            value = str.slice(index2, brk);
+            index2 = brk;
+            return { value, done: false };
+          }
+          if (index2 < str.length) {
+            value = str.slice(index2);
+            index2 = str.length;
+            return { value, done: false };
+          }
+          return { value: void 0, done: true };
+        }).bind(this)
+      };
+      if (typeof Symbol !== "undefined" && Symbol.iterator) {
+        res[Symbol.iterator] = function() {
+          return res;
+        };
+      }
+      return res;
+    };
+    this.countGraphemes = function(str) {
+      var count = 0;
+      var index2 = 0;
+      var brk;
+      while ((brk = this.nextBreak(str, index2)) < str.length) {
+        index2 = brk;
+        count++;
+      }
+      if (index2 < str.length) {
+        count++;
+      }
+      return count;
+    };
+    function getGraphemeBreakProperty(code2) {
+      if (1536 <= code2 && code2 <= 1541 || // Cf   [6] ARABIC NUMBER SIGN..ARABIC NUMBER MARK ABOVE
+      1757 == code2 || // Cf       ARABIC END OF AYAH
+      1807 == code2 || // Cf       SYRIAC ABBREVIATION MARK
+      2274 == code2 || // Cf       ARABIC DISPUTED END OF AYAH
+      3406 == code2 || // Lo       MALAYALAM LETTER DOT REPH
+      69821 == code2 || // Cf       KAITHI NUMBER SIGN
+      70082 <= code2 && code2 <= 70083 || // Lo   [2] SHARADA SIGN JIHVAMULIYA..SHARADA SIGN UPADHMANIYA
+      72250 == code2 || // Lo       ZANABAZAR SQUARE CLUSTER-INITIAL LETTER RA
+      72326 <= code2 && code2 <= 72329 || // Lo   [4] SOYOMBO CLUSTER-INITIAL LETTER RA..SOYOMBO CLUSTER-INITIAL LETTER SA
+      73030 == code2) {
+        return Prepend;
+      }
+      if (13 == code2) {
+        return CR;
+      }
+      if (10 == code2) {
+        return LF;
+      }
+      if (0 <= code2 && code2 <= 9 || // Cc  [10] <control-0000>..<control-0009>
+      11 <= code2 && code2 <= 12 || // Cc   [2] <control-000B>..<control-000C>
+      14 <= code2 && code2 <= 31 || // Cc  [18] <control-000E>..<control-001F>
+      127 <= code2 && code2 <= 159 || // Cc  [33] <control-007F>..<control-009F>
+      173 == code2 || // Cf       SOFT HYPHEN
+      1564 == code2 || // Cf       ARABIC LETTER MARK
+      6158 == code2 || // Cf       MONGOLIAN VOWEL SEPARATOR
+      8203 == code2 || // Cf       ZERO WIDTH SPACE
+      8206 <= code2 && code2 <= 8207 || // Cf   [2] LEFT-TO-RIGHT MARK..RIGHT-TO-LEFT MARK
+      8232 == code2 || // Zl       LINE SEPARATOR
+      8233 == code2 || // Zp       PARAGRAPH SEPARATOR
+      8234 <= code2 && code2 <= 8238 || // Cf   [5] LEFT-TO-RIGHT EMBEDDING..RIGHT-TO-LEFT OVERRIDE
+      8288 <= code2 && code2 <= 8292 || // Cf   [5] WORD JOINER..INVISIBLE PLUS
+      8293 == code2 || // Cn       <reserved-2065>
+      8294 <= code2 && code2 <= 8303 || // Cf  [10] LEFT-TO-RIGHT ISOLATE..NOMINAL DIGIT SHAPES
+      55296 <= code2 && code2 <= 57343 || // Cs [2048] <surrogate-D800>..<surrogate-DFFF>
+      65279 == code2 || // Cf       ZERO WIDTH NO-BREAK SPACE
+      65520 <= code2 && code2 <= 65528 || // Cn   [9] <reserved-FFF0>..<reserved-FFF8>
+      65529 <= code2 && code2 <= 65531 || // Cf   [3] INTERLINEAR ANNOTATION ANCHOR..INTERLINEAR ANNOTATION TERMINATOR
+      113824 <= code2 && code2 <= 113827 || // Cf   [4] SHORTHAND FORMAT LETTER OVERLAP..SHORTHAND FORMAT UP STEP
+      119155 <= code2 && code2 <= 119162 || // Cf   [8] MUSICAL SYMBOL BEGIN BEAM..MUSICAL SYMBOL END PHRASE
+      917504 == code2 || // Cn       <reserved-E0000>
+      917505 == code2 || // Cf       LANGUAGE TAG
+      917506 <= code2 && code2 <= 917535 || // Cn  [30] <reserved-E0002>..<reserved-E001F>
+      917632 <= code2 && code2 <= 917759 || // Cn [128] <reserved-E0080>..<reserved-E00FF>
+      918e3 <= code2 && code2 <= 921599) {
+        return Control;
+      }
+      if (768 <= code2 && code2 <= 879 || // Mn [112] COMBINING GRAVE ACCENT..COMBINING LATIN SMALL LETTER X
+      1155 <= code2 && code2 <= 1159 || // Mn   [5] COMBINING CYRILLIC TITLO..COMBINING CYRILLIC POKRYTIE
+      1160 <= code2 && code2 <= 1161 || // Me   [2] COMBINING CYRILLIC HUNDRED THOUSANDS SIGN..COMBINING CYRILLIC MILLIONS SIGN
+      1425 <= code2 && code2 <= 1469 || // Mn  [45] HEBREW ACCENT ETNAHTA..HEBREW POINT METEG
+      1471 == code2 || // Mn       HEBREW POINT RAFE
+      1473 <= code2 && code2 <= 1474 || // Mn   [2] HEBREW POINT SHIN DOT..HEBREW POINT SIN DOT
+      1476 <= code2 && code2 <= 1477 || // Mn   [2] HEBREW MARK UPPER DOT..HEBREW MARK LOWER DOT
+      1479 == code2 || // Mn       HEBREW POINT QAMATS QATAN
+      1552 <= code2 && code2 <= 1562 || // Mn  [11] ARABIC SIGN SALLALLAHOU ALAYHE WASSALLAM..ARABIC SMALL KASRA
+      1611 <= code2 && code2 <= 1631 || // Mn  [21] ARABIC FATHATAN..ARABIC WAVY HAMZA BELOW
+      1648 == code2 || // Mn       ARABIC LETTER SUPERSCRIPT ALEF
+      1750 <= code2 && code2 <= 1756 || // Mn   [7] ARABIC SMALL HIGH LIGATURE SAD WITH LAM WITH ALEF MAKSURA..ARABIC SMALL HIGH SEEN
+      1759 <= code2 && code2 <= 1764 || // Mn   [6] ARABIC SMALL HIGH ROUNDED ZERO..ARABIC SMALL HIGH MADDA
+      1767 <= code2 && code2 <= 1768 || // Mn   [2] ARABIC SMALL HIGH YEH..ARABIC SMALL HIGH NOON
+      1770 <= code2 && code2 <= 1773 || // Mn   [4] ARABIC EMPTY CENTRE LOW STOP..ARABIC SMALL LOW MEEM
+      1809 == code2 || // Mn       SYRIAC LETTER SUPERSCRIPT ALAPH
+      1840 <= code2 && code2 <= 1866 || // Mn  [27] SYRIAC PTHAHA ABOVE..SYRIAC BARREKH
+      1958 <= code2 && code2 <= 1968 || // Mn  [11] THAANA ABAFILI..THAANA SUKUN
+      2027 <= code2 && code2 <= 2035 || // Mn   [9] NKO COMBINING SHORT HIGH TONE..NKO COMBINING DOUBLE DOT ABOVE
+      2070 <= code2 && code2 <= 2073 || // Mn   [4] SAMARITAN MARK IN..SAMARITAN MARK DAGESH
+      2075 <= code2 && code2 <= 2083 || // Mn   [9] SAMARITAN MARK EPENTHETIC YUT..SAMARITAN VOWEL SIGN A
+      2085 <= code2 && code2 <= 2087 || // Mn   [3] SAMARITAN VOWEL SIGN SHORT A..SAMARITAN VOWEL SIGN U
+      2089 <= code2 && code2 <= 2093 || // Mn   [5] SAMARITAN VOWEL SIGN LONG I..SAMARITAN MARK NEQUDAA
+      2137 <= code2 && code2 <= 2139 || // Mn   [3] MANDAIC AFFRICATION MARK..MANDAIC GEMINATION MARK
+      2260 <= code2 && code2 <= 2273 || // Mn  [14] ARABIC SMALL HIGH WORD AR-RUB..ARABIC SMALL HIGH SIGN SAFHA
+      2275 <= code2 && code2 <= 2306 || // Mn  [32] ARABIC TURNED DAMMA BELOW..DEVANAGARI SIGN ANUSVARA
+      2362 == code2 || // Mn       DEVANAGARI VOWEL SIGN OE
+      2364 == code2 || // Mn       DEVANAGARI SIGN NUKTA
+      2369 <= code2 && code2 <= 2376 || // Mn   [8] DEVANAGARI VOWEL SIGN U..DEVANAGARI VOWEL SIGN AI
+      2381 == code2 || // Mn       DEVANAGARI SIGN VIRAMA
+      2385 <= code2 && code2 <= 2391 || // Mn   [7] DEVANAGARI STRESS SIGN UDATTA..DEVANAGARI VOWEL SIGN UUE
+      2402 <= code2 && code2 <= 2403 || // Mn   [2] DEVANAGARI VOWEL SIGN VOCALIC L..DEVANAGARI VOWEL SIGN VOCALIC LL
+      2433 == code2 || // Mn       BENGALI SIGN CANDRABINDU
+      2492 == code2 || // Mn       BENGALI SIGN NUKTA
+      2494 == code2 || // Mc       BENGALI VOWEL SIGN AA
+      2497 <= code2 && code2 <= 2500 || // Mn   [4] BENGALI VOWEL SIGN U..BENGALI VOWEL SIGN VOCALIC RR
+      2509 == code2 || // Mn       BENGALI SIGN VIRAMA
+      2519 == code2 || // Mc       BENGALI AU LENGTH MARK
+      2530 <= code2 && code2 <= 2531 || // Mn   [2] BENGALI VOWEL SIGN VOCALIC L..BENGALI VOWEL SIGN VOCALIC LL
+      2561 <= code2 && code2 <= 2562 || // Mn   [2] GURMUKHI SIGN ADAK BINDI..GURMUKHI SIGN BINDI
+      2620 == code2 || // Mn       GURMUKHI SIGN NUKTA
+      2625 <= code2 && code2 <= 2626 || // Mn   [2] GURMUKHI VOWEL SIGN U..GURMUKHI VOWEL SIGN UU
+      2631 <= code2 && code2 <= 2632 || // Mn   [2] GURMUKHI VOWEL SIGN EE..GURMUKHI VOWEL SIGN AI
+      2635 <= code2 && code2 <= 2637 || // Mn   [3] GURMUKHI VOWEL SIGN OO..GURMUKHI SIGN VIRAMA
+      2641 == code2 || // Mn       GURMUKHI SIGN UDAAT
+      2672 <= code2 && code2 <= 2673 || // Mn   [2] GURMUKHI TIPPI..GURMUKHI ADDAK
+      2677 == code2 || // Mn       GURMUKHI SIGN YAKASH
+      2689 <= code2 && code2 <= 2690 || // Mn   [2] GUJARATI SIGN CANDRABINDU..GUJARATI SIGN ANUSVARA
+      2748 == code2 || // Mn       GUJARATI SIGN NUKTA
+      2753 <= code2 && code2 <= 2757 || // Mn   [5] GUJARATI VOWEL SIGN U..GUJARATI VOWEL SIGN CANDRA E
+      2759 <= code2 && code2 <= 2760 || // Mn   [2] GUJARATI VOWEL SIGN E..GUJARATI VOWEL SIGN AI
+      2765 == code2 || // Mn       GUJARATI SIGN VIRAMA
+      2786 <= code2 && code2 <= 2787 || // Mn   [2] GUJARATI VOWEL SIGN VOCALIC L..GUJARATI VOWEL SIGN VOCALIC LL
+      2810 <= code2 && code2 <= 2815 || // Mn   [6] GUJARATI SIGN SUKUN..GUJARATI SIGN TWO-CIRCLE NUKTA ABOVE
+      2817 == code2 || // Mn       ORIYA SIGN CANDRABINDU
+      2876 == code2 || // Mn       ORIYA SIGN NUKTA
+      2878 == code2 || // Mc       ORIYA VOWEL SIGN AA
+      2879 == code2 || // Mn       ORIYA VOWEL SIGN I
+      2881 <= code2 && code2 <= 2884 || // Mn   [4] ORIYA VOWEL SIGN U..ORIYA VOWEL SIGN VOCALIC RR
+      2893 == code2 || // Mn       ORIYA SIGN VIRAMA
+      2902 == code2 || // Mn       ORIYA AI LENGTH MARK
+      2903 == code2 || // Mc       ORIYA AU LENGTH MARK
+      2914 <= code2 && code2 <= 2915 || // Mn   [2] ORIYA VOWEL SIGN VOCALIC L..ORIYA VOWEL SIGN VOCALIC LL
+      2946 == code2 || // Mn       TAMIL SIGN ANUSVARA
+      3006 == code2 || // Mc       TAMIL VOWEL SIGN AA
+      3008 == code2 || // Mn       TAMIL VOWEL SIGN II
+      3021 == code2 || // Mn       TAMIL SIGN VIRAMA
+      3031 == code2 || // Mc       TAMIL AU LENGTH MARK
+      3072 == code2 || // Mn       TELUGU SIGN COMBINING CANDRABINDU ABOVE
+      3134 <= code2 && code2 <= 3136 || // Mn   [3] TELUGU VOWEL SIGN AA..TELUGU VOWEL SIGN II
+      3142 <= code2 && code2 <= 3144 || // Mn   [3] TELUGU VOWEL SIGN E..TELUGU VOWEL SIGN AI
+      3146 <= code2 && code2 <= 3149 || // Mn   [4] TELUGU VOWEL SIGN O..TELUGU SIGN VIRAMA
+      3157 <= code2 && code2 <= 3158 || // Mn   [2] TELUGU LENGTH MARK..TELUGU AI LENGTH MARK
+      3170 <= code2 && code2 <= 3171 || // Mn   [2] TELUGU VOWEL SIGN VOCALIC L..TELUGU VOWEL SIGN VOCALIC LL
+      3201 == code2 || // Mn       KANNADA SIGN CANDRABINDU
+      3260 == code2 || // Mn       KANNADA SIGN NUKTA
+      3263 == code2 || // Mn       KANNADA VOWEL SIGN I
+      3266 == code2 || // Mc       KANNADA VOWEL SIGN UU
+      3270 == code2 || // Mn       KANNADA VOWEL SIGN E
+      3276 <= code2 && code2 <= 3277 || // Mn   [2] KANNADA VOWEL SIGN AU..KANNADA SIGN VIRAMA
+      3285 <= code2 && code2 <= 3286 || // Mc   [2] KANNADA LENGTH MARK..KANNADA AI LENGTH MARK
+      3298 <= code2 && code2 <= 3299 || // Mn   [2] KANNADA VOWEL SIGN VOCALIC L..KANNADA VOWEL SIGN VOCALIC LL
+      3328 <= code2 && code2 <= 3329 || // Mn   [2] MALAYALAM SIGN COMBINING ANUSVARA ABOVE..MALAYALAM SIGN CANDRABINDU
+      3387 <= code2 && code2 <= 3388 || // Mn   [2] MALAYALAM SIGN VERTICAL BAR VIRAMA..MALAYALAM SIGN CIRCULAR VIRAMA
+      3390 == code2 || // Mc       MALAYALAM VOWEL SIGN AA
+      3393 <= code2 && code2 <= 3396 || // Mn   [4] MALAYALAM VOWEL SIGN U..MALAYALAM VOWEL SIGN VOCALIC RR
+      3405 == code2 || // Mn       MALAYALAM SIGN VIRAMA
+      3415 == code2 || // Mc       MALAYALAM AU LENGTH MARK
+      3426 <= code2 && code2 <= 3427 || // Mn   [2] MALAYALAM VOWEL SIGN VOCALIC L..MALAYALAM VOWEL SIGN VOCALIC LL
+      3530 == code2 || // Mn       SINHALA SIGN AL-LAKUNA
+      3535 == code2 || // Mc       SINHALA VOWEL SIGN AELA-PILLA
+      3538 <= code2 && code2 <= 3540 || // Mn   [3] SINHALA VOWEL SIGN KETTI IS-PILLA..SINHALA VOWEL SIGN KETTI PAA-PILLA
+      3542 == code2 || // Mn       SINHALA VOWEL SIGN DIGA PAA-PILLA
+      3551 == code2 || // Mc       SINHALA VOWEL SIGN GAYANUKITTA
+      3633 == code2 || // Mn       THAI CHARACTER MAI HAN-AKAT
+      3636 <= code2 && code2 <= 3642 || // Mn   [7] THAI CHARACTER SARA I..THAI CHARACTER PHINTHU
+      3655 <= code2 && code2 <= 3662 || // Mn   [8] THAI CHARACTER MAITAIKHU..THAI CHARACTER YAMAKKAN
+      3761 == code2 || // Mn       LAO VOWEL SIGN MAI KAN
+      3764 <= code2 && code2 <= 3769 || // Mn   [6] LAO VOWEL SIGN I..LAO VOWEL SIGN UU
+      3771 <= code2 && code2 <= 3772 || // Mn   [2] LAO VOWEL SIGN MAI KON..LAO SEMIVOWEL SIGN LO
+      3784 <= code2 && code2 <= 3789 || // Mn   [6] LAO TONE MAI EK..LAO NIGGAHITA
+      3864 <= code2 && code2 <= 3865 || // Mn   [2] TIBETAN ASTROLOGICAL SIGN -KHYUD PA..TIBETAN ASTROLOGICAL SIGN SDONG TSHUGS
+      3893 == code2 || // Mn       TIBETAN MARK NGAS BZUNG NYI ZLA
+      3895 == code2 || // Mn       TIBETAN MARK NGAS BZUNG SGOR RTAGS
+      3897 == code2 || // Mn       TIBETAN MARK TSA -PHRU
+      3953 <= code2 && code2 <= 3966 || // Mn  [14] TIBETAN VOWEL SIGN AA..TIBETAN SIGN RJES SU NGA RO
+      3968 <= code2 && code2 <= 3972 || // Mn   [5] TIBETAN VOWEL SIGN REVERSED I..TIBETAN MARK HALANTA
+      3974 <= code2 && code2 <= 3975 || // Mn   [2] TIBETAN SIGN LCI RTAGS..TIBETAN SIGN YANG RTAGS
+      3981 <= code2 && code2 <= 3991 || // Mn  [11] TIBETAN SUBJOINED SIGN LCE TSA CAN..TIBETAN SUBJOINED LETTER JA
+      3993 <= code2 && code2 <= 4028 || // Mn  [36] TIBETAN SUBJOINED LETTER NYA..TIBETAN SUBJOINED LETTER FIXED-FORM RA
+      4038 == code2 || // Mn       TIBETAN SYMBOL PADMA GDAN
+      4141 <= code2 && code2 <= 4144 || // Mn   [4] MYANMAR VOWEL SIGN I..MYANMAR VOWEL SIGN UU
+      4146 <= code2 && code2 <= 4151 || // Mn   [6] MYANMAR VOWEL SIGN AI..MYANMAR SIGN DOT BELOW
+      4153 <= code2 && code2 <= 4154 || // Mn   [2] MYANMAR SIGN VIRAMA..MYANMAR SIGN ASAT
+      4157 <= code2 && code2 <= 4158 || // Mn   [2] MYANMAR CONSONANT SIGN MEDIAL WA..MYANMAR CONSONANT SIGN MEDIAL HA
+      4184 <= code2 && code2 <= 4185 || // Mn   [2] MYANMAR VOWEL SIGN VOCALIC L..MYANMAR VOWEL SIGN VOCALIC LL
+      4190 <= code2 && code2 <= 4192 || // Mn   [3] MYANMAR CONSONANT SIGN MON MEDIAL NA..MYANMAR CONSONANT SIGN MON MEDIAL LA
+      4209 <= code2 && code2 <= 4212 || // Mn   [4] MYANMAR VOWEL SIGN GEBA KAREN I..MYANMAR VOWEL SIGN KAYAH EE
+      4226 == code2 || // Mn       MYANMAR CONSONANT SIGN SHAN MEDIAL WA
+      4229 <= code2 && code2 <= 4230 || // Mn   [2] MYANMAR VOWEL SIGN SHAN E ABOVE..MYANMAR VOWEL SIGN SHAN FINAL Y
+      4237 == code2 || // Mn       MYANMAR SIGN SHAN COUNCIL EMPHATIC TONE
+      4253 == code2 || // Mn       MYANMAR VOWEL SIGN AITON AI
+      4957 <= code2 && code2 <= 4959 || // Mn   [3] ETHIOPIC COMBINING GEMINATION AND VOWEL LENGTH MARK..ETHIOPIC COMBINING GEMINATION MARK
+      5906 <= code2 && code2 <= 5908 || // Mn   [3] TAGALOG VOWEL SIGN I..TAGALOG SIGN VIRAMA
+      5938 <= code2 && code2 <= 5940 || // Mn   [3] HANUNOO VOWEL SIGN I..HANUNOO SIGN PAMUDPOD
+      5970 <= code2 && code2 <= 5971 || // Mn   [2] BUHID VOWEL SIGN I..BUHID VOWEL SIGN U
+      6002 <= code2 && code2 <= 6003 || // Mn   [2] TAGBANWA VOWEL SIGN I..TAGBANWA VOWEL SIGN U
+      6068 <= code2 && code2 <= 6069 || // Mn   [2] KHMER VOWEL INHERENT AQ..KHMER VOWEL INHERENT AA
+      6071 <= code2 && code2 <= 6077 || // Mn   [7] KHMER VOWEL SIGN I..KHMER VOWEL SIGN UA
+      6086 == code2 || // Mn       KHMER SIGN NIKAHIT
+      6089 <= code2 && code2 <= 6099 || // Mn  [11] KHMER SIGN MUUSIKATOAN..KHMER SIGN BATHAMASAT
+      6109 == code2 || // Mn       KHMER SIGN ATTHACAN
+      6155 <= code2 && code2 <= 6157 || // Mn   [3] MONGOLIAN FREE VARIATION SELECTOR ONE..MONGOLIAN FREE VARIATION SELECTOR THREE
+      6277 <= code2 && code2 <= 6278 || // Mn   [2] MONGOLIAN LETTER ALI GALI BALUDA..MONGOLIAN LETTER ALI GALI THREE BALUDA
+      6313 == code2 || // Mn       MONGOLIAN LETTER ALI GALI DAGALGA
+      6432 <= code2 && code2 <= 6434 || // Mn   [3] LIMBU VOWEL SIGN A..LIMBU VOWEL SIGN U
+      6439 <= code2 && code2 <= 6440 || // Mn   [2] LIMBU VOWEL SIGN E..LIMBU VOWEL SIGN O
+      6450 == code2 || // Mn       LIMBU SMALL LETTER ANUSVARA
+      6457 <= code2 && code2 <= 6459 || // Mn   [3] LIMBU SIGN MUKPHRENG..LIMBU SIGN SA-I
+      6679 <= code2 && code2 <= 6680 || // Mn   [2] BUGINESE VOWEL SIGN I..BUGINESE VOWEL SIGN U
+      6683 == code2 || // Mn       BUGINESE VOWEL SIGN AE
+      6742 == code2 || // Mn       TAI THAM CONSONANT SIGN MEDIAL LA
+      6744 <= code2 && code2 <= 6750 || // Mn   [7] TAI THAM SIGN MAI KANG LAI..TAI THAM CONSONANT SIGN SA
+      6752 == code2 || // Mn       TAI THAM SIGN SAKOT
+      6754 == code2 || // Mn       TAI THAM VOWEL SIGN MAI SAT
+      6757 <= code2 && code2 <= 6764 || // Mn   [8] TAI THAM VOWEL SIGN I..TAI THAM VOWEL SIGN OA BELOW
+      6771 <= code2 && code2 <= 6780 || // Mn  [10] TAI THAM VOWEL SIGN OA ABOVE..TAI THAM SIGN KHUEN-LUE KARAN
+      6783 == code2 || // Mn       TAI THAM COMBINING CRYPTOGRAMMIC DOT
+      6832 <= code2 && code2 <= 6845 || // Mn  [14] COMBINING DOUBLED CIRCUMFLEX ACCENT..COMBINING PARENTHESES BELOW
+      6846 == code2 || // Me       COMBINING PARENTHESES OVERLAY
+      6912 <= code2 && code2 <= 6915 || // Mn   [4] BALINESE SIGN ULU RICEM..BALINESE SIGN SURANG
+      6964 == code2 || // Mn       BALINESE SIGN REREKAN
+      6966 <= code2 && code2 <= 6970 || // Mn   [5] BALINESE VOWEL SIGN ULU..BALINESE VOWEL SIGN RA REPA
+      6972 == code2 || // Mn       BALINESE VOWEL SIGN LA LENGA
+      6978 == code2 || // Mn       BALINESE VOWEL SIGN PEPET
+      7019 <= code2 && code2 <= 7027 || // Mn   [9] BALINESE MUSICAL SYMBOL COMBINING TEGEH..BALINESE MUSICAL SYMBOL COMBINING GONG
+      7040 <= code2 && code2 <= 7041 || // Mn   [2] SUNDANESE SIGN PANYECEK..SUNDANESE SIGN PANGLAYAR
+      7074 <= code2 && code2 <= 7077 || // Mn   [4] SUNDANESE CONSONANT SIGN PANYAKRA..SUNDANESE VOWEL SIGN PANYUKU
+      7080 <= code2 && code2 <= 7081 || // Mn   [2] SUNDANESE VOWEL SIGN PAMEPET..SUNDANESE VOWEL SIGN PANEULEUNG
+      7083 <= code2 && code2 <= 7085 || // Mn   [3] SUNDANESE SIGN VIRAMA..SUNDANESE CONSONANT SIGN PASANGAN WA
+      7142 == code2 || // Mn       BATAK SIGN TOMPI
+      7144 <= code2 && code2 <= 7145 || // Mn   [2] BATAK VOWEL SIGN PAKPAK E..BATAK VOWEL SIGN EE
+      7149 == code2 || // Mn       BATAK VOWEL SIGN KARO O
+      7151 <= code2 && code2 <= 7153 || // Mn   [3] BATAK VOWEL SIGN U FOR SIMALUNGUN SA..BATAK CONSONANT SIGN H
+      7212 <= code2 && code2 <= 7219 || // Mn   [8] LEPCHA VOWEL SIGN E..LEPCHA CONSONANT SIGN T
+      7222 <= code2 && code2 <= 7223 || // Mn   [2] LEPCHA SIGN RAN..LEPCHA SIGN NUKTA
+      7376 <= code2 && code2 <= 7378 || // Mn   [3] VEDIC TONE KARSHANA..VEDIC TONE PRENKHA
+      7380 <= code2 && code2 <= 7392 || // Mn  [13] VEDIC SIGN YAJURVEDIC MIDLINE SVARITA..VEDIC TONE RIGVEDIC KASHMIRI INDEPENDENT SVARITA
+      7394 <= code2 && code2 <= 7400 || // Mn   [7] VEDIC SIGN VISARGA SVARITA..VEDIC SIGN VISARGA ANUDATTA WITH TAIL
+      7405 == code2 || // Mn       VEDIC SIGN TIRYAK
+      7412 == code2 || // Mn       VEDIC TONE CANDRA ABOVE
+      7416 <= code2 && code2 <= 7417 || // Mn   [2] VEDIC TONE RING ABOVE..VEDIC TONE DOUBLE RING ABOVE
+      7616 <= code2 && code2 <= 7673 || // Mn  [58] COMBINING DOTTED GRAVE ACCENT..COMBINING WIDE INVERTED BRIDGE BELOW
+      7675 <= code2 && code2 <= 7679 || // Mn   [5] COMBINING DELETION MARK..COMBINING RIGHT ARROWHEAD AND DOWN ARROWHEAD BELOW
+      8204 == code2 || // Cf       ZERO WIDTH NON-JOINER
+      8400 <= code2 && code2 <= 8412 || // Mn  [13] COMBINING LEFT HARPOON ABOVE..COMBINING FOUR DOTS ABOVE
+      8413 <= code2 && code2 <= 8416 || // Me   [4] COMBINING ENCLOSING CIRCLE..COMBINING ENCLOSING CIRCLE BACKSLASH
+      8417 == code2 || // Mn       COMBINING LEFT RIGHT ARROW ABOVE
+      8418 <= code2 && code2 <= 8420 || // Me   [3] COMBINING ENCLOSING SCREEN..COMBINING ENCLOSING UPWARD POINTING TRIANGLE
+      8421 <= code2 && code2 <= 8432 || // Mn  [12] COMBINING REVERSE SOLIDUS OVERLAY..COMBINING ASTERISK ABOVE
+      11503 <= code2 && code2 <= 11505 || // Mn   [3] COPTIC COMBINING NI ABOVE..COPTIC COMBINING SPIRITUS LENIS
+      11647 == code2 || // Mn       TIFINAGH CONSONANT JOINER
+      11744 <= code2 && code2 <= 11775 || // Mn  [32] COMBINING CYRILLIC LETTER BE..COMBINING CYRILLIC LETTER IOTIFIED BIG YUS
+      12330 <= code2 && code2 <= 12333 || // Mn   [4] IDEOGRAPHIC LEVEL TONE MARK..IDEOGRAPHIC ENTERING TONE MARK
+      12334 <= code2 && code2 <= 12335 || // Mc   [2] HANGUL SINGLE DOT TONE MARK..HANGUL DOUBLE DOT TONE MARK
+      12441 <= code2 && code2 <= 12442 || // Mn   [2] COMBINING KATAKANA-HIRAGANA VOICED SOUND MARK..COMBINING KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK
+      42607 == code2 || // Mn       COMBINING CYRILLIC VZMET
+      42608 <= code2 && code2 <= 42610 || // Me   [3] COMBINING CYRILLIC TEN MILLIONS SIGN..COMBINING CYRILLIC THOUSAND MILLIONS SIGN
+      42612 <= code2 && code2 <= 42621 || // Mn  [10] COMBINING CYRILLIC LETTER UKRAINIAN IE..COMBINING CYRILLIC PAYEROK
+      42654 <= code2 && code2 <= 42655 || // Mn   [2] COMBINING CYRILLIC LETTER EF..COMBINING CYRILLIC LETTER IOTIFIED E
+      42736 <= code2 && code2 <= 42737 || // Mn   [2] BAMUM COMBINING MARK KOQNDON..BAMUM COMBINING MARK TUKWENTIS
+      43010 == code2 || // Mn       SYLOTI NAGRI SIGN DVISVARA
+      43014 == code2 || // Mn       SYLOTI NAGRI SIGN HASANTA
+      43019 == code2 || // Mn       SYLOTI NAGRI SIGN ANUSVARA
+      43045 <= code2 && code2 <= 43046 || // Mn   [2] SYLOTI NAGRI VOWEL SIGN U..SYLOTI NAGRI VOWEL SIGN E
+      43204 <= code2 && code2 <= 43205 || // Mn   [2] SAURASHTRA SIGN VIRAMA..SAURASHTRA SIGN CANDRABINDU
+      43232 <= code2 && code2 <= 43249 || // Mn  [18] COMBINING DEVANAGARI DIGIT ZERO..COMBINING DEVANAGARI SIGN AVAGRAHA
+      43302 <= code2 && code2 <= 43309 || // Mn   [8] KAYAH LI VOWEL UE..KAYAH LI TONE CALYA PLOPHU
+      43335 <= code2 && code2 <= 43345 || // Mn  [11] REJANG VOWEL SIGN I..REJANG CONSONANT SIGN R
+      43392 <= code2 && code2 <= 43394 || // Mn   [3] JAVANESE SIGN PANYANGGA..JAVANESE SIGN LAYAR
+      43443 == code2 || // Mn       JAVANESE SIGN CECAK TELU
+      43446 <= code2 && code2 <= 43449 || // Mn   [4] JAVANESE VOWEL SIGN WULU..JAVANESE VOWEL SIGN SUKU MENDUT
+      43452 == code2 || // Mn       JAVANESE VOWEL SIGN PEPET
+      43493 == code2 || // Mn       MYANMAR SIGN SHAN SAW
+      43561 <= code2 && code2 <= 43566 || // Mn   [6] CHAM VOWEL SIGN AA..CHAM VOWEL SIGN OE
+      43569 <= code2 && code2 <= 43570 || // Mn   [2] CHAM VOWEL SIGN AU..CHAM VOWEL SIGN UE
+      43573 <= code2 && code2 <= 43574 || // Mn   [2] CHAM CONSONANT SIGN LA..CHAM CONSONANT SIGN WA
+      43587 == code2 || // Mn       CHAM CONSONANT SIGN FINAL NG
+      43596 == code2 || // Mn       CHAM CONSONANT SIGN FINAL M
+      43644 == code2 || // Mn       MYANMAR SIGN TAI LAING TONE-2
+      43696 == code2 || // Mn       TAI VIET MAI KANG
+      43698 <= code2 && code2 <= 43700 || // Mn   [3] TAI VIET VOWEL I..TAI VIET VOWEL U
+      43703 <= code2 && code2 <= 43704 || // Mn   [2] TAI VIET MAI KHIT..TAI VIET VOWEL IA
+      43710 <= code2 && code2 <= 43711 || // Mn   [2] TAI VIET VOWEL AM..TAI VIET TONE MAI EK
+      43713 == code2 || // Mn       TAI VIET TONE MAI THO
+      43756 <= code2 && code2 <= 43757 || // Mn   [2] MEETEI MAYEK VOWEL SIGN UU..MEETEI MAYEK VOWEL SIGN AAI
+      43766 == code2 || // Mn       MEETEI MAYEK VIRAMA
+      44005 == code2 || // Mn       MEETEI MAYEK VOWEL SIGN ANAP
+      44008 == code2 || // Mn       MEETEI MAYEK VOWEL SIGN UNAP
+      44013 == code2 || // Mn       MEETEI MAYEK APUN IYEK
+      64286 == code2 || // Mn       HEBREW POINT JUDEO-SPANISH VARIKA
+      65024 <= code2 && code2 <= 65039 || // Mn  [16] VARIATION SELECTOR-1..VARIATION SELECTOR-16
+      65056 <= code2 && code2 <= 65071 || // Mn  [16] COMBINING LIGATURE LEFT HALF..COMBINING CYRILLIC TITLO RIGHT HALF
+      65438 <= code2 && code2 <= 65439 || // Lm   [2] HALFWIDTH KATAKANA VOICED SOUND MARK..HALFWIDTH KATAKANA SEMI-VOICED SOUND MARK
+      66045 == code2 || // Mn       PHAISTOS DISC SIGN COMBINING OBLIQUE STROKE
+      66272 == code2 || // Mn       COPTIC EPACT THOUSANDS MARK
+      66422 <= code2 && code2 <= 66426 || // Mn   [5] COMBINING OLD PERMIC LETTER AN..COMBINING OLD PERMIC LETTER SII
+      68097 <= code2 && code2 <= 68099 || // Mn   [3] KHAROSHTHI VOWEL SIGN I..KHAROSHTHI VOWEL SIGN VOCALIC R
+      68101 <= code2 && code2 <= 68102 || // Mn   [2] KHAROSHTHI VOWEL SIGN E..KHAROSHTHI VOWEL SIGN O
+      68108 <= code2 && code2 <= 68111 || // Mn   [4] KHAROSHTHI VOWEL LENGTH MARK..KHAROSHTHI SIGN VISARGA
+      68152 <= code2 && code2 <= 68154 || // Mn   [3] KHAROSHTHI SIGN BAR ABOVE..KHAROSHTHI SIGN DOT BELOW
+      68159 == code2 || // Mn       KHAROSHTHI VIRAMA
+      68325 <= code2 && code2 <= 68326 || // Mn   [2] MANICHAEAN ABBREVIATION MARK ABOVE..MANICHAEAN ABBREVIATION MARK BELOW
+      69633 == code2 || // Mn       BRAHMI SIGN ANUSVARA
+      69688 <= code2 && code2 <= 69702 || // Mn  [15] BRAHMI VOWEL SIGN AA..BRAHMI VIRAMA
+      69759 <= code2 && code2 <= 69761 || // Mn   [3] BRAHMI NUMBER JOINER..KAITHI SIGN ANUSVARA
+      69811 <= code2 && code2 <= 69814 || // Mn   [4] KAITHI VOWEL SIGN U..KAITHI VOWEL SIGN AI
+      69817 <= code2 && code2 <= 69818 || // Mn   [2] KAITHI SIGN VIRAMA..KAITHI SIGN NUKTA
+      69888 <= code2 && code2 <= 69890 || // Mn   [3] CHAKMA SIGN CANDRABINDU..CHAKMA SIGN VISARGA
+      69927 <= code2 && code2 <= 69931 || // Mn   [5] CHAKMA VOWEL SIGN A..CHAKMA VOWEL SIGN UU
+      69933 <= code2 && code2 <= 69940 || // Mn   [8] CHAKMA VOWEL SIGN AI..CHAKMA MAAYYAA
+      70003 == code2 || // Mn       MAHAJANI SIGN NUKTA
+      70016 <= code2 && code2 <= 70017 || // Mn   [2] SHARADA SIGN CANDRABINDU..SHARADA SIGN ANUSVARA
+      70070 <= code2 && code2 <= 70078 || // Mn   [9] SHARADA VOWEL SIGN U..SHARADA VOWEL SIGN O
+      70090 <= code2 && code2 <= 70092 || // Mn   [3] SHARADA SIGN NUKTA..SHARADA EXTRA SHORT VOWEL MARK
+      70191 <= code2 && code2 <= 70193 || // Mn   [3] KHOJKI VOWEL SIGN U..KHOJKI VOWEL SIGN AI
+      70196 == code2 || // Mn       KHOJKI SIGN ANUSVARA
+      70198 <= code2 && code2 <= 70199 || // Mn   [2] KHOJKI SIGN NUKTA..KHOJKI SIGN SHADDA
+      70206 == code2 || // Mn       KHOJKI SIGN SUKUN
+      70367 == code2 || // Mn       KHUDAWADI SIGN ANUSVARA
+      70371 <= code2 && code2 <= 70378 || // Mn   [8] KHUDAWADI VOWEL SIGN U..KHUDAWADI SIGN VIRAMA
+      70400 <= code2 && code2 <= 70401 || // Mn   [2] GRANTHA SIGN COMBINING ANUSVARA ABOVE..GRANTHA SIGN CANDRABINDU
+      70460 == code2 || // Mn       GRANTHA SIGN NUKTA
+      70462 == code2 || // Mc       GRANTHA VOWEL SIGN AA
+      70464 == code2 || // Mn       GRANTHA VOWEL SIGN II
+      70487 == code2 || // Mc       GRANTHA AU LENGTH MARK
+      70502 <= code2 && code2 <= 70508 || // Mn   [7] COMBINING GRANTHA DIGIT ZERO..COMBINING GRANTHA DIGIT SIX
+      70512 <= code2 && code2 <= 70516 || // Mn   [5] COMBINING GRANTHA LETTER A..COMBINING GRANTHA LETTER PA
+      70712 <= code2 && code2 <= 70719 || // Mn   [8] NEWA VOWEL SIGN U..NEWA VOWEL SIGN AI
+      70722 <= code2 && code2 <= 70724 || // Mn   [3] NEWA SIGN VIRAMA..NEWA SIGN ANUSVARA
+      70726 == code2 || // Mn       NEWA SIGN NUKTA
+      70832 == code2 || // Mc       TIRHUTA VOWEL SIGN AA
+      70835 <= code2 && code2 <= 70840 || // Mn   [6] TIRHUTA VOWEL SIGN U..TIRHUTA VOWEL SIGN VOCALIC LL
+      70842 == code2 || // Mn       TIRHUTA VOWEL SIGN SHORT E
+      70845 == code2 || // Mc       TIRHUTA VOWEL SIGN SHORT O
+      70847 <= code2 && code2 <= 70848 || // Mn   [2] TIRHUTA SIGN CANDRABINDU..TIRHUTA SIGN ANUSVARA
+      70850 <= code2 && code2 <= 70851 || // Mn   [2] TIRHUTA SIGN VIRAMA..TIRHUTA SIGN NUKTA
+      71087 == code2 || // Mc       SIDDHAM VOWEL SIGN AA
+      71090 <= code2 && code2 <= 71093 || // Mn   [4] SIDDHAM VOWEL SIGN U..SIDDHAM VOWEL SIGN VOCALIC RR
+      71100 <= code2 && code2 <= 71101 || // Mn   [2] SIDDHAM SIGN CANDRABINDU..SIDDHAM SIGN ANUSVARA
+      71103 <= code2 && code2 <= 71104 || // Mn   [2] SIDDHAM SIGN VIRAMA..SIDDHAM SIGN NUKTA
+      71132 <= code2 && code2 <= 71133 || // Mn   [2] SIDDHAM VOWEL SIGN ALTERNATE U..SIDDHAM VOWEL SIGN ALTERNATE UU
+      71219 <= code2 && code2 <= 71226 || // Mn   [8] MODI VOWEL SIGN U..MODI VOWEL SIGN AI
+      71229 == code2 || // Mn       MODI SIGN ANUSVARA
+      71231 <= code2 && code2 <= 71232 || // Mn   [2] MODI SIGN VIRAMA..MODI SIGN ARDHACANDRA
+      71339 == code2 || // Mn       TAKRI SIGN ANUSVARA
+      71341 == code2 || // Mn       TAKRI VOWEL SIGN AA
+      71344 <= code2 && code2 <= 71349 || // Mn   [6] TAKRI VOWEL SIGN U..TAKRI VOWEL SIGN AU
+      71351 == code2 || // Mn       TAKRI SIGN NUKTA
+      71453 <= code2 && code2 <= 71455 || // Mn   [3] AHOM CONSONANT SIGN MEDIAL LA..AHOM CONSONANT SIGN MEDIAL LIGATING RA
+      71458 <= code2 && code2 <= 71461 || // Mn   [4] AHOM VOWEL SIGN I..AHOM VOWEL SIGN UU
+      71463 <= code2 && code2 <= 71467 || // Mn   [5] AHOM VOWEL SIGN AW..AHOM SIGN KILLER
+      72193 <= code2 && code2 <= 72198 || // Mn   [6] ZANABAZAR SQUARE VOWEL SIGN I..ZANABAZAR SQUARE VOWEL SIGN O
+      72201 <= code2 && code2 <= 72202 || // Mn   [2] ZANABAZAR SQUARE VOWEL SIGN REVERSED I..ZANABAZAR SQUARE VOWEL LENGTH MARK
+      72243 <= code2 && code2 <= 72248 || // Mn   [6] ZANABAZAR SQUARE FINAL CONSONANT MARK..ZANABAZAR SQUARE SIGN ANUSVARA
+      72251 <= code2 && code2 <= 72254 || // Mn   [4] ZANABAZAR SQUARE CLUSTER-FINAL LETTER YA..ZANABAZAR SQUARE CLUSTER-FINAL LETTER VA
+      72263 == code2 || // Mn       ZANABAZAR SQUARE SUBJOINER
+      72273 <= code2 && code2 <= 72278 || // Mn   [6] SOYOMBO VOWEL SIGN I..SOYOMBO VOWEL SIGN OE
+      72281 <= code2 && code2 <= 72283 || // Mn   [3] SOYOMBO VOWEL SIGN VOCALIC R..SOYOMBO VOWEL LENGTH MARK
+      72330 <= code2 && code2 <= 72342 || // Mn  [13] SOYOMBO FINAL CONSONANT SIGN G..SOYOMBO SIGN ANUSVARA
+      72344 <= code2 && code2 <= 72345 || // Mn   [2] SOYOMBO GEMINATION MARK..SOYOMBO SUBJOINER
+      72752 <= code2 && code2 <= 72758 || // Mn   [7] BHAIKSUKI VOWEL SIGN I..BHAIKSUKI VOWEL SIGN VOCALIC L
+      72760 <= code2 && code2 <= 72765 || // Mn   [6] BHAIKSUKI VOWEL SIGN E..BHAIKSUKI SIGN ANUSVARA
+      72767 == code2 || // Mn       BHAIKSUKI SIGN VIRAMA
+      72850 <= code2 && code2 <= 72871 || // Mn  [22] MARCHEN SUBJOINED LETTER KA..MARCHEN SUBJOINED LETTER ZA
+      72874 <= code2 && code2 <= 72880 || // Mn   [7] MARCHEN SUBJOINED LETTER RA..MARCHEN VOWEL SIGN AA
+      72882 <= code2 && code2 <= 72883 || // Mn   [2] MARCHEN VOWEL SIGN U..MARCHEN VOWEL SIGN E
+      72885 <= code2 && code2 <= 72886 || // Mn   [2] MARCHEN SIGN ANUSVARA..MARCHEN SIGN CANDRABINDU
+      73009 <= code2 && code2 <= 73014 || // Mn   [6] MASARAM GONDI VOWEL SIGN AA..MASARAM GONDI VOWEL SIGN VOCALIC R
+      73018 == code2 || // Mn       MASARAM GONDI VOWEL SIGN E
+      73020 <= code2 && code2 <= 73021 || // Mn   [2] MASARAM GONDI VOWEL SIGN AI..MASARAM GONDI VOWEL SIGN O
+      73023 <= code2 && code2 <= 73029 || // Mn   [7] MASARAM GONDI VOWEL SIGN AU..MASARAM GONDI VIRAMA
+      73031 == code2 || // Mn       MASARAM GONDI RA-KARA
+      92912 <= code2 && code2 <= 92916 || // Mn   [5] BASSA VAH COMBINING HIGH TONE..BASSA VAH COMBINING HIGH-LOW TONE
+      92976 <= code2 && code2 <= 92982 || // Mn   [7] PAHAWH HMONG MARK CIM TUB..PAHAWH HMONG MARK CIM TAUM
+      94095 <= code2 && code2 <= 94098 || // Mn   [4] MIAO TONE RIGHT..MIAO TONE BELOW
+      113821 <= code2 && code2 <= 113822 || // Mn   [2] DUPLOYAN THICK LETTER SELECTOR..DUPLOYAN DOUBLE MARK
+      119141 == code2 || // Mc       MUSICAL SYMBOL COMBINING STEM
+      119143 <= code2 && code2 <= 119145 || // Mn   [3] MUSICAL SYMBOL COMBINING TREMOLO-1..MUSICAL SYMBOL COMBINING TREMOLO-3
+      119150 <= code2 && code2 <= 119154 || // Mc   [5] MUSICAL SYMBOL COMBINING FLAG-1..MUSICAL SYMBOL COMBINING FLAG-5
+      119163 <= code2 && code2 <= 119170 || // Mn   [8] MUSICAL SYMBOL COMBINING ACCENT..MUSICAL SYMBOL COMBINING LOURE
+      119173 <= code2 && code2 <= 119179 || // Mn   [7] MUSICAL SYMBOL COMBINING DOIT..MUSICAL SYMBOL COMBINING TRIPLE TONGUE
+      119210 <= code2 && code2 <= 119213 || // Mn   [4] MUSICAL SYMBOL COMBINING DOWN BOW..MUSICAL SYMBOL COMBINING SNAP PIZZICATO
+      119362 <= code2 && code2 <= 119364 || // Mn   [3] COMBINING GREEK MUSICAL TRISEME..COMBINING GREEK MUSICAL PENTASEME
+      121344 <= code2 && code2 <= 121398 || // Mn  [55] SIGNWRITING HEAD RIM..SIGNWRITING AIR SUCKING IN
+      121403 <= code2 && code2 <= 121452 || // Mn  [50] SIGNWRITING MOUTH CLOSED NEUTRAL..SIGNWRITING EXCITEMENT
+      121461 == code2 || // Mn       SIGNWRITING UPPER BODY TILTING FROM HIP JOINTS
+      121476 == code2 || // Mn       SIGNWRITING LOCATION HEAD NECK
+      121499 <= code2 && code2 <= 121503 || // Mn   [5] SIGNWRITING FILL MODIFIER-2..SIGNWRITING FILL MODIFIER-6
+      121505 <= code2 && code2 <= 121519 || // Mn  [15] SIGNWRITING ROTATION MODIFIER-2..SIGNWRITING ROTATION MODIFIER-16
+      122880 <= code2 && code2 <= 122886 || // Mn   [7] COMBINING GLAGOLITIC LETTER AZU..COMBINING GLAGOLITIC LETTER ZHIVETE
+      122888 <= code2 && code2 <= 122904 || // Mn  [17] COMBINING GLAGOLITIC LETTER ZEMLJA..COMBINING GLAGOLITIC LETTER HERU
+      122907 <= code2 && code2 <= 122913 || // Mn   [7] COMBINING GLAGOLITIC LETTER SHTA..COMBINING GLAGOLITIC LETTER YATI
+      122915 <= code2 && code2 <= 122916 || // Mn   [2] COMBINING GLAGOLITIC LETTER YU..COMBINING GLAGOLITIC LETTER SMALL YUS
+      122918 <= code2 && code2 <= 122922 || // Mn   [5] COMBINING GLAGOLITIC LETTER YO..COMBINING GLAGOLITIC LETTER FITA
+      125136 <= code2 && code2 <= 125142 || // Mn   [7] MENDE KIKAKUI COMBINING NUMBER TEENS..MENDE KIKAKUI COMBINING NUMBER MILLIONS
+      125252 <= code2 && code2 <= 125258 || // Mn   [7] ADLAM ALIF LENGTHENER..ADLAM NUKTA
+      917536 <= code2 && code2 <= 917631 || // Cf  [96] TAG SPACE..CANCEL TAG
+      917760 <= code2 && code2 <= 917999) {
+        return Extend;
+      }
+      if (127462 <= code2 && code2 <= 127487) {
+        return Regional_Indicator;
+      }
+      if (2307 == code2 || // Mc       DEVANAGARI SIGN VISARGA
+      2363 == code2 || // Mc       DEVANAGARI VOWEL SIGN OOE
+      2366 <= code2 && code2 <= 2368 || // Mc   [3] DEVANAGARI VOWEL SIGN AA..DEVANAGARI VOWEL SIGN II
+      2377 <= code2 && code2 <= 2380 || // Mc   [4] DEVANAGARI VOWEL SIGN CANDRA O..DEVANAGARI VOWEL SIGN AU
+      2382 <= code2 && code2 <= 2383 || // Mc   [2] DEVANAGARI VOWEL SIGN PRISHTHAMATRA E..DEVANAGARI VOWEL SIGN AW
+      2434 <= code2 && code2 <= 2435 || // Mc   [2] BENGALI SIGN ANUSVARA..BENGALI SIGN VISARGA
+      2495 <= code2 && code2 <= 2496 || // Mc   [2] BENGALI VOWEL SIGN I..BENGALI VOWEL SIGN II
+      2503 <= code2 && code2 <= 2504 || // Mc   [2] BENGALI VOWEL SIGN E..BENGALI VOWEL SIGN AI
+      2507 <= code2 && code2 <= 2508 || // Mc   [2] BENGALI VOWEL SIGN O..BENGALI VOWEL SIGN AU
+      2563 == code2 || // Mc       GURMUKHI SIGN VISARGA
+      2622 <= code2 && code2 <= 2624 || // Mc   [3] GURMUKHI VOWEL SIGN AA..GURMUKHI VOWEL SIGN II
+      2691 == code2 || // Mc       GUJARATI SIGN VISARGA
+      2750 <= code2 && code2 <= 2752 || // Mc   [3] GUJARATI VOWEL SIGN AA..GUJARATI VOWEL SIGN II
+      2761 == code2 || // Mc       GUJARATI VOWEL SIGN CANDRA O
+      2763 <= code2 && code2 <= 2764 || // Mc   [2] GUJARATI VOWEL SIGN O..GUJARATI VOWEL SIGN AU
+      2818 <= code2 && code2 <= 2819 || // Mc   [2] ORIYA SIGN ANUSVARA..ORIYA SIGN VISARGA
+      2880 == code2 || // Mc       ORIYA VOWEL SIGN II
+      2887 <= code2 && code2 <= 2888 || // Mc   [2] ORIYA VOWEL SIGN E..ORIYA VOWEL SIGN AI
+      2891 <= code2 && code2 <= 2892 || // Mc   [2] ORIYA VOWEL SIGN O..ORIYA VOWEL SIGN AU
+      3007 == code2 || // Mc       TAMIL VOWEL SIGN I
+      3009 <= code2 && code2 <= 3010 || // Mc   [2] TAMIL VOWEL SIGN U..TAMIL VOWEL SIGN UU
+      3014 <= code2 && code2 <= 3016 || // Mc   [3] TAMIL VOWEL SIGN E..TAMIL VOWEL SIGN AI
+      3018 <= code2 && code2 <= 3020 || // Mc   [3] TAMIL VOWEL SIGN O..TAMIL VOWEL SIGN AU
+      3073 <= code2 && code2 <= 3075 || // Mc   [3] TELUGU SIGN CANDRABINDU..TELUGU SIGN VISARGA
+      3137 <= code2 && code2 <= 3140 || // Mc   [4] TELUGU VOWEL SIGN U..TELUGU VOWEL SIGN VOCALIC RR
+      3202 <= code2 && code2 <= 3203 || // Mc   [2] KANNADA SIGN ANUSVARA..KANNADA SIGN VISARGA
+      3262 == code2 || // Mc       KANNADA VOWEL SIGN AA
+      3264 <= code2 && code2 <= 3265 || // Mc   [2] KANNADA VOWEL SIGN II..KANNADA VOWEL SIGN U
+      3267 <= code2 && code2 <= 3268 || // Mc   [2] KANNADA VOWEL SIGN VOCALIC R..KANNADA VOWEL SIGN VOCALIC RR
+      3271 <= code2 && code2 <= 3272 || // Mc   [2] KANNADA VOWEL SIGN EE..KANNADA VOWEL SIGN AI
+      3274 <= code2 && code2 <= 3275 || // Mc   [2] KANNADA VOWEL SIGN O..KANNADA VOWEL SIGN OO
+      3330 <= code2 && code2 <= 3331 || // Mc   [2] MALAYALAM SIGN ANUSVARA..MALAYALAM SIGN VISARGA
+      3391 <= code2 && code2 <= 3392 || // Mc   [2] MALAYALAM VOWEL SIGN I..MALAYALAM VOWEL SIGN II
+      3398 <= code2 && code2 <= 3400 || // Mc   [3] MALAYALAM VOWEL SIGN E..MALAYALAM VOWEL SIGN AI
+      3402 <= code2 && code2 <= 3404 || // Mc   [3] MALAYALAM VOWEL SIGN O..MALAYALAM VOWEL SIGN AU
+      3458 <= code2 && code2 <= 3459 || // Mc   [2] SINHALA SIGN ANUSVARAYA..SINHALA SIGN VISARGAYA
+      3536 <= code2 && code2 <= 3537 || // Mc   [2] SINHALA VOWEL SIGN KETTI AEDA-PILLA..SINHALA VOWEL SIGN DIGA AEDA-PILLA
+      3544 <= code2 && code2 <= 3550 || // Mc   [7] SINHALA VOWEL SIGN GAETTA-PILLA..SINHALA VOWEL SIGN KOMBUVA HAA GAYANUKITTA
+      3570 <= code2 && code2 <= 3571 || // Mc   [2] SINHALA VOWEL SIGN DIGA GAETTA-PILLA..SINHALA VOWEL SIGN DIGA GAYANUKITTA
+      3635 == code2 || // Lo       THAI CHARACTER SARA AM
+      3763 == code2 || // Lo       LAO VOWEL SIGN AM
+      3902 <= code2 && code2 <= 3903 || // Mc   [2] TIBETAN SIGN YAR TSHES..TIBETAN SIGN MAR TSHES
+      3967 == code2 || // Mc       TIBETAN SIGN RNAM BCAD
+      4145 == code2 || // Mc       MYANMAR VOWEL SIGN E
+      4155 <= code2 && code2 <= 4156 || // Mc   [2] MYANMAR CONSONANT SIGN MEDIAL YA..MYANMAR CONSONANT SIGN MEDIAL RA
+      4182 <= code2 && code2 <= 4183 || // Mc   [2] MYANMAR VOWEL SIGN VOCALIC R..MYANMAR VOWEL SIGN VOCALIC RR
+      4228 == code2 || // Mc       MYANMAR VOWEL SIGN SHAN E
+      6070 == code2 || // Mc       KHMER VOWEL SIGN AA
+      6078 <= code2 && code2 <= 6085 || // Mc   [8] KHMER VOWEL SIGN OE..KHMER VOWEL SIGN AU
+      6087 <= code2 && code2 <= 6088 || // Mc   [2] KHMER SIGN REAHMUK..KHMER SIGN YUUKALEAPINTU
+      6435 <= code2 && code2 <= 6438 || // Mc   [4] LIMBU VOWEL SIGN EE..LIMBU VOWEL SIGN AU
+      6441 <= code2 && code2 <= 6443 || // Mc   [3] LIMBU SUBJOINED LETTER YA..LIMBU SUBJOINED LETTER WA
+      6448 <= code2 && code2 <= 6449 || // Mc   [2] LIMBU SMALL LETTER KA..LIMBU SMALL LETTER NGA
+      6451 <= code2 && code2 <= 6456 || // Mc   [6] LIMBU SMALL LETTER TA..LIMBU SMALL LETTER LA
+      6681 <= code2 && code2 <= 6682 || // Mc   [2] BUGINESE VOWEL SIGN E..BUGINESE VOWEL SIGN O
+      6741 == code2 || // Mc       TAI THAM CONSONANT SIGN MEDIAL RA
+      6743 == code2 || // Mc       TAI THAM CONSONANT SIGN LA TANG LAI
+      6765 <= code2 && code2 <= 6770 || // Mc   [6] TAI THAM VOWEL SIGN OY..TAI THAM VOWEL SIGN THAM AI
+      6916 == code2 || // Mc       BALINESE SIGN BISAH
+      6965 == code2 || // Mc       BALINESE VOWEL SIGN TEDUNG
+      6971 == code2 || // Mc       BALINESE VOWEL SIGN RA REPA TEDUNG
+      6973 <= code2 && code2 <= 6977 || // Mc   [5] BALINESE VOWEL SIGN LA LENGA TEDUNG..BALINESE VOWEL SIGN TALING REPA TEDUNG
+      6979 <= code2 && code2 <= 6980 || // Mc   [2] BALINESE VOWEL SIGN PEPET TEDUNG..BALINESE ADEG ADEG
+      7042 == code2 || // Mc       SUNDANESE SIGN PANGWISAD
+      7073 == code2 || // Mc       SUNDANESE CONSONANT SIGN PAMINGKAL
+      7078 <= code2 && code2 <= 7079 || // Mc   [2] SUNDANESE VOWEL SIGN PANAELAENG..SUNDANESE VOWEL SIGN PANOLONG
+      7082 == code2 || // Mc       SUNDANESE SIGN PAMAAEH
+      7143 == code2 || // Mc       BATAK VOWEL SIGN E
+      7146 <= code2 && code2 <= 7148 || // Mc   [3] BATAK VOWEL SIGN I..BATAK VOWEL SIGN O
+      7150 == code2 || // Mc       BATAK VOWEL SIGN U
+      7154 <= code2 && code2 <= 7155 || // Mc   [2] BATAK PANGOLAT..BATAK PANONGONAN
+      7204 <= code2 && code2 <= 7211 || // Mc   [8] LEPCHA SUBJOINED LETTER YA..LEPCHA VOWEL SIGN UU
+      7220 <= code2 && code2 <= 7221 || // Mc   [2] LEPCHA CONSONANT SIGN NYIN-DO..LEPCHA CONSONANT SIGN KANG
+      7393 == code2 || // Mc       VEDIC TONE ATHARVAVEDIC INDEPENDENT SVARITA
+      7410 <= code2 && code2 <= 7411 || // Mc   [2] VEDIC SIGN ARDHAVISARGA..VEDIC SIGN ROTATED ARDHAVISARGA
+      7415 == code2 || // Mc       VEDIC SIGN ATIKRAMA
+      43043 <= code2 && code2 <= 43044 || // Mc   [2] SYLOTI NAGRI VOWEL SIGN A..SYLOTI NAGRI VOWEL SIGN I
+      43047 == code2 || // Mc       SYLOTI NAGRI VOWEL SIGN OO
+      43136 <= code2 && code2 <= 43137 || // Mc   [2] SAURASHTRA SIGN ANUSVARA..SAURASHTRA SIGN VISARGA
+      43188 <= code2 && code2 <= 43203 || // Mc  [16] SAURASHTRA CONSONANT SIGN HAARU..SAURASHTRA VOWEL SIGN AU
+      43346 <= code2 && code2 <= 43347 || // Mc   [2] REJANG CONSONANT SIGN H..REJANG VIRAMA
+      43395 == code2 || // Mc       JAVANESE SIGN WIGNYAN
+      43444 <= code2 && code2 <= 43445 || // Mc   [2] JAVANESE VOWEL SIGN TARUNG..JAVANESE VOWEL SIGN TOLONG
+      43450 <= code2 && code2 <= 43451 || // Mc   [2] JAVANESE VOWEL SIGN TALING..JAVANESE VOWEL SIGN DIRGA MURE
+      43453 <= code2 && code2 <= 43456 || // Mc   [4] JAVANESE CONSONANT SIGN KERET..JAVANESE PANGKON
+      43567 <= code2 && code2 <= 43568 || // Mc   [2] CHAM VOWEL SIGN O..CHAM VOWEL SIGN AI
+      43571 <= code2 && code2 <= 43572 || // Mc   [2] CHAM CONSONANT SIGN YA..CHAM CONSONANT SIGN RA
+      43597 == code2 || // Mc       CHAM CONSONANT SIGN FINAL H
+      43755 == code2 || // Mc       MEETEI MAYEK VOWEL SIGN II
+      43758 <= code2 && code2 <= 43759 || // Mc   [2] MEETEI MAYEK VOWEL SIGN AU..MEETEI MAYEK VOWEL SIGN AAU
+      43765 == code2 || // Mc       MEETEI MAYEK VOWEL SIGN VISARGA
+      44003 <= code2 && code2 <= 44004 || // Mc   [2] MEETEI MAYEK VOWEL SIGN ONAP..MEETEI MAYEK VOWEL SIGN INAP
+      44006 <= code2 && code2 <= 44007 || // Mc   [2] MEETEI MAYEK VOWEL SIGN YENAP..MEETEI MAYEK VOWEL SIGN SOUNAP
+      44009 <= code2 && code2 <= 44010 || // Mc   [2] MEETEI MAYEK VOWEL SIGN CHEINAP..MEETEI MAYEK VOWEL SIGN NUNG
+      44012 == code2 || // Mc       MEETEI MAYEK LUM IYEK
+      69632 == code2 || // Mc       BRAHMI SIGN CANDRABINDU
+      69634 == code2 || // Mc       BRAHMI SIGN VISARGA
+      69762 == code2 || // Mc       KAITHI SIGN VISARGA
+      69808 <= code2 && code2 <= 69810 || // Mc   [3] KAITHI VOWEL SIGN AA..KAITHI VOWEL SIGN II
+      69815 <= code2 && code2 <= 69816 || // Mc   [2] KAITHI VOWEL SIGN O..KAITHI VOWEL SIGN AU
+      69932 == code2 || // Mc       CHAKMA VOWEL SIGN E
+      70018 == code2 || // Mc       SHARADA SIGN VISARGA
+      70067 <= code2 && code2 <= 70069 || // Mc   [3] SHARADA VOWEL SIGN AA..SHARADA VOWEL SIGN II
+      70079 <= code2 && code2 <= 70080 || // Mc   [2] SHARADA VOWEL SIGN AU..SHARADA SIGN VIRAMA
+      70188 <= code2 && code2 <= 70190 || // Mc   [3] KHOJKI VOWEL SIGN AA..KHOJKI VOWEL SIGN II
+      70194 <= code2 && code2 <= 70195 || // Mc   [2] KHOJKI VOWEL SIGN O..KHOJKI VOWEL SIGN AU
+      70197 == code2 || // Mc       KHOJKI SIGN VIRAMA
+      70368 <= code2 && code2 <= 70370 || // Mc   [3] KHUDAWADI VOWEL SIGN AA..KHUDAWADI VOWEL SIGN II
+      70402 <= code2 && code2 <= 70403 || // Mc   [2] GRANTHA SIGN ANUSVARA..GRANTHA SIGN VISARGA
+      70463 == code2 || // Mc       GRANTHA VOWEL SIGN I
+      70465 <= code2 && code2 <= 70468 || // Mc   [4] GRANTHA VOWEL SIGN U..GRANTHA VOWEL SIGN VOCALIC RR
+      70471 <= code2 && code2 <= 70472 || // Mc   [2] GRANTHA VOWEL SIGN EE..GRANTHA VOWEL SIGN AI
+      70475 <= code2 && code2 <= 70477 || // Mc   [3] GRANTHA VOWEL SIGN OO..GRANTHA SIGN VIRAMA
+      70498 <= code2 && code2 <= 70499 || // Mc   [2] GRANTHA VOWEL SIGN VOCALIC L..GRANTHA VOWEL SIGN VOCALIC LL
+      70709 <= code2 && code2 <= 70711 || // Mc   [3] NEWA VOWEL SIGN AA..NEWA VOWEL SIGN II
+      70720 <= code2 && code2 <= 70721 || // Mc   [2] NEWA VOWEL SIGN O..NEWA VOWEL SIGN AU
+      70725 == code2 || // Mc       NEWA SIGN VISARGA
+      70833 <= code2 && code2 <= 70834 || // Mc   [2] TIRHUTA VOWEL SIGN I..TIRHUTA VOWEL SIGN II
+      70841 == code2 || // Mc       TIRHUTA VOWEL SIGN E
+      70843 <= code2 && code2 <= 70844 || // Mc   [2] TIRHUTA VOWEL SIGN AI..TIRHUTA VOWEL SIGN O
+      70846 == code2 || // Mc       TIRHUTA VOWEL SIGN AU
+      70849 == code2 || // Mc       TIRHUTA SIGN VISARGA
+      71088 <= code2 && code2 <= 71089 || // Mc   [2] SIDDHAM VOWEL SIGN I..SIDDHAM VOWEL SIGN II
+      71096 <= code2 && code2 <= 71099 || // Mc   [4] SIDDHAM VOWEL SIGN E..SIDDHAM VOWEL SIGN AU
+      71102 == code2 || // Mc       SIDDHAM SIGN VISARGA
+      71216 <= code2 && code2 <= 71218 || // Mc   [3] MODI VOWEL SIGN AA..MODI VOWEL SIGN II
+      71227 <= code2 && code2 <= 71228 || // Mc   [2] MODI VOWEL SIGN O..MODI VOWEL SIGN AU
+      71230 == code2 || // Mc       MODI SIGN VISARGA
+      71340 == code2 || // Mc       TAKRI SIGN VISARGA
+      71342 <= code2 && code2 <= 71343 || // Mc   [2] TAKRI VOWEL SIGN I..TAKRI VOWEL SIGN II
+      71350 == code2 || // Mc       TAKRI SIGN VIRAMA
+      71456 <= code2 && code2 <= 71457 || // Mc   [2] AHOM VOWEL SIGN A..AHOM VOWEL SIGN AA
+      71462 == code2 || // Mc       AHOM VOWEL SIGN E
+      72199 <= code2 && code2 <= 72200 || // Mc   [2] ZANABAZAR SQUARE VOWEL SIGN AI..ZANABAZAR SQUARE VOWEL SIGN AU
+      72249 == code2 || // Mc       ZANABAZAR SQUARE SIGN VISARGA
+      72279 <= code2 && code2 <= 72280 || // Mc   [2] SOYOMBO VOWEL SIGN AI..SOYOMBO VOWEL SIGN AU
+      72343 == code2 || // Mc       SOYOMBO SIGN VISARGA
+      72751 == code2 || // Mc       BHAIKSUKI VOWEL SIGN AA
+      72766 == code2 || // Mc       BHAIKSUKI SIGN VISARGA
+      72873 == code2 || // Mc       MARCHEN SUBJOINED LETTER YA
+      72881 == code2 || // Mc       MARCHEN VOWEL SIGN I
+      72884 == code2 || // Mc       MARCHEN VOWEL SIGN O
+      94033 <= code2 && code2 <= 94078 || // Mc  [46] MIAO SIGN ASPIRATION..MIAO VOWEL SIGN NG
+      119142 == code2 || // Mc       MUSICAL SYMBOL COMBINING SPRECHGESANG STEM
+      119149 == code2) {
+        return SpacingMark;
+      }
+      if (4352 <= code2 && code2 <= 4447 || // Lo  [96] HANGUL CHOSEONG KIYEOK..HANGUL CHOSEONG FILLER
+      43360 <= code2 && code2 <= 43388) {
+        return L2;
+      }
+      if (4448 <= code2 && code2 <= 4519 || // Lo  [72] HANGUL JUNGSEONG FILLER..HANGUL JUNGSEONG O-YAE
+      55216 <= code2 && code2 <= 55238) {
+        return V2;
+      }
+      if (4520 <= code2 && code2 <= 4607 || // Lo  [88] HANGUL JONGSEONG KIYEOK..HANGUL JONGSEONG SSANGNIEUN
+      55243 <= code2 && code2 <= 55291) {
+        return T2;
+      }
+      if (44032 == code2 || // Lo       HANGUL SYLLABLE GA
+      44060 == code2 || // Lo       HANGUL SYLLABLE GAE
+      44088 == code2 || // Lo       HANGUL SYLLABLE GYA
+      44116 == code2 || // Lo       HANGUL SYLLABLE GYAE
+      44144 == code2 || // Lo       HANGUL SYLLABLE GEO
+      44172 == code2 || // Lo       HANGUL SYLLABLE GE
+      44200 == code2 || // Lo       HANGUL SYLLABLE GYEO
+      44228 == code2 || // Lo       HANGUL SYLLABLE GYE
+      44256 == code2 || // Lo       HANGUL SYLLABLE GO
+      44284 == code2 || // Lo       HANGUL SYLLABLE GWA
+      44312 == code2 || // Lo       HANGUL SYLLABLE GWAE
+      44340 == code2 || // Lo       HANGUL SYLLABLE GOE
+      44368 == code2 || // Lo       HANGUL SYLLABLE GYO
+      44396 == code2 || // Lo       HANGUL SYLLABLE GU
+      44424 == code2 || // Lo       HANGUL SYLLABLE GWEO
+      44452 == code2 || // Lo       HANGUL SYLLABLE GWE
+      44480 == code2 || // Lo       HANGUL SYLLABLE GWI
+      44508 == code2 || // Lo       HANGUL SYLLABLE GYU
+      44536 == code2 || // Lo       HANGUL SYLLABLE GEU
+      44564 == code2 || // Lo       HANGUL SYLLABLE GYI
+      44592 == code2 || // Lo       HANGUL SYLLABLE GI
+      44620 == code2 || // Lo       HANGUL SYLLABLE GGA
+      44648 == code2 || // Lo       HANGUL SYLLABLE GGAE
+      44676 == code2 || // Lo       HANGUL SYLLABLE GGYA
+      44704 == code2 || // Lo       HANGUL SYLLABLE GGYAE
+      44732 == code2 || // Lo       HANGUL SYLLABLE GGEO
+      44760 == code2 || // Lo       HANGUL SYLLABLE GGE
+      44788 == code2 || // Lo       HANGUL SYLLABLE GGYEO
+      44816 == code2 || // Lo       HANGUL SYLLABLE GGYE
+      44844 == code2 || // Lo       HANGUL SYLLABLE GGO
+      44872 == code2 || // Lo       HANGUL SYLLABLE GGWA
+      44900 == code2 || // Lo       HANGUL SYLLABLE GGWAE
+      44928 == code2 || // Lo       HANGUL SYLLABLE GGOE
+      44956 == code2 || // Lo       HANGUL SYLLABLE GGYO
+      44984 == code2 || // Lo       HANGUL SYLLABLE GGU
+      45012 == code2 || // Lo       HANGUL SYLLABLE GGWEO
+      45040 == code2 || // Lo       HANGUL SYLLABLE GGWE
+      45068 == code2 || // Lo       HANGUL SYLLABLE GGWI
+      45096 == code2 || // Lo       HANGUL SYLLABLE GGYU
+      45124 == code2 || // Lo       HANGUL SYLLABLE GGEU
+      45152 == code2 || // Lo       HANGUL SYLLABLE GGYI
+      45180 == code2 || // Lo       HANGUL SYLLABLE GGI
+      45208 == code2 || // Lo       HANGUL SYLLABLE NA
+      45236 == code2 || // Lo       HANGUL SYLLABLE NAE
+      45264 == code2 || // Lo       HANGUL SYLLABLE NYA
+      45292 == code2 || // Lo       HANGUL SYLLABLE NYAE
+      45320 == code2 || // Lo       HANGUL SYLLABLE NEO
+      45348 == code2 || // Lo       HANGUL SYLLABLE NE
+      45376 == code2 || // Lo       HANGUL SYLLABLE NYEO
+      45404 == code2 || // Lo       HANGUL SYLLABLE NYE
+      45432 == code2 || // Lo       HANGUL SYLLABLE NO
+      45460 == code2 || // Lo       HANGUL SYLLABLE NWA
+      45488 == code2 || // Lo       HANGUL SYLLABLE NWAE
+      45516 == code2 || // Lo       HANGUL SYLLABLE NOE
+      45544 == code2 || // Lo       HANGUL SYLLABLE NYO
+      45572 == code2 || // Lo       HANGUL SYLLABLE NU
+      45600 == code2 || // Lo       HANGUL SYLLABLE NWEO
+      45628 == code2 || // Lo       HANGUL SYLLABLE NWE
+      45656 == code2 || // Lo       HANGUL SYLLABLE NWI
+      45684 == code2 || // Lo       HANGUL SYLLABLE NYU
+      45712 == code2 || // Lo       HANGUL SYLLABLE NEU
+      45740 == code2 || // Lo       HANGUL SYLLABLE NYI
+      45768 == code2 || // Lo       HANGUL SYLLABLE NI
+      45796 == code2 || // Lo       HANGUL SYLLABLE DA
+      45824 == code2 || // Lo       HANGUL SYLLABLE DAE
+      45852 == code2 || // Lo       HANGUL SYLLABLE DYA
+      45880 == code2 || // Lo       HANGUL SYLLABLE DYAE
+      45908 == code2 || // Lo       HANGUL SYLLABLE DEO
+      45936 == code2 || // Lo       HANGUL SYLLABLE DE
+      45964 == code2 || // Lo       HANGUL SYLLABLE DYEO
+      45992 == code2 || // Lo       HANGUL SYLLABLE DYE
+      46020 == code2 || // Lo       HANGUL SYLLABLE DO
+      46048 == code2 || // Lo       HANGUL SYLLABLE DWA
+      46076 == code2 || // Lo       HANGUL SYLLABLE DWAE
+      46104 == code2 || // Lo       HANGUL SYLLABLE DOE
+      46132 == code2 || // Lo       HANGUL SYLLABLE DYO
+      46160 == code2 || // Lo       HANGUL SYLLABLE DU
+      46188 == code2 || // Lo       HANGUL SYLLABLE DWEO
+      46216 == code2 || // Lo       HANGUL SYLLABLE DWE
+      46244 == code2 || // Lo       HANGUL SYLLABLE DWI
+      46272 == code2 || // Lo       HANGUL SYLLABLE DYU
+      46300 == code2 || // Lo       HANGUL SYLLABLE DEU
+      46328 == code2 || // Lo       HANGUL SYLLABLE DYI
+      46356 == code2 || // Lo       HANGUL SYLLABLE DI
+      46384 == code2 || // Lo       HANGUL SYLLABLE DDA
+      46412 == code2 || // Lo       HANGUL SYLLABLE DDAE
+      46440 == code2 || // Lo       HANGUL SYLLABLE DDYA
+      46468 == code2 || // Lo       HANGUL SYLLABLE DDYAE
+      46496 == code2 || // Lo       HANGUL SYLLABLE DDEO
+      46524 == code2 || // Lo       HANGUL SYLLABLE DDE
+      46552 == code2 || // Lo       HANGUL SYLLABLE DDYEO
+      46580 == code2 || // Lo       HANGUL SYLLABLE DDYE
+      46608 == code2 || // Lo       HANGUL SYLLABLE DDO
+      46636 == code2 || // Lo       HANGUL SYLLABLE DDWA
+      46664 == code2 || // Lo       HANGUL SYLLABLE DDWAE
+      46692 == code2 || // Lo       HANGUL SYLLABLE DDOE
+      46720 == code2 || // Lo       HANGUL SYLLABLE DDYO
+      46748 == code2 || // Lo       HANGUL SYLLABLE DDU
+      46776 == code2 || // Lo       HANGUL SYLLABLE DDWEO
+      46804 == code2 || // Lo       HANGUL SYLLABLE DDWE
+      46832 == code2 || // Lo       HANGUL SYLLABLE DDWI
+      46860 == code2 || // Lo       HANGUL SYLLABLE DDYU
+      46888 == code2 || // Lo       HANGUL SYLLABLE DDEU
+      46916 == code2 || // Lo       HANGUL SYLLABLE DDYI
+      46944 == code2 || // Lo       HANGUL SYLLABLE DDI
+      46972 == code2 || // Lo       HANGUL SYLLABLE RA
+      47e3 == code2 || // Lo       HANGUL SYLLABLE RAE
+      47028 == code2 || // Lo       HANGUL SYLLABLE RYA
+      47056 == code2 || // Lo       HANGUL SYLLABLE RYAE
+      47084 == code2 || // Lo       HANGUL SYLLABLE REO
+      47112 == code2 || // Lo       HANGUL SYLLABLE RE
+      47140 == code2 || // Lo       HANGUL SYLLABLE RYEO
+      47168 == code2 || // Lo       HANGUL SYLLABLE RYE
+      47196 == code2 || // Lo       HANGUL SYLLABLE RO
+      47224 == code2 || // Lo       HANGUL SYLLABLE RWA
+      47252 == code2 || // Lo       HANGUL SYLLABLE RWAE
+      47280 == code2 || // Lo       HANGUL SYLLABLE ROE
+      47308 == code2 || // Lo       HANGUL SYLLABLE RYO
+      47336 == code2 || // Lo       HANGUL SYLLABLE RU
+      47364 == code2 || // Lo       HANGUL SYLLABLE RWEO
+      47392 == code2 || // Lo       HANGUL SYLLABLE RWE
+      47420 == code2 || // Lo       HANGUL SYLLABLE RWI
+      47448 == code2 || // Lo       HANGUL SYLLABLE RYU
+      47476 == code2 || // Lo       HANGUL SYLLABLE REU
+      47504 == code2 || // Lo       HANGUL SYLLABLE RYI
+      47532 == code2 || // Lo       HANGUL SYLLABLE RI
+      47560 == code2 || // Lo       HANGUL SYLLABLE MA
+      47588 == code2 || // Lo       HANGUL SYLLABLE MAE
+      47616 == code2 || // Lo       HANGUL SYLLABLE MYA
+      47644 == code2 || // Lo       HANGUL SYLLABLE MYAE
+      47672 == code2 || // Lo       HANGUL SYLLABLE MEO
+      47700 == code2 || // Lo       HANGUL SYLLABLE ME
+      47728 == code2 || // Lo       HANGUL SYLLABLE MYEO
+      47756 == code2 || // Lo       HANGUL SYLLABLE MYE
+      47784 == code2 || // Lo       HANGUL SYLLABLE MO
+      47812 == code2 || // Lo       HANGUL SYLLABLE MWA
+      47840 == code2 || // Lo       HANGUL SYLLABLE MWAE
+      47868 == code2 || // Lo       HANGUL SYLLABLE MOE
+      47896 == code2 || // Lo       HANGUL SYLLABLE MYO
+      47924 == code2 || // Lo       HANGUL SYLLABLE MU
+      47952 == code2 || // Lo       HANGUL SYLLABLE MWEO
+      47980 == code2 || // Lo       HANGUL SYLLABLE MWE
+      48008 == code2 || // Lo       HANGUL SYLLABLE MWI
+      48036 == code2 || // Lo       HANGUL SYLLABLE MYU
+      48064 == code2 || // Lo       HANGUL SYLLABLE MEU
+      48092 == code2 || // Lo       HANGUL SYLLABLE MYI
+      48120 == code2 || // Lo       HANGUL SYLLABLE MI
+      48148 == code2 || // Lo       HANGUL SYLLABLE BA
+      48176 == code2 || // Lo       HANGUL SYLLABLE BAE
+      48204 == code2 || // Lo       HANGUL SYLLABLE BYA
+      48232 == code2 || // Lo       HANGUL SYLLABLE BYAE
+      48260 == code2 || // Lo       HANGUL SYLLABLE BEO
+      48288 == code2 || // Lo       HANGUL SYLLABLE BE
+      48316 == code2 || // Lo       HANGUL SYLLABLE BYEO
+      48344 == code2 || // Lo       HANGUL SYLLABLE BYE
+      48372 == code2 || // Lo       HANGUL SYLLABLE BO
+      48400 == code2 || // Lo       HANGUL SYLLABLE BWA
+      48428 == code2 || // Lo       HANGUL SYLLABLE BWAE
+      48456 == code2 || // Lo       HANGUL SYLLABLE BOE
+      48484 == code2 || // Lo       HANGUL SYLLABLE BYO
+      48512 == code2 || // Lo       HANGUL SYLLABLE BU
+      48540 == code2 || // Lo       HANGUL SYLLABLE BWEO
+      48568 == code2 || // Lo       HANGUL SYLLABLE BWE
+      48596 == code2 || // Lo       HANGUL SYLLABLE BWI
+      48624 == code2 || // Lo       HANGUL SYLLABLE BYU
+      48652 == code2 || // Lo       HANGUL SYLLABLE BEU
+      48680 == code2 || // Lo       HANGUL SYLLABLE BYI
+      48708 == code2 || // Lo       HANGUL SYLLABLE BI
+      48736 == code2 || // Lo       HANGUL SYLLABLE BBA
+      48764 == code2 || // Lo       HANGUL SYLLABLE BBAE
+      48792 == code2 || // Lo       HANGUL SYLLABLE BBYA
+      48820 == code2 || // Lo       HANGUL SYLLABLE BBYAE
+      48848 == code2 || // Lo       HANGUL SYLLABLE BBEO
+      48876 == code2 || // Lo       HANGUL SYLLABLE BBE
+      48904 == code2 || // Lo       HANGUL SYLLABLE BBYEO
+      48932 == code2 || // Lo       HANGUL SYLLABLE BBYE
+      48960 == code2 || // Lo       HANGUL SYLLABLE BBO
+      48988 == code2 || // Lo       HANGUL SYLLABLE BBWA
+      49016 == code2 || // Lo       HANGUL SYLLABLE BBWAE
+      49044 == code2 || // Lo       HANGUL SYLLABLE BBOE
+      49072 == code2 || // Lo       HANGUL SYLLABLE BBYO
+      49100 == code2 || // Lo       HANGUL SYLLABLE BBU
+      49128 == code2 || // Lo       HANGUL SYLLABLE BBWEO
+      49156 == code2 || // Lo       HANGUL SYLLABLE BBWE
+      49184 == code2 || // Lo       HANGUL SYLLABLE BBWI
+      49212 == code2 || // Lo       HANGUL SYLLABLE BBYU
+      49240 == code2 || // Lo       HANGUL SYLLABLE BBEU
+      49268 == code2 || // Lo       HANGUL SYLLABLE BBYI
+      49296 == code2 || // Lo       HANGUL SYLLABLE BBI
+      49324 == code2 || // Lo       HANGUL SYLLABLE SA
+      49352 == code2 || // Lo       HANGUL SYLLABLE SAE
+      49380 == code2 || // Lo       HANGUL SYLLABLE SYA
+      49408 == code2 || // Lo       HANGUL SYLLABLE SYAE
+      49436 == code2 || // Lo       HANGUL SYLLABLE SEO
+      49464 == code2 || // Lo       HANGUL SYLLABLE SE
+      49492 == code2 || // Lo       HANGUL SYLLABLE SYEO
+      49520 == code2 || // Lo       HANGUL SYLLABLE SYE
+      49548 == code2 || // Lo       HANGUL SYLLABLE SO
+      49576 == code2 || // Lo       HANGUL SYLLABLE SWA
+      49604 == code2 || // Lo       HANGUL SYLLABLE SWAE
+      49632 == code2 || // Lo       HANGUL SYLLABLE SOE
+      49660 == code2 || // Lo       HANGUL SYLLABLE SYO
+      49688 == code2 || // Lo       HANGUL SYLLABLE SU
+      49716 == code2 || // Lo       HANGUL SYLLABLE SWEO
+      49744 == code2 || // Lo       HANGUL SYLLABLE SWE
+      49772 == code2 || // Lo       HANGUL SYLLABLE SWI
+      49800 == code2 || // Lo       HANGUL SYLLABLE SYU
+      49828 == code2 || // Lo       HANGUL SYLLABLE SEU
+      49856 == code2 || // Lo       HANGUL SYLLABLE SYI
+      49884 == code2 || // Lo       HANGUL SYLLABLE SI
+      49912 == code2 || // Lo       HANGUL SYLLABLE SSA
+      49940 == code2 || // Lo       HANGUL SYLLABLE SSAE
+      49968 == code2 || // Lo       HANGUL SYLLABLE SSYA
+      49996 == code2 || // Lo       HANGUL SYLLABLE SSYAE
+      50024 == code2 || // Lo       HANGUL SYLLABLE SSEO
+      50052 == code2 || // Lo       HANGUL SYLLABLE SSE
+      50080 == code2 || // Lo       HANGUL SYLLABLE SSYEO
+      50108 == code2 || // Lo       HANGUL SYLLABLE SSYE
+      50136 == code2 || // Lo       HANGUL SYLLABLE SSO
+      50164 == code2 || // Lo       HANGUL SYLLABLE SSWA
+      50192 == code2 || // Lo       HANGUL SYLLABLE SSWAE
+      50220 == code2 || // Lo       HANGUL SYLLABLE SSOE
+      50248 == code2 || // Lo       HANGUL SYLLABLE SSYO
+      50276 == code2 || // Lo       HANGUL SYLLABLE SSU
+      50304 == code2 || // Lo       HANGUL SYLLABLE SSWEO
+      50332 == code2 || // Lo       HANGUL SYLLABLE SSWE
+      50360 == code2 || // Lo       HANGUL SYLLABLE SSWI
+      50388 == code2 || // Lo       HANGUL SYLLABLE SSYU
+      50416 == code2 || // Lo       HANGUL SYLLABLE SSEU
+      50444 == code2 || // Lo       HANGUL SYLLABLE SSYI
+      50472 == code2 || // Lo       HANGUL SYLLABLE SSI
+      50500 == code2 || // Lo       HANGUL SYLLABLE A
+      50528 == code2 || // Lo       HANGUL SYLLABLE AE
+      50556 == code2 || // Lo       HANGUL SYLLABLE YA
+      50584 == code2 || // Lo       HANGUL SYLLABLE YAE
+      50612 == code2 || // Lo       HANGUL SYLLABLE EO
+      50640 == code2 || // Lo       HANGUL SYLLABLE E
+      50668 == code2 || // Lo       HANGUL SYLLABLE YEO
+      50696 == code2 || // Lo       HANGUL SYLLABLE YE
+      50724 == code2 || // Lo       HANGUL SYLLABLE O
+      50752 == code2 || // Lo       HANGUL SYLLABLE WA
+      50780 == code2 || // Lo       HANGUL SYLLABLE WAE
+      50808 == code2 || // Lo       HANGUL SYLLABLE OE
+      50836 == code2 || // Lo       HANGUL SYLLABLE YO
+      50864 == code2 || // Lo       HANGUL SYLLABLE U
+      50892 == code2 || // Lo       HANGUL SYLLABLE WEO
+      50920 == code2 || // Lo       HANGUL SYLLABLE WE
+      50948 == code2 || // Lo       HANGUL SYLLABLE WI
+      50976 == code2 || // Lo       HANGUL SYLLABLE YU
+      51004 == code2 || // Lo       HANGUL SYLLABLE EU
+      51032 == code2 || // Lo       HANGUL SYLLABLE YI
+      51060 == code2 || // Lo       HANGUL SYLLABLE I
+      51088 == code2 || // Lo       HANGUL SYLLABLE JA
+      51116 == code2 || // Lo       HANGUL SYLLABLE JAE
+      51144 == code2 || // Lo       HANGUL SYLLABLE JYA
+      51172 == code2 || // Lo       HANGUL SYLLABLE JYAE
+      51200 == code2 || // Lo       HANGUL SYLLABLE JEO
+      51228 == code2 || // Lo       HANGUL SYLLABLE JE
+      51256 == code2 || // Lo       HANGUL SYLLABLE JYEO
+      51284 == code2 || // Lo       HANGUL SYLLABLE JYE
+      51312 == code2 || // Lo       HANGUL SYLLABLE JO
+      51340 == code2 || // Lo       HANGUL SYLLABLE JWA
+      51368 == code2 || // Lo       HANGUL SYLLABLE JWAE
+      51396 == code2 || // Lo       HANGUL SYLLABLE JOE
+      51424 == code2 || // Lo       HANGUL SYLLABLE JYO
+      51452 == code2 || // Lo       HANGUL SYLLABLE JU
+      51480 == code2 || // Lo       HANGUL SYLLABLE JWEO
+      51508 == code2 || // Lo       HANGUL SYLLABLE JWE
+      51536 == code2 || // Lo       HANGUL SYLLABLE JWI
+      51564 == code2 || // Lo       HANGUL SYLLABLE JYU
+      51592 == code2 || // Lo       HANGUL SYLLABLE JEU
+      51620 == code2 || // Lo       HANGUL SYLLABLE JYI
+      51648 == code2 || // Lo       HANGUL SYLLABLE JI
+      51676 == code2 || // Lo       HANGUL SYLLABLE JJA
+      51704 == code2 || // Lo       HANGUL SYLLABLE JJAE
+      51732 == code2 || // Lo       HANGUL SYLLABLE JJYA
+      51760 == code2 || // Lo       HANGUL SYLLABLE JJYAE
+      51788 == code2 || // Lo       HANGUL SYLLABLE JJEO
+      51816 == code2 || // Lo       HANGUL SYLLABLE JJE
+      51844 == code2 || // Lo       HANGUL SYLLABLE JJYEO
+      51872 == code2 || // Lo       HANGUL SYLLABLE JJYE
+      51900 == code2 || // Lo       HANGUL SYLLABLE JJO
+      51928 == code2 || // Lo       HANGUL SYLLABLE JJWA
+      51956 == code2 || // Lo       HANGUL SYLLABLE JJWAE
+      51984 == code2 || // Lo       HANGUL SYLLABLE JJOE
+      52012 == code2 || // Lo       HANGUL SYLLABLE JJYO
+      52040 == code2 || // Lo       HANGUL SYLLABLE JJU
+      52068 == code2 || // Lo       HANGUL SYLLABLE JJWEO
+      52096 == code2 || // Lo       HANGUL SYLLABLE JJWE
+      52124 == code2 || // Lo       HANGUL SYLLABLE JJWI
+      52152 == code2 || // Lo       HANGUL SYLLABLE JJYU
+      52180 == code2 || // Lo       HANGUL SYLLABLE JJEU
+      52208 == code2 || // Lo       HANGUL SYLLABLE JJYI
+      52236 == code2 || // Lo       HANGUL SYLLABLE JJI
+      52264 == code2 || // Lo       HANGUL SYLLABLE CA
+      52292 == code2 || // Lo       HANGUL SYLLABLE CAE
+      52320 == code2 || // Lo       HANGUL SYLLABLE CYA
+      52348 == code2 || // Lo       HANGUL SYLLABLE CYAE
+      52376 == code2 || // Lo       HANGUL SYLLABLE CEO
+      52404 == code2 || // Lo       HANGUL SYLLABLE CE
+      52432 == code2 || // Lo       HANGUL SYLLABLE CYEO
+      52460 == code2 || // Lo       HANGUL SYLLABLE CYE
+      52488 == code2 || // Lo       HANGUL SYLLABLE CO
+      52516 == code2 || // Lo       HANGUL SYLLABLE CWA
+      52544 == code2 || // Lo       HANGUL SYLLABLE CWAE
+      52572 == code2 || // Lo       HANGUL SYLLABLE COE
+      52600 == code2 || // Lo       HANGUL SYLLABLE CYO
+      52628 == code2 || // Lo       HANGUL SYLLABLE CU
+      52656 == code2 || // Lo       HANGUL SYLLABLE CWEO
+      52684 == code2 || // Lo       HANGUL SYLLABLE CWE
+      52712 == code2 || // Lo       HANGUL SYLLABLE CWI
+      52740 == code2 || // Lo       HANGUL SYLLABLE CYU
+      52768 == code2 || // Lo       HANGUL SYLLABLE CEU
+      52796 == code2 || // Lo       HANGUL SYLLABLE CYI
+      52824 == code2 || // Lo       HANGUL SYLLABLE CI
+      52852 == code2 || // Lo       HANGUL SYLLABLE KA
+      52880 == code2 || // Lo       HANGUL SYLLABLE KAE
+      52908 == code2 || // Lo       HANGUL SYLLABLE KYA
+      52936 == code2 || // Lo       HANGUL SYLLABLE KYAE
+      52964 == code2 || // Lo       HANGUL SYLLABLE KEO
+      52992 == code2 || // Lo       HANGUL SYLLABLE KE
+      53020 == code2 || // Lo       HANGUL SYLLABLE KYEO
+      53048 == code2 || // Lo       HANGUL SYLLABLE KYE
+      53076 == code2 || // Lo       HANGUL SYLLABLE KO
+      53104 == code2 || // Lo       HANGUL SYLLABLE KWA
+      53132 == code2 || // Lo       HANGUL SYLLABLE KWAE
+      53160 == code2 || // Lo       HANGUL SYLLABLE KOE
+      53188 == code2 || // Lo       HANGUL SYLLABLE KYO
+      53216 == code2 || // Lo       HANGUL SYLLABLE KU
+      53244 == code2 || // Lo       HANGUL SYLLABLE KWEO
+      53272 == code2 || // Lo       HANGUL SYLLABLE KWE
+      53300 == code2 || // Lo       HANGUL SYLLABLE KWI
+      53328 == code2 || // Lo       HANGUL SYLLABLE KYU
+      53356 == code2 || // Lo       HANGUL SYLLABLE KEU
+      53384 == code2 || // Lo       HANGUL SYLLABLE KYI
+      53412 == code2 || // Lo       HANGUL SYLLABLE KI
+      53440 == code2 || // Lo       HANGUL SYLLABLE TA
+      53468 == code2 || // Lo       HANGUL SYLLABLE TAE
+      53496 == code2 || // Lo       HANGUL SYLLABLE TYA
+      53524 == code2 || // Lo       HANGUL SYLLABLE TYAE
+      53552 == code2 || // Lo       HANGUL SYLLABLE TEO
+      53580 == code2 || // Lo       HANGUL SYLLABLE TE
+      53608 == code2 || // Lo       HANGUL SYLLABLE TYEO
+      53636 == code2 || // Lo       HANGUL SYLLABLE TYE
+      53664 == code2 || // Lo       HANGUL SYLLABLE TO
+      53692 == code2 || // Lo       HANGUL SYLLABLE TWA
+      53720 == code2 || // Lo       HANGUL SYLLABLE TWAE
+      53748 == code2 || // Lo       HANGUL SYLLABLE TOE
+      53776 == code2 || // Lo       HANGUL SYLLABLE TYO
+      53804 == code2 || // Lo       HANGUL SYLLABLE TU
+      53832 == code2 || // Lo       HANGUL SYLLABLE TWEO
+      53860 == code2 || // Lo       HANGUL SYLLABLE TWE
+      53888 == code2 || // Lo       HANGUL SYLLABLE TWI
+      53916 == code2 || // Lo       HANGUL SYLLABLE TYU
+      53944 == code2 || // Lo       HANGUL SYLLABLE TEU
+      53972 == code2 || // Lo       HANGUL SYLLABLE TYI
+      54e3 == code2 || // Lo       HANGUL SYLLABLE TI
+      54028 == code2 || // Lo       HANGUL SYLLABLE PA
+      54056 == code2 || // Lo       HANGUL SYLLABLE PAE
+      54084 == code2 || // Lo       HANGUL SYLLABLE PYA
+      54112 == code2 || // Lo       HANGUL SYLLABLE PYAE
+      54140 == code2 || // Lo       HANGUL SYLLABLE PEO
+      54168 == code2 || // Lo       HANGUL SYLLABLE PE
+      54196 == code2 || // Lo       HANGUL SYLLABLE PYEO
+      54224 == code2 || // Lo       HANGUL SYLLABLE PYE
+      54252 == code2 || // Lo       HANGUL SYLLABLE PO
+      54280 == code2 || // Lo       HANGUL SYLLABLE PWA
+      54308 == code2 || // Lo       HANGUL SYLLABLE PWAE
+      54336 == code2 || // Lo       HANGUL SYLLABLE POE
+      54364 == code2 || // Lo       HANGUL SYLLABLE PYO
+      54392 == code2 || // Lo       HANGUL SYLLABLE PU
+      54420 == code2 || // Lo       HANGUL SYLLABLE PWEO
+      54448 == code2 || // Lo       HANGUL SYLLABLE PWE
+      54476 == code2 || // Lo       HANGUL SYLLABLE PWI
+      54504 == code2 || // Lo       HANGUL SYLLABLE PYU
+      54532 == code2 || // Lo       HANGUL SYLLABLE PEU
+      54560 == code2 || // Lo       HANGUL SYLLABLE PYI
+      54588 == code2 || // Lo       HANGUL SYLLABLE PI
+      54616 == code2 || // Lo       HANGUL SYLLABLE HA
+      54644 == code2 || // Lo       HANGUL SYLLABLE HAE
+      54672 == code2 || // Lo       HANGUL SYLLABLE HYA
+      54700 == code2 || // Lo       HANGUL SYLLABLE HYAE
+      54728 == code2 || // Lo       HANGUL SYLLABLE HEO
+      54756 == code2 || // Lo       HANGUL SYLLABLE HE
+      54784 == code2 || // Lo       HANGUL SYLLABLE HYEO
+      54812 == code2 || // Lo       HANGUL SYLLABLE HYE
+      54840 == code2 || // Lo       HANGUL SYLLABLE HO
+      54868 == code2 || // Lo       HANGUL SYLLABLE HWA
+      54896 == code2 || // Lo       HANGUL SYLLABLE HWAE
+      54924 == code2 || // Lo       HANGUL SYLLABLE HOE
+      54952 == code2 || // Lo       HANGUL SYLLABLE HYO
+      54980 == code2 || // Lo       HANGUL SYLLABLE HU
+      55008 == code2 || // Lo       HANGUL SYLLABLE HWEO
+      55036 == code2 || // Lo       HANGUL SYLLABLE HWE
+      55064 == code2 || // Lo       HANGUL SYLLABLE HWI
+      55092 == code2 || // Lo       HANGUL SYLLABLE HYU
+      55120 == code2 || // Lo       HANGUL SYLLABLE HEU
+      55148 == code2 || // Lo       HANGUL SYLLABLE HYI
+      55176 == code2) {
+        return LV;
+      }
+      if (44033 <= code2 && code2 <= 44059 || // Lo  [27] HANGUL SYLLABLE GAG..HANGUL SYLLABLE GAH
+      44061 <= code2 && code2 <= 44087 || // Lo  [27] HANGUL SYLLABLE GAEG..HANGUL SYLLABLE GAEH
+      44089 <= code2 && code2 <= 44115 || // Lo  [27] HANGUL SYLLABLE GYAG..HANGUL SYLLABLE GYAH
+      44117 <= code2 && code2 <= 44143 || // Lo  [27] HANGUL SYLLABLE GYAEG..HANGUL SYLLABLE GYAEH
+      44145 <= code2 && code2 <= 44171 || // Lo  [27] HANGUL SYLLABLE GEOG..HANGUL SYLLABLE GEOH
+      44173 <= code2 && code2 <= 44199 || // Lo  [27] HANGUL SYLLABLE GEG..HANGUL SYLLABLE GEH
+      44201 <= code2 && code2 <= 44227 || // Lo  [27] HANGUL SYLLABLE GYEOG..HANGUL SYLLABLE GYEOH
+      44229 <= code2 && code2 <= 44255 || // Lo  [27] HANGUL SYLLABLE GYEG..HANGUL SYLLABLE GYEH
+      44257 <= code2 && code2 <= 44283 || // Lo  [27] HANGUL SYLLABLE GOG..HANGUL SYLLABLE GOH
+      44285 <= code2 && code2 <= 44311 || // Lo  [27] HANGUL SYLLABLE GWAG..HANGUL SYLLABLE GWAH
+      44313 <= code2 && code2 <= 44339 || // Lo  [27] HANGUL SYLLABLE GWAEG..HANGUL SYLLABLE GWAEH
+      44341 <= code2 && code2 <= 44367 || // Lo  [27] HANGUL SYLLABLE GOEG..HANGUL SYLLABLE GOEH
+      44369 <= code2 && code2 <= 44395 || // Lo  [27] HANGUL SYLLABLE GYOG..HANGUL SYLLABLE GYOH
+      44397 <= code2 && code2 <= 44423 || // Lo  [27] HANGUL SYLLABLE GUG..HANGUL SYLLABLE GUH
+      44425 <= code2 && code2 <= 44451 || // Lo  [27] HANGUL SYLLABLE GWEOG..HANGUL SYLLABLE GWEOH
+      44453 <= code2 && code2 <= 44479 || // Lo  [27] HANGUL SYLLABLE GWEG..HANGUL SYLLABLE GWEH
+      44481 <= code2 && code2 <= 44507 || // Lo  [27] HANGUL SYLLABLE GWIG..HANGUL SYLLABLE GWIH
+      44509 <= code2 && code2 <= 44535 || // Lo  [27] HANGUL SYLLABLE GYUG..HANGUL SYLLABLE GYUH
+      44537 <= code2 && code2 <= 44563 || // Lo  [27] HANGUL SYLLABLE GEUG..HANGUL SYLLABLE GEUH
+      44565 <= code2 && code2 <= 44591 || // Lo  [27] HANGUL SYLLABLE GYIG..HANGUL SYLLABLE GYIH
+      44593 <= code2 && code2 <= 44619 || // Lo  [27] HANGUL SYLLABLE GIG..HANGUL SYLLABLE GIH
+      44621 <= code2 && code2 <= 44647 || // Lo  [27] HANGUL SYLLABLE GGAG..HANGUL SYLLABLE GGAH
+      44649 <= code2 && code2 <= 44675 || // Lo  [27] HANGUL SYLLABLE GGAEG..HANGUL SYLLABLE GGAEH
+      44677 <= code2 && code2 <= 44703 || // Lo  [27] HANGUL SYLLABLE GGYAG..HANGUL SYLLABLE GGYAH
+      44705 <= code2 && code2 <= 44731 || // Lo  [27] HANGUL SYLLABLE GGYAEG..HANGUL SYLLABLE GGYAEH
+      44733 <= code2 && code2 <= 44759 || // Lo  [27] HANGUL SYLLABLE GGEOG..HANGUL SYLLABLE GGEOH
+      44761 <= code2 && code2 <= 44787 || // Lo  [27] HANGUL SYLLABLE GGEG..HANGUL SYLLABLE GGEH
+      44789 <= code2 && code2 <= 44815 || // Lo  [27] HANGUL SYLLABLE GGYEOG..HANGUL SYLLABLE GGYEOH
+      44817 <= code2 && code2 <= 44843 || // Lo  [27] HANGUL SYLLABLE GGYEG..HANGUL SYLLABLE GGYEH
+      44845 <= code2 && code2 <= 44871 || // Lo  [27] HANGUL SYLLABLE GGOG..HANGUL SYLLABLE GGOH
+      44873 <= code2 && code2 <= 44899 || // Lo  [27] HANGUL SYLLABLE GGWAG..HANGUL SYLLABLE GGWAH
+      44901 <= code2 && code2 <= 44927 || // Lo  [27] HANGUL SYLLABLE GGWAEG..HANGUL SYLLABLE GGWAEH
+      44929 <= code2 && code2 <= 44955 || // Lo  [27] HANGUL SYLLABLE GGOEG..HANGUL SYLLABLE GGOEH
+      44957 <= code2 && code2 <= 44983 || // Lo  [27] HANGUL SYLLABLE GGYOG..HANGUL SYLLABLE GGYOH
+      44985 <= code2 && code2 <= 45011 || // Lo  [27] HANGUL SYLLABLE GGUG..HANGUL SYLLABLE GGUH
+      45013 <= code2 && code2 <= 45039 || // Lo  [27] HANGUL SYLLABLE GGWEOG..HANGUL SYLLABLE GGWEOH
+      45041 <= code2 && code2 <= 45067 || // Lo  [27] HANGUL SYLLABLE GGWEG..HANGUL SYLLABLE GGWEH
+      45069 <= code2 && code2 <= 45095 || // Lo  [27] HANGUL SYLLABLE GGWIG..HANGUL SYLLABLE GGWIH
+      45097 <= code2 && code2 <= 45123 || // Lo  [27] HANGUL SYLLABLE GGYUG..HANGUL SYLLABLE GGYUH
+      45125 <= code2 && code2 <= 45151 || // Lo  [27] HANGUL SYLLABLE GGEUG..HANGUL SYLLABLE GGEUH
+      45153 <= code2 && code2 <= 45179 || // Lo  [27] HANGUL SYLLABLE GGYIG..HANGUL SYLLABLE GGYIH
+      45181 <= code2 && code2 <= 45207 || // Lo  [27] HANGUL SYLLABLE GGIG..HANGUL SYLLABLE GGIH
+      45209 <= code2 && code2 <= 45235 || // Lo  [27] HANGUL SYLLABLE NAG..HANGUL SYLLABLE NAH
+      45237 <= code2 && code2 <= 45263 || // Lo  [27] HANGUL SYLLABLE NAEG..HANGUL SYLLABLE NAEH
+      45265 <= code2 && code2 <= 45291 || // Lo  [27] HANGUL SYLLABLE NYAG..HANGUL SYLLABLE NYAH
+      45293 <= code2 && code2 <= 45319 || // Lo  [27] HANGUL SYLLABLE NYAEG..HANGUL SYLLABLE NYAEH
+      45321 <= code2 && code2 <= 45347 || // Lo  [27] HANGUL SYLLABLE NEOG..HANGUL SYLLABLE NEOH
+      45349 <= code2 && code2 <= 45375 || // Lo  [27] HANGUL SYLLABLE NEG..HANGUL SYLLABLE NEH
+      45377 <= code2 && code2 <= 45403 || // Lo  [27] HANGUL SYLLABLE NYEOG..HANGUL SYLLABLE NYEOH
+      45405 <= code2 && code2 <= 45431 || // Lo  [27] HANGUL SYLLABLE NYEG..HANGUL SYLLABLE NYEH
+      45433 <= code2 && code2 <= 45459 || // Lo  [27] HANGUL SYLLABLE NOG..HANGUL SYLLABLE NOH
+      45461 <= code2 && code2 <= 45487 || // Lo  [27] HANGUL SYLLABLE NWAG..HANGUL SYLLABLE NWAH
+      45489 <= code2 && code2 <= 45515 || // Lo  [27] HANGUL SYLLABLE NWAEG..HANGUL SYLLABLE NWAEH
+      45517 <= code2 && code2 <= 45543 || // Lo  [27] HANGUL SYLLABLE NOEG..HANGUL SYLLABLE NOEH
+      45545 <= code2 && code2 <= 45571 || // Lo  [27] HANGUL SYLLABLE NYOG..HANGUL SYLLABLE NYOH
+      45573 <= code2 && code2 <= 45599 || // Lo  [27] HANGUL SYLLABLE NUG..HANGUL SYLLABLE NUH
+      45601 <= code2 && code2 <= 45627 || // Lo  [27] HANGUL SYLLABLE NWEOG..HANGUL SYLLABLE NWEOH
+      45629 <= code2 && code2 <= 45655 || // Lo  [27] HANGUL SYLLABLE NWEG..HANGUL SYLLABLE NWEH
+      45657 <= code2 && code2 <= 45683 || // Lo  [27] HANGUL SYLLABLE NWIG..HANGUL SYLLABLE NWIH
+      45685 <= code2 && code2 <= 45711 || // Lo  [27] HANGUL SYLLABLE NYUG..HANGUL SYLLABLE NYUH
+      45713 <= code2 && code2 <= 45739 || // Lo  [27] HANGUL SYLLABLE NEUG..HANGUL SYLLABLE NEUH
+      45741 <= code2 && code2 <= 45767 || // Lo  [27] HANGUL SYLLABLE NYIG..HANGUL SYLLABLE NYIH
+      45769 <= code2 && code2 <= 45795 || // Lo  [27] HANGUL SYLLABLE NIG..HANGUL SYLLABLE NIH
+      45797 <= code2 && code2 <= 45823 || // Lo  [27] HANGUL SYLLABLE DAG..HANGUL SYLLABLE DAH
+      45825 <= code2 && code2 <= 45851 || // Lo  [27] HANGUL SYLLABLE DAEG..HANGUL SYLLABLE DAEH
+      45853 <= code2 && code2 <= 45879 || // Lo  [27] HANGUL SYLLABLE DYAG..HANGUL SYLLABLE DYAH
+      45881 <= code2 && code2 <= 45907 || // Lo  [27] HANGUL SYLLABLE DYAEG..HANGUL SYLLABLE DYAEH
+      45909 <= code2 && code2 <= 45935 || // Lo  [27] HANGUL SYLLABLE DEOG..HANGUL SYLLABLE DEOH
+      45937 <= code2 && code2 <= 45963 || // Lo  [27] HANGUL SYLLABLE DEG..HANGUL SYLLABLE DEH
+      45965 <= code2 && code2 <= 45991 || // Lo  [27] HANGUL SYLLABLE DYEOG..HANGUL SYLLABLE DYEOH
+      45993 <= code2 && code2 <= 46019 || // Lo  [27] HANGUL SYLLABLE DYEG..HANGUL SYLLABLE DYEH
+      46021 <= code2 && code2 <= 46047 || // Lo  [27] HANGUL SYLLABLE DOG..HANGUL SYLLABLE DOH
+      46049 <= code2 && code2 <= 46075 || // Lo  [27] HANGUL SYLLABLE DWAG..HANGUL SYLLABLE DWAH
+      46077 <= code2 && code2 <= 46103 || // Lo  [27] HANGUL SYLLABLE DWAEG..HANGUL SYLLABLE DWAEH
+      46105 <= code2 && code2 <= 46131 || // Lo  [27] HANGUL SYLLABLE DOEG..HANGUL SYLLABLE DOEH
+      46133 <= code2 && code2 <= 46159 || // Lo  [27] HANGUL SYLLABLE DYOG..HANGUL SYLLABLE DYOH
+      46161 <= code2 && code2 <= 46187 || // Lo  [27] HANGUL SYLLABLE DUG..HANGUL SYLLABLE DUH
+      46189 <= code2 && code2 <= 46215 || // Lo  [27] HANGUL SYLLABLE DWEOG..HANGUL SYLLABLE DWEOH
+      46217 <= code2 && code2 <= 46243 || // Lo  [27] HANGUL SYLLABLE DWEG..HANGUL SYLLABLE DWEH
+      46245 <= code2 && code2 <= 46271 || // Lo  [27] HANGUL SYLLABLE DWIG..HANGUL SYLLABLE DWIH
+      46273 <= code2 && code2 <= 46299 || // Lo  [27] HANGUL SYLLABLE DYUG..HANGUL SYLLABLE DYUH
+      46301 <= code2 && code2 <= 46327 || // Lo  [27] HANGUL SYLLABLE DEUG..HANGUL SYLLABLE DEUH
+      46329 <= code2 && code2 <= 46355 || // Lo  [27] HANGUL SYLLABLE DYIG..HANGUL SYLLABLE DYIH
+      46357 <= code2 && code2 <= 46383 || // Lo  [27] HANGUL SYLLABLE DIG..HANGUL SYLLABLE DIH
+      46385 <= code2 && code2 <= 46411 || // Lo  [27] HANGUL SYLLABLE DDAG..HANGUL SYLLABLE DDAH
+      46413 <= code2 && code2 <= 46439 || // Lo  [27] HANGUL SYLLABLE DDAEG..HANGUL SYLLABLE DDAEH
+      46441 <= code2 && code2 <= 46467 || // Lo  [27] HANGUL SYLLABLE DDYAG..HANGUL SYLLABLE DDYAH
+      46469 <= code2 && code2 <= 46495 || // Lo  [27] HANGUL SYLLABLE DDYAEG..HANGUL SYLLABLE DDYAEH
+      46497 <= code2 && code2 <= 46523 || // Lo  [27] HANGUL SYLLABLE DDEOG..HANGUL SYLLABLE DDEOH
+      46525 <= code2 && code2 <= 46551 || // Lo  [27] HANGUL SYLLABLE DDEG..HANGUL SYLLABLE DDEH
+      46553 <= code2 && code2 <= 46579 || // Lo  [27] HANGUL SYLLABLE DDYEOG..HANGUL SYLLABLE DDYEOH
+      46581 <= code2 && code2 <= 46607 || // Lo  [27] HANGUL SYLLABLE DDYEG..HANGUL SYLLABLE DDYEH
+      46609 <= code2 && code2 <= 46635 || // Lo  [27] HANGUL SYLLABLE DDOG..HANGUL SYLLABLE DDOH
+      46637 <= code2 && code2 <= 46663 || // Lo  [27] HANGUL SYLLABLE DDWAG..HANGUL SYLLABLE DDWAH
+      46665 <= code2 && code2 <= 46691 || // Lo  [27] HANGUL SYLLABLE DDWAEG..HANGUL SYLLABLE DDWAEH
+      46693 <= code2 && code2 <= 46719 || // Lo  [27] HANGUL SYLLABLE DDOEG..HANGUL SYLLABLE DDOEH
+      46721 <= code2 && code2 <= 46747 || // Lo  [27] HANGUL SYLLABLE DDYOG..HANGUL SYLLABLE DDYOH
+      46749 <= code2 && code2 <= 46775 || // Lo  [27] HANGUL SYLLABLE DDUG..HANGUL SYLLABLE DDUH
+      46777 <= code2 && code2 <= 46803 || // Lo  [27] HANGUL SYLLABLE DDWEOG..HANGUL SYLLABLE DDWEOH
+      46805 <= code2 && code2 <= 46831 || // Lo  [27] HANGUL SYLLABLE DDWEG..HANGUL SYLLABLE DDWEH
+      46833 <= code2 && code2 <= 46859 || // Lo  [27] HANGUL SYLLABLE DDWIG..HANGUL SYLLABLE DDWIH
+      46861 <= code2 && code2 <= 46887 || // Lo  [27] HANGUL SYLLABLE DDYUG..HANGUL SYLLABLE DDYUH
+      46889 <= code2 && code2 <= 46915 || // Lo  [27] HANGUL SYLLABLE DDEUG..HANGUL SYLLABLE DDEUH
+      46917 <= code2 && code2 <= 46943 || // Lo  [27] HANGUL SYLLABLE DDYIG..HANGUL SYLLABLE DDYIH
+      46945 <= code2 && code2 <= 46971 || // Lo  [27] HANGUL SYLLABLE DDIG..HANGUL SYLLABLE DDIH
+      46973 <= code2 && code2 <= 46999 || // Lo  [27] HANGUL SYLLABLE RAG..HANGUL SYLLABLE RAH
+      47001 <= code2 && code2 <= 47027 || // Lo  [27] HANGUL SYLLABLE RAEG..HANGUL SYLLABLE RAEH
+      47029 <= code2 && code2 <= 47055 || // Lo  [27] HANGUL SYLLABLE RYAG..HANGUL SYLLABLE RYAH
+      47057 <= code2 && code2 <= 47083 || // Lo  [27] HANGUL SYLLABLE RYAEG..HANGUL SYLLABLE RYAEH
+      47085 <= code2 && code2 <= 47111 || // Lo  [27] HANGUL SYLLABLE REOG..HANGUL SYLLABLE REOH
+      47113 <= code2 && code2 <= 47139 || // Lo  [27] HANGUL SYLLABLE REG..HANGUL SYLLABLE REH
+      47141 <= code2 && code2 <= 47167 || // Lo  [27] HANGUL SYLLABLE RYEOG..HANGUL SYLLABLE RYEOH
+      47169 <= code2 && code2 <= 47195 || // Lo  [27] HANGUL SYLLABLE RYEG..HANGUL SYLLABLE RYEH
+      47197 <= code2 && code2 <= 47223 || // Lo  [27] HANGUL SYLLABLE ROG..HANGUL SYLLABLE ROH
+      47225 <= code2 && code2 <= 47251 || // Lo  [27] HANGUL SYLLABLE RWAG..HANGUL SYLLABLE RWAH
+      47253 <= code2 && code2 <= 47279 || // Lo  [27] HANGUL SYLLABLE RWAEG..HANGUL SYLLABLE RWAEH
+      47281 <= code2 && code2 <= 47307 || // Lo  [27] HANGUL SYLLABLE ROEG..HANGUL SYLLABLE ROEH
+      47309 <= code2 && code2 <= 47335 || // Lo  [27] HANGUL SYLLABLE RYOG..HANGUL SYLLABLE RYOH
+      47337 <= code2 && code2 <= 47363 || // Lo  [27] HANGUL SYLLABLE RUG..HANGUL SYLLABLE RUH
+      47365 <= code2 && code2 <= 47391 || // Lo  [27] HANGUL SYLLABLE RWEOG..HANGUL SYLLABLE RWEOH
+      47393 <= code2 && code2 <= 47419 || // Lo  [27] HANGUL SYLLABLE RWEG..HANGUL SYLLABLE RWEH
+      47421 <= code2 && code2 <= 47447 || // Lo  [27] HANGUL SYLLABLE RWIG..HANGUL SYLLABLE RWIH
+      47449 <= code2 && code2 <= 47475 || // Lo  [27] HANGUL SYLLABLE RYUG..HANGUL SYLLABLE RYUH
+      47477 <= code2 && code2 <= 47503 || // Lo  [27] HANGUL SYLLABLE REUG..HANGUL SYLLABLE REUH
+      47505 <= code2 && code2 <= 47531 || // Lo  [27] HANGUL SYLLABLE RYIG..HANGUL SYLLABLE RYIH
+      47533 <= code2 && code2 <= 47559 || // Lo  [27] HANGUL SYLLABLE RIG..HANGUL SYLLABLE RIH
+      47561 <= code2 && code2 <= 47587 || // Lo  [27] HANGUL SYLLABLE MAG..HANGUL SYLLABLE MAH
+      47589 <= code2 && code2 <= 47615 || // Lo  [27] HANGUL SYLLABLE MAEG..HANGUL SYLLABLE MAEH
+      47617 <= code2 && code2 <= 47643 || // Lo  [27] HANGUL SYLLABLE MYAG..HANGUL SYLLABLE MYAH
+      47645 <= code2 && code2 <= 47671 || // Lo  [27] HANGUL SYLLABLE MYAEG..HANGUL SYLLABLE MYAEH
+      47673 <= code2 && code2 <= 47699 || // Lo  [27] HANGUL SYLLABLE MEOG..HANGUL SYLLABLE MEOH
+      47701 <= code2 && code2 <= 47727 || // Lo  [27] HANGUL SYLLABLE MEG..HANGUL SYLLABLE MEH
+      47729 <= code2 && code2 <= 47755 || // Lo  [27] HANGUL SYLLABLE MYEOG..HANGUL SYLLABLE MYEOH
+      47757 <= code2 && code2 <= 47783 || // Lo  [27] HANGUL SYLLABLE MYEG..HANGUL SYLLABLE MYEH
+      47785 <= code2 && code2 <= 47811 || // Lo  [27] HANGUL SYLLABLE MOG..HANGUL SYLLABLE MOH
+      47813 <= code2 && code2 <= 47839 || // Lo  [27] HANGUL SYLLABLE MWAG..HANGUL SYLLABLE MWAH
+      47841 <= code2 && code2 <= 47867 || // Lo  [27] HANGUL SYLLABLE MWAEG..HANGUL SYLLABLE MWAEH
+      47869 <= code2 && code2 <= 47895 || // Lo  [27] HANGUL SYLLABLE MOEG..HANGUL SYLLABLE MOEH
+      47897 <= code2 && code2 <= 47923 || // Lo  [27] HANGUL SYLLABLE MYOG..HANGUL SYLLABLE MYOH
+      47925 <= code2 && code2 <= 47951 || // Lo  [27] HANGUL SYLLABLE MUG..HANGUL SYLLABLE MUH
+      47953 <= code2 && code2 <= 47979 || // Lo  [27] HANGUL SYLLABLE MWEOG..HANGUL SYLLABLE MWEOH
+      47981 <= code2 && code2 <= 48007 || // Lo  [27] HANGUL SYLLABLE MWEG..HANGUL SYLLABLE MWEH
+      48009 <= code2 && code2 <= 48035 || // Lo  [27] HANGUL SYLLABLE MWIG..HANGUL SYLLABLE MWIH
+      48037 <= code2 && code2 <= 48063 || // Lo  [27] HANGUL SYLLABLE MYUG..HANGUL SYLLABLE MYUH
+      48065 <= code2 && code2 <= 48091 || // Lo  [27] HANGUL SYLLABLE MEUG..HANGUL SYLLABLE MEUH
+      48093 <= code2 && code2 <= 48119 || // Lo  [27] HANGUL SYLLABLE MYIG..HANGUL SYLLABLE MYIH
+      48121 <= code2 && code2 <= 48147 || // Lo  [27] HANGUL SYLLABLE MIG..HANGUL SYLLABLE MIH
+      48149 <= code2 && code2 <= 48175 || // Lo  [27] HANGUL SYLLABLE BAG..HANGUL SYLLABLE BAH
+      48177 <= code2 && code2 <= 48203 || // Lo  [27] HANGUL SYLLABLE BAEG..HANGUL SYLLABLE BAEH
+      48205 <= code2 && code2 <= 48231 || // Lo  [27] HANGUL SYLLABLE BYAG..HANGUL SYLLABLE BYAH
+      48233 <= code2 && code2 <= 48259 || // Lo  [27] HANGUL SYLLABLE BYAEG..HANGUL SYLLABLE BYAEH
+      48261 <= code2 && code2 <= 48287 || // Lo  [27] HANGUL SYLLABLE BEOG..HANGUL SYLLABLE BEOH
+      48289 <= code2 && code2 <= 48315 || // Lo  [27] HANGUL SYLLABLE BEG..HANGUL SYLLABLE BEH
+      48317 <= code2 && code2 <= 48343 || // Lo  [27] HANGUL SYLLABLE BYEOG..HANGUL SYLLABLE BYEOH
+      48345 <= code2 && code2 <= 48371 || // Lo  [27] HANGUL SYLLABLE BYEG..HANGUL SYLLABLE BYEH
+      48373 <= code2 && code2 <= 48399 || // Lo  [27] HANGUL SYLLABLE BOG..HANGUL SYLLABLE BOH
+      48401 <= code2 && code2 <= 48427 || // Lo  [27] HANGUL SYLLABLE BWAG..HANGUL SYLLABLE BWAH
+      48429 <= code2 && code2 <= 48455 || // Lo  [27] HANGUL SYLLABLE BWAEG..HANGUL SYLLABLE BWAEH
+      48457 <= code2 && code2 <= 48483 || // Lo  [27] HANGUL SYLLABLE BOEG..HANGUL SYLLABLE BOEH
+      48485 <= code2 && code2 <= 48511 || // Lo  [27] HANGUL SYLLABLE BYOG..HANGUL SYLLABLE BYOH
+      48513 <= code2 && code2 <= 48539 || // Lo  [27] HANGUL SYLLABLE BUG..HANGUL SYLLABLE BUH
+      48541 <= code2 && code2 <= 48567 || // Lo  [27] HANGUL SYLLABLE BWEOG..HANGUL SYLLABLE BWEOH
+      48569 <= code2 && code2 <= 48595 || // Lo  [27] HANGUL SYLLABLE BWEG..HANGUL SYLLABLE BWEH
+      48597 <= code2 && code2 <= 48623 || // Lo  [27] HANGUL SYLLABLE BWIG..HANGUL SYLLABLE BWIH
+      48625 <= code2 && code2 <= 48651 || // Lo  [27] HANGUL SYLLABLE BYUG..HANGUL SYLLABLE BYUH
+      48653 <= code2 && code2 <= 48679 || // Lo  [27] HANGUL SYLLABLE BEUG..HANGUL SYLLABLE BEUH
+      48681 <= code2 && code2 <= 48707 || // Lo  [27] HANGUL SYLLABLE BYIG..HANGUL SYLLABLE BYIH
+      48709 <= code2 && code2 <= 48735 || // Lo  [27] HANGUL SYLLABLE BIG..HANGUL SYLLABLE BIH
+      48737 <= code2 && code2 <= 48763 || // Lo  [27] HANGUL SYLLABLE BBAG..HANGUL SYLLABLE BBAH
+      48765 <= code2 && code2 <= 48791 || // Lo  [27] HANGUL SYLLABLE BBAEG..HANGUL SYLLABLE BBAEH
+      48793 <= code2 && code2 <= 48819 || // Lo  [27] HANGUL SYLLABLE BBYAG..HANGUL SYLLABLE BBYAH
+      48821 <= code2 && code2 <= 48847 || // Lo  [27] HANGUL SYLLABLE BBYAEG..HANGUL SYLLABLE BBYAEH
+      48849 <= code2 && code2 <= 48875 || // Lo  [27] HANGUL SYLLABLE BBEOG..HANGUL SYLLABLE BBEOH
+      48877 <= code2 && code2 <= 48903 || // Lo  [27] HANGUL SYLLABLE BBEG..HANGUL SYLLABLE BBEH
+      48905 <= code2 && code2 <= 48931 || // Lo  [27] HANGUL SYLLABLE BBYEOG..HANGUL SYLLABLE BBYEOH
+      48933 <= code2 && code2 <= 48959 || // Lo  [27] HANGUL SYLLABLE BBYEG..HANGUL SYLLABLE BBYEH
+      48961 <= code2 && code2 <= 48987 || // Lo  [27] HANGUL SYLLABLE BBOG..HANGUL SYLLABLE BBOH
+      48989 <= code2 && code2 <= 49015 || // Lo  [27] HANGUL SYLLABLE BBWAG..HANGUL SYLLABLE BBWAH
+      49017 <= code2 && code2 <= 49043 || // Lo  [27] HANGUL SYLLABLE BBWAEG..HANGUL SYLLABLE BBWAEH
+      49045 <= code2 && code2 <= 49071 || // Lo  [27] HANGUL SYLLABLE BBOEG..HANGUL SYLLABLE BBOEH
+      49073 <= code2 && code2 <= 49099 || // Lo  [27] HANGUL SYLLABLE BBYOG..HANGUL SYLLABLE BBYOH
+      49101 <= code2 && code2 <= 49127 || // Lo  [27] HANGUL SYLLABLE BBUG..HANGUL SYLLABLE BBUH
+      49129 <= code2 && code2 <= 49155 || // Lo  [27] HANGUL SYLLABLE BBWEOG..HANGUL SYLLABLE BBWEOH
+      49157 <= code2 && code2 <= 49183 || // Lo  [27] HANGUL SYLLABLE BBWEG..HANGUL SYLLABLE BBWEH
+      49185 <= code2 && code2 <= 49211 || // Lo  [27] HANGUL SYLLABLE BBWIG..HANGUL SYLLABLE BBWIH
+      49213 <= code2 && code2 <= 49239 || // Lo  [27] HANGUL SYLLABLE BBYUG..HANGUL SYLLABLE BBYUH
+      49241 <= code2 && code2 <= 49267 || // Lo  [27] HANGUL SYLLABLE BBEUG..HANGUL SYLLABLE BBEUH
+      49269 <= code2 && code2 <= 49295 || // Lo  [27] HANGUL SYLLABLE BBYIG..HANGUL SYLLABLE BBYIH
+      49297 <= code2 && code2 <= 49323 || // Lo  [27] HANGUL SYLLABLE BBIG..HANGUL SYLLABLE BBIH
+      49325 <= code2 && code2 <= 49351 || // Lo  [27] HANGUL SYLLABLE SAG..HANGUL SYLLABLE SAH
+      49353 <= code2 && code2 <= 49379 || // Lo  [27] HANGUL SYLLABLE SAEG..HANGUL SYLLABLE SAEH
+      49381 <= code2 && code2 <= 49407 || // Lo  [27] HANGUL SYLLABLE SYAG..HANGUL SYLLABLE SYAH
+      49409 <= code2 && code2 <= 49435 || // Lo  [27] HANGUL SYLLABLE SYAEG..HANGUL SYLLABLE SYAEH
+      49437 <= code2 && code2 <= 49463 || // Lo  [27] HANGUL SYLLABLE SEOG..HANGUL SYLLABLE SEOH
+      49465 <= code2 && code2 <= 49491 || // Lo  [27] HANGUL SYLLABLE SEG..HANGUL SYLLABLE SEH
+      49493 <= code2 && code2 <= 49519 || // Lo  [27] HANGUL SYLLABLE SYEOG..HANGUL SYLLABLE SYEOH
+      49521 <= code2 && code2 <= 49547 || // Lo  [27] HANGUL SYLLABLE SYEG..HANGUL SYLLABLE SYEH
+      49549 <= code2 && code2 <= 49575 || // Lo  [27] HANGUL SYLLABLE SOG..HANGUL SYLLABLE SOH
+      49577 <= code2 && code2 <= 49603 || // Lo  [27] HANGUL SYLLABLE SWAG..HANGUL SYLLABLE SWAH
+      49605 <= code2 && code2 <= 49631 || // Lo  [27] HANGUL SYLLABLE SWAEG..HANGUL SYLLABLE SWAEH
+      49633 <= code2 && code2 <= 49659 || // Lo  [27] HANGUL SYLLABLE SOEG..HANGUL SYLLABLE SOEH
+      49661 <= code2 && code2 <= 49687 || // Lo  [27] HANGUL SYLLABLE SYOG..HANGUL SYLLABLE SYOH
+      49689 <= code2 && code2 <= 49715 || // Lo  [27] HANGUL SYLLABLE SUG..HANGUL SYLLABLE SUH
+      49717 <= code2 && code2 <= 49743 || // Lo  [27] HANGUL SYLLABLE SWEOG..HANGUL SYLLABLE SWEOH
+      49745 <= code2 && code2 <= 49771 || // Lo  [27] HANGUL SYLLABLE SWEG..HANGUL SYLLABLE SWEH
+      49773 <= code2 && code2 <= 49799 || // Lo  [27] HANGUL SYLLABLE SWIG..HANGUL SYLLABLE SWIH
+      49801 <= code2 && code2 <= 49827 || // Lo  [27] HANGUL SYLLABLE SYUG..HANGUL SYLLABLE SYUH
+      49829 <= code2 && code2 <= 49855 || // Lo  [27] HANGUL SYLLABLE SEUG..HANGUL SYLLABLE SEUH
+      49857 <= code2 && code2 <= 49883 || // Lo  [27] HANGUL SYLLABLE SYIG..HANGUL SYLLABLE SYIH
+      49885 <= code2 && code2 <= 49911 || // Lo  [27] HANGUL SYLLABLE SIG..HANGUL SYLLABLE SIH
+      49913 <= code2 && code2 <= 49939 || // Lo  [27] HANGUL SYLLABLE SSAG..HANGUL SYLLABLE SSAH
+      49941 <= code2 && code2 <= 49967 || // Lo  [27] HANGUL SYLLABLE SSAEG..HANGUL SYLLABLE SSAEH
+      49969 <= code2 && code2 <= 49995 || // Lo  [27] HANGUL SYLLABLE SSYAG..HANGUL SYLLABLE SSYAH
+      49997 <= code2 && code2 <= 50023 || // Lo  [27] HANGUL SYLLABLE SSYAEG..HANGUL SYLLABLE SSYAEH
+      50025 <= code2 && code2 <= 50051 || // Lo  [27] HANGUL SYLLABLE SSEOG..HANGUL SYLLABLE SSEOH
+      50053 <= code2 && code2 <= 50079 || // Lo  [27] HANGUL SYLLABLE SSEG..HANGUL SYLLABLE SSEH
+      50081 <= code2 && code2 <= 50107 || // Lo  [27] HANGUL SYLLABLE SSYEOG..HANGUL SYLLABLE SSYEOH
+      50109 <= code2 && code2 <= 50135 || // Lo  [27] HANGUL SYLLABLE SSYEG..HANGUL SYLLABLE SSYEH
+      50137 <= code2 && code2 <= 50163 || // Lo  [27] HANGUL SYLLABLE SSOG..HANGUL SYLLABLE SSOH
+      50165 <= code2 && code2 <= 50191 || // Lo  [27] HANGUL SYLLABLE SSWAG..HANGUL SYLLABLE SSWAH
+      50193 <= code2 && code2 <= 50219 || // Lo  [27] HANGUL SYLLABLE SSWAEG..HANGUL SYLLABLE SSWAEH
+      50221 <= code2 && code2 <= 50247 || // Lo  [27] HANGUL SYLLABLE SSOEG..HANGUL SYLLABLE SSOEH
+      50249 <= code2 && code2 <= 50275 || // Lo  [27] HANGUL SYLLABLE SSYOG..HANGUL SYLLABLE SSYOH
+      50277 <= code2 && code2 <= 50303 || // Lo  [27] HANGUL SYLLABLE SSUG..HANGUL SYLLABLE SSUH
+      50305 <= code2 && code2 <= 50331 || // Lo  [27] HANGUL SYLLABLE SSWEOG..HANGUL SYLLABLE SSWEOH
+      50333 <= code2 && code2 <= 50359 || // Lo  [27] HANGUL SYLLABLE SSWEG..HANGUL SYLLABLE SSWEH
+      50361 <= code2 && code2 <= 50387 || // Lo  [27] HANGUL SYLLABLE SSWIG..HANGUL SYLLABLE SSWIH
+      50389 <= code2 && code2 <= 50415 || // Lo  [27] HANGUL SYLLABLE SSYUG..HANGUL SYLLABLE SSYUH
+      50417 <= code2 && code2 <= 50443 || // Lo  [27] HANGUL SYLLABLE SSEUG..HANGUL SYLLABLE SSEUH
+      50445 <= code2 && code2 <= 50471 || // Lo  [27] HANGUL SYLLABLE SSYIG..HANGUL SYLLABLE SSYIH
+      50473 <= code2 && code2 <= 50499 || // Lo  [27] HANGUL SYLLABLE SSIG..HANGUL SYLLABLE SSIH
+      50501 <= code2 && code2 <= 50527 || // Lo  [27] HANGUL SYLLABLE AG..HANGUL SYLLABLE AH
+      50529 <= code2 && code2 <= 50555 || // Lo  [27] HANGUL SYLLABLE AEG..HANGUL SYLLABLE AEH
+      50557 <= code2 && code2 <= 50583 || // Lo  [27] HANGUL SYLLABLE YAG..HANGUL SYLLABLE YAH
+      50585 <= code2 && code2 <= 50611 || // Lo  [27] HANGUL SYLLABLE YAEG..HANGUL SYLLABLE YAEH
+      50613 <= code2 && code2 <= 50639 || // Lo  [27] HANGUL SYLLABLE EOG..HANGUL SYLLABLE EOH
+      50641 <= code2 && code2 <= 50667 || // Lo  [27] HANGUL SYLLABLE EG..HANGUL SYLLABLE EH
+      50669 <= code2 && code2 <= 50695 || // Lo  [27] HANGUL SYLLABLE YEOG..HANGUL SYLLABLE YEOH
+      50697 <= code2 && code2 <= 50723 || // Lo  [27] HANGUL SYLLABLE YEG..HANGUL SYLLABLE YEH
+      50725 <= code2 && code2 <= 50751 || // Lo  [27] HANGUL SYLLABLE OG..HANGUL SYLLABLE OH
+      50753 <= code2 && code2 <= 50779 || // Lo  [27] HANGUL SYLLABLE WAG..HANGUL SYLLABLE WAH
+      50781 <= code2 && code2 <= 50807 || // Lo  [27] HANGUL SYLLABLE WAEG..HANGUL SYLLABLE WAEH
+      50809 <= code2 && code2 <= 50835 || // Lo  [27] HANGUL SYLLABLE OEG..HANGUL SYLLABLE OEH
+      50837 <= code2 && code2 <= 50863 || // Lo  [27] HANGUL SYLLABLE YOG..HANGUL SYLLABLE YOH
+      50865 <= code2 && code2 <= 50891 || // Lo  [27] HANGUL SYLLABLE UG..HANGUL SYLLABLE UH
+      50893 <= code2 && code2 <= 50919 || // Lo  [27] HANGUL SYLLABLE WEOG..HANGUL SYLLABLE WEOH
+      50921 <= code2 && code2 <= 50947 || // Lo  [27] HANGUL SYLLABLE WEG..HANGUL SYLLABLE WEH
+      50949 <= code2 && code2 <= 50975 || // Lo  [27] HANGUL SYLLABLE WIG..HANGUL SYLLABLE WIH
+      50977 <= code2 && code2 <= 51003 || // Lo  [27] HANGUL SYLLABLE YUG..HANGUL SYLLABLE YUH
+      51005 <= code2 && code2 <= 51031 || // Lo  [27] HANGUL SYLLABLE EUG..HANGUL SYLLABLE EUH
+      51033 <= code2 && code2 <= 51059 || // Lo  [27] HANGUL SYLLABLE YIG..HANGUL SYLLABLE YIH
+      51061 <= code2 && code2 <= 51087 || // Lo  [27] HANGUL SYLLABLE IG..HANGUL SYLLABLE IH
+      51089 <= code2 && code2 <= 51115 || // Lo  [27] HANGUL SYLLABLE JAG..HANGUL SYLLABLE JAH
+      51117 <= code2 && code2 <= 51143 || // Lo  [27] HANGUL SYLLABLE JAEG..HANGUL SYLLABLE JAEH
+      51145 <= code2 && code2 <= 51171 || // Lo  [27] HANGUL SYLLABLE JYAG..HANGUL SYLLABLE JYAH
+      51173 <= code2 && code2 <= 51199 || // Lo  [27] HANGUL SYLLABLE JYAEG..HANGUL SYLLABLE JYAEH
+      51201 <= code2 && code2 <= 51227 || // Lo  [27] HANGUL SYLLABLE JEOG..HANGUL SYLLABLE JEOH
+      51229 <= code2 && code2 <= 51255 || // Lo  [27] HANGUL SYLLABLE JEG..HANGUL SYLLABLE JEH
+      51257 <= code2 && code2 <= 51283 || // Lo  [27] HANGUL SYLLABLE JYEOG..HANGUL SYLLABLE JYEOH
+      51285 <= code2 && code2 <= 51311 || // Lo  [27] HANGUL SYLLABLE JYEG..HANGUL SYLLABLE JYEH
+      51313 <= code2 && code2 <= 51339 || // Lo  [27] HANGUL SYLLABLE JOG..HANGUL SYLLABLE JOH
+      51341 <= code2 && code2 <= 51367 || // Lo  [27] HANGUL SYLLABLE JWAG..HANGUL SYLLABLE JWAH
+      51369 <= code2 && code2 <= 51395 || // Lo  [27] HANGUL SYLLABLE JWAEG..HANGUL SYLLABLE JWAEH
+      51397 <= code2 && code2 <= 51423 || // Lo  [27] HANGUL SYLLABLE JOEG..HANGUL SYLLABLE JOEH
+      51425 <= code2 && code2 <= 51451 || // Lo  [27] HANGUL SYLLABLE JYOG..HANGUL SYLLABLE JYOH
+      51453 <= code2 && code2 <= 51479 || // Lo  [27] HANGUL SYLLABLE JUG..HANGUL SYLLABLE JUH
+      51481 <= code2 && code2 <= 51507 || // Lo  [27] HANGUL SYLLABLE JWEOG..HANGUL SYLLABLE JWEOH
+      51509 <= code2 && code2 <= 51535 || // Lo  [27] HANGUL SYLLABLE JWEG..HANGUL SYLLABLE JWEH
+      51537 <= code2 && code2 <= 51563 || // Lo  [27] HANGUL SYLLABLE JWIG..HANGUL SYLLABLE JWIH
+      51565 <= code2 && code2 <= 51591 || // Lo  [27] HANGUL SYLLABLE JYUG..HANGUL SYLLABLE JYUH
+      51593 <= code2 && code2 <= 51619 || // Lo  [27] HANGUL SYLLABLE JEUG..HANGUL SYLLABLE JEUH
+      51621 <= code2 && code2 <= 51647 || // Lo  [27] HANGUL SYLLABLE JYIG..HANGUL SYLLABLE JYIH
+      51649 <= code2 && code2 <= 51675 || // Lo  [27] HANGUL SYLLABLE JIG..HANGUL SYLLABLE JIH
+      51677 <= code2 && code2 <= 51703 || // Lo  [27] HANGUL SYLLABLE JJAG..HANGUL SYLLABLE JJAH
+      51705 <= code2 && code2 <= 51731 || // Lo  [27] HANGUL SYLLABLE JJAEG..HANGUL SYLLABLE JJAEH
+      51733 <= code2 && code2 <= 51759 || // Lo  [27] HANGUL SYLLABLE JJYAG..HANGUL SYLLABLE JJYAH
+      51761 <= code2 && code2 <= 51787 || // Lo  [27] HANGUL SYLLABLE JJYAEG..HANGUL SYLLABLE JJYAEH
+      51789 <= code2 && code2 <= 51815 || // Lo  [27] HANGUL SYLLABLE JJEOG..HANGUL SYLLABLE JJEOH
+      51817 <= code2 && code2 <= 51843 || // Lo  [27] HANGUL SYLLABLE JJEG..HANGUL SYLLABLE JJEH
+      51845 <= code2 && code2 <= 51871 || // Lo  [27] HANGUL SYLLABLE JJYEOG..HANGUL SYLLABLE JJYEOH
+      51873 <= code2 && code2 <= 51899 || // Lo  [27] HANGUL SYLLABLE JJYEG..HANGUL SYLLABLE JJYEH
+      51901 <= code2 && code2 <= 51927 || // Lo  [27] HANGUL SYLLABLE JJOG..HANGUL SYLLABLE JJOH
+      51929 <= code2 && code2 <= 51955 || // Lo  [27] HANGUL SYLLABLE JJWAG..HANGUL SYLLABLE JJWAH
+      51957 <= code2 && code2 <= 51983 || // Lo  [27] HANGUL SYLLABLE JJWAEG..HANGUL SYLLABLE JJWAEH
+      51985 <= code2 && code2 <= 52011 || // Lo  [27] HANGUL SYLLABLE JJOEG..HANGUL SYLLABLE JJOEH
+      52013 <= code2 && code2 <= 52039 || // Lo  [27] HANGUL SYLLABLE JJYOG..HANGUL SYLLABLE JJYOH
+      52041 <= code2 && code2 <= 52067 || // Lo  [27] HANGUL SYLLABLE JJUG..HANGUL SYLLABLE JJUH
+      52069 <= code2 && code2 <= 52095 || // Lo  [27] HANGUL SYLLABLE JJWEOG..HANGUL SYLLABLE JJWEOH
+      52097 <= code2 && code2 <= 52123 || // Lo  [27] HANGUL SYLLABLE JJWEG..HANGUL SYLLABLE JJWEH
+      52125 <= code2 && code2 <= 52151 || // Lo  [27] HANGUL SYLLABLE JJWIG..HANGUL SYLLABLE JJWIH
+      52153 <= code2 && code2 <= 52179 || // Lo  [27] HANGUL SYLLABLE JJYUG..HANGUL SYLLABLE JJYUH
+      52181 <= code2 && code2 <= 52207 || // Lo  [27] HANGUL SYLLABLE JJEUG..HANGUL SYLLABLE JJEUH
+      52209 <= code2 && code2 <= 52235 || // Lo  [27] HANGUL SYLLABLE JJYIG..HANGUL SYLLABLE JJYIH
+      52237 <= code2 && code2 <= 52263 || // Lo  [27] HANGUL SYLLABLE JJIG..HANGUL SYLLABLE JJIH
+      52265 <= code2 && code2 <= 52291 || // Lo  [27] HANGUL SYLLABLE CAG..HANGUL SYLLABLE CAH
+      52293 <= code2 && code2 <= 52319 || // Lo  [27] HANGUL SYLLABLE CAEG..HANGUL SYLLABLE CAEH
+      52321 <= code2 && code2 <= 52347 || // Lo  [27] HANGUL SYLLABLE CYAG..HANGUL SYLLABLE CYAH
+      52349 <= code2 && code2 <= 52375 || // Lo  [27] HANGUL SYLLABLE CYAEG..HANGUL SYLLABLE CYAEH
+      52377 <= code2 && code2 <= 52403 || // Lo  [27] HANGUL SYLLABLE CEOG..HANGUL SYLLABLE CEOH
+      52405 <= code2 && code2 <= 52431 || // Lo  [27] HANGUL SYLLABLE CEG..HANGUL SYLLABLE CEH
+      52433 <= code2 && code2 <= 52459 || // Lo  [27] HANGUL SYLLABLE CYEOG..HANGUL SYLLABLE CYEOH
+      52461 <= code2 && code2 <= 52487 || // Lo  [27] HANGUL SYLLABLE CYEG..HANGUL SYLLABLE CYEH
+      52489 <= code2 && code2 <= 52515 || // Lo  [27] HANGUL SYLLABLE COG..HANGUL SYLLABLE COH
+      52517 <= code2 && code2 <= 52543 || // Lo  [27] HANGUL SYLLABLE CWAG..HANGUL SYLLABLE CWAH
+      52545 <= code2 && code2 <= 52571 || // Lo  [27] HANGUL SYLLABLE CWAEG..HANGUL SYLLABLE CWAEH
+      52573 <= code2 && code2 <= 52599 || // Lo  [27] HANGUL SYLLABLE COEG..HANGUL SYLLABLE COEH
+      52601 <= code2 && code2 <= 52627 || // Lo  [27] HANGUL SYLLABLE CYOG..HANGUL SYLLABLE CYOH
+      52629 <= code2 && code2 <= 52655 || // Lo  [27] HANGUL SYLLABLE CUG..HANGUL SYLLABLE CUH
+      52657 <= code2 && code2 <= 52683 || // Lo  [27] HANGUL SYLLABLE CWEOG..HANGUL SYLLABLE CWEOH
+      52685 <= code2 && code2 <= 52711 || // Lo  [27] HANGUL SYLLABLE CWEG..HANGUL SYLLABLE CWEH
+      52713 <= code2 && code2 <= 52739 || // Lo  [27] HANGUL SYLLABLE CWIG..HANGUL SYLLABLE CWIH
+      52741 <= code2 && code2 <= 52767 || // Lo  [27] HANGUL SYLLABLE CYUG..HANGUL SYLLABLE CYUH
+      52769 <= code2 && code2 <= 52795 || // Lo  [27] HANGUL SYLLABLE CEUG..HANGUL SYLLABLE CEUH
+      52797 <= code2 && code2 <= 52823 || // Lo  [27] HANGUL SYLLABLE CYIG..HANGUL SYLLABLE CYIH
+      52825 <= code2 && code2 <= 52851 || // Lo  [27] HANGUL SYLLABLE CIG..HANGUL SYLLABLE CIH
+      52853 <= code2 && code2 <= 52879 || // Lo  [27] HANGUL SYLLABLE KAG..HANGUL SYLLABLE KAH
+      52881 <= code2 && code2 <= 52907 || // Lo  [27] HANGUL SYLLABLE KAEG..HANGUL SYLLABLE KAEH
+      52909 <= code2 && code2 <= 52935 || // Lo  [27] HANGUL SYLLABLE KYAG..HANGUL SYLLABLE KYAH
+      52937 <= code2 && code2 <= 52963 || // Lo  [27] HANGUL SYLLABLE KYAEG..HANGUL SYLLABLE KYAEH
+      52965 <= code2 && code2 <= 52991 || // Lo  [27] HANGUL SYLLABLE KEOG..HANGUL SYLLABLE KEOH
+      52993 <= code2 && code2 <= 53019 || // Lo  [27] HANGUL SYLLABLE KEG..HANGUL SYLLABLE KEH
+      53021 <= code2 && code2 <= 53047 || // Lo  [27] HANGUL SYLLABLE KYEOG..HANGUL SYLLABLE KYEOH
+      53049 <= code2 && code2 <= 53075 || // Lo  [27] HANGUL SYLLABLE KYEG..HANGUL SYLLABLE KYEH
+      53077 <= code2 && code2 <= 53103 || // Lo  [27] HANGUL SYLLABLE KOG..HANGUL SYLLABLE KOH
+      53105 <= code2 && code2 <= 53131 || // Lo  [27] HANGUL SYLLABLE KWAG..HANGUL SYLLABLE KWAH
+      53133 <= code2 && code2 <= 53159 || // Lo  [27] HANGUL SYLLABLE KWAEG..HANGUL SYLLABLE KWAEH
+      53161 <= code2 && code2 <= 53187 || // Lo  [27] HANGUL SYLLABLE KOEG..HANGUL SYLLABLE KOEH
+      53189 <= code2 && code2 <= 53215 || // Lo  [27] HANGUL SYLLABLE KYOG..HANGUL SYLLABLE KYOH
+      53217 <= code2 && code2 <= 53243 || // Lo  [27] HANGUL SYLLABLE KUG..HANGUL SYLLABLE KUH
+      53245 <= code2 && code2 <= 53271 || // Lo  [27] HANGUL SYLLABLE KWEOG..HANGUL SYLLABLE KWEOH
+      53273 <= code2 && code2 <= 53299 || // Lo  [27] HANGUL SYLLABLE KWEG..HANGUL SYLLABLE KWEH
+      53301 <= code2 && code2 <= 53327 || // Lo  [27] HANGUL SYLLABLE KWIG..HANGUL SYLLABLE KWIH
+      53329 <= code2 && code2 <= 53355 || // Lo  [27] HANGUL SYLLABLE KYUG..HANGUL SYLLABLE KYUH
+      53357 <= code2 && code2 <= 53383 || // Lo  [27] HANGUL SYLLABLE KEUG..HANGUL SYLLABLE KEUH
+      53385 <= code2 && code2 <= 53411 || // Lo  [27] HANGUL SYLLABLE KYIG..HANGUL SYLLABLE KYIH
+      53413 <= code2 && code2 <= 53439 || // Lo  [27] HANGUL SYLLABLE KIG..HANGUL SYLLABLE KIH
+      53441 <= code2 && code2 <= 53467 || // Lo  [27] HANGUL SYLLABLE TAG..HANGUL SYLLABLE TAH
+      53469 <= code2 && code2 <= 53495 || // Lo  [27] HANGUL SYLLABLE TAEG..HANGUL SYLLABLE TAEH
+      53497 <= code2 && code2 <= 53523 || // Lo  [27] HANGUL SYLLABLE TYAG..HANGUL SYLLABLE TYAH
+      53525 <= code2 && code2 <= 53551 || // Lo  [27] HANGUL SYLLABLE TYAEG..HANGUL SYLLABLE TYAEH
+      53553 <= code2 && code2 <= 53579 || // Lo  [27] HANGUL SYLLABLE TEOG..HANGUL SYLLABLE TEOH
+      53581 <= code2 && code2 <= 53607 || // Lo  [27] HANGUL SYLLABLE TEG..HANGUL SYLLABLE TEH
+      53609 <= code2 && code2 <= 53635 || // Lo  [27] HANGUL SYLLABLE TYEOG..HANGUL SYLLABLE TYEOH
+      53637 <= code2 && code2 <= 53663 || // Lo  [27] HANGUL SYLLABLE TYEG..HANGUL SYLLABLE TYEH
+      53665 <= code2 && code2 <= 53691 || // Lo  [27] HANGUL SYLLABLE TOG..HANGUL SYLLABLE TOH
+      53693 <= code2 && code2 <= 53719 || // Lo  [27] HANGUL SYLLABLE TWAG..HANGUL SYLLABLE TWAH
+      53721 <= code2 && code2 <= 53747 || // Lo  [27] HANGUL SYLLABLE TWAEG..HANGUL SYLLABLE TWAEH
+      53749 <= code2 && code2 <= 53775 || // Lo  [27] HANGUL SYLLABLE TOEG..HANGUL SYLLABLE TOEH
+      53777 <= code2 && code2 <= 53803 || // Lo  [27] HANGUL SYLLABLE TYOG..HANGUL SYLLABLE TYOH
+      53805 <= code2 && code2 <= 53831 || // Lo  [27] HANGUL SYLLABLE TUG..HANGUL SYLLABLE TUH
+      53833 <= code2 && code2 <= 53859 || // Lo  [27] HANGUL SYLLABLE TWEOG..HANGUL SYLLABLE TWEOH
+      53861 <= code2 && code2 <= 53887 || // Lo  [27] HANGUL SYLLABLE TWEG..HANGUL SYLLABLE TWEH
+      53889 <= code2 && code2 <= 53915 || // Lo  [27] HANGUL SYLLABLE TWIG..HANGUL SYLLABLE TWIH
+      53917 <= code2 && code2 <= 53943 || // Lo  [27] HANGUL SYLLABLE TYUG..HANGUL SYLLABLE TYUH
+      53945 <= code2 && code2 <= 53971 || // Lo  [27] HANGUL SYLLABLE TEUG..HANGUL SYLLABLE TEUH
+      53973 <= code2 && code2 <= 53999 || // Lo  [27] HANGUL SYLLABLE TYIG..HANGUL SYLLABLE TYIH
+      54001 <= code2 && code2 <= 54027 || // Lo  [27] HANGUL SYLLABLE TIG..HANGUL SYLLABLE TIH
+      54029 <= code2 && code2 <= 54055 || // Lo  [27] HANGUL SYLLABLE PAG..HANGUL SYLLABLE PAH
+      54057 <= code2 && code2 <= 54083 || // Lo  [27] HANGUL SYLLABLE PAEG..HANGUL SYLLABLE PAEH
+      54085 <= code2 && code2 <= 54111 || // Lo  [27] HANGUL SYLLABLE PYAG..HANGUL SYLLABLE PYAH
+      54113 <= code2 && code2 <= 54139 || // Lo  [27] HANGUL SYLLABLE PYAEG..HANGUL SYLLABLE PYAEH
+      54141 <= code2 && code2 <= 54167 || // Lo  [27] HANGUL SYLLABLE PEOG..HANGUL SYLLABLE PEOH
+      54169 <= code2 && code2 <= 54195 || // Lo  [27] HANGUL SYLLABLE PEG..HANGUL SYLLABLE PEH
+      54197 <= code2 && code2 <= 54223 || // Lo  [27] HANGUL SYLLABLE PYEOG..HANGUL SYLLABLE PYEOH
+      54225 <= code2 && code2 <= 54251 || // Lo  [27] HANGUL SYLLABLE PYEG..HANGUL SYLLABLE PYEH
+      54253 <= code2 && code2 <= 54279 || // Lo  [27] HANGUL SYLLABLE POG..HANGUL SYLLABLE POH
+      54281 <= code2 && code2 <= 54307 || // Lo  [27] HANGUL SYLLABLE PWAG..HANGUL SYLLABLE PWAH
+      54309 <= code2 && code2 <= 54335 || // Lo  [27] HANGUL SYLLABLE PWAEG..HANGUL SYLLABLE PWAEH
+      54337 <= code2 && code2 <= 54363 || // Lo  [27] HANGUL SYLLABLE POEG..HANGUL SYLLABLE POEH
+      54365 <= code2 && code2 <= 54391 || // Lo  [27] HANGUL SYLLABLE PYOG..HANGUL SYLLABLE PYOH
+      54393 <= code2 && code2 <= 54419 || // Lo  [27] HANGUL SYLLABLE PUG..HANGUL SYLLABLE PUH
+      54421 <= code2 && code2 <= 54447 || // Lo  [27] HANGUL SYLLABLE PWEOG..HANGUL SYLLABLE PWEOH
+      54449 <= code2 && code2 <= 54475 || // Lo  [27] HANGUL SYLLABLE PWEG..HANGUL SYLLABLE PWEH
+      54477 <= code2 && code2 <= 54503 || // Lo  [27] HANGUL SYLLABLE PWIG..HANGUL SYLLABLE PWIH
+      54505 <= code2 && code2 <= 54531 || // Lo  [27] HANGUL SYLLABLE PYUG..HANGUL SYLLABLE PYUH
+      54533 <= code2 && code2 <= 54559 || // Lo  [27] HANGUL SYLLABLE PEUG..HANGUL SYLLABLE PEUH
+      54561 <= code2 && code2 <= 54587 || // Lo  [27] HANGUL SYLLABLE PYIG..HANGUL SYLLABLE PYIH
+      54589 <= code2 && code2 <= 54615 || // Lo  [27] HANGUL SYLLABLE PIG..HANGUL SYLLABLE PIH
+      54617 <= code2 && code2 <= 54643 || // Lo  [27] HANGUL SYLLABLE HAG..HANGUL SYLLABLE HAH
+      54645 <= code2 && code2 <= 54671 || // Lo  [27] HANGUL SYLLABLE HAEG..HANGUL SYLLABLE HAEH
+      54673 <= code2 && code2 <= 54699 || // Lo  [27] HANGUL SYLLABLE HYAG..HANGUL SYLLABLE HYAH
+      54701 <= code2 && code2 <= 54727 || // Lo  [27] HANGUL SYLLABLE HYAEG..HANGUL SYLLABLE HYAEH
+      54729 <= code2 && code2 <= 54755 || // Lo  [27] HANGUL SYLLABLE HEOG..HANGUL SYLLABLE HEOH
+      54757 <= code2 && code2 <= 54783 || // Lo  [27] HANGUL SYLLABLE HEG..HANGUL SYLLABLE HEH
+      54785 <= code2 && code2 <= 54811 || // Lo  [27] HANGUL SYLLABLE HYEOG..HANGUL SYLLABLE HYEOH
+      54813 <= code2 && code2 <= 54839 || // Lo  [27] HANGUL SYLLABLE HYEG..HANGUL SYLLABLE HYEH
+      54841 <= code2 && code2 <= 54867 || // Lo  [27] HANGUL SYLLABLE HOG..HANGUL SYLLABLE HOH
+      54869 <= code2 && code2 <= 54895 || // Lo  [27] HANGUL SYLLABLE HWAG..HANGUL SYLLABLE HWAH
+      54897 <= code2 && code2 <= 54923 || // Lo  [27] HANGUL SYLLABLE HWAEG..HANGUL SYLLABLE HWAEH
+      54925 <= code2 && code2 <= 54951 || // Lo  [27] HANGUL SYLLABLE HOEG..HANGUL SYLLABLE HOEH
+      54953 <= code2 && code2 <= 54979 || // Lo  [27] HANGUL SYLLABLE HYOG..HANGUL SYLLABLE HYOH
+      54981 <= code2 && code2 <= 55007 || // Lo  [27] HANGUL SYLLABLE HUG..HANGUL SYLLABLE HUH
+      55009 <= code2 && code2 <= 55035 || // Lo  [27] HANGUL SYLLABLE HWEOG..HANGUL SYLLABLE HWEOH
+      55037 <= code2 && code2 <= 55063 || // Lo  [27] HANGUL SYLLABLE HWEG..HANGUL SYLLABLE HWEH
+      55065 <= code2 && code2 <= 55091 || // Lo  [27] HANGUL SYLLABLE HWIG..HANGUL SYLLABLE HWIH
+      55093 <= code2 && code2 <= 55119 || // Lo  [27] HANGUL SYLLABLE HYUG..HANGUL SYLLABLE HYUH
+      55121 <= code2 && code2 <= 55147 || // Lo  [27] HANGUL SYLLABLE HEUG..HANGUL SYLLABLE HEUH
+      55149 <= code2 && code2 <= 55175 || // Lo  [27] HANGUL SYLLABLE HYIG..HANGUL SYLLABLE HYIH
+      55177 <= code2 && code2 <= 55203) {
+        return LVT;
+      }
+      if (9757 == code2 || // So       WHITE UP POINTING INDEX
+      9977 == code2 || // So       PERSON WITH BALL
+      9994 <= code2 && code2 <= 9997 || // So   [4] RAISED FIST..WRITING HAND
+      127877 == code2 || // So       FATHER CHRISTMAS
+      127938 <= code2 && code2 <= 127940 || // So   [3] SNOWBOARDER..SURFER
+      127943 == code2 || // So       HORSE RACING
+      127946 <= code2 && code2 <= 127948 || // So   [3] SWIMMER..GOLFER
+      128066 <= code2 && code2 <= 128067 || // So   [2] EAR..NOSE
+      128070 <= code2 && code2 <= 128080 || // So  [11] WHITE UP POINTING BACKHAND INDEX..OPEN HANDS SIGN
+      128110 == code2 || // So       POLICE OFFICER
+      128112 <= code2 && code2 <= 128120 || // So   [9] BRIDE WITH VEIL..PRINCESS
+      128124 == code2 || // So       BABY ANGEL
+      128129 <= code2 && code2 <= 128131 || // So   [3] INFORMATION DESK PERSON..DANCER
+      128133 <= code2 && code2 <= 128135 || // So   [3] NAIL POLISH..HAIRCUT
+      128170 == code2 || // So       FLEXED BICEPS
+      128372 <= code2 && code2 <= 128373 || // So   [2] MAN IN BUSINESS SUIT LEVITATING..SLEUTH OR SPY
+      128378 == code2 || // So       MAN DANCING
+      128400 == code2 || // So       RAISED HAND WITH FINGERS SPLAYED
+      128405 <= code2 && code2 <= 128406 || // So   [2] REVERSED HAND WITH MIDDLE FINGER EXTENDED..RAISED HAND WITH PART BETWEEN MIDDLE AND RING FINGERS
+      128581 <= code2 && code2 <= 128583 || // So   [3] FACE WITH NO GOOD GESTURE..PERSON BOWING DEEPLY
+      128587 <= code2 && code2 <= 128591 || // So   [5] HAPPY PERSON RAISING ONE HAND..PERSON WITH FOLDED HANDS
+      128675 == code2 || // So       ROWBOAT
+      128692 <= code2 && code2 <= 128694 || // So   [3] BICYCLIST..PEDESTRIAN
+      128704 == code2 || // So       BATH
+      128716 == code2 || // So       SLEEPING ACCOMMODATION
+      129304 <= code2 && code2 <= 129308 || // So   [5] SIGN OF THE HORNS..RIGHT-FACING FIST
+      129310 <= code2 && code2 <= 129311 || // So   [2] HAND WITH INDEX AND MIDDLE FINGERS CROSSED..I LOVE YOU HAND SIGN
+      129318 == code2 || // So       FACE PALM
+      129328 <= code2 && code2 <= 129337 || // So  [10] PREGNANT WOMAN..JUGGLING
+      129341 <= code2 && code2 <= 129342 || // So   [2] WATER POLO..HANDBALL
+      129489 <= code2 && code2 <= 129501) {
+        return E_Base;
+      }
+      if (127995 <= code2 && code2 <= 127999) {
+        return E_Modifier;
+      }
+      if (8205 == code2) {
+        return ZWJ;
+      }
+      if (9792 == code2 || // So       FEMALE SIGN
+      9794 == code2 || // So       MALE SIGN
+      9877 <= code2 && code2 <= 9878 || // So   [2] STAFF OF AESCULAPIUS..SCALES
+      9992 == code2 || // So       AIRPLANE
+      10084 == code2 || // So       HEAVY BLACK HEART
+      127752 == code2 || // So       RAINBOW
+      127806 == code2 || // So       EAR OF RICE
+      127859 == code2 || // So       COOKING
+      127891 == code2 || // So       GRADUATION CAP
+      127908 == code2 || // So       MICROPHONE
+      127912 == code2 || // So       ARTIST PALETTE
+      127979 == code2 || // So       SCHOOL
+      127981 == code2 || // So       FACTORY
+      128139 == code2 || // So       KISS MARK
+      128187 <= code2 && code2 <= 128188 || // So   [2] PERSONAL COMPUTER..BRIEFCASE
+      128295 == code2 || // So       WRENCH
+      128300 == code2 || // So       MICROSCOPE
+      128488 == code2 || // So       LEFT SPEECH BUBBLE
+      128640 == code2 || // So       ROCKET
+      128658 == code2) {
+        return Glue_After_Zwj;
+      }
+      if (128102 <= code2 && code2 <= 128105) {
+        return E_Base_GAZ;
+      }
+      return Other;
+    }
+    return this;
+  }
+  if (module.exports) {
+    module.exports = GraphemeSplitter2;
+  }
+})(graphemeSplitter);
+var graphemeSplitterExports = graphemeSplitter.exports;
+const GraphemeSplitter = /* @__PURE__ */ getDefaultExportFromCjs(graphemeSplitterExports);
+const InitialMessage = ({
+  msg_id,
+  msg,
+  userInfo = {},
+  modelName = "",
+  children = null
+}) => {
+  const msgRef = reactExports.useRef(null);
+  const stringSplitter = (string2) => {
+    const splitter = new GraphemeSplitter();
+    return splitter.splitGraphemes(string2);
+  };
+  reactExports.useEffect(() => {
+    if (!msgRef.current)
+      return;
+    console.log("msgRef.current", msgRef.current);
+    const t2 = new Typewriter(msgRef.current, {
+      strings: [msg.message],
+      autoStart: false,
+      loop: false,
+      blinkSpeed: 35,
+      delay: 35,
+      stringSplitter
+    });
+    t2.typeString(msg.message).start().callFunction((state) => {
+      console.log("done");
+      state.elements.cursor.setAttribute("hidden", "hidden");
+      t2.stop();
+    });
+  }, [msgRef]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    Grid$1,
+    {
+      sx: { padding: "20px 0" },
+      msg_id,
+      className: `msg-box ${msg.type === "prompt" ? "user" : "ai"}
+        `,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Grid$1,
+          {
+            item: true,
+            xs: 1,
+            sx: { display: "flex", justifyContent: "end", alignItems: "end" },
+            children: msg.type === "prompt" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Avatar$1,
+              {
+                className: "avatar",
+                src: userInfo.avatar ?? "",
+                sx: { fontSize: 15 },
+                children: userInfo.initial === "" ? "personIcon" : userInfo.initial
+              }
+            ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Avatar$1,
+              {
+                className: "avatar",
+                sx: { backgroundColor: "rebeccapurple" },
+                children: modelName.charAt(0).toUpperCase()
+              }
+            )
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { maxWidth: "80%" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Typography$1,
+            {
+              sx: {
+                fontSize: 12,
+                color: "text.secondary",
+                marginLeft: "20px",
+                marginBottom: "5px"
+              },
+              children: msg.type === "prompt" ? userInfo.name : modelName
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Grid$1,
+            {
+              item: true,
+              xs: 12,
+              pr: { xs: msg.type === "prompt" ? 2 : 1 },
+              pl: { xs: msg.type === "prompt" ? 6 : 2 },
+              sx: { display: "flex", flexDirection: "column" },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Typography$1,
+                {
+                  className: "inner-msg",
+                  ref: msgRef,
+                  id: "inner-msg-start",
+                  variant: "messages"
+                }
+              )
+            }
+          )
+        ] })
+      ]
+    }
+  );
+};
 function Chatbox({
   info = {},
   type,
@@ -51478,7 +53507,7 @@ function Chatbox({
       var _a2;
       if (chatContainerRef.current)
         chatContainerRef.current.scrollTop = (_a2 = chatContainerRef == null ? void 0 : chatContainerRef.current) == null ? void 0 : _a2.scrollHeight;
-    });
+    }, 100);
     const errorCallback = (response = { message: [] }) => {
       console.log("errorCallback", response);
       let messages2 = response.message;
@@ -51491,7 +53520,7 @@ function Chatbox({
       setInputFocused(true);
     };
     const bufferCallback = (resp) => {
-      var _a2, _b2;
+      var _a2;
       try {
         if (resp.error) {
           if (resp.data != "") {
@@ -51509,7 +53538,10 @@ function Chatbox({
           let data = resp.data;
           cachedMsg += resp.data;
           if (chatContainerRef.current)
-            chatContainerRef.current.scrollTop = (_b2 = chatContainerRef == null ? void 0 : chatContainerRef.current) == null ? void 0 : _b2.scrollHeight;
+            setTimeout(() => {
+              var _a3;
+              chatContainerRef.current.scrollTop = (_a3 = chatContainerRef == null ? void 0 : chatContainerRef.current) == null ? void 0 : _a3.scrollHeight;
+            }, 50);
           setAiMessage((prev2) => {
             return {
               ...prev2 ? prev2 : {
@@ -51633,13 +53665,25 @@ function Chatbox({
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLE } }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLEMARKDOWN } }),
               dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(MessageStructureSkeleton, { loading: true }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(reactExports.Fragment, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                messages.length == 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  InitialMessage,
+                  {
+                    msg: {
+                      message: "👋 Hi there! How can I help you today?",
+                      type: "response"
+                    },
+                    initialMessage: true,
+                    userInfo: {},
+                    modelName
+                  }
+                ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
                   Message,
                   {
                     msg: {
                       message: "👋 Hi there! How can I help you today?",
                       type: "response"
                     },
+                    initialMessage: true,
                     userInfo: {},
                     modelName
                   }
