@@ -15726,6 +15726,7 @@ class Config {
       this.BOTTOM = (props == null ? void 0 : props.BOTTOM) ? Number(props.BOTTOM) : 20;
       this.HEIGHT = (props == null ? void 0 : props.HEIGHT) ? Number(props.HEIGHT) : 60;
       this.WIDTH = (props == null ? void 0 : props.WIDTH) ? Number(props.WIDTH) : 60;
+      this.language = (props == null ? void 0 : props.language) ? props.language : "en";
     } catch (error) {
       console.error("Config: ", error);
     }
@@ -51099,7 +51100,7 @@ const Message = ({
     }
   );
 };
-const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:flex-end}.msg-box.user{flex-direction:row-reverse;color:#3976ef;align-items:center!important}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}.chatbox-input.sending legend,.chatbox-input.sending label{display:none}.dots-loading{display:inline-block;clip-path:inset(0 1ch 0 0);animation:dots-loading 1s steps(4) infinite;color:#c3c3c3;margin-left:3px}@keyframes dots-loading{to{clip-path:inset(0 -1ch 0 0)}}.form-input{position:relative;width:100%}.form-input textarea::placeholder{opacity:0}.form-input textarea{width:100%;height:70px;padding:16.5px 45px 16.5px 14.5px;outline:none;border:1px solid rgba(0,0,0,.4);box-sizing:border-box;border-radius:4px;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px;max-height:120px;overflow-y:hidden;resize:none}.form-input textarea::-webkit-scrollbar{width:6px}.form-input textarea::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.form-input textarea::-webkit-scrollbar-track{background-color:#f1f1f1}.form-input:hover textarea{border:1px solid rgba(0,0,0,.8)}.form-input label{position:absolute;left:14.5px;top:50%;transform:translateY(-50%);transition:.3s;color:#00000080;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px}.form-input textarea:focus+label,.form-input textarea:not(:placeholder-shown)+label{top:0;font-size:12px;color:#3976ef;background:#fff;padding:0 7px}.form-input textarea:focus{border:1.8px solid rgb(57,118,239)}.inner-msg ol,.inner-msg ul{padding-left:20px}";
+const STYLE = ".container{display:flex;flex-flow:column!important;justify-content:flex-start;align-items:flex-start;width:100%;padding:0;overflow-y:auto}@media screen and (min-width: 600px){.container{max-height:400px}}.container::-webkit-scrollbar{width:6px}.container::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.container::-webkit-scrollbar-track{background-color:#f1f1f1}.chatContainer{scroll-behavior:smooth;min-height:400px}@media (max-width: 600px){.chatContainer{flex:1}}.msg-box{width:100%;padding:20px;display:flex;word-break:break-word;justify-content:flex-start!important;align-items:flex-end}.msg-box.user{flex-direction:row-reverse;color:#3976ef;align-items:center!important}.msg-box.ai{color:#000000de}.msg-box.ai .inner-msg{background-color:#f5f5f5;padding:20px;border-radius:16px}.inner-msg{width:100%;word-break:break-word}.inner-msg>*:first-child{margin-top:0!important}.inner-msg>*:last-child{margin-bottom:0!important}.inner-msg a,p,span{word-wrap:break-word}.avatar{min-width:40px;min-height:40px;max-width:40px;max-height:40px;font-size:11px!important}.msg-box.ai>.avatar{background-color:#639}.chatbox-input.label-apply label{top:8px}.chatbox-input.sending legend,.chatbox-input.sending label{display:none}.dots-loading{display:inline-block;clip-path:inset(0 1ch 0 0);animation:dots-loading 1s steps(4) infinite;color:#c3c3c3;margin-left:3px}@keyframes dots-loading{to{clip-path:inset(0 -1ch 0 0)}}.form-input{position:relative;width:100%}.form-input textarea::placeholder{opacity:0}.form-input textarea{width:100%;height:70px;padding:16.5px 45px 16.5px 14.5px;outline:none;border:1px solid rgba(0,0,0,.4);box-sizing:border-box;border-radius:4px;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px;max-height:120px;overflow-y:hidden;resize:none;background-color:transparent}.form-input textarea::-webkit-scrollbar{width:6px}.form-input textarea::-webkit-scrollbar-thumb{background-color:#c1c1c1;border-radius:10px}.form-input textarea::-webkit-scrollbar-track{background-color:#f1f1f1}.form-input:hover textarea{border:1px solid rgba(0,0,0,.8)}.form-input label{position:absolute;left:14.5px;top:50%;transform:translateY(-50%);transition:.3s;color:#00000080;font-size:16px;font-family:InterYounet;font-weight:400;line-height:23px}.form-input textarea:focus+label,.form-input textarea:not(:placeholder-shown)+label{top:0;font-size:12px;color:#3976ef;background:#fff;padding:0 7px}.form-input textarea:focus{border:1.8px solid rgb(57,118,239)}.inner-msg ol,.inner-msg ul{padding-left:20px}";
 const STYLEMARKDOWN = ".preview-image{width:100%;max-width:285px}.full-screen-image{max-width:100vw;max-height:100vh}";
 var classnames$1 = { exports: {} };
 /*!
@@ -53367,6 +53368,740 @@ const InitialMessage = ({
     }
   );
 };
+const messages = {
+  aa: {
+    firstMessage: "👋 ሰላም! እንዴት እንደሚረዳው እርዳታ ይችላሉ?",
+    talkto: "Talk to {modelName}"
+  },
+  ab: {
+    firstMessage: "👋 Здравствуйте! Как могу вам помочь сегодня?",
+    talkto: "Talk to {modelName}"
+  },
+  ae: {
+    firstMessage: "👋 𐎧𐏁𐏂! 𐎠𐎰𐎡𐎴𐎠 𐎥𐎴 𐎡𐎦𐎢𐏁𐎢𐏁 𐎴𐎠𐏐𐎹𐏐?",
+    talkto: "Talk to {modelName}"
+  },
+  af: {
+    firstMessage: "👋 Hallo daar! Hoe kan ek jou vandag help?",
+    talkto: "Talk to {modelName}"
+  },
+  ak: {
+    firstMessage: "👋 Ɛte sɛn na akyekyɛ me wo ankasa?",
+    talkto: "Talk to {modelName}"
+  },
+  am: {
+    firstMessage: "👋 ሰላም! እንዴት እንደሚረዳው እርዳታ ይችላሉ?",
+    talkto: "Talk to {modelName}"
+  },
+  an: {
+    firstMessage: "👋 ¡Hola! ¿Cómo puedo ayudarte hoy?",
+    talkto: "Talk to {modelName}"
+  },
+  as: {
+    firstMessage: "👋 নমস্কাৰ! আজি আপুনি কি সাহায্য কৰিব লাগিছে?",
+    talkto: "এটা {modelName} শোনুক"
+  },
+  av: {
+    firstMessage: "👋 Здравствуйте! Как могу я вам помочь сегодня?",
+    talkto: "Talk to {modelName}"
+  },
+  ay: {
+    firstMessage: "👋 ¡Jaqhama! ¿Ima sumajaykama yatichañataki?",
+    talkto: "Hablale a {modelName}"
+  },
+  az: {
+    firstMessage: "👋 Salam! Bugün sizi necə kömək edə bilərəm?",
+    talkto: "{modelName} ilə danış"
+  },
+  ba: {
+    firstMessage: "👋 Сәлам! Бүген сезгә күзәткән мәгълүмат буйынса нәрсәгә кергә ярдәм итә аласыз?",
+    talkto: "Talk to {modelName}"
+  },
+  be: {
+    firstMessage: "👋 Прывітанне! Як я магу вам сёння дапамагчы?",
+    talkto: "Гаварыце з {modelName}"
+  },
+  bg: {
+    firstMessage: "👋 Здравейте! Как мога да ви помогна днес?",
+    talkto: "Говори с {modelName}"
+  },
+  bh: {
+    firstMessage: "👋 नमस्कार! आज आपकी किस प्रकार मदद कर सकता हूं?",
+    talkto: "Talk to {modelName}"
+  },
+  bm: {
+    firstMessage: "👋 Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+    talkto: "Talk to {modelName}"
+  },
+  bi: {
+    firstMessage: "👋 Halo! Hanem mi wanem yu stap?",
+    talkto: "Talk to {modelName}"
+  },
+  bn: {
+    firstMessage: "👋 হ্যালো! আপনাকে আজকে কিভাবে সাহায্য করতে পারি?",
+    talkto: "{modelName} সাথে কথা বলুন"
+  },
+  bo: {
+    firstMessage: "👋 བཀྲ་ཤིས་བདེ་ལེགས། ཁྱེད་རང་ལུགས་ཀྱི་དམིགས་ལ་སྐྱབས་ནས་ངེས་དེའི་གནས་ཚིགས་ཆོས་ལ་ཞུ་བཞིན་ལོག་གྱི་སྐད་ཡིག་ཡིག་གཞན་ནུག།",
+    talkto: "Talk to {modelName}"
+  },
+  br: {
+    firstMessage: "👋 Demat! Penaos em eus sikour d'ho peus hiziv?",
+    talkto: "Talk to {modelName}"
+  },
+  bs: {
+    firstMessage: "👋 Zdravo! Kako vam mogu pomoći danas?",
+    talkto: "Razgovarajte s {modelName}"
+  },
+  ca: {
+    firstMessage: "👋 Hola! Com puc ajudar-te avui?",
+    talkto: "Parla amb {modelName}"
+  },
+  ce: {
+    firstMessage: "👋 Салам! ТӀапархо лелаш йоз ца хьо?",
+    talkto: "Talk to {modelName}"
+  },
+  ch: {
+    firstMessage: "👋 Håfa adai! Hu guaiya hao? Manu na'åyu yan hu sinangan-mu?",
+    talkto: "Talk to {modelName}"
+  },
+  co: {
+    firstMessage: "👋 Bonghjornu! Cumu vi pudari oghje?",
+    talkto: "Parla cun {modelName}"
+  },
+  cr: {
+    firstMessage: "👋 ᓴᐃᓕᐅᓯᐟ! ᐊᑐᐳᐦᑕᓐ ᑭᔮᓯᐠ?",
+    talkto: "Talk to {modelName}"
+  },
+  cs: {
+    firstMessage: "👋 Ahoj! Jak vám dnes mohu pomoci?",
+    talkto: "Mluvte s {modelName}"
+  },
+  cu: {
+    firstMessage: "👋 Здраꙣте! Како можо азъ вамъ помоштъ дьньсе?",
+    talkto: "Talk to {modelName}"
+  },
+  cv: {
+    firstMessage: "👋 Салам! Пĕр иртнĕк пусишĕ?",
+    talkto: "Talk to {modelName}"
+  },
+  cy: {
+    firstMessage: "👋 Helô! Sut gallaf helpu chi heddiw?",
+    talkto: "Talk to {modelName}"
+  },
+  da: {
+    firstMessage: "👋 Hej! Hvordan kan jeg hjælpe dig i dag?",
+    talkto: "Tal med {modelName}"
+  },
+  de: {
+    firstMessage: "👋 Hallo! Wie kann ich Ihnen heute helfen?",
+    talkto: "Sprechen Sie mit {modelName}"
+  },
+  dv: {
+    firstMessage: "👋 މިއީ! މިއީދު އަންނަވާއިދު އެކްޓްރެސް ހަދަން އެކްޓްރެސްވެސް ކިޔާނެ؟",
+    talkto: "{modelName} സങ്കരിക്കുക"
+  },
+  dz: {
+    firstMessage: "👋 བཀྲ་ཤིས་བདེ་ལེགས། ཁྱེད་རང་སྐད་ཅིག་ཡིག་ཆུ་འདུག",
+    talkto: "Talk to {modelName}"
+  },
+  ee: {
+    firstMessage: "👋 Woezɔɔ! Ebi wo yɛ ɛdɔɔsoɔ dada?",
+    talkto: "Talk to {modelName}"
+  },
+  el: {
+    firstMessage: "👋 Γεια σας! Πώς μπορώ να σας βοηθήσω σήμερα;",
+    talkto: "Μιλήστε στο {modelName}"
+  },
+  en: {
+    firstMessage: "👋 Hi there! How can I help you today?",
+    talkto: "Talk to {modelName}"
+  },
+  eo: {
+    firstMessage: "👋 Saluton! Kiel mi povas helpi vin hodiaŭ?",
+    talkto: "Parolu kun {modelName}"
+  },
+  es: {
+    firstMessage: "👋 ¡Hola! ¿Cómo puedo ayudarte hoy?",
+    talkto: "Habla con {modelName}"
+  },
+  et: {
+    firstMessage: "👋 Tere! Kuidas ma saaksin sind täna aidata?",
+    talkto: "Räägi {modelName}ga"
+  },
+  eu: {
+    firstMessage: "👋 Kaixo! Nola lagundu ahal dizut gaur?",
+    talkto: "Talk to {modelName}"
+  },
+  fa: {
+    firstMessage: "👋 سلام! امروز چطور می‌توانم به شما کمک کنم؟",
+    talkto: "با {modelName} صحبت کنید"
+  },
+  ff: {
+    firstMessage: "👋 Jam tan! Mi ndikukotumo finan?",
+    talkto: "Talk to {modelName}"
+  },
+  fi: {
+    firstMessage: "👋 Hei! Kuinka voin auttaa sinua tänään?",
+    talkto: "Puhu {modelName}n kanssa"
+  },
+  fj: {
+    firstMessage: "👋 Bula! Au rawa ni veivukei iko e na siga ni tuku?",
+    talkto: "Talk to {modelName}"
+  },
+  fo: {
+    firstMessage: "👋 Hallo! Hvussu kann eg hjálpa teg í dag?",
+    talkto: "Talk to {modelName}"
+  },
+  fr: {
+    firstMessage: "👋 Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+    talkto: "Parlez à {modelName}"
+  },
+  fy: {
+    firstMessage: "👋 Hallo! Hoe kin ik jo hjoed helpe?",
+    talkto: "Talk to {modelName}"
+  },
+  ga: {
+    firstMessage: "👋 Dia dhuit! Conas is féidir liom cabhrú leat inniu?",
+    talkto: "Labhair le {modelName}"
+  },
+  gd: {
+    firstMessage: "👋 Halò! Ciamar a gheibh mi cuideachadh dhut an-diugh?",
+    talkto: "Bruidhinn ri {modelName}"
+  },
+  gl: {
+    firstMessage: "👋 Ola! Como podo axudarche hoxe?",
+    talkto: "Fala con {modelName}"
+  },
+  gn: {
+    firstMessage: "👋 Jajatopata! Hei nandejaraite?",
+    talkto: "Ñe'ẽ {modelName}-pe"
+  },
+  gu: {
+    firstMessage: "👋 હાય! આજે તમારી મદદ કેવી રીતે કરું?",
+    talkto: "{modelName}ને સંવાદ કરો"
+  },
+  gv: {
+    firstMessage: "👋 Laa rieau! Cre'n obbragh t'ou cooney lesh shoh?",
+    talkto: "Raay rish {modelName}"
+  },
+  ha: {
+    firstMessage: "👋 Sannu! Me zan samun ka'ido na gaba?",
+    talkto: "Magana da {modelName}"
+  },
+  he: {
+    firstMessage: "👋 שלום! איך אני יכול לעזור לך היום?",
+    talkto: "דבר עם {modelName}"
+  },
+  hi: {
+    firstMessage: "👋 नमस्ते! आज मैं आपकी कैसे सहायता कर सकता हूँ?",
+    talkto: "{modelName} से बात करें"
+  },
+  ho: {
+    firstMessage: "👋 Halo! Ohow can I help you today?",
+    talkto: "Talk to {modelName}"
+  },
+  hr: {
+    firstMessage: "👋 Bok! Kako vam mogu pomoći danas?",
+    talkto: "Razgovarajte s {modelName}"
+  },
+  ht: {
+    firstMessage: "👋 Alo! Kouman mwen ka ede ou jodi a?",
+    talkto: "Pale ak {modelName}"
+  },
+  hu: {
+    firstMessage: "👋 Helló! Hogy segíthetek ma Önnek?",
+    talkto: "Beszélj {modelName}-val"
+  },
+  hy: {
+    firstMessage: "👋 Բարև Ձեզ! Ինչպես եմ կարող օրվանից աջակցել ձեզ?",
+    talkto: "Խոսեք {modelName}-ի հետ"
+  },
+  hz: {
+    firstMessage: "👋 Hallo! Ndati mbo nindikupi ko ombwa omushana?",
+    talkto: "Talk to {modelName}"
+  },
+  ia: {
+    firstMessage: "👋 Salute! Como io posse adjuvar vos hodie?",
+    talkto: "Parla con {modelName}"
+  },
+  id: {
+    firstMessage: "👋 Halo! Bagaimana saya bisa membantu Anda hari ini?",
+    talkto: "Bicara dengan {modelName}"
+  },
+  ie: {
+    firstMessage: "👋 Halo! Como me pote adjuvar vu hodie?",
+    talkto: "Talk to {modelName}"
+  },
+  ig: {
+    firstMessage: "👋 Ndewo! Kedu ka m aghọtaghị gị ụbọchị?",
+    talkto: "Habụla na {modelName}"
+  },
+  ii: {
+    firstMessage: "👋 ꀨꉙ! ꆇꉡ ꂿꇩꋬ ꂏꁱꋬ ꎭꃅꑍ?",
+    talkto: "Talk to {modelName}"
+  },
+  ik: {
+    firstMessage: "👋 Hello! Aghaawaken qaillunaarli?",
+    talkto: "Talk to {modelName}"
+  },
+  io: {
+    firstMessage: "👋 Halo! Quale moy povas helpar vu todie?",
+    talkto: "Talk to {modelName}"
+  },
+  is: {
+    firstMessage: "👋 Halló! Hvernig get ég aðstoðað þig í dag?",
+    talkto: "Tala við {modelName}"
+  },
+  it: {
+    firstMessage: "👋 Ciao! Come posso aiutarti oggi?",
+    talkto: "Parla con {modelName}"
+  },
+  iu: {
+    firstMessage: "👋 ᐊᕐᕌᒍ! ᐃᓕᓐᓂᐊᕐᒥᖅ ᐊᓚᑦᑎᖓ?",
+    talkto: "Talk to {modelName}"
+  },
+  ja: {
+    firstMessage: "👋 こんにちは！今日はどのようにお手伝いできますか？",
+    talkto: "{modelName}と話す"
+  },
+  jv: {
+    firstMessage: "👋 Halo! Kayehe kanggo nggoleki manehanmu dina iki?",
+    talkto: "Ngomong karo {modelName}"
+  },
+  ka: {
+    firstMessage: "👋 გამარჯობა! როგორ შემიძლია დღეს გამომეხმაუროთ?",
+    talkto: "{modelName}-სთან ლაპარაკო"
+  },
+  kg: {
+    firstMessage: "👋 Bonzou! Ndaya nabonza kima ba uya?",
+    talkto: "Talk to {modelName}"
+  },
+  ki: {
+    firstMessage: "👋 Hae! Gaciugūka kwene?",
+    talkto: "Talk to {modelName}"
+  },
+  kj: {
+    firstMessage: "👋 Halo! Unaki lelela nji kovalela udyu?",
+    talkto: "Talk to {modelName}"
+  },
+  kk: {
+    firstMessage: "👋 Сәлем! Бүгін сізге қалай көмек көрсете аламын?",
+    talkto: "{modelName}мен сөйлесу"
+  },
+  kl: {
+    firstMessage: "👋 Aluu! Maanna kingornaarpoq?",
+    talkto: "Talk to {modelName}"
+  },
+  km: {
+    firstMessage: "👋 ជំរាបសួរ! តើខ្ញុំអាចជួយអ្នកនៅថ្ងៃនេះបានដូចម្តេចមែនទេ?",
+    talkto: "និយាយជាមួយ {modelName}"
+  },
+  kn: {
+    firstMessage: "👋 ಹಲೋ! ನೀವು ಇಂದು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
+    talkto: "{modelName}ಗೆ ಮಾತನಾಡಿ"
+  },
+  ko: {
+    firstMessage: "👋 안녕하세요! 오늘 어떻게 도와드릴까요?",
+    talkto: "{modelName}과 대화하기"
+  },
+  kr: {
+    firstMessage: "👋 Halo! Yaya ake zanmema muku yau?",
+    talkto: "Talk to {modelName}"
+  },
+  ks: {
+    firstMessage: "👋 سلام! آج تہانو کیسے مدد کرسکتا ہوں؟",
+    talkto: "Talk to {modelName}"
+  },
+  ku: {
+    firstMessage: "👋 Silav! Ez çawa dikarim hîn bibînim we çawa dikarin alîkarî bikin ji we?",
+    talkto: "Talk to {modelName}"
+  },
+  kv: {
+    firstMessage: "👋 Сайбар! Шуд сӧндӧм ма пырыштӧн вы лаптӧн?",
+    talkto: "Talk to {modelName}"
+  },
+  kw: {
+    firstMessage: "👋 Dydh da! Fatell vy yw aga leverel orth vy hedhyw?",
+    talkto: "Talk to {modelName}"
+  },
+  ky: {
+    firstMessage: "👋 Салам! Бүгүн сизге кандай көмөк көрсөтө алам?",
+    talkto: "{modelName} мен сүйлөү"
+  },
+  la: {
+    firstMessage: "👋 Salve! Quomodo tibi hodie adiuvari possum?",
+    talkto: "Loquere cum {modelName}"
+  },
+  lb: {
+    firstMessage: "👋 Moien! Wéi kann ech Iech haut hëllefen?",
+    talkto: "Talk to {modelName}"
+  },
+  lg: {
+    firstMessage: "👋 Bulungi! Oli otya? Njagala okusaba otya?",
+    talkto: "Talk to {modelName}"
+  },
+  li: {
+    firstMessage: "👋 Halo! Hoe kan ich uuch hulpje vandaag?",
+    talkto: "Talk to {modelName}"
+  },
+  ln: {
+    firstMessage: "👋 Mbote! Na yei lokola koyebana na yo sango?",
+    talkto: "Kosala na {modelName}"
+  },
+  lo: {
+    firstMessage: "👋 ສະບາຍດີ! ຂ້ອຍສາມາດຊ່ວຍທ່ານໃນມືນນີ້ໄດ້ບໍ?",
+    talkto: "ສົນໃຈກັບ {modelName}"
+  },
+  lt: {
+    firstMessage: "👋 Laba diena! Kaip galiu jums padėti šiandien?",
+    talkto: "Talk to {modelName}"
+  },
+  lu: {
+    firstMessage: "👋 Mbote! Nkayi wumela nkolo akeyi?",
+    talkto: "Talk to {modelName}"
+  },
+  lv: {
+    firstMessage: "👋 Sveiki! Kā es varu jums palīdzēt šodien?",
+    talkto: "Runāt ar {modelName}"
+  },
+  mg: {
+    firstMessage: "👋 Hello! Inona no afaka manampy anao anio?",
+    talkto: "Talk to {modelName}"
+  },
+  mh: {
+    firstMessage: "👋 Yokwe! Ej bujen jen eo am loe?",
+    talkto: "Talk to {modelName}"
+  },
+  mi: {
+    firstMessage: "👋 Kia ora! Me pēhea ahau e āwhina i a koe i tēnei rā?",
+    talkto: "Kōrero ki {modelName}"
+  },
+  mk: {
+    firstMessage: "👋 Здраво! Како можам да ви помогнам денес?",
+    talkto: "Разговарајте со {modelName}"
+  },
+  ml: {
+    firstMessage: "👋 ഹലോ! ഇന്ന് ഞാൻ നിങ്ങൾക്ക് എങ്ങനെ സഹായിക്കാം?",
+    talkto: "{modelName} സംസാരിക്കുക"
+  },
+  mn: {
+    firstMessage: "👋 Сайн уу! Би энэ өдөр танд ямар тусламж үзэх боломжтой байна уу?",
+    talkto: "{modelName}тай ярих"
+  },
+  mr: {
+    firstMessage: "👋 नमस्कार! आज आपल्याला कसे मदत करू शकतो?",
+    talkto: "{modelName}सोबत बोला"
+  },
+  ms: {
+    firstMessage: "👋 Hai! Bagaimana saya boleh membantu anda hari ini?",
+    talkto: "Bercakap dengan {modelName}"
+  },
+  mt: {
+    firstMessage: "👋 Hello! Kif nista' nassistu lilek illum?",
+    talkto: "Tikkomunika ma' {modelName}"
+  },
+  my: {
+    firstMessage: "👋 မင်္ဂလာပါ! ယနေ့မှာ နားလည်ပါလိမ့်မယ်လို့လား?",
+    talkto: "{modelName}နှင့် ဆက်သွယ်ရန်"
+  },
+  na: {
+    firstMessage: "👋 Hello! Kame ndi pima hala gwo mavo?",
+    talkto: "Talk to {modelName}"
+  },
+  nb: {
+    firstMessage: "👋 Hei! Hvordan kan jeg hjelpe deg i dag?",
+    talkto: "Snakk med {modelName}"
+  },
+  nd: {
+    firstMessage: "👋 Avuxeni! Ndinga njhani ndzi nga ku pfuna namuntlha?",
+    talkto: "Talk to {modelName}"
+  },
+  ne: {
+    firstMessage: "👋 नमस्कार! आज तपाईंलाई कस्तो सहयोग गर्न सक्छु?",
+    talkto: "{modelName}सँग कुरा गर्नुहोस्"
+  },
+  ng: {
+    firstMessage: "👋 Hallo! Ha gakua nge kau ke ka?",
+    talkto: "Talk to {modelName}"
+  },
+  nl: {
+    firstMessage: "👋 Hallo! Hoe kan ik u vandaag helpen?",
+    talkto: "Praat met {modelName}"
+  },
+  nn: {
+    firstMessage: "👋 Hei! Korleis kan eg hjelpe deg i dag?",
+    talkto: "Snakk med {modelName}"
+  },
+  no: {
+    firstMessage: "👋 Hei! Hvordan kan jeg hjelpe deg i dag?",
+    talkto: "Snakk med {modelName}"
+  },
+  nr: {
+    firstMessage: "👋 Avuxeni! Ndinga njhani ndzi nga ku pfuna namuntlha?",
+    talkto: "Talk to {modelName}"
+  },
+  nv: {
+    firstMessage: "👋 Yá'át'ééh! Díí baa haneʼé níjiinii atah? ",
+    talkto: "Tʼáá hwóʼ ají {modelName}"
+  },
+  ny: {
+    firstMessage: "👋 Moni! Ndimakukondani bwanji lonjezo lino?",
+    talkto: "Talk to {modelName}"
+  },
+  oc: {
+    firstMessage: "👋 Bonjorn! Coma pòdi aiudar-vos avui?",
+    talkto: "Parlar amb {modelName}"
+  },
+  oj: {
+    firstMessage: "👋 Bozhoo! Kiiwenh nindinawemaaganan?",
+    talkto: "Talk to {modelName}"
+  },
+  om: {
+    firstMessage: "👋 Akkam! Innii maal jedha kan hin beeku seera?",
+    talkto: "Talk to {modelName}"
+  },
+  or: {
+    firstMessage: "👋 ନମସ୍କାର! ଆଜି ମୁଁ କିପରି ଆପଣଙ୍କୁ କେମିତି ସହାୟ୍ୟ କରିପାରିବୁ?",
+    talkto: "Talk to {modelName}"
+  },
+  os: {
+    firstMessage: "👋 Аллæ! Къуыгæд}, бæдзæг}, тæ сæралызыд?",
+    talkto: "Talk to {modelName}"
+  },
+  pa: {
+    firstMessage: "👋 ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਆਜ ਮੈਂ ਤੁਹਾਨੂੰ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹਾਂ?",
+    talkto: "{modelName} ਨਾਲ ਗੱਲ ਕਰੋ"
+  },
+  pi: {
+    firstMessage: "👋 सद्वै! आज्ज सुमणमा के मम तुम्हांस अनुग्रह देइ सकै?",
+    talkto: "Talk to {modelName}"
+  },
+  pl: {
+    firstMessage: "👋 Cześć! Jak mogę dzisiaj pomóc?",
+    talkto: "Porozmawiaj z {modelName}"
+  },
+  ps: {
+    firstMessage: "👋 سلام! په دې نه کولای شم کولای مرسته کولای چې؟",
+    talkto: "Talk to {modelName}"
+  },
+  pt: {
+    firstMessage: "👋 Olá! Como posso ajudar você hoje?",
+    talkto: "Falar com {modelName}"
+  },
+  qu: {
+    firstMessage: "👋 Rimaykullayki! Imaynalla saqeykuy munayki?",
+    talkto: "Talk to {modelName}"
+  },
+  rm: {
+    firstMessage: "👋 Allegra! Co poss j'udar a vus avui?",
+    talkto: "Parla cun {modelName}"
+  },
+  rn: {
+    firstMessage: "👋 Amahoro! Ufise aho kugomba kuzana kuri uyu munsi?",
+    talkto: "Talk to {modelName}"
+  },
+  ro: {
+    firstMessage: "👋 Buna! Cum vă pot ajuta astăzi?",
+    talkto: "Discută cu {modelName}"
+  },
+  ru: {
+    firstMessage: "👋 Привет! Как я могу помочь вам сегодня?",
+    talkto: "Поговорить с {modelName}"
+  },
+  rw: {
+    firstMessage: "👋 Muraho! Ejo nanjye nkugirira iki?",
+    talkto: "Habara na {modelName}"
+  },
+  sa: {
+    firstMessage: "👋 नमस्कारम्! आज त्वां किं कार्यम् करिष्यति?",
+    talkto: "{modelName} संवादं करा"
+  },
+  sc: {
+    firstMessage: "👋 Ciao! Comente ti posso aiutare oe?",
+    talkto: "Talk to {modelName}"
+  },
+  sd: {
+    firstMessage: "👋 سلام! آج مان سنڌي ڪي مدد ڪرڻ ڪري سگھون؟",
+    talkto: "{modelName} سان گپ شپ کريو"
+  },
+  se: {
+    firstMessage: "👋 Hei! Goassege boahtte sajis du?",
+    talkto: "Talk to {modelName}"
+  },
+  sg: {
+    firstMessage: "👋 Bäâkaaböö! Mbe mäng níi?",
+    talkto: "Talk to {modelName}"
+  },
+  si: {
+    firstMessage: "👋 හෙලෝ! අද ඔබට කොළඹෙන් කළ හැකිද?",
+    talkto: "{modelName} සමඟ කතා කරන්න"
+  },
+  sk: {
+    firstMessage: "👋 Ahoj! Ako vám môžem dnes pomôcť?",
+    talkto: "Rozpravajte sa s {modelName}"
+  },
+  sl: {
+    firstMessage: "👋 Zdravo! Kako vam lahko danes pomagam?",
+    talkto: "Pogovorite s {modelName}"
+  },
+  sm: {
+    firstMessage: "👋 Talofa! E afea ou te fesoasoani ia te oe i le aso nei?",
+    talkto: "Talk to {modelName}"
+  },
+  sn: {
+    firstMessage: "👋 Mhoroi! Ndinoda kukusanganisira nhasi?",
+    talkto: "Talk to {modelName}"
+  },
+  so: {
+    firstMessage: "👋 Hoyo! Maanta adigaa kuu caawin karaa?",
+    talkto: "Talk to {modelName}"
+  },
+  sq: {
+    firstMessage: "👋 Tungjatjeta! Si të mund të ju ndihmoj sot?",
+    talkto: "Fol me {modelName}"
+  },
+  sr: {
+    firstMessage: "👋 Здраво! Како могу да вам помогнем данас?",
+    talkto: "Разговарайте са {modelName}"
+  },
+  ss: {
+    firstMessage: "👋 Sawubona! Ngiyazi ukusiza namuhla?",
+    talkto: "Talk to {modelName}"
+  },
+  st: {
+    firstMessage: "👋 Lumela! Ke kopa thuso e kapa teng?",
+    talkto: "Talk to {modelName}"
+  },
+  su: {
+    firstMessage: "👋 Halo! Kumaha abdi tiasa ngabantu ka anu ieu?",
+    talkto: "Talk to {modelName}"
+  },
+  sv: {
+    firstMessage: "👋 Hej! Hur kan jag hjälpa dig idag?",
+    talkto: "Prata med {modelName}"
+  },
+  sw: {
+    firstMessage: "👋 Habari! Leo naweza kukusaidia vipi?",
+    talkto: "Habari na {modelName}"
+  },
+  ta: {
+    firstMessage: "👋 வணக்கம்! இன்று நான் உங்களுக்கு எப்படி உதவ முடியும்?",
+    talkto: "{modelName} மொழியில் பேசுங்கள்"
+  },
+  te: {
+    firstMessage: "👋 హలో! ఈ రోజు నేను మీకు ఎలా సహాయం చేయగలను?",
+    talkto: "{modelName}తో మాట్లాడు"
+  },
+  tg: {
+    firstMessage: "👋 Салом! Ман шумо муоиди кӯмак додан дар имкон ба шумо имкон мебошам?",
+    talkto: "{modelName}ро сухан гуфтан"
+  },
+  th: {
+    firstMessage: "👋 สวัสดี! วันนี้ฉันจะช่วยเธอได้อย่างไร?",
+    talkto: "พูดคุยกับ {modelName}"
+  },
+  ti: {
+    firstMessage: "👋 ሰላም! ናብ ኣለኹም! ናብ ኣለኹም!",
+    talkto: "Talk to {modelName}"
+  },
+  tk: {
+    firstMessage: "👋 Салам! Сезге как көмөкле алмага мүмкүнми?",
+    talkto: "Talk to {modelName}"
+  },
+  tl: {
+    firstMessage: "👋 Kumusta! Paano kita matutulungan ngayon?",
+    talkto: "Usapang may {modelName}"
+  },
+  tn: {
+    firstMessage: "👋 Lotšha! Ke kopa thuso eo ke sa mo kgethilego?",
+    talkto: "Talk to {modelName}"
+  },
+  to: {
+    firstMessage: "👋 Mālō e lelei! Peheā au ke fesoasoani ki heni?",
+    talkto: "Fakamatala ki {modelName}"
+  },
+  tr: {
+    firstMessage: "👋 Merhaba! Bugün sana nasıl yardımcı olabilirim?",
+    talkto: "{modelName} ile konuş"
+  },
+  ts: {
+    firstMessage: "👋 Avuxeni! Ndzi khou lava u ri do vhathu?",
+    talkto: "Talk to {modelName}"
+  },
+  tt: {
+    firstMessage: "👋 Сәләм! Бөгән сезгә ярдәм итә алармын?",
+    talkto: "Talk to {modelName}"
+  },
+  tw: {
+    firstMessage: "👋 Akwaaba! Meboɔ a ɛdawoɔ gye wo wɔ asase yi mu?",
+    talkto: "Talk to {modelName}"
+  },
+  ty: {
+    firstMessage: "👋 Ia ora na! E aha te mea e taea e au te āwhina i a koe i tēnei rā?",
+    talkto: "Parau ia {modelName}"
+  },
+  ug: {
+    firstMessage: "👋 ياخشىمۇسىز! بۈگۈن سىزگە قانداق ياردەم بەرەمەن؟",
+    talkto: "{modelName} بىلەن سۆزلىشىڭ"
+  },
+  uk: {
+    firstMessage: "👋 Привіт! Як я можу допомогти вам сьогодні?",
+    talkto: "Розмовляйте з {modelName}"
+  },
+  ur: {
+    firstMessage: "👋 ہیلو! آج میں آپ کی کس طرح مدد کر سکتا ہوں؟",
+    talkto: "{modelName} سے بات کریں"
+  },
+  uz: {
+    firstMessage: "👋 Salom! Bugun senga qanday yordam bera olishim mumkin?",
+    talkto: "{modelName} bilan gapirish"
+  },
+  ve: {
+    firstMessage: "👋 Avuxeni! Ndzi khou lava u ri do vhathu?",
+    talkto: "Talk to {modelName}"
+  },
+  vi: {
+    firstMessage: "👋 Xin chào! Hôm nay tôi có thể giúp bạn như thế nào?",
+    talkto: "Nói chuyện với {modelName}"
+  },
+  vo: {
+    firstMessage: "👋 Halo! Vu koy vo deikoa jenon?",
+    talkto: "Kladolövöl ob {modelName}"
+  },
+  wa: {
+    firstMessage: "👋 Bondjoû! Comint c' est çou qu' dj' pou l' oblier aodjordji?",
+    talkto: "Parle avou {modelName}"
+  },
+  wo: {
+    firstMessage: "👋 Nanga def! Noo njabootu jëkkal nga def?",
+    talkto: "Talk to {modelName}"
+  },
+  xh: {
+    firstMessage: "👋 Molo! Ndicela nisiza njani namhlanje?",
+    talkto: "Talk to {modelName}"
+  },
+  yi: {
+    firstMessage: "👋 העלא! ווי קאָן איך העלפֿן איר היינט?",
+    talkto: "רעדן מיט {modelName}"
+  },
+  yo: {
+    firstMessage: "👋 Bawo ni! Bawo lo se le fi ohun kọ mi?",
+    talkto: "Tẹlẹ́ {modelName} rọ"
+  },
+  za: {
+    firstMessage: "👋 Ngi'hani! Ndo qurisentea tsoeujmo qurisenzai?",
+    talkto: "Talk to {modelName}"
+  },
+  zh: {
+    firstMessage: "👋 你好！今天我能为您提供什么帮助呢？",
+    talkto: "与 {modelName} 谈话"
+  },
+  zu: {
+    firstMessage: "👋 Sawubona! Ngicela ukusiza kanjani namhlanje?",
+    talkto: "Talk to {modelName}"
+  }
+};
 function Chatbox({
   info = {},
   type,
@@ -53375,7 +54110,8 @@ function Chatbox({
   onTry = () => {
   },
   setIsOpened,
-  modelHash
+  modelHash,
+  language
 }) {
   const chatContainerRef = reactExports.useRef(null);
   const controllerRef = reactExports.useRef(new AbortController());
@@ -53385,7 +54121,7 @@ function Chatbox({
   const [isInputFocused, setInputFocused] = reactExports.useState(false);
   const [rabbitChatId, setRabbitChatId] = reactExports.useState(false);
   const questionRef = reactExports.useRef(null);
-  const [messages, setMessages] = reactExports.useState([]);
+  const [messages$1, setMessages] = reactExports.useState([]);
   const [guestId, setGuestId] = reactExports.useState();
   const [model, setModel] = reactExports.useState();
   const [userMessage, setUserMessage] = reactExports.useState("");
@@ -53435,7 +54171,7 @@ function Chatbox({
       return;
     }
     let msgParams = {
-      message: encodeData(msg ?? messages),
+      message: encodeData(msg ?? messages$1),
       type: "response"
     };
     await fetch(new Config().API_URL + "/message", {
@@ -53453,6 +54189,13 @@ function Chatbox({
       console.log("err", err);
     });
   };
+  const talkToModel = reactExports.useMemo(() => {
+    console.log("i18nMessages[language]", messages[language]);
+    return messages[language].talkto.replace(
+      "{modelName}",
+      `"${modelName}"` || "model"
+    );
+  }, [modelName]);
   const handleAbortRequest = () => {
     abortRequestAction({ userAction: true });
     saveAiResponse();
@@ -53665,11 +54408,11 @@ function Chatbox({
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLE } }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("style", { dangerouslySetInnerHTML: { __html: STYLEMARKDOWN } }),
               dataLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(MessageStructureSkeleton, { loading: true }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(reactExports.Fragment, { children: [
-                messages.length == 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                messages$1.length == 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
                   InitialMessage,
                   {
                     msg: {
-                      message: "👋 Hi there! How can I help you today?",
+                      message: messages[language].firstMessage,
                       type: "response"
                     },
                     initialMessage: true,
@@ -53680,7 +54423,7 @@ function Chatbox({
                   Message,
                   {
                     msg: {
-                      message: "👋 Hi there! How can I help you today?",
+                      message: messages[language].firstMessage,
                       type: "response"
                     },
                     initialMessage: true,
@@ -53688,7 +54431,7 @@ function Chatbox({
                     modelName
                   }
                 ),
-                messages.map((msg, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                messages$1.map((msg, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                   Message,
                   {
                     msg,
@@ -53813,7 +54556,7 @@ function Chatbox({
                       e2.target.style.overflowY = "hidden";
                     }
                   },
-                  label: !isMsgSending ? `Talk to "${modelName}"` : "",
+                  label: !isMsgSending ? talkToModel : "",
                   focused: isInputFocused.toString(),
                   onFocus: () => {
                     setInputFocused(true);
@@ -53827,12 +54570,12 @@ function Chatbox({
                       }
                     }
                   },
-                  placeholder: isMsgSending == false ? `Talk to "${modelName}"` : "",
+                  placeholder: isMsgSending == false ? talkToModel : "",
                   id: "younet-input",
                   ref: questionRef
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "younet-input", children: !isMsgSending && `Talk to "${modelName}"` })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "younet-input", children: !isMsgSending && talkToModel })
             ] }) })
           }
         )
@@ -53840,12 +54583,20 @@ function Chatbox({
     }
   );
 }
-function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
+function App({
+  modelHash,
+  RIGHT = 24,
+  BOTTOM = 20,
+  HEIGHT = 60,
+  WIDTH = 60,
+  language = "en"
+}) {
   const CONFIG = new Config({
     RIGHT,
     BOTTOM,
     HEIGHT,
-    WIDTH
+    WIDTH,
+    language
   });
   console.log("CONFIG", CONFIG);
   if (!modelHash) {
@@ -54002,7 +54753,14 @@ function App({ modelHash, RIGHT = 24, BOTTOM = 20, HEIGHT = 60, WIDTH = 60 }) {
                 zIndex: 9999
               },
               container: containerRef.current,
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Chatbox, { modelHash, setIsOpened }) })
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Box$1, { sx: { width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Chatbox,
+                {
+                  language,
+                  modelHash,
+                  setIsOpened
+                }
+              ) })
             }
           )
         }
