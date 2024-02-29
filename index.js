@@ -54790,6 +54790,7 @@ if (!document.getElementById("younet-embed-chatbox")) {
   const url = new URL(import.meta.url);
   console.log("mainjsx url", url);
   const modelHash = url.searchParams.get("modelHash");
+  const language = url.searchParams.get("language");
   const height2 = url.searchParams.get("height");
   const width2 = url.searchParams.get("width");
   const bottom = url.searchParams.get("bottom");
@@ -54811,7 +54812,8 @@ if (!document.getElementById("younet-embed-chatbox")) {
           RIGHT: right,
           BOTTOM: bottom,
           HEIGHT: height2,
-          WIDTH: width2
+          WIDTH: width2,
+          language
         }
       )
     ] })
