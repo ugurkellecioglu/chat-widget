@@ -58301,8 +58301,7 @@ function Chatbox({
           {
             sx: {
               display: {
-                xs: "block",
-                sm: "none"
+                xs: "block"
               },
               position: "absolute",
               right: "4px",
@@ -58645,6 +58644,9 @@ function App({
     if (!open) {
       return;
     }
+    if (window.innerWidth < 500) {
+      return;
+    }
     const cleanup = autoUpdate(
       buttonRef.current,
       containerRef.current,
@@ -58738,7 +58740,7 @@ function App({
                   setSelectedLanguage,
                   language: selectedLanguage,
                   modelHash,
-                  setIsOpened
+                  setIsOpened: setOpen
                 }
               ) })
             }
@@ -58748,8 +58750,11 @@ function App({
     ] })
   ] });
 }
+console.debug("main.jsx");
 if (!document.getElementById("younet-embed-chatbox")) {
   const root2 = document.querySelector("younet-chat-button");
+  const text2 = root2.textContent;
+  console.log("text", text2);
   root2.id = "younet-embed-chatbox";
   console.log("import meta url", import.meta.url);
   const u2 = new URL(import.meta.url);
@@ -58767,12 +58772,14 @@ if (!document.getElementById("younet-embed-chatbox")) {
   const url = new URL(import.meta.url);
   console.log("mainjsx url", url);
   const modelHash = url.searchParams.get("modelHash");
-  const language = url.searchParams.get("language") || ((_a = navigator.language || navigator.userLanguage) == null ? void 0 : _a.split("-")[0]) || "en";
+  let language = localStorage.getItem("younet-language") || url.searchParams.get("language") || ((_a = navigator.language || navigator.userLanguage) == null ? void 0 : _a.split("-")[0]) || "en";
+  if (messages[language] === void 0) {
+    language = "en";
+  }
   const height2 = url.searchParams.get("height");
   const width2 = url.searchParams.get("width");
   const bottom = url.searchParams.get("bottom");
   const right = url.searchParams.get("right");
-  const text2 = url.searchParams.get("text");
   const imgUrl = url.searchParams.get("imgUrl");
   const shadow = root2.attachShadow({ mode: "open" });
   const cache = createCache({
