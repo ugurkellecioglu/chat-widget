@@ -58738,9 +58738,9 @@ function App({
                 Chatbox,
                 {
                   setSelectedLanguage,
-                  language: selectedLanguage,
+                  selectedLanguage,
                   modelHash,
-                  setIsOpened: setOpen
+                  setIsOpened
                 }
               ) })
             }
