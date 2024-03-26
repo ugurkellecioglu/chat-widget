@@ -58583,7 +58583,6 @@ function App({
     WIDTH,
     language
   });
-  console.log("CONFIG", CONFIG);
   if (!modelHash) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "Missing modelHash" });
   }
@@ -58611,7 +58610,6 @@ function App({
     }
     if (!logoRef.current || !closeRef.current)
       return;
-    console.log("isOpened", isOpened);
     if (isOpened) {
       closeRef.current.classList.remove("opened");
       logoRef.current.classList.remove("closed");
@@ -58625,6 +58623,8 @@ function App({
     }
   }, [isOpened]);
   const buttonRef = reactExports.useRef(null);
+  const [x2, setX] = reactExports.useState(0);
+  const [y2, setY] = reactExports.useState(0);
   function updatePosition() {
     computePosition(buttonRef.current, containerRef.current, {
       middleware: [
@@ -58632,19 +58632,19 @@ function App({
         shift({ padding: 5 }),
         offset(6)
       ]
-    }).then(({ x: x2, y: y2 }) => {
-      console.debug("x", x2, "y", y2);
-      Object.assign(containerRef.current.style, {
-        left: `${x2}px`,
-        top: `${y2}px`
-      });
+    }).then(({ x: x22, y: y22, middlewareData, strategy, placement }) => {
+      setX(x22);
+      setY(y22);
     });
   }
   reactExports.useEffect(() => {
     if (!open) {
       return;
     }
-    if (window.innerWidth < 500) {
+    if (!buttonRef.current || !containerRef.current) {
+      return;
+    }
+    if (buttonRef.current.getAttribute("data-floating-ui") === "true") {
       return;
     }
     const cleanup = autoUpdate(
@@ -58652,7 +58652,7 @@ function App({
       containerRef.current,
       updatePosition
     );
-    console.log("cleanup", cleanup);
+    buttonRef.current.setAttribute("data-floating-ui", "true");
     return () => {
       cleanup();
     };
@@ -58695,12 +58695,12 @@ function App({
               sm: "absolute",
               xs: "fixed"
             },
-            bottom: {
-              sm: `auto`,
+            top: {
+              sm: `${y2}px`,
               xs: 0
             },
-            right: {
-              sm: "auto",
+            left: {
+              sm: `${x2}px`,
               xs: 0
             },
             cursor: {
