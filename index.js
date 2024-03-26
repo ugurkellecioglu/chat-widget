@@ -58740,7 +58740,7 @@ function App({
                   setSelectedLanguage,
                   selectedLanguage,
                   modelHash,
-                  setIsOpened
+                  setIsOpened: setOpen
                 }
               ) })
             }
